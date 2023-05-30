@@ -502,30 +502,25 @@
                             <!--end::Breadcrumb-->
                         </div>
                         <!--end::Page title-->
-                        <!--begin::Actions-->
-                        <!--end::Actions-->
+                     
                     </div>
                     <!--end::Toolbar container-->
                 </div>
-                <!--end::Toolbar-->
-                <!--begin::Content-->
+                
                 <div id="kt_app_content" class="app-content  flex-column-fluid ">
-
-
-                    <!--begin::Content container-->
+ 
                     <div id="kt_app_content_container" class="app-container  container-xxl ">
-
-                        <!--begin::Pricing-->
                         <div class="card">
                             <!--begin::Card body-->
                             <div class="card-body px-10 px-lg-20 pt-17 pb-10">
-                                @RenderBody()
-                            </div>
-                            <!--end::Card body-->
-                        </div>
-                        <!--end::Pricing-->
+                                <div class="table-responsive">
+                        
+                              @RenderBody()
+                                
+                    </div> 
+                    </div> 
                     </div>
-                    <!--end::Content container-->
+                    
                 </div>
                 <!--end::Content-->
             </div>
@@ -537,12 +532,28 @@
                     <!--begin::Copyright-->
                     <div class="text-dark order-2 order-md-1">
                         <span class="text-muted fw-semibold me-1">2023&copy;</span>
-                        <a href="#" target="_blank"
-                           class="text-gray-800 text-hover-primary">Diverse</a>
+                        <a href="https://keenthemes.com/" target="_blank"
+                           class="text-gray-800 text-hover-primary">Keenthemes</a>
                     </div>
                     <!--end::Copyright-->
                     <!--begin::Menu-->
+                    <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
+                        <li class="menu-item">
+                            <a href="https://keenthemes.com/" target="_blank"
+                               class="menu-link px-2">About</a>
+                        </li>
 
+                        <li class="menu-item">
+                            <a href="https://devs.keenthemes.com/" target="_blank"
+                               class="menu-link px-2">Support</a>
+                        </li>
+
+                        <li class="menu-item">
+                            <a href="https://themes.getbootstrap.com/product/keen-the-ultimate-bootstrap-admin-theme/"
+                               target="_blank" class="menu-link px-2">Purchase</a>
+                        </li>
+                    </ul>
+                    <!--end::Menu-->
                 </div>
                 <!--end::Footer container-->
             </div>
@@ -550,13 +561,9 @@
         </div>
         <!--end:::Main-->
 
-
     </div>
     <!--end::Wrapper-->
-    </div>
-    <!--end::Page-->
-    </div>
-    <!--end::App-->
+     
 
 
 
@@ -574,14 +581,9 @@
     <!--end::Global Javascript Bundle-->
     <!--begin::Vendors Javascript(used for this page only)-->
     <script src="~/admin/assets/plugins/custom/datatables/datatables.bundle.js"></script>
+    
     <!--end::Vendors Javascript-->
-    <!--begin::Custom Javascript(used for this page only)-->
-    <script src="~/admin/assets/js/custom/pages/pricing/general.js"></script>
-    <script src="~/admin/assets/js/widgets.bundle.js"></script>
-    <script src="~/admin/assets/js/custom/apps/chat/chat.js"></script>
-    <script src="~/admin/assets/js/custom/utilities/modals/upgrade-plan.js"></script>
-    <script src="~/admin/assets/js/custom/utilities/modals/create-campaign.js"></script>
-    <script src="~/admin/assets/js/custom/utilities/modals/users-search.js"></script>
+    
     @await RenderSectionAsync("Scripts", required: false)
     <!--end::Custom Javascript-->
     <!--end::Javascript-->

@@ -75,6 +75,7 @@ namespace Diverse_website
                 app.UseHsts();
             }
             DBIntializer.seed(userManager);
+           // DBIntializer.seedroles(userrole);
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

@@ -17,6 +17,7 @@ namespace Diverse_website.Data
                 {
                     UserName = "admin@gmail.com",
                     Email = "admin@gmail.com"
+                    
                 };
 
                 IdentityResult result = usermanager.CreateAsync(user, "123456").Result;
@@ -25,6 +26,26 @@ namespace Diverse_website.Data
                 {
                     usermanager.AddToRoleAsync(user, "Admin").Wait();
                 }
+            }
+
+        }
+        public static void seedroles(UserManager<IdentityRole> userrole)
+        {
+            if (userrole.FindByNameAsync("admin").Result==null)
+            {
+                IdentityRole role = new IdentityRole
+                {
+                    Name = "admin",
+                    NormalizedName = "admin"
+                };
+            }
+            else if (userrole.FindByNameAsync("user").Result == null)
+            {
+                IdentityRole role = new IdentityRole
+                {
+                    Name = "user",
+                    NormalizedName = "user"
+                };
             }
         }
     }
