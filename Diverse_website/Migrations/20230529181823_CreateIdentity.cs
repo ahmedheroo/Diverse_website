@@ -39,7 +39,10 @@ namespace Diverse_website.Migrations
                     TwoFactorEnabled = table.Column<bool>(type: "bit", nullable: false),
                     LockoutEnd = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
                     LockoutEnabled = table.Column<bool>(type: "bit", nullable: false),
-                    AccessFailedCount = table.Column<int>(type: "int", nullable: false)
+                    AccessFailedCount = table.Column<int>(type: "int", nullable: false),
+                    LastLogin= table.Column<DateTime>(type: "date", nullable: true),
+                    IsDeleted =table.Column<bool>(type: "bit", nullable: true)
+
                 },
                 constraints: table =>
                 {

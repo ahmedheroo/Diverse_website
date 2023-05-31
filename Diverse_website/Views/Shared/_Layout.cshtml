@@ -627,7 +627,7 @@
 
     <!--end::Custom Javascript-->
     <!--end::Javascript-->
-    @RenderSection("Scripts", false);
+    @await RenderSectionAsync("Scripts", required: false);
 </body>
  
 </html>
