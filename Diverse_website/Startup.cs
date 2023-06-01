@@ -1,5 +1,7 @@
 using Diverse_website.Data;
 using Diverse_website.Models;
+using Diverse_website.Repository;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -58,6 +60,8 @@ namespace Diverse_website
                 options.ExpireTimeSpan = TimeSpan.FromHours(20);
             });
             services.AddControllersWithViews();
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(q => q.LoginPath = "/identity/account/login");
+            services.AddScoped<IUserRepo, UserRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
