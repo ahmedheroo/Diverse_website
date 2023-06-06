@@ -1,0 +1,162 @@
+﻿@model Diverse_website.ViewModels.BlogsWithImages
+@{
+    ViewData["Title"] = "Create";
+}
+
+<style>
+    .image-input-placeholder {
+        background-image: Url('admin/assets/media/avatars/blogplaceholder.jpg');
+    }
+
+    [data-bs-theme="dark"] .image-input-placeholder {
+        background-image: url('assets/media/avatars/blogplaceholder.jpg');
+    }
+</style>
+<div class="card">
+    <!--begin::Body-->
+    <div class="card-body p-lg-10">
+        <!--begin::Latest posts-->
+        <form class="form-horizontal" enctype="multipart/form-data" asp-controller="Blogs" method="post" asp-action="Create">
+
+            <div class="fv-row mb-7">
+                <!--begin::Label-->
+                <label asp-for="Blog.TitleEn" class="required fs-6 fw-semibold mb-2">Title English</label>
+                <!--end::Label-->
+                <!--begin::Input-->
+                <input asp-for="Blog.TitleEn" type="text" class="form-control form-control-solid" placeholder="Title English"/>
+                <!--end::Input-->
+            </div>
+            <div class="fv-row mb-7">
+                <!--begin::Label-->
+                <label asp-for="Blog.TitleAr" class="required fs-6 fw-semibold mb-2">Title Arabic</label>
+                <!--end::Label-->
+                <!--begin::Input-->
+                <input asp-for="Blog.TitleAr" type="text" class="form-control form-control-solid" placeholder="Title Arabic"/>
+                <!--end::Input-->
+            </div>
+            <div class="fv-row mb-7">
+                <!--begin::Label-->
+                <label asp-for="Blog.ContentEn" class="required fs-6 fw-semibold mb-2">Content English</label>
+                <!--end::Label-->
+                <!--begin::Input-->
+                <textarea asp-for="Blog.ContentEn" type="text" class="form-control form-control-solid" placeholder="Content English" >
+
+</textarea>
+                <!--end::Input-->
+            </div>
+            <div class="fv-row mb-7">
+                <!--begin::Label-->
+                <label asp-for="Blog.ContentAr" class="required fs-6 fw-semibold mb-2">Content Arabic</label>
+                <!--end::Label-->
+                <!--begin::Input-->
+                <textarea asp-for="Blog.ContentAr" type="text" class="form-control form-control-solid" placeholder="Content Arabic">
+
+</textarea>
+                <!--end::Input-->
+            </div>
+
+            <!--begin::Image input-->
+            <div class="fv-row mb-7">
+                <div class="image-input image-input-empty" data-kt-image-input="true">
+                    <!--begin::Image preview wrapper-->
+                    <div class="image-input-wrapper h-125px" style="width:18rem !important;background-image:Url('@Url.Content("~/admin/assets/media/avatars/blogplaceholder.jpg")')"></div>
+                    <!--end::Image preview wrapper-->
+                    <!--begin::Edit button-->
+                    <label class="btn btn-icon btn-circle btn-color-muted btn-active-color-primary w-25px h-25px bg-body shadow"
+                           data-kt-image-input-action="change"
+                           data-bs-toggle="tooltip"
+                           data-bs-dismiss="click"
+                           title="Change banner">
+                        <i class="ki-duotone ki-pencil fs-6"><span class="path1"></span><span class="path2"></span></i>
+
+                        <!--begin::Inputs-->
+                        <input asp-for="BlogImage" type="file" accept=".png, .jpg, .jpeg" />
+                        <input type="hidden" name="avatar_remove" />
+                        <!--end::Inputs-->
+                    </label>
+                    <!--end::Edit button-->
+                    <!--begin::Cancel button-->
+                    <span class="btn btn-icon btn-circle btn-color-muted btn-active-color-primary w-25px h-25px bg-body shadow"
+                          data-kt-image-input-action="cancel"
+                          data-bs-toggle="tooltip"
+                          data-bs-dismiss="click"
+                          title="Cancel banner">
+                        <i class="ki-outline ki-cross fs-3"></i>
+                    </span>
+                    <!--end::Cancel button-->
+                    <!--begin::Remove button-->
+                    <span class="btn btn-icon btn-circle btn-color-muted btn-active-color-primary w-25px h-25px bg-body shadow"
+                          data-kt-image-input-action="remove"
+                          data-bs-toggle="tooltip"
+                          data-bs-dismiss="click"
+                          title="Remove avatar">
+                        <i class="ki-outline ki-cross fs-3"></i>
+                    </span>
+                    <!--end::Remove button-->
+                </div>
+            </div>
+            <!--end::Image input-->
+
+            @*<input type="hidden" asp-for="CreatedDate" />*@
+            <!--<div class="row g-9 mb-7">-->
+            <!--begin::Col-->
+            <!--<div class="col-md-6 fv-row">-->
+            <!--begin::Label-->
+            <!--<label class="required fs-6 fw-semibold mb-2">State / Province</label>-->
+            <!--end::Label-->
+            <!--begin::Input-->
+            <!--<input class="form-control form-control-solid" placeholder="" name="state" value="Victoria" />-->
+            <!--end::Input-->
+            <!--</div>-->
+            <!--end::Col-->
+            <!--begin::Col-->
+            <!--<div class="col-md-6 fv-row">-->
+            <!--begin::Label-->
+            <!--<label class="required fs-6 fw-semibold mb-2">Post Code</label>-->
+            <!--end::Label-->
+            <!--begin::Input-->
+            <!--<input class="form-control form-control-solid" placeholder="" name="postcode" value="3000" />-->
+            <!--end::Input-->
+            <!--</div>-->
+            <!--end::Col-->
+            <!--</div>-->
+            <!--<div class="fv-row mb-7 col-md-6">-->
+            <!--begin::Wrapper-->
+            <!--<div class="d-flex flex-stack">-->
+            <!--begin::Label-->
+            <!--<div class="me-5">-->
+            <!--begin::Label-->
+            <!--<label class="fs-6 fw-semibold">Use as a billing adderess?</label>-->
+            <!--end::Label-->
+            <!--</div>-->
+            <!--end::Label-->
+            <!--begin::Switch-->
+            <!--<label class="form-check form-switch form-check-custom form-check-solid">-->
+            <!--begin::Input-->
+            <!--<input class="form-check-input" name="billing" type="checkbox" value="1" id="kt_modal_add_customer_billing" checked="checked" />-->
+            <!--end::Input-->
+            <!--begin::Label-->
+            <!--<span class="form-check-label fw-semibold text-muted" for="kt_modal_add_customer_billing">
+        Yes
+    </span>-->
+            <!--end::Label-->
+            <!--</label>-->
+            <!--end::Switch-->
+            <!--</div>-->
+            <!--begin::Wrapper-->
+            <!--</div>-->
+            <div class="card-footer">
+                <div class="fv-row mb-7">
+                    <button type="submit" class="btn btn-sm btn-primary" style="float:right">Save</button>
+                    <a type="submit" class="btn btn-sm btn-secondary" asp-action="Index">Back</a>
+                </div>
+            </div>
+
+
+        </form>
+
+
+
+    </div>
+    <!--end::Body-->
+</div>

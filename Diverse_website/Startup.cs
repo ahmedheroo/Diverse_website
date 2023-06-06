@@ -60,8 +60,15 @@ namespace Diverse_website
                 options.ExpireTimeSpan = TimeSpan.FromHours(20);
             });
             services.AddControllersWithViews();
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(q => q.LoginPath = "/identity/account/login");
+            services.AddAuthentication(o =>
+            {
+                o.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            })
+                .AddCookie(o => o.LoginPath = "/identity/account/login");
+                
+            //services.AddAuthentication( CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(q => q.LoginPath = "/identity/account/login");
             services.AddScoped<IUserRepo, UserRepo>();
+            services.AddScoped<IBlogsRepo, BlogsRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

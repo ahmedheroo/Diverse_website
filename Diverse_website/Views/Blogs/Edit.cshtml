@@ -1,0 +1,113 @@
+﻿@model Diverse_website.ViewModels.BlogsWithImages
+@{
+    ViewData["Title"] = "Create";
+}
+
+<style>
+    .image-input-placeholder {
+        background-image: Url('admin/assets/media/avatars/blogplaceholder.jpg');
+    }
+
+    [data-bs-theme="dark"] .image-input-placeholder {
+        background-image: url('assets/media/avatars/blogplaceholder.jpg');
+    }
+</style>
+<div class="card">
+    <!--begin::Body-->
+    <div class="card-body p-lg-10">
+        <!--begin::Latest posts-->
+        <form class="form-horizontal" enctype="multipart/form-data" asp-controller="Blogs" method="post" asp-action="Edit">
+            <input type="hidden" asp-for="Blog.ID" />
+            <div class="fv-row mb-7">
+                <!--begin::Label-->
+                <label asp-for="Blog.TitleEn" class="required fs-6 fw-semibold mb-2">Title English</label>
+                <!--end::Label-->
+                <!--begin::Input-->
+                <input asp-for="Blog.TitleEn" type="text" class="form-control form-control-solid" placeholder="Title English" />
+                <!--end::Input-->
+            </div>
+            <div class="fv-row mb-7">
+                <!--begin::Label-->
+                <label asp-for="Blog.TitleAr" class="required fs-6 fw-semibold mb-2">Title Arabic</label>
+                <!--end::Label-->
+                <!--begin::Input-->
+                <input asp-for="Blog.TitleAr" type="text" class="form-control form-control-solid" placeholder="Title Arabic" />
+                <!--end::Input-->
+            </div>
+            <div class="fv-row mb-7">
+                <!--begin::Label-->
+                <label asp-for="Blog.ContentEn" class="required fs-6 fw-semibold mb-2">Content English</label>
+                <!--end::Label-->
+                <!--begin::Input-->
+                <textarea asp-for="Blog.ContentEn" type="text" class="form-control form-control-solid" placeholder="Content English">
+
+</textarea>
+                <!--end::Input-->
+            </div>
+            <div class="fv-row mb-7">
+                <!--begin::Label-->
+                <label asp-for="Blog.ContentAr" class="required fs-6 fw-semibold mb-2">Content Arabic</label>
+                <!--end::Label-->
+                <!--begin::Input-->
+                <textarea asp-for="Blog.ContentAr" type="text" class="form-control form-control-solid" placeholder="Content Arabic">
+
+</textarea>
+                <!--end::Input-->
+            </div>
+
+            <!--begin::Image input-->
+            <div class="fv-row mb-7">
+                <div class="image-input image-input-empty" data-kt-image-input="true">
+                    <!--begin::Image preview wrapper-->
+                    <div class="image-input-wrapper h-125px" style="width:18rem !important;background-image:Url('@Url.Content(Model.Blog.PhotoUrl)')"></div>
+                    <!--end::Image preview wrapper-->
+                    <!--begin::Edit button-->
+                    <label class="btn btn-icon btn-circle btn-color-muted btn-active-color-primary w-25px h-25px bg-body shadow"
+                           data-kt-image-input-action="change"
+                           data-bs-toggle="tooltip"
+                           data-bs-dismiss="click"
+                           title="Change banner">
+                        <i class="ki-duotone ki-pencil fs-6"><span class="path1"></span><span class="path2"></span></i>
+
+                        <!--begin::Inputs-->
+                        <input asp-for="BlogImage" type="file" accept=".png, .jpg, .jpeg" />
+                        <input type="hidden" name="avatar_remove" />
+                        <!--end::Inputs-->
+                    </label>
+                    <!--end::Edit button-->
+                    <!--begin::Cancel button-->
+                    <span class="btn btn-icon btn-circle btn-color-muted btn-active-color-primary w-25px h-25px bg-body shadow"
+                          data-kt-image-input-action="cancel"
+                          data-bs-toggle="tooltip"
+                          data-bs-dismiss="click"
+                          title="Cancel banner">
+                        <i class="ki-outline ki-cross fs-3"></i>
+                    </span>
+                    <!--end::Cancel button-->
+                    <!--begin::Remove button-->
+                    <span class="btn btn-icon btn-circle btn-color-muted btn-active-color-primary w-25px h-25px bg-body shadow"
+                          data-kt-image-input-action="remove"
+                          data-bs-toggle="tooltip"
+                          data-bs-dismiss="click"
+                          title="Remove avatar">
+                        <i class="ki-outline ki-cross fs-3"></i>
+                    </span>
+                    <!--end::Remove button-->
+                </div>
+            </div>
+         
+            <div class="card-footer">
+                <div class="fv-row mb-7">
+                    <button type="submit" class="btn btn-sm btn-primary" style="float:right">Save</button>
+                    <a class="btn btn-sm btn-secondary" asp-action="ViewBlog" asp-route-id="@Model.Blog.ID">Back</a>
+                </div>
+            </div>
+
+
+        </form>
+
+
+
+    </div>
+    <!--end::Body-->
+</div>

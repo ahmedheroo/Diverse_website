@@ -19,5 +19,6 @@ namespace Diverse_website.Models
         public string PhotoUrl { get; set; }
         public bool IsDeleted { get; set; }
 
+
     }
 }

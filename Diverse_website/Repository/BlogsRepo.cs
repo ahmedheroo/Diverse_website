@@ -1,32 +1,29 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Diverse_website.Models;
+using Diverse_website.ViewModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace Diverse_website.Repository
 {
-    public class BlogsRepo<T> : IBlogsRepo<T> where T : class
+    public class BlogsRepo : Repository<blog>, IBlogsRepo
     {
-        public void Delete(object id)
+        private readonly DiverseContext context;
+        public BlogsRepo(DiverseContext _context)
         {
-            throw new System.NotImplementedException();
+            context = _context;
+        }
+        public IQueryable<blog> Getblogs()
+        {
+            return context.blogs.AsNoTracking();
         }
 
-        public IQueryable<T> GetAll()
+        public blog GetBlogWithImage()
         {
-            throw new System.NotImplementedException();
+            return context.blogs.FirstOrDefault();
         }
+      
 
-        public T GetById(object id)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void Insert(T obj)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void Update(T obj)
-        {
-            throw new System.NotImplementedException();
-        }
+       
     }
 }
