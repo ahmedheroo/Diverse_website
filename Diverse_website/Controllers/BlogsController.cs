@@ -11,7 +11,7 @@ using System.Linq;
 
 namespace Diverse_website.Controllers
 { 
-    //[Authorize]
+    [Authorize]
     public class BlogsController : Controller
     {
        
@@ -26,9 +26,16 @@ namespace Diverse_website.Controllers
         {
               IQueryable<blog> model ;
               model = blogsRepo.Getblogs();
+
             //foreach (var item in model)
             //{
-            //   item.ContentEn.Substring(0, 85);
+            //    if (item.ContentEn.Length>=100)
+            //    {
+            //     item.ContentEn.Substring(100, item.ContentEn.Length);
+                
+            //    }
+                
+
             //}
             return View(model);
         }
@@ -99,16 +106,15 @@ namespace Diverse_website.Controllers
                         ContentEn = model.Blog.ContentEn,
                         ContentAr = model.Blog.ContentAr,
                         PhotoUrl = uniqueFileName,
+                        CreatedDate=model.Blog.CreatedDate,
                         UpdatedDate = DateTime.Now
 
                     };
                     blogsRepo.Update(model.Blog);
                     return RedirectToAction("Index");
 
-                
             }
          
-           
                 return View(model);
              
             
