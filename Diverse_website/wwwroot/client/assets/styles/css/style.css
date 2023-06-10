@@ -76,9 +76,9 @@ header.scroll-css .navbar-default .navbar-nav > .active > a, header.menu-transpa
     color: #3e6be0;
 }
 
-    .btn-border:hover i, .white .btn i {
-        color: #3e6be0 !important;
-    }
+.btn-border:hover i, .white .btn i {
+    color: #3e6be0 !important;
+}
 
 .btn-color.btn-border, .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus, .pagination > li:not(.disabled):hover > a i:before {
     border-color: #5584ff !important;
@@ -196,7 +196,7 @@ footer, .flex-control-paging li a:hover, .bg-color {
     .nav.inner.ms-rounded > li > a:hover, .white .btn-text:hover, .header-base.white .breadcrumb.b a, .mi-menu .sidebar-nav ul a:hover, .white .btn.btn-border:hover, .white.advs-box-top-icon h3,
     .nav.inner:not(.ms-rounded) > li.active, .nav.inner.ms-rounded > li.active a, .nav.inner.ms-rounded li:hover i, .ms-rounded .active .maso-order i, .white .btn.circle-button.btn-border,
     .boxed .btn-text, .advs-box.white h3, h1.white, .white .form-control, .boxed.white p, .white .btn i, .call-action-box p, .white h4, .adv-img-classic-box.white p {
-        color: #fff !important;
+        color: #fff;
     }
 
 .section-bg-image .advs-box.boxed-inverse, .white .flex-control-paging li a:hover, .adv-img-down-text.boxed-inverse:hover, .advs-box-multiple div.circle, .list-blog input, .list-blog select,
@@ -600,7 +600,7 @@ hr {
         padding-bottom: 160px;
     }
 
-    body > div[class*=section-]:last-of-type > .container.content{ /*Added by Omar Younis*/
+    body > div[class*=section-]:last-of-type > .container.content{ /*Added*/
         padding-bottom: 50px;
         padding-top: 50px;
     }
@@ -1230,6 +1230,7 @@ span.caption-box {
     padding: 8px 35px;
     font-weight: 500;
     font-size: 13px;
+    border-radius: 30px; /*Added*/
 }
 
     .btn-sm i {
@@ -2638,12 +2639,12 @@ RESPONSIVE
 @media (min-width: 992px) {
     header .navbar-default .navbar-nav > li > a::after{
         content: '';
-        height: 2px;
+        height: 3.4%;
         width: 0;
         margin-left: 20%;
         background-color: #DD3994;
         position: absolute;
-        bottom: 15px;
+        bottom: 22%;
         left: 0;
         transition: all 0.3s;
     }
@@ -2653,12 +2654,12 @@ RESPONSIVE
     
     .selected::after{
         content: '';
-        height: 2px;
+        height: 3.4%;
         width: 50%;
         margin-left: 20%;
         background-color: #DD3994;
         position: absolute;
-        bottom: 15px;
+        bottom: 22%;
         left: 0;
     }
     .title{
@@ -2689,4 +2690,37 @@ RESPONSIVE
 
 .image{
     border-radius: 6px 6px 0 0 !important;
+}
+
+/****************** Projects Page ********************/
+
+.project{
+    margin-bottom: 50px !important;
+    background-color: #0e1a35;
+    box-shadow: #00000030 1px 1px 11px 0;
+}
+
+.projectC{
+    background-color: #F4F9FE;
+}
+
+div.text-primary  a{
+    color: #000 !important;
+}
+
+div.text-primary  p{
+    color: #9daac7;
+}
+
+div.text-primary  i{
+    color: #5584ff !important;
+}
+
+div.text-primary > a:last-child{
+    color: rgb(255, 255, 255) !important;
+}
+
+i#info{
+    color: #ffffff !important;
+    margin-left: -10px;
 }
