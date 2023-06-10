@@ -20,7 +20,7 @@ namespace Diverse_website.Models
         {
         }
 
-        public DbSet<blog> blogs { get; set; }
+        public DbSet<Blog> blogs { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<sys_user> sys_Users { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

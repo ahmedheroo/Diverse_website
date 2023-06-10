@@ -117,4 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AccountSettings" xml:space="preserve">
+    <value>إعدادات الحساب</value>
+  </data>
+  <data name="Arabic" xml:space="preserve">
+    <value>العربية</value>
+  </data>
+  <data name="Blogs" xml:space="preserve">
+    <value>التدوينات</value>
+  </data>
+  <data name="Client WebPage" xml:space="preserve">
+    <value>صفحة العملاء</value>
+  </data>
+  <data name="DashBoard" xml:space="preserve">
+    <value>القائمة الرئيسية</value>
+  </data>
+  <data name="Diverse - For Network Solutions" xml:space="preserve">
+    <value>Diverse - For Network Solutions</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>الانجليزية</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>اللغة</value>
+  </data>
+  <data name="SignOut" xml:space="preserve">
+    <value>تسجيل خروج</value>
+  </data>
 </root>

@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+
+#nullable disable
 
 namespace Diverse_website.Models
 {
-    public class blog
+    public partial class Blog
     {
-        [Key]
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string TitleAr { get; set; }
         public string TitleEn { get; set; }
         public string ContentAr { get; set; }
@@ -18,7 +16,5 @@ namespace Diverse_website.Models
         public DateTime? UpdatedDate { get; set; }
         public string PhotoUrl { get; set; }
         public bool IsDeleted { get; set; }
-
-
     }
 }

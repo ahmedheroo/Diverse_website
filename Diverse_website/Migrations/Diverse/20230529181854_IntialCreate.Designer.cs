@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Diverse_website.Migrations.Diverse
 {
-    [DbContext(typeof(DiverseContext))]
+    [DbContext(typeof(Diverse_websiteContext))]
     [Migration("20230529181854_IntialCreate")]
     partial class IntialCreate
     {

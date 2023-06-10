@@ -1,0 +1,150 @@
+﻿@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.Extensions.Options
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.AspNetCore.Http.Features
+@using System.Globalization
+
+@inject IStringLocalizer<Resource> T
+@inject IOptions<RequestLocalizationOptions> locOptions
+@{
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+    var culureItems = localOptions.Value.SupportedCultures
+        .Select(c => new SelectListItem { Value = c.Name, Text = c.NativeName }).ToList();
+    var returnUrl = string.IsNullOrEmpty(Context.Request.Path) ? "~/" : $"~{Context.Request.Path + Context.Request.QueryString}";
+
+}
+
+
+    @*<ul class="top-link list-inline lang-curr" style="margin:0 8% 0 8%">
+
+        <li class="language">
+            <div class="btn-group sw-demo-button languages-block ">
+
+                <form id="selecteLanguage" asp-controller="Home" asp-action="SetLanguage" asp-route-returnUrl="@returnUrl">
+                    
+                    @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                    {
+                        <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[0].Value" type="hidden" />
+                        <button type="submit" class="btn-link button-demo-ltr dropdown-toggle">
+                            
+                            <span class="font-weight-bolder"> English </span>
+
+                        </button>
+                        <link href="~/ClientTemplet/css/rtl.css" rel="stylesheet" />
+
+                    }
+                    else
+                    {
+                        <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[1].Value" type="hidden" />
+                        <button type="submit" class="btn-link button-demo-rtl dropdown-toggle">
+                           
+                            <span class="font-weight-bolder"> العربية </span>
+                        </button>
+                    }
+                </form>
+            </div>
+
+        </li>
+    </ul>
+
+@*////////////*@
+@*<div class="menu-item px-5" data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
+     data-kt-menu-placement="left-start" data-kt-menu-offset="-15px, 0">
+    <form id="selecteLanguage" asp-controller="Home" asp-action="SetLanguage" asp-route-returnUrl="@returnUrl">
+        @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+        {
+            <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[0].Value" type="hidden" />
+
+            <button type="submit" class="menu-link px-5">
+                <span class="menu-title position-relative">
+                    @T["Language"]
+
+                    <span class="fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0">
+                        @T["English"]  <img class="w-15px h-15px rounded-1 ms-2"
+                                           src="~/admin/assets/media/flags/united-states.svg" alt="" />
+                    </span>
+                </span>
+            </button>
+        }
+        else
+        {
+            <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[1].Value" type="hidden" />
+
+            <button type="submit" class="menu-link px-5">
+                <span class="menu-title position-relative">
+                    @T["Language"]
+
+                    <span class="fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0">
+                        @T["Arabic"]  <img class="w-15px h-15px rounded-1 ms-2"
+                                            src="~/admin/assets/media/flags/saudi-arabia.svg" alt="" />
+                    </span>
+                </span>
+            </button>
+            }
+    </form>
+</div>*@
+
+    <!--begin::Menu sub-->
+
+@*<form id="selecteLanguage" asp-controller="Home" asp-action="SetLanguage" asp-route-returnUrl="@returnUrl">
+
+    @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+    {
+    <div class="menu-sub menu-sub-dropdown w-175px py-4">
+
+        <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[0].Value" type="hidden" />
+        <div class="menu-item px-3">
+            <button type="submit" class="menu-link d-flex px-5 active">
+                <span class="symbol symbol-20px me-4">
+                    <img class="rounded-1" src="~/admin/assets/media/flags/saudi-arabia.svg"
+                         alt="" />
+                </span>
+                @T["Arabic"]
+            </button>
+        </div>
+        <div class="menu-item px-3">
+            <button type="submit" class="menu-link d-flex px-5">
+                <span class="symbol symbol-20px me-4">
+                    <img class="rounded-1" src="~/admin/assets/media/flags/united-states.svg"
+                         alt="" />
+                </span>
+                @T["English"]
+            </button>
+        </div>
+
+    </div>
+        }
+        else
+        {
+<div class="menu-sub menu-sub-dropdown w-175px py-4">
+
+    <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[1].Value" type="hidden" />
+
+    <div class="menu-item px-3 active">
+        <button type="submit" class="menu-link d-flex px-5 active">
+            <span class="symbol symbol-20px me-4">
+                <img class="rounded-1" src="~/admin/assets/media/flags/united-states.svg"
+                     alt="" />
+            </span>
+            @T["English"]
+        </button>
+    </div>
+
+    <div class="menu-item px-3">
+        <button type="submit" class="menu-link d-flex px-5 ">
+            <span class="symbol symbol-20px me-4">
+                <img class="rounded-1" src="~/admin/assets/media/flags/saudi-arabia.svg"
+                     alt="" />
+            </span>
+            @T["Arabic"]
+        </button>
+    </div>
+</div>
+
+            }
+
+       
+</form>
+
+</div>*@

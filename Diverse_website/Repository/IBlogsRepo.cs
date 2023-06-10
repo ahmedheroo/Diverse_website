@@ -5,10 +5,10 @@ using System.Linq;
 
 namespace Diverse_website.Repository
 {
-    public interface IBlogsRepo :IRepository<blog>  
+    public interface IBlogsRepo :IRepository<Blog>  
     {
-        IQueryable<blog> Getblogs();
-        blog GetBlogWithImage();
+        IQueryable<Blog> Getblogs();
+        Blog GetBlogWithImage();
         //void Insert(blog obj);
 
     }

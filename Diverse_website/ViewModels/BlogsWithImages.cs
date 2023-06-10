@@ -9,7 +9,7 @@ namespace Diverse_website.ViewModels
 {
     public class BlogsWithImages
     {
-        public blog Blog { get; set; }
+        public Blog Blog { get; set; }
         public IFormFile BlogImage { get; set; }
     }
 }

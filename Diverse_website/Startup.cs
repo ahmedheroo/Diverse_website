@@ -13,9 +13,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Globalization;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Options;
 
 namespace Diverse_website
 {
@@ -31,7 +33,27 @@ namespace Diverse_website
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<DiverseContext>(options =>
+            services.AddControllersWithViews();
+
+            services.AddMvc()
+      .AddDataAnnotationsLocalization(options =>
+      {
+          options.DataAnnotationLocalizerProvider = (type, factory) =>
+              factory.Create(typeof(Resource));
+      });
+            services.Configure<RequestLocalizationOptions>(option =>
+            {
+                var supportedCultures = new[]
+                {
+                    new CultureInfo("en"),
+                    new CultureInfo("ar-EG")
+
+                };
+                option.DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture(culture: "en", uiCulture: "en");
+                option.SupportedCultures = supportedCultures;
+                option.SupportedUICultures = supportedCultures;
+            });
+            services.AddDbContext<Diverse_websiteContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
@@ -59,7 +81,6 @@ namespace Diverse_website
             {
                 options.ExpireTimeSpan = TimeSpan.FromHours(20);
             });
-            services.AddControllersWithViews();
             services.AddAuthentication(o =>
             {
                 o.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
@@ -74,6 +95,8 @@ namespace Diverse_website
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, UserManager<IdentityUser> userManager)
         {
+            app.UseRequestLocalization(
+           app.ApplicationServices.GetRequiredService<IOptions<RequestLocalizationOptions>>().Value);
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -92,12 +115,13 @@ namespace Diverse_website
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            var lockOptions = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
+            app.UseRequestLocalization(lockOptions.Value);
             app.UseAuthentication();
             app.UseAuthorization();
             using var scope = app.ApplicationServices.CreateScope();
             var services = scope.ServiceProvider;
-            var context = services.GetRequiredService<DiverseContext>();
+            var context = services.GetRequiredService<Diverse_websiteContext>();
             var Identitycontext = services.GetRequiredService<ApplicationDbContext>();
             var logger = services.GetRequiredService<ILogger<Program>>();
             try

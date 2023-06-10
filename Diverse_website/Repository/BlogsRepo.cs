@@ -6,21 +6,21 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Diverse_website.Repository
 {
-    public class BlogsRepo : Repository<blog>, IBlogsRepo
+    public class BlogsRepo : Repository<Blog>, IBlogsRepo
     {
-        private readonly DiverseContext context;
-        public BlogsRepo(DiverseContext _context)
+        private readonly Diverse_websiteContext context;
+        public BlogsRepo(Diverse_websiteContext _context)
         {
             context = _context;
         }
-        public IQueryable<blog> Getblogs()
+        public IQueryable<Blog> Getblogs()
         {
-            return context.blogs.AsNoTracking();
+            return context.Blogs.AsNoTracking();
         }
 
-        public blog GetBlogWithImage()
+        public Blog GetBlogWithImage()
         {
-            return context.blogs.FirstOrDefault();
+            return context.Blogs.FirstOrDefault();
         }
       
 

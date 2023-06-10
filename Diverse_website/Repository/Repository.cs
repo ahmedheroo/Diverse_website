@@ -6,14 +6,14 @@ namespace Diverse_website.Repository
 {
     public class Repository<T> : IRepository<T> where T : class
     {
-        private readonly DiverseContext Context;
+        private readonly Diverse_websiteContext Context;
         public DbSet<T> table = null;
         public Repository()
         {
-            this.Context=new DiverseContext();
+            this.Context=new Diverse_websiteContext();
             table=Context.Set<T>();
         }
-        public Repository(DiverseContext _context)
+        public Repository(Diverse_websiteContext _context)
         {
             this.Context = _context;
             table = Context.Set<T>();

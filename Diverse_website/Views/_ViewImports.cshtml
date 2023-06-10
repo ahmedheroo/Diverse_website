@@ -1,6 +1,6 @@
 ﻿@using Diverse_website
 @using Diverse_website.Models
-@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using Diverse_website.ViewModels
 @using Microsoft.AspNetCore.Builder
 @using Microsoft.AspNetCore.Localization
 @using Microsoft.Extensions.Options
@@ -10,5 +10,6 @@
 @{
     var requestCultuer = Context.Features.Get<IRequestCultureFeature>();
 }
- 
- 
+@inject IStringLocalizer<Resource> T
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+

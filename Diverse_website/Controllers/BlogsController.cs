@@ -24,19 +24,9 @@ namespace Diverse_website.Controllers
         }
         public IActionResult Index()
         {
-              IQueryable<blog> model ;
+              IQueryable<Blog> model ;
               model = blogsRepo.Getblogs();
-
-            //foreach (var item in model)
-            //{
-            //    if (item.ContentEn.Length>=100)
-            //    {
-            //     item.ContentEn.Substring(100, item.ContentEn.Length);
-                
-            //    }
-                
-
-            //}
+ 
             return View(model);
         }
         public IActionResult ViewBlog(int Id)
@@ -59,7 +49,7 @@ namespace Diverse_website.Controllers
             {
                 string uniqueFileName = UploadedFile(model);
                 
-                blog blog= new blog()
+                Blog blog= new Blog()
                 {
                     TitleEn = model.Blog.TitleEn,
                     TitleAr = model.Blog.TitleAr,
@@ -67,7 +57,8 @@ namespace Diverse_website.Controllers
                     ContentAr = model.Blog.ContentAr,
                     PhotoUrl = uniqueFileName,
                     IsDeleted = false,
-                    CreatedDate = DateTime.Now
+                    CreatedDate = DateTime.Now,
+                    UpdatedDate = DateTime.Now
 
                 };
 
@@ -80,9 +71,10 @@ namespace Diverse_website.Controllers
         [HttpGet]
         public IActionResult Edit(int Id)
         {
-            BlogsWithImages model = new BlogsWithImages();
-            model.Blog = blogsRepo.GetById(Id);
-
+            BlogsWithImages model = new BlogsWithImages()
+            {
+                Blog = blogsRepo.GetById(Id)
+              };
 
             return View(model);
         }
@@ -99,29 +91,36 @@ namespace Diverse_website.Controllers
                         model.Blog.PhotoUrl = UploadedFile(model);
 
                     }
-                    blog blog = new blog()
+                    Blog blog = new Blog()
                     {
                         TitleEn = model.Blog.TitleEn,
                         TitleAr = model.Blog.TitleAr,
                         ContentEn = model.Blog.ContentEn,
                         ContentAr = model.Blog.ContentAr,
                         PhotoUrl = uniqueFileName,
-                        CreatedDate=model.Blog.CreatedDate,
+                        CreatedDate = DateTime.Now,
                         UpdatedDate = DateTime.Now
 
                     };
                     blogsRepo.Update(model.Blog);
                     return RedirectToAction("Index");
 
-            }
-         
+                }       
                 return View(model);
              
             
         }
         public IActionResult Delete(int Id)
         {
-             blogsRepo.Delete(Id);
+            Blog model = blogsRepo.GetById(Id);
+            if (model.PhotoUrl != null)
+            {
+                string ExitingFile = Path.Combine(webHostEnvironment.WebRootPath, model.PhotoUrl);
+                ExitingFile = ExitingFile.Replace("~/", "");
+                System.IO.File.Delete(ExitingFile);
+            }
+ 
+            blogsRepo.Delete(Id);
             return RedirectToAction("Index"); 
         }
         private string UploadedFile(BlogsWithImages model)

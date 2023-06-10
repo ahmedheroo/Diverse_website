@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Diverse_website.Migrations.Diverse
 {
-    [DbContext(typeof(DiverseContext))]
+    [DbContext(typeof(Diverse_websiteContext))]
     partial class DiverseContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
