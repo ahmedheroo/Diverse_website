@@ -1,4 +1,5 @@
-﻿@using System.Globalization
+﻿
+@using System.Globalization
 @using Microsoft.AspNetCore.Mvc.Localization
 @using Microsoft.AspNetCore.Identity
 
@@ -64,6 +65,9 @@
           data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true"
           data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true"
           data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
+    @inject SignInManager<IdentityUser> SignInManager
+    @inject UserManager<IdentityUser> userManager
+    @inject RoleManager<IdentityRole> Roles
         <script>
             var defaultThemeMode = "light";
             var themeMode;
@@ -87,7 +91,7 @@
             }
         </script>
 
-
+   
 
         <div class="d-flex flex-column flex-root app-root" id="kt_app_root">
             <div class="app-page  flex-column flex-column-fluid " id="kt_app_page">
@@ -217,7 +221,7 @@
                                     </a>
                                 </div>
                                 <div class="menu-item px-5">
-                                    <a class="menu-link px-5">
+                                <a class="menu-link px-5" asp-area="Identity" asp-page="/Account/Logout">
                                         @T["SignOut"]
                                     </a>
                                 </div>
@@ -300,92 +304,96 @@
                                         </a> 
                                     </div>
 
+                                    @if (User.IsInRole("admin"))
+                                                    {
+                                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                            <span class="menu-link">
+                                                <span class="menu-icon">
+                                                    <i class="ki-duotone ki-security-user fs-2">
+                                                        <i class="path1"></i>
+                                                        <i class="path2"></i>
+                                                    </i>
+                                                </span><span class="menu-title">
+                                                    @T["UserManagement"]
+                                                </span><span class="menu-arrow"></span>
+                                            </span> 
+                                            <div class="menu-sub menu-sub-accordion">
+                                                <div data-kt-menu-trigger="click" class="menu-item menu-accordion mb-1">
+                                                    <span class="menu-link">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span><span class="menu-title">Users</span><span class="menu-arrow"></span>
+                                                    </span> 
+                                                    <div class="menu-sub menu-sub-accordion">
+                                                        <div class="menu-item">
+                                                            <a class="menu-link"
+                                                            href="#">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-dot"></span>
+                                                                </span><span class="menu-title">
+                                                                    @T["UsersList"]
+                                                                </span>
+                                                            </a> 
+                                                        </div>
 
-                                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                                         <span class="menu-link">
-                                            <span class="menu-icon">
-                                                <i class="ki-duotone ki-security-user fs-2">
-                                                    <i class="path1"></i>
-                                                    <i class="path2"></i>
-                                                </i>
-                                            </span><span class="menu-title">
-                                                @T["UserManagement"]
-                                            </span><span class="menu-arrow"></span>
-                                        </span> 
-                                        <div class="menu-sub menu-sub-accordion">
-                                            <div data-kt-menu-trigger="click" class="menu-item menu-accordion mb-1">
-                                                 <span class="menu-link">
-                                                    <span class="menu-bullet">
-                                                        <span class="bullet bullet-dot"></span>
-                                                    </span><span class="menu-title">Users</span><span class="menu-arrow"></span>
-                                                </span> 
-                                                <div class="menu-sub menu-sub-accordion">
-                                                    <div class="menu-item">
-                                                         <a class="menu-link"
-                                                                                 href="#">
-                                                            <span class="menu-bullet">
-                                                                <span class="bullet bullet-dot"></span>
-                                                            </span><span class="menu-title">
-                                                                @T["UsersList"]
-                                                            </span>
-                                                        </a> 
-                                                    </div>
-                                                     
-                                                    <div class="menu-item">
-                                                         <a class="menu-link"
-                                                                                 href="#">
-                                                            <span class="menu-bullet">
-                                                                <span class="bullet bullet-dot"></span>
-                                                            </span><span class="menu-title">
-                                                                @T["ViewUser"]
-                                                            </span>
-                                                        </a> 
-                                                    </div>
+                                                        <div class="menu-item">
+                                                            <a class="menu-link"
+                                                            href="#">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-dot"></span>
+                                                                </span><span class="menu-title">
+                                                                    @T["ViewUser"]
+                                                                </span>
+                                                            </a> 
+                                                        </div>
+                                                    </div> 
                                                 </div> 
-                                            </div> 
-                                            <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                                                 <span class="menu-link">
-                                                    <span class="menu-bullet">
-                                                        <span class="bullet bullet-dot"></span>
-                                                    </span><span class="menu-title"> @T["Roles"]</span><span class="menu-arrow"></span>
-                                                </span>
-                                                <div class="menu-sub menu-sub-accordion">
-                                                    <div class="menu-item">
-                                                        <a class="menu-link"
-                                                                                 href="../apps/user-management/roles/list.html">
-                                                            <span class="menu-bullet">
-                                                                <span class="bullet bullet-dot"></span>
-                                                            </span><span class="menu-title">
-                                                                @T["RolesList"]
-                                                            </span>
-                                                        </a> 
-                                                    </div>
-                                                    <div class="menu-item">
-                                                        <a class="menu-link"
-                                                                                 href="../apps/user-management/roles/view.html">
-                                                            <span class="menu-bullet">
-                                                                <span class="bullet bullet-dot"></span>
-                                                            </span><span class="menu-title">
-                                                                @T["ViewRole"]
-                                                            </span>
-                                                        </a> 
-                                                    </div>
+                                                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                                                    <span class="menu-link">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span><span class="menu-title"> @T["Roles"]</span><span class="menu-arrow"></span>
+                                                    </span>
+                                                    <div class="menu-sub menu-sub-accordion">
+                                                        <div class="menu-item">
+                                                            <a class="menu-link"
+                                                            href="../apps/user-management/roles/list.html">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-dot"></span>
+                                                                </span><span class="menu-title">
+                                                                    @T["RolesList"]
+                                                                </span>
+                                                            </a> 
+                                                        </div>
+                                                        <div class="menu-item">
+                                                            <a class="menu-link"
+                                                            href="../apps/user-management/roles/view.html">
+                                                                <span class="menu-bullet">
+                                                                    <span class="bullet bullet-dot"></span>
+                                                                </span><span class="menu-title">
+                                                                    @T["ViewRole"]
+                                                                </span>
+                                                            </a> 
+                                                        </div>
+                                                    </div> 
                                                 </div> 
+                                                <div class="menu-item">
+                                                    <a class="menu-link"
+                                                    href="../apps/user-management/permissions.html">
+                                                        <span class="menu-bullet">
+                                                            <span class="bullet bullet-dot"></span>
+                                                        </span><span class="menu-title"> @T["Permissions"]</span>
+                                                    </a> 
+                                                </div>
                                             </div> 
-                                            <div class="menu-item">
-                                              <a class="menu-link"
-                                                                         href="../apps/user-management/permissions.html">
-                                                    <span class="menu-bullet">
-                                                        <span class="bullet bullet-dot"></span>
-                                                    </span><span class="menu-title"> @T["Permissions"]</span>
-                                                </a> 
-                                            </div>
-                                        </div> 
-                                    </div> 
+                                        </div>
 
-                                
 
-                                </div>
+
+                                     
+                                    }
+
+                            </div>
                             </div>
                         </div>
 

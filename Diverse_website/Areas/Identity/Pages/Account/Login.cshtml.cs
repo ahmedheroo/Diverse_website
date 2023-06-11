@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Diverse_website.Models;
 
 namespace Diverse_website.Areas.Identity.Pages.Account
 {
@@ -77,57 +78,37 @@ namespace Diverse_website.Areas.Identity.Pages.Account
         {
             returnUrl ??= Url.Content("~/");
 
-            //ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
-
-            //if (ModelState.IsValid)
-            //{
-            //    // This doesn't count login failures towards account lockout
-            //    // To enable password failures to trigger account lockout, set lockoutOnFailure: true
-            //    var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
-            //    if (result.Succeeded)
-            //    {
-            //        _logger.LogInformation("User logged in.");
-            //        return LocalRedirect(returnUrl);
-            //    }
-            //    if (result.RequiresTwoFactor)
-            //    {
-            //        return RedirectToPage("./LoginWith2fa", new { ReturnUrl = returnUrl, RememberMe = Input.RememberMe });
-            //    }
-            //    if (result.IsLockedOut)
-            //    {
-            //        _logger.LogWarning("User account locked out.");
-            //        return RedirectToPage("./Lockout");
-            //    }
-            //    else
-            //    {
-            //        ModelState.AddModelError(string.Empty, "Invalid login attempt.");
-            //        return Page();
-            //    }
-            //}
-
-            //// If we got this far, something failed, redisplay form
-            //return Page();
-
-            if (Input.Email == "admin@test.com" && Input.Password == "123456")
+            //---------
+            var user = await _signInManager.UserManager.FindByEmailAsync(Input.Email);
+            var role = await _signInManager.UserManager.GetRolesAsync(user);
+            if (user == null)
             {
-                var claims = new List<Claim>
+                ModelState.AddModelError(string.Empty, "Invalid login E-mail or Password.");
+                return Page();
+            }
+            else
+            { 
+             var claims = new List<Claim>
                 {
                 new Claim(ClaimTypes.NameIdentifier,Input.Email),
-                new Claim(ClaimTypes.Name,"UserName"),
-                new Claim(ClaimTypes.Role,"Role"),
+                new Claim(ClaimTypes.Name,user.UserName),
+                new Claim(ClaimTypes.Role,role.FirstOrDefault()),
                 new Claim("RandomDateValue","RandomValue")
 
                 };
                 var identityuser = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 var principal = new ClaimsPrincipal(identityuser);
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, new AuthenticationProperties { IsPersistent = Input.RememberMe });
-               // return Page();
-                  return LocalRedirect(returnUrl);
+                // return Page();
+                return LocalRedirect(returnUrl);
             }
-            else {
-
-                return Unauthorized();
-            }
+            
+               
+            
+            
         }
+
+        
     }
-}
+    }
+ 
