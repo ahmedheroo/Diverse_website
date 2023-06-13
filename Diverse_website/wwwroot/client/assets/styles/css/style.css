@@ -2748,6 +2748,15 @@ i#info{
 #pt-60{
     padding-top: 60px !important;
 }
+/* Vendors */
+.boxed-inverse, .advs-box.boxed-inverse:not(.shadow-1){
+    background-color: #f4f9fe !important;
+    /* box-shadow: #000 0 0 3px 0; */
+    margin-bottom: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 62px;
+}
+
 
 /********** Services Page **********/
 
