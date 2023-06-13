@@ -299,7 +299,7 @@ CUSTOM CLASSES
     }
 
         .width-80.text-left {
-            margin-left: 0;
+            margin-right: 0;
         }
 
     .margin-top-90, .section-two-blocks.margin-top-90 {
@@ -331,8 +331,8 @@ CUSTOM CLASSES
             .section-middle-img > .content > .middle-img > img {
                 position: absolute;
                 z-index: 9;
-                left: 50%;
-                transform: translate3d(-50%, -10px, 0);
+                right: 50%;
+                transform: translate3d(50%, -10px, 0);
             }
 
         .section-middle-img > .content {
@@ -391,7 +391,7 @@ CUSTOM CLASSES
     .section-pins .box-pin {
         position: absolute;
         z-index: 9;
-        text-align: left;
+        text-align: right;
         max-width: 250px;
         top: 40px;
     }
@@ -405,7 +405,7 @@ CUSTOM CLASSES
 .box-pin:before {
     content: "";
     background-image: url(images/line-2.png);
-    background-position: right center;
+    background-position: left center;
     background-repeat: no-repeat;
     position: absolute;
     width: 600px;
@@ -415,14 +415,14 @@ CUSTOM CLASSES
 
 .box-pin.box-pin-right {
     top: 270px;
-    right: 0;
-    text-align: right;
+    left: 0;
+    text-align: left;
 }
 
     .box-pin.box-pin-right:before {
         background-image: url(images/line-1.png);
-        background-position: left center;
-        right: 0;
+        background-position: right center;
+        left: 0;
     }
 
 .bg-top {
@@ -439,7 +439,7 @@ CUSTOM CLASSES
     text-align: center;
     line-height: 60px;
     text-shadow: none;
-    left: -30px;
+    right: -30px;
     margin-top: -30px;
     border-radius: 50%;
     box-shadow: 0 0 0 rgba(204,169,44, 0.4);
@@ -516,11 +516,11 @@ h1, .h1 {
 }
 
 .anima-button:hover {
-    padding-left: 57px;
+    padding-right: 57px;
 }
 
 .anima-button.btn:hover i, .anima-button.circle-button:hover i {
-    margin-left: -27px;
+    margin-right: -27px;
 }
 
 .text-xs {
@@ -561,7 +561,7 @@ hr {
 
 @media (min-width: 993px) {
     .section-two-blocks .content {
-        padding-left: 50px;
+        padding-right: 50px;
     }
 
     .container.content, .section-empty > .content, .section-bg-image > .content, .section-bg-video > .content, .section-bg-animation > .content, .section-slider > .content, .section-two-blocks .content {
@@ -583,13 +583,13 @@ hr {
     }
 
     .row.vertical-row > div, .section-map .overlaybox-inner > .row > * {
-        padding-left: 40px;
         padding-right: 40px;
+        padding-left: 40px;
     }
 
     .row, .row.vertical-row:not(.box-middle) {
-        margin-left: -40px;
         margin-right: -40px;
+        margin-left: -40px;
     }
 
     [class*="col-md-"].boxed, [class*="col-md-"].boxed-inverse {
@@ -673,8 +673,8 @@ h1.text-m, h2.text-m, h3.text-m {
 .quote-author {
     font-style: normal;
     font-weight: 400;
-    padding-left: 15px;
-    border-left: 4px solid #7d7d7d;
+    padding-right: 15px;
+    border-right: 4px solid #7d7d7d;
 }
 
 .section-bg-color hr {
@@ -688,7 +688,7 @@ h1.text-m, h2.text-m, h3.text-m {
     width: 35px;
     height: 35px;
     bottom: 15px;
-    right: 15px;
+    left: 15px;
 }
 
 /*
@@ -712,7 +712,7 @@ HEADER AND MENUS
 .navbar-inner:not(.ms-rounded) li > a:before {
     content: '';
     position: absolute;
-    left: 0px;
+    right: 0px;
     bottom: 0px;
     width: 0%;
     height: 1px;
@@ -747,7 +747,7 @@ header.scroll-css .navbar-nav > li > .dropdown-menu {
 }
 
 .dropdown-submenu:hover > .dropdown-menu {
-    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: -1px 4px 10px rgba(0, 0, 0, 0.2);
     margin-top: -9px;
 }
 
@@ -804,7 +804,7 @@ header.scroll-css .navbar-nav > li > .dropdown-menu {
 .mega-menu a {
     height: 32px;
     margin-bottom: 7px;
-    padding-left: 0;
+    padding-right: 0;
     font-weight: 400;
     font-size: 14px;
 }
@@ -879,7 +879,7 @@ TITLES
 
 
 [class*=header-] .title-base {
-    text-align: left;
+    text-align: right;
 }
 
     [class*=header-] .title-base h1, .title-base h2, [class*=header-] .title-icon h2, [class*=header-] .title-icon h1, [class*=header-] .title-base.title-small h2 {
@@ -929,7 +929,7 @@ div.title-base p {
 .header-base .breadcrumb {
     margin-top: 65px;
     display: inline-block;
-    float: right;
+    float: left;
     padding: 3px 15px;
     border-radius: 30px;
 }
@@ -948,19 +948,19 @@ div.title-base p {
 }
 
 .title-base h1:before, .title-base h2:before, .title-base.title-small h2:before {
-    left: 50%;
-    margin-left: -75px;
+    right: 50%;
+    margin-right: -75px;
 }
 
 .title-base.text-left h1:before, .title-base.text-left h2:before, .title-base.text-left.title-small h2:before, [class*="header-"] .title-base h1:before, [class*="header-"] .title-base h2:before {
-    left: 0;
-    margin-left: 0;
+    right: 0;
+    margin-right: 0;
 }
 
 .title-base p, .title-base.title-small p {
     text-align: center;
-    margin-left: auto;
     margin-right: auto;
+    margin-left: auto;
 }
 
 .title-base.text-left hr, .title-base.text-left hr, .title-base hr {
@@ -976,12 +976,12 @@ div.title-base p {
 }
 
 .title-base.text-left p, [class*="header-"] .title-base p {
-    text-align: left;
-    margin-left: 0;
+    text-align: right;
+    margin-right: 0;
 }
 
 .title-base.text-left p {
-    margin-left: 1px;
+    margin-right: 1px;
     margin-bottom: 3px;
 }
 
@@ -1034,8 +1034,8 @@ div.section-bg-animation {
 
 .header-video:not(.full-screen-title) .layer-parallax, .header-slider:not(.full-screen-title) .layer-parallax {
     max-width: 1140px;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 50%;
+    transform: translateX(50%);
 }
 
 .header-parallax.header-video:not(.full-screen-title) {
@@ -1079,7 +1079,7 @@ footer:not(.footer-minimal) .copy-row {
 
 footer .copy-row .copy-text {
     max-width: 1170px;
-    text-align: left;
+    text-align: right;
     font-size: 15px;
     padding: 30px 15px;
     margin: auto;
@@ -1090,7 +1090,7 @@ footer .copy-row .copy-text {
 
     footer .copy-row .copy-text > span {
         display: inline-block;
-        float: right;
+        float: left;
     }
 
 footer .fa-ul .fa-li {
@@ -1098,7 +1098,7 @@ footer .fa-ul .fa-li {
 }
 
 footer ul {
-    padding-left: 16px;
+    padding-right: 16px;
 }
 
 footer .social-group {
@@ -1111,7 +1111,7 @@ footer.footer-minimal .copy-row .copy-text {
 
 .scroll-top-mobile:before {
     top: -6px;
-    left: -2px;
+    right: -2px;
 }
 /*
 -------------------------------------------------------------------
@@ -1124,8 +1124,8 @@ COMPONENTS
 
 .img-box.inner, .slides > li > a.img-box.inner {
     width: auto;
-    margin-left: 150px;
-    margin-right: 1px;
+    margin-right: 150px;
+    margin-left: 1px;
 }
 
     .img-box.inner .caption-box {
@@ -1143,12 +1143,12 @@ COMPONENTS
         font-size: 15px;
         line-height: 20px;
         font-weight: 300;
-        left: -135px;
+        right: -135px;
         bottom: 50px;
         padding: 30px;
         height: auto;
         border-radius: 6px;
-        text-align: left;
+        text-align: right;
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.18);
     }
 
@@ -1185,20 +1185,20 @@ span.caption-box {
 
         .accordion-list .list-group-item > a {
             font-weight: 500;
-            padding-left: 40px;
+            padding-right: 40px;
         }
 
             .accordion-list .list-group-item > a:before, .advs-box .btn-text:after, .box-steps .step-item:after {
-                -webkit-transform: rotate(45deg);
-                -ms-transform: rotate(45deg);
-                transform: rotate(45deg);
-                margin-left: -21px;
+                -webkit-transform: rotate(-45deg);
+                -ms-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+                margin-right: -21px;
                 top: 19px;
                 position: absolute;
                 border-top-width: 2px;
                 border-top-style: solid;
-                border-right-width: 2px;
-                border-right-style: solid;
+                border-left-width: 2px;
+                border-left-style: solid;
                 content: "";
                 width: 6px;
                 height: 6px;
@@ -1207,13 +1207,13 @@ span.caption-box {
             }
 
         .accordion-list .list-group-item > .panel > .inner {
-            padding: 0px 15px 10px 20px;
+            padding: 0px 20px 10px 15px;
         }
 
         .accordion-list .list-group-item > a.active:before {
-            -webkit-transform: rotate(135deg);
-            -ms-transform: rotate(135deg);
-            transform: rotate(135deg);
+            -webkit-transform: rotate(-135deg);
+            -ms-transform: rotate(-135deg);
+            transform: rotate(-135deg);
         }
 
 .btn {
@@ -1252,7 +1252,7 @@ span.caption-box {
 
 .load-more-maso.btn i, .load-more-grid.btn i {
     font-size: 11px;
-    margin-left: 5px;
+    margin-right: 5px;
     transform: translateY(0px);
 }
 
@@ -1275,7 +1275,7 @@ span.caption-box {
 }
 
 .counter-box-simple span + span {
-    margin-left: 15px;
+    margin-right: 15px;
 }
 
 .inner-circle hr {
@@ -1393,9 +1393,9 @@ table.table:not(.grid-table) > tbody > tr > td, table.table:not(.grid-table) > t
     }
 
         .advs-box .btn-text:after {
-            margin-left: 7px;
+            margin-right: 7px;
             top: 9px;
-            right: -13px;
+            left: -13px;
         }
 
 .advs-box-top-icon-img .img-box {
@@ -1427,13 +1427,13 @@ div.adv-img p {
 
 .niche-box-post .block-infos {
     width: 250px;
-    text-align: left;
-    margin-left: 15px;
+    text-align: right;
+    margin-right: -10px;
 }
 
     .niche-box-post .block-infos .block-data {
         display: block;
-        float: left;
+        float: right;
         height: 30px;
         border: none;
         border-radius: 23px;
@@ -1447,7 +1447,7 @@ div.adv-img p {
 
 .niche-box-post .block-infos p.bd-day {
     display: inline-block;
-    padding: 5px 0px 5px 10px;
+    padding: 5px 10px 5px 0px;
     font-size: 13px;
     font-weight: 500;
     color: #fff;
@@ -1457,7 +1457,7 @@ div.adv-img p {
     display: inline-block;
     font-size: 13px;
     font-weight: 500;
-    padding-right: 9px;
+    padding-left: 9px;
     color: #fff;
 }
 
@@ -1502,7 +1502,7 @@ div.adv-img p {
 }
 
 .niche-box-blog .block-top .block-title {
-    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .niche-box-blog h2 {
@@ -1519,11 +1519,11 @@ div.adv-img p {
     font-size: 13px;
     text-transform: uppercase;
     background: none;
-    border-left: none;
+    border-right: none;
     color: #585858;
     border-top: 1px solid #7a7a7a;
-    padding-left: 0;
     padding-right: 0;
+    padding-left: 0;
 }
 
 .adv-img-down-text h2 {
@@ -1557,7 +1557,7 @@ div.adv-img p {
 }
 
     .niche-box-testimonails-cloud p {
-        text-align: left;
+        text-align: right;
         background: #fff;
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.12);
     }
@@ -1629,7 +1629,7 @@ div.adv-img p {
 
 .advs-box-top-icon .icon {
     position: relative;
-    left: auto;
+    right: auto;
     margin: 0;
     box-shadow: none !important;
     font-size: 100px;
@@ -1646,13 +1646,13 @@ div.adv-img p {
     }
 
 .advs-box-top-icon.text-left .icon {
-    text-align: left;
-    left: 0;
-    margin-left: 0;
+    text-align: right;
+    right: 0;
+    margin-right: 0;
 }
 
 .advs-box-top-icon.text-left.boxed .icon, .advs-box-top-icon.text-left.boxed-inverse .icon {
-    left: 13px;
+    right: 13px;
     text-align: center;
 }
 
@@ -1708,7 +1708,7 @@ div.adv-img p {
 ul li .fa-li.fa-square {
     font-size: 10px;
     margin-top: 3px;
-    margin-left: -8px;
+    margin-right: -8px;
 }
 
 .icon-box-cell i.text-xl {
@@ -1748,7 +1748,7 @@ ul li .fa-li.fa-square {
 
 .advs-box-multiple div.circle {
     font-size: 34px;
-    right: 20px;
+    left: 20px;
     line-height: 44px;
     border: none;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.17);
@@ -1777,7 +1777,7 @@ ul li .fa-li.fa-square {
 }
 
     .progress-bar > span {
-        padding: 2px 0 2px 5px;
+        padding: 2px 5px 2px 0;
         width: 60px;
         transform: translateY(-31px);
         border-radius: 3px;
@@ -1785,7 +1785,7 @@ ul li .fa-li.fa-square {
         white-space: nowrap;
         font-weight: 500;
         letter-spacing: 1px;
-        float: right;
+        float: left;
         font-size: 12px;
         background: #2d2d2d;
         color: #fff;
@@ -1801,8 +1801,8 @@ ul li .fa-li.fa-square {
 }
 
     .pricing-table .list-group-item {
-        padding: 5px 35px 5px 60px;
-        text-align: left;
+        padding: 5px 60px 5px 35px;
+        text-align: right;
         border-bottom: none;
         font-size: 16px;
         position: relative;
@@ -1820,7 +1820,7 @@ ul li .fa-li.fa-square {
         content: "\f00c";
         font: normal normal normal 14px/1 FontAwesome;
         position: absolute;
-        left: 35px;
+        right: 35px;
         top: 11px;
     }
 
@@ -1856,13 +1856,13 @@ ul li .fa-li.fa-square {
         .pricing-table .pricing-price span:first-child {
             font-weight: 600;
             font-size: 40px;
-            transform: translate3d(-2px,-2px,0);
+            transform: translate3d(2px,-2px,0);
         }
 
     .pricing-table .pricing-name {
         position: absolute;
-        right: 0;
         left: 0;
+        right: 0;
         top: 35px;
         padding: 0px 28px;
     }
@@ -1902,14 +1902,14 @@ ul li .fa-li.fa-square {
 .advs-box-side-icon .icon-box i {
     font-size: 65px;
     line-height: 75px;
-    text-align: left;
+    text-align: right;
     width: 95px;
-    margin-left: 1px;
+    margin-right: 1px;
     height: 65px;
 }
 
 .advs-box-side-icon .icon-box {
-    padding-right: 0;
+    padding-left: 0;
     vertical-align: top;
 }
 
@@ -1928,7 +1928,7 @@ ul li .fa-li.fa-square {
 
 [class*="boxed-"].advs-box-side .col-md-4 {
     margin: -25px;
-    padding-right: 40px;
+    padding-left: 40px;
 }
 
 .advs-box-side > .row {
@@ -1936,8 +1936,8 @@ ul li .fa-li.fa-square {
 }
 
     .advs-box-side > .row > div {
-        padding-left: 15px;
         padding-right: 15px;
+        padding-left: 15px;
     }
 
 .timeline > li > .timeline-panel {
@@ -1965,7 +1965,7 @@ ul li .fa-li.fa-square {
     }
 
 .timeline small > i {
-    margin-right: 15px;
+    margin-left: 15px;
 }
 
 .timeline-body {
@@ -1973,14 +1973,14 @@ ul li .fa-li.fa-square {
 }
 
 .timeline > li > .timeline-panel:before {
-    border-left: 15px solid rgba(189,189,189,.14);
-    border-right: 0 solid rgba(189,189,189,.14);
+    border-right: 15px solid rgba(189,189,189,.14);
+    border-left: 0 solid rgba(189,189,189,.14);
     filter: blur(3px);
-    right: -20px;
+    left: -20px;
 }
 
 .timeline > li.timeline-inverted > .timeline-panel:before {
-    left: -20px;
+    right: -20px;
 }
 
 .niche-box-team:hover .img-box img {
@@ -2001,7 +2001,7 @@ ul li .fa-li.fa-square {
 }
 
 .counter-box-icon > div {
-    text-align: left;
+    text-align: right;
 }
 
 /*
@@ -2012,7 +2012,7 @@ CONTAINERS
 
 
 .nav-tabs > li {
-    margin-right: 30px;
+    margin-left: 30px;
 }
 
 .inverse .nav:not(.ms-rounded) li > a:before {
@@ -2021,7 +2021,7 @@ CONTAINERS
 }
 
 .nav-tabs > li > a i {
-    margin: 0 10px 0 0;
+    margin: 0 0 0 10px;
 }
 
 .tab-box .nav-tabs > li > a {
@@ -2029,7 +2029,7 @@ CONTAINERS
     font-size: 15px;
     font-weight: 600;
     padding: 21px 20px 20px 20px;
-    margin-right: 0;
+    margin-left: 0;
     opacity: .6;
     transition: all .4s;
 }
@@ -2072,15 +2072,15 @@ CONTAINERS
 }
 
 .tab-box.left .panel-box .panel {
-    padding: 0 0 0 30px;
-}
-
-.tab-box.right .panel-box .panel {
     padding: 0 30px 0 0;
 }
 
+.tab-box.right .panel-box .panel {
+    padding: 0 0 0 30px;
+}
+
 .tab-box .nav-tabs.nav-center li.active {
-    margin-right: 0;
+    margin-left: 0;
     bottom: 0;
 }
 
@@ -2094,24 +2094,24 @@ div div.flexslider li .shadow-1 {
 }
 
     .flexslider .flex-direction-nav li a:before {
-        margin-left: -6px;
+        margin-right: -6px;
         transition: all .6s;
     }
 
     .flexslider .flex-direction-nav li a.flex-prev:before {
-        margin-left: 7px;
+        margin-right: 7px;
         margin-top: 10px;
     }
 
 .flexslider.nav-bottom-left .flex-direction-nav a, .flexslider.nav-bottom-left:hover .flex-direction-nav .flex-prev {
-    left: -10px;
+    right: -10px;
     bottom: -50px;
     top: auto;
     opacity: 1;
 }
 
     .flexslider.nav-bottom-left .flex-direction-nav a.flex-next {
-        left: 40px;
+        right: 40px;
     }
 
 .maso-box.row, .grid-box.row {
@@ -2146,7 +2146,7 @@ div div.flexslider li .shadow-1 {
 
 
 .box-steps .step-item {
-    padding-left: 140px;
+    padding-right: 140px;
 }
 
 .box-steps .step-number {
@@ -2160,14 +2160,14 @@ div div.flexslider li .shadow-1 {
     line-height: 70px;
     font-size: 30px;
     font-weight: 600;
-    left: 42px;
+    right: 42px;
 }
 
 .box-steps .step-item:before {
     content: '';
     position: absolute;
     width: 1px;
-    right: 29px;
+    left: 29px;
     top: 50%;
     margin-top: -38px;
     height: 70px;
@@ -2179,10 +2179,10 @@ div div.flexslider li .shadow-1 {
     width: 18px;
     height: 18px;
     top: 50%;
-    margin-right: 15px;
+    margin-left: 15px;
     background: #fff;
     border-top-width: 1px;
-    border-right-width: 1px;
+    border-left-width: 1px;
 }
 
 .box-steps .step-item:last-child:before {
@@ -2194,7 +2194,7 @@ div div.flexslider li .shadow-1 {
 }
 
 .mfp-arrow-right:before {
-    margin: 24px 0 0 9px;
+    margin: 24px 9px 0 0;
 }
 
 .fixed-area.active .nav.inner.ms-rounded li a {
@@ -2308,7 +2308,7 @@ RESPONSIVE
     }
 
     header .mega-tabs .tab-box .nav-tabs > li > a {
-        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
 
     .navbar-nav .dropdown-menu > li > .dropdown-toggle {
@@ -2328,7 +2328,7 @@ RESPONSIVE
     }
 
     .mega-menu .nav-tabs > li > a {
-        padding-left: 15px !important;
+        padding-right: 15px !important;
     }
 
     .text-m-xs {
@@ -2426,16 +2426,16 @@ RESPONSIVE
 
     .timeline > li > .timeline-label {
         position: absolute;
-        left: auto;
-        right: 0;
+        right: auto;
+        left: 0;
         max-width: 65px;
         margin: 0;
     }
 
     .timeline > li.timeline-inverted > .timeline-label {
-        left: 0;
-        right: auto;
-        text-align: right;
+        right: 0;
+        left: auto;
+        text-align: left;
     }
 
     .timeline > li > .timeline-badge {
@@ -2452,7 +2452,7 @@ RESPONSIVE
     }
 
     header .dropdown-submenu a + .dropdown-menu a {
-        padding-left: 20px;
+        padding-right: 20px;
     }
 
     .comment-list img {
@@ -2461,7 +2461,7 @@ RESPONSIVE
     }
 
     .comment-list .col-md-10 {
-        padding-left: 90px;
+        padding-right: 90px;
     }
 
     .img-box.adv-img-side-content .caption {
@@ -2469,7 +2469,7 @@ RESPONSIVE
     }
 
     .header-base .breadcrumb, .header-bootstrap .breadcrumb {
-        text-align: right;
+        text-align: left;
     }
 
     .advs-box-side-icon .icon-box, .advs-box-side-icon .caption-box {
@@ -2504,12 +2504,12 @@ RESPONSIVE
 
     .advs-box-side-icon .icon-box, .advs-box-side-icon .caption-box, .advs-box-side, .advs-box-side-icon p, .advs-box.advs-box-side p,
     .section .background-page, .section .content, .section .container {
-        text-align: left !important;
+        text-align: right !important;
     }
 
     div[class*=header-]:not(.full-screen-title):not(.header-base) {
-        margin-left: 15px;
         margin-right: 15px;
+        margin-left: 15px;
         width: calc(100% - 30px);
     }
 }
@@ -2521,7 +2521,7 @@ RESPONSIVE
     }
 
     .title-base.text-left, .vertical-row > div, .row.vertical-row > div {
-        text-align: left !important;
+        text-align: right !important;
     }
 
     .pagination-lg > li > a span {
@@ -2534,7 +2534,7 @@ RESPONSIVE
     }
 
     .header-base .breadcrumb, .header-bootstrap .breadcrumb {
-        text-align: left;
+        text-align: right;
     }
 
     .tab-box.left .panel-box .panel, .tab-box.right .panel-box .panel {
@@ -2550,7 +2550,7 @@ RESPONSIVE
         }
 
     .img-box.inner, .slides > li > a.img-box.inner {
-        margin-left: 0;
+        margin-right: 0;
     }
 
         .img-box.inner .caption {
@@ -2626,14 +2626,14 @@ RESPONSIVE
     }
     .header-base .breadcrumb {
         margin-top: 0;
-        float: left;
+        float: right;
     }
 }
 
 /****************** Blogs Page ***********************/
 
 #headerB{
-    background-image: url('../../images/header-background.png');
+    background-image: url('../../images/header-background-rtl.png');
 }
 
 .hov:hover{
@@ -2645,11 +2645,11 @@ RESPONSIVE
         content: '';
         height: 3.4%;
         width: 0;
-        margin-left: 20%;
+        margin-right: 20%;
         background-color: #DD3994;
         position: absolute;
         bottom: 22%;
-        left: 0;
+        right: 0;
         transition: all 0.3s;
     }
     header .navbar-default .navbar-nav > li:hover > a::after{
@@ -2660,11 +2660,11 @@ RESPONSIVE
         content: '';
         height: 3.4%;
         width: 50%;
-        margin-left: 20%;
+        margin-right: 20%;
         background-color: #DD3994;
         position: absolute;
         bottom: 22%;
-        left: 0;
+        right: 0;
     }
     .title{
         font-size: 70px !important;
@@ -2696,12 +2696,19 @@ RESPONSIVE
     border-radius: 6px 6px 0 0 !important;
 }
 
+.tag-row{
+    text-align: right !important;
+}
+
+.niche-box-content{
+    text-align: right !important;
+}
 /****************** Projects Page ********************/
 
 .project{
     margin-bottom: 50px !important;
     background-color: #0e1a35;
-    box-shadow: #00000030 1px 1px 11px 0;
+    box-shadow: #000000 1px 1px 11px 0;
 }
 
 .projectC{
@@ -2726,7 +2733,7 @@ div.text-primary > a:last-child{
 
 i#info{
     color: #ffffff !important;
-    margin-left: -10px;
+    margin-right: -10px;
 }
 
 /**************** About us page ***************/

@@ -825,7 +825,7 @@ pre code {
 }
 @media (min-width: 992px) {
   .container {
-    width: 970px;
+    width: 100%;
   }
 }
 @media (min-width: 1200px) {
@@ -3561,9 +3561,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     display: none;
   }
 }
-.navbar-nav {
+/* .navbar-nav {
   margin: 7.5px -15px;
-}
+} */
 .navbar-nav > li > a {
   padding-top: 10px;
   padding-bottom: 10px;
