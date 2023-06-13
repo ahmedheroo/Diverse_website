@@ -2753,6 +2753,6 @@ i#info{
     background-color: #f4f9fe !important;
     /* box-shadow: #000 0 0 3px 0; */
     margin-bottom: 15px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 62px;
 }
