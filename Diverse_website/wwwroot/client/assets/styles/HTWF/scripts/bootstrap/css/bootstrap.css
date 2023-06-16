@@ -5458,3 +5458,7 @@ button.list-group-item-danger.active:focus {
 .mb-7{
   margin-bottom: 6rem !important;
 }
+
+.ml-2{
+  margin-left: 7px;
+}
