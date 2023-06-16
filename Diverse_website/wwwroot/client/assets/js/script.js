@@ -19,26 +19,42 @@ function Slider() {
     const btnNext = document.querySelector('.next');
     let currentSlide = 0;
   
-
-
     const changeSlide = function (slides) {
-        carouselSlides.forEach((slide, index) => (slide.style.transform = `translateX(${100 * (index - slides)}%)`));
+        carouselSlides.forEach((slide, index) => {
+            if (index === slides) {
+                slide.style.transform = 'translateX(0%)';
+            } else if (slides === 0) {
+                slide.style.transform = `translateX(${100 * (index + 1)}%)`;
+            } else {
+                slide.style.transform = `translateX(${100 * (index - slides)}%)`;
+            }
+        });
     };
-    changeSlide(currentSlide);
-
-    btnNext.addEventListener('click', function () {
-        currentSlide++; 
-        if (carouselSlides.length - 1 < currentSlide) {
+  
+    const nextSlide = function () {
+        currentSlide++;
+        if (carouselSlides.length <= currentSlide) {
             currentSlide = 0;
-        };
+        }
         changeSlide(currentSlide);
-});
-    btnPrev.addEventListener('click', function () {
+    };
+  
+    const prevSlide = function () {
         currentSlide--;
-        if (0 >= currentSlide) {
-            currentSlide = 0;
-        }; 
+        if (currentSlide < 0) {
+            currentSlide = carouselSlides.length - 1;
+        }
         changeSlide(currentSlide);
-    });
-};
+    };
+  
+    const startSlider = function () {
+        changeSlide(currentSlide); // Set initial slide position
+        setInterval(nextSlide, 3000); // Slide every 3 seconds
+    };
+  
+    btnNext.addEventListener('click', nextSlide);
+    btnPrev.addEventListener('click', prevSlide);
+  
+    startSlider();
+}
 Slider();
