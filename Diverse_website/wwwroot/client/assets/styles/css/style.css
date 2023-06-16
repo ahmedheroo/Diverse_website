@@ -2821,22 +2821,6 @@ i#info{
     }
 }
 
-@media only screen and (min-width: 767px){
-    .row {
-        display: flex;
-        flex-wrap: wrap;
-      }
-      
-      .cdcr {
-        display: flex;
-        flex-direction: column;
-      }
-      
-      .cdcr .boxed-inverse {
-        flex: 1;
-      }
-}
-
 @media only screen and (max-width: 992px) {
     #ls{
         height: 350px;
@@ -2922,7 +2906,9 @@ article {
     color: var(--title-color);
     transition: color 0.3s ease-out;
 }
-
+.txt-center{
+    text-align: center;
+}
 @media (max-width: 961px) {
     .disp-b{
         display: none;
@@ -2982,7 +2968,7 @@ article.article:hover, article.article:focus {
     display: grid;
     max-width: 1200px;
     margin-inline: auto;
-    padding: 20px;
+    padding: 20px 0;
     padding-inline: 24px;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 24px;
