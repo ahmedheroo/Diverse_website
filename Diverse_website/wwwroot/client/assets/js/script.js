@@ -3,11 +3,11 @@ window.onload = function() {
     var myDiv = document.getElementById('pagesNUM');
 
     if (screenWidth < 992) {
-        myDiv.classList.remove('text-right');
-        myDiv.classList.add('text-center');
+        myDiv?.classList.remove('text-right');
+        myDiv?.classList.add('text-center');
     } else {
-        myDiv.classList.remove('text-center');
-        myDiv.classList.add('text-right');
+        myDiv?.classList.remove('text-center');
+        myDiv?.classList.add('text-right');
     }
 };
 
