@@ -21,16 +21,12 @@ function Slider() {
   
     const changeSlide = function (slides) {
         carouselSlides.forEach((slide, index) => {
-            if (index === slides) {
-                slide.style.transform = 'translateX(0%)';
-            } else if (slides === 0) {
-                slide.style.transform = `translateX(${100 * (index + 1)}%)`;
-            } else {
-                slide.style.transform = `translateX(${100 * (index - slides)}%)`;
-            }
+            const offset = index - slides;
+            slide.style.transform = `translateX(${100 * offset}%)`;
         });
     };
-  
+
+
     const nextSlide = function () {
         currentSlide++;
         if (carouselSlides.length <= currentSlide) {
@@ -56,5 +52,6 @@ function Slider() {
     btnPrev.addEventListener('click', prevSlide);
   
     startSlider();
+    carouselSlides[0].classList.add('active');
 }
 Slider();
