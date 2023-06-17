@@ -3156,3 +3156,92 @@ textarea.in-bg{
 .bx-sha{
     box-shadow: #04040427 0 0 5px 0;
 }
+/* index.html */
+.bg-g{
+    background: linear-gradient(79.37deg, #001E4D 30.14%, #64BCEA 86.55%) !important;
+}
+.std{
+    width: 55% !important;
+    text-align: left !important;
+}
+.lol{
+    text-align: right;
+    width: 30%;
+}
+.index-text-color{
+    color: #fff !important;
+    padding-bottom: 20px !important;
+}
+
+.index-text-color-1{
+    color: #dcd4d4 !important;
+    padding-top: 20px !important;
+}
+.m{
+    background-color: #DD3994 !important;
+    height: 2px !important;
+    width: 80% !important;
+}
+@media only screen and (max-width: 766px) {
+    .std{
+        text-align: center !important;
+        width: 100% !important;
+    }
+    .m{
+        text-align: center!important;
+        display: inline-block !important;
+    }
+    .lol{
+        width: 50%;
+    }
+
+}
+@media only screen and (max-width: 766px) {
+    .std{
+        text-align: center !important;
+        width: 100% !important;
+    }
+    .m{
+        text-align: center!important;
+        display: inline-block !important;
+    }
+    .index-text-color-1{
+        padding-top: 20px !important;
+    }
+}
+.index-box{
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+}
+.index-box-1{
+    padding: 20px 20px 20px 20px;
+}
+.br-bad{
+    height: 10px;
+}
+.slider-index{
+    width: 100% !important;
+}
+.s{
+    width: 50%;
+    text-align: right;
+}
+.ss{
+    font-size: 35px !important;
+    color: #5584FF !important;
+}
+.int-fix{
+    padding-top: 0px !important;
+}
+.mmm{
+text-align: left;
+margin-left: 0% !important;
+}
+@media only screen and (max-width: 992px) {
+    .mmm{
+        text-align: left !important;
+        /* display: inherit !important; */
+        margin: 0 !important;
+        }
+}
