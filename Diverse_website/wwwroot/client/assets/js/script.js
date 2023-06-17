@@ -55,39 +55,3 @@ function Slider() {
     carouselSlides[0].classList.add('active');
 }
 Slider();
-
-
-function toggleCards() {
-    const cards = document.querySelectorAll('.col-md-4');
-    const loadMoreButton = document.querySelector('.load-more-maso');
-  
-    const showAllCards = () => {
-      cards.forEach((card, index) => {
-        card.style.display = 'block';
-      });
-      loadMoreButton.textContent = 'Load Less';
-    };
-  
-    const hideExtraCards = () => {
-      cards.forEach((card, index) => {
-        if (index >= 3) {
-          card.style.display = 'none';
-        }
-      });
-      loadMoreButton.textContent = 'Load More';
-    };
-  
-    loadMoreButton.addEventListener('click', function () {
-      if (loadMoreButton.textContent === 'Load More') {
-        showAllCards();
-      } else {
-        hideExtraCards();
-      }
-    });
-  
-    // Hide initial extra cards
-    hideExtraCards();
-  }
-  
-  toggleCards();
-  
