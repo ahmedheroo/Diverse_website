@@ -2752,7 +2752,6 @@ i#info{
 /* Vendors */
 #box{
     background-color: #f4f9fe !important;
-    /* box-shadow: #000 0 0 3px 0; */
     margin-bottom: 15px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 62px;
@@ -3144,4 +3143,16 @@ textarea.in-bg{
     max-width: 100%;
     max-height: 160px;
     overflow-y: auto;
+}
+
+/****************** Clients Page ********************/
+
+.d-flex-align-center{
+    display: flex !important;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.bx-sha{
+    box-shadow: #04040427 0 0 5px 0;
 }
