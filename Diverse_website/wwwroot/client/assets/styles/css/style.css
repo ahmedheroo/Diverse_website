@@ -3118,3 +3118,30 @@ button .fas{
 .dot.active{
 background:#272727;
 }
+
+/****************** Clients Page ********************/
+
+div.bg-C{
+background-color: #F4F9FE !important;
+}
+
+.p-20P{
+    padding: 0 20%;
+}
+
+h2.f-b{
+    font-weight: 500;
+}
+
+input.in-bg, textarea.in-bg{
+    background-color: #F4F9FE !important;
+    box-shadow: #00000032 0px 0px 4px 0;
+}
+
+textarea.in-bg{
+    min-width: 40%;
+    min-height: 60%;
+    max-width: 100%;
+    max-height: 160px;
+    overflow-y: auto;
+}
