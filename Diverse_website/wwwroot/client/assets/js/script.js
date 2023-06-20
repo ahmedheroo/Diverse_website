@@ -48,10 +48,10 @@ function Slider() {
         setInterval(nextSlide, 3000); // Slide every 3 seconds
     };
   
-    btnNext.addEventListener('click', nextSlide);
-    btnPrev.addEventListener('click', prevSlide);
+    btnNext?.addEventListener('click', nextSlide);
+    btnPrev?.addEventListener('click', prevSlide);
   
     startSlider();
-    carouselSlides[0].classList.add('active');
+    carouselSlides[0]?.classList.add('active');
 }
 Slider();
