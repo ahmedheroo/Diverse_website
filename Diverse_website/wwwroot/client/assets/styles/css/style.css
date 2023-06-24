@@ -3289,3 +3289,50 @@ margin-left: 0% !important;
     /* background-position: center !important; */
     /* opacity: 65%; 
   }
+
+  /****************** single service Page ********************/
+
+  .circle-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #3E6BE0;
+  }
+  
+  .star-icon {
+    color: white;
+  }
+
+  .titleK{
+    color: #0E1A35;
+    margin-bottom: 30px;
+  }
+  div.f-f{
+    display: flex;
+    margin-bottom: 5px;
+    
+  }
+  div.f-s{
+    margin-left: 10px;
+  }
+  span.f-title{
+    margin-left: 15px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #0E1A35;
+  }
+  
+  span.f-desc{
+    margin-left: 20px;
+  }
+
+  div.feature{
+    margin-bottom: 30px;
+  }
+
+  .p-30{
+    padding: 30px !important;
+  }
