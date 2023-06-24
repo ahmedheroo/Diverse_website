@@ -3208,6 +3208,9 @@ textarea.in-bg{
     .index-text-color-1{
         padding-top: 20px !important;
     }
+    .panel-fix{
+        display: block;
+    }
 
 }
 .index-box{
@@ -3288,4 +3291,22 @@ margin-left: 0% !important;
     background-size: cover !important; /* Adjust as per your preference */
     /* background-position: center !important; */
     /* opacity: 65%; 
+  }*/
+  .panel-fix{
+    width: 100% !important;
   }
+  .sol-txt{
+    color: #5584FF !important;
+    font-weight: 300 !important;
+    font-size: 24px !important;
+    padding: 15px 15px 15px 15px !important;
+    margin: 15px;
+    line-height: 40px;
+  }
+.xxm{
+    padding: 10px!important;
+}
+/* FAQ */
+.full{
+    width: 100% !important;
+}
