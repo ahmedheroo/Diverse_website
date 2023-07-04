@@ -3357,3 +3357,18 @@ margin-left: 0% !important;
   .p-30{
     padding: 30px !important;
   }
+  .lol-fix{
+    width: 40% ;
+    text-align: right ;
+  }
+  .lol-fix-1{
+    width: 75% !important ;
+  }
+  @media only screen and (max-width: 500px) {
+    .lol-fix-2{
+        display: none !important;
+    }
+    .lol-fix-3{
+        width: 100% !important;
+    }
+  }
