@@ -3118,7 +3118,7 @@ button .fas{
 background:#272727;
 }
 
-/****************** Clients Page ********************/
+/****************** Contact us Page ********************/
 
 div.bg-C{
 background-color: #F4F9FE !important;
@@ -3145,6 +3145,50 @@ textarea.in-bg{
     overflow-y: auto;
 }
 
+#mt-0{
+    margin-top: 0 !important;
+}
+
+.pb-5{
+    padding-bottom: 5px;
+}
+
+.pt-5{
+    padding-top: 5px;
+}
+
+.ht-4{
+    height: 40px !important;
+}
+
+.ml-2{
+    margin-left: 8px;
+}
+
+.fw-b{
+    font-weight: 350;
+}
+
+.pd{
+    padding: 0 !important;
+}
+.pd-10{
+    padding: 0 10px !important;
+}
+
+/* .pd-20-40{
+    padding: 0 20px 0 40px;
+} */
+
+.d-flex{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.d-flex div{
+    width: 30%;
+}
 /****************** Clients Page ********************/
 
 .d-flex-align-center{
@@ -3372,3 +3416,4 @@ margin-left: 0% !important;
         width: 100% !important;
     }
   }
+
