@@ -3200,7 +3200,13 @@ textarea.in-bg{
 .bx-sha{
     box-shadow: #04040427 0 0 5px 0;
 }
-/* index.html */
+
+.mm{
+    height: 25px !important;
+}
+
+/***************** index.html ***************/
+
 .bg-g{
     background: linear-gradient(79.37deg, #001E4D 30.14%, #64BCEA 86.55%) !important;
 }
@@ -3293,6 +3299,10 @@ margin-left: 0% !important;
         /* display: inherit !important; */
         margin: 0 !important;
         }
+
+    .p-20P{
+        padding: 0 6%;
+    }
 }
 .card-container{
     display: flex ;
