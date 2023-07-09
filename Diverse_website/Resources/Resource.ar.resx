@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="About Us" xml:space="preserve">
+    <value>معلومات عنا</value>
+  </data>
   <data name="AccountSettings" xml:space="preserve">
     <value>إعدادات الحساب</value>
   </data>
@@ -129,19 +132,70 @@
   <data name="Client WebPage" xml:space="preserve">
     <value>صفحة العملاء</value>
   </data>
+  <data name="Contact Us" xml:space="preserve">
+    <value>تواصل معنا</value>
+  </data>
+  <data name="Contact us now" xml:space="preserve">
+    <value>تواصل معنا</value>
+  </data>
   <data name="DashBoard" xml:space="preserve">
     <value>القائمة الرئيسية</value>
+  </data>
+  <data name="Discover the diverse range of industry-leading organizations that have chosen us as their trusted partner for cutting-edge ICT solutions and services." xml:space="preserve">
+    <value>وصف بالعربي</value>
+  </data>
+  <data name="Discover valuable resources, helpful tips, and company updates on our informative blog." xml:space="preserve">
+    <value>وصف بالعربي2</value>
   </data>
   <data name="Diverse - For Network Solutions" xml:space="preserve">
     <value>Diverse - For Network Solutions</value>
   </data>
+  <data name="Email" xml:space="preserve">
+    <value>البريد الالكتروني</value>
+  </data>
   <data name="English" xml:space="preserve">
     <value>الانجليزية</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>الصفحة الرئيسية</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>اللغة</value>
   </data>
+  <data name="Latest Blogs" xml:space="preserve">
+    <value>أخر التدوينات</value>
+  </data>
+  <data name="Phone number" xml:space="preserve">
+    <value>رقم الهاتف</value>
+  </data>
+  <data name="Projects" xml:space="preserve">
+    <value>المشاريع</value>
+  </data>
+  <data name="Read all" xml:space="preserve">
+    <value>إقرأ المزيد</value>
+  </data>
+  <data name="Read more" xml:space="preserve">
+    <value>إقرأ المزيد</value>
+  </data>
+  <data name="Services" xml:space="preserve">
+    <value>الخدمات</value>
+  </data>
   <data name="SignOut" xml:space="preserve">
     <value>تسجيل خروج</value>
+  </data>
+  <data name="Solutions" xml:space="preserve">
+    <value>الحلول</value>
+  </data>
+  <data name="Tags" xml:space="preserve">
+    <value>وسوم</value>
+  </data>
+  <data name="Vendors" xml:space="preserve">
+    <value>الموردين</value>
+  </data>
+  <data name="Your message" xml:space="preserve">
+    <value>رسالتك</value>
+  </data>
+  <data name="Your name" xml:space="preserve">
+    <value>الأسم</value>
   </data>
 </root>

@@ -33,7 +33,7 @@ namespace Diverse_website.Repository
         }
         public IEnumerable<AspNetRole> GetAllRoles()
         {
-            return context.AspNetRoles;
+            return context.AspNetRoles.ToList();
         }
         public string GetRoleNameUsingRoleId(string roleId)
         {
@@ -50,6 +50,13 @@ namespace Diverse_website.Repository
 
         }
 
-        
+        public void Delete(string id)
+        {
+            var user = GetUserById(id);
+           // context.AspNetUserRoles.Find(id);
+           //AspNetUser user= context.AspNetUsers.Find(id);
+            context.Remove(user);
+            context.SaveChanges();
+        }
     }
 }

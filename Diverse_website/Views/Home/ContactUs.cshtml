@@ -1,0 +1,145 @@
+﻿@using System.Globalization
+@{
+    ViewData["Title"] = "ContactUs";
+    ViewData["ActiveLi"] = "Contactli";
+    Layout = "~/Views/Shared/_ClientLayout.cshtml";
+}
+
+
+<!-- Maps Api, Ajax Search Api and Stylesheet
+// Note: If you are already using the Maps API then do not include it again
+//       If you are already using the AJAX Search API, then do not include it
+//       or its stylesheet again
+//
+// The Key Embedded in the following script tags is designed to work with
+// the following site:
+// http://www.abhilashaengineering.com
+-->
+@*<script src="http://maps.google.com/maps?file=api&v=2&key=ABQIAAAAjfewZCwoKLTq3HmI_i3FYBQIrbY-MYJHVPV3NhA9XUpGkb0yzhRskeXa2xR_0Y55q4MAqbDm5loJxw" type="text/javascript"></script>
+    <script src="http://www.google.com/uds/api?file=uds.js&v=1.0&source=uds-msw&key=ABQIAAAAjfewZCwoKLTq3HmI_i3FYBQIrbY-MYJHVPV3NhA9XUpGkb0yzhRskeXa2xR_0Y55q4MAqbDm5loJxw" type="text/javascript"></script>
+    <style type="text/css">
+        import url("http://www.google.com/uds/css/gsearch.css");
+    </style>*@
+
+<!-- Map Search Control and Stylesheet -->
+<script type="text/javascript" window._uds_msw_donotrepair=true;>
+</script>
+@*<script src="http://www.google.com/uds/solutions/mapsearch/gsmapsearch.js?mode=new" type="text/javascript">
+    </script>*@
+@*<style type="text/css">
+        import url("http://www.google.com/uds/solutions/mapsearch/gsmapsearch.css");
+    </style>*@
+
+@*<style type="text/css">
+        .gsmsc-mapDiv {
+            height: 300px;
+        }
+
+        .gsmsc-idleMapDiv {
+            height: 300px;
+        }
+
+        #mapsearch {
+            width: 550px;
+            margin: 10px;
+            padding: 4px;
+        }
+    </style>*@
+@*<script type="text/javascript">
+        function LoadMapSearchControl() {
+
+          var options = {
+                zoomControl : GSmapSearchControl.ZOOM_CONTROL_ENABLE_ALL,
+                title : "Googleplex",
+                url : "http://www.google.com/corporate/index.html",
+                idleMapZoom : GSmapSearchControl.ACTIVE_MAP_ZOOM,
+                activeMapZoom : GSmapSearchControl.ACTIVE_MAP_ZOOM
+                }
+
+          new GSmapSearchControl(
+                document.getElementById("mapsearch"),
+                "1600 Amphitheatre Parkway, Mountain View, CA",
+                options
+                );
+
+        }
+        // arrange for this function to be called during body.onload
+        // event processing
+        GSearch.setOnLoadCallback(LoadMapSearchControl);
+    </script>*@
+<!-- ++End Map Search Control Wizard Generated Code++ -->
+
+<div class="section-empty">
+    <div class="container content">
+        <div class="row-18">
+
+            <iframe class="col-md-12 col-sm-12" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13826.907364777717!2d30.9247085!3d29.9585348!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1458576527f7ead5%3A0xac13cf3237223512!2sDiverse%20ltd.!5e0!3m2!1sen!2seg!4v1687537030216!5m2!1sen!2seg" width="1100" height="460" style="border-radius:1em;" allowfullscreen="allowfullscreen" loading="lazy"></iframe>
+
+
+        </div>
+        <hr class="space" />
+        <div class="row proporzional-row">
+            <div class="col-md-6 col-sm-12 pd-20-40">
+                <h2 class="text-color fw-b"> @T["Contact us now"]</h2>
+                <hr class="space s" />
+                <form action="" class="form-box form-ajax" method="post">
+                    <div class="d-flex">
+                        <div class="pd">
+                            <p>@T["Your name"]</p>
+                            <input id="name" name="name" placeholder="@T[""]" type="text" class="form-control form-value in-bg pd-10" required>
+                        </div>
+                        <div class="pd">
+                            <p>@T["Email"]</p>
+                            <input id="email" name="email" placeholder="@T[""]" type="email" class="form-control form-value in-bg pd-10" required>
+                        </div>
+                        <div class="pd">
+                            <p>@T["Phone number"]</p>
+                            <input id="phone" name="phone" placeholder="@T[""]" type="text" class="form-control form-value in-bg pd-10" required>
+                        </div>
+                    </div>
+                    <hr class="space xs" />
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>@T["Your message"]</p>
+                            <textarea id="messagge" name="messagge" placeholder="@T[""]" class="form-control form-value in-bg" required></textarea>
+                            <hr class="space s" />
+                            <a class="circle-button btn-sm btn"><i class="fa fa-send-o"></i>@T["Send message"]</a>
+                        </div>
+                    </div>
+                    <!-- <div class="success-box">
+                        <div class="alert alert-success">Congratulations. Your message has been sent successfully</div>
+                    </div>
+                    <div class="error-box">
+                        <div class="alert alert-warning">Error, please retry. Your message has not been sent</div>
+                    </div> -->
+                </form>
+
+            </div>
+            <div class="col-md-6 boxed-inverse shadow-1 col-sm-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="fa-ul">
+                            <li>
+                                <i class="fa-li fa fa-home"></i>
+                                506, First Tower - Silver Mall, Central Axis - 6th Oct. City
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6" id="mt-0">
+                        <ul class="fa-ul">
+                            <li class="pb-5"><i class="fa-li fa fa-fax"></i> +20 238332974</li>
+                            <li class="pt-5"><i class="fa-li fa fa-envelope-o pt-5"></i> info@diverseltd.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="space m ht-4" />
+                <div class="btn-group social-group btn-group-icons">
+                    <a class="d-flex-align-center" target="_blank" href="https://www.linkedin.com/company/diverseltd-eg/about/" data-placement="top" title="LinkedIn">
+                        <i class="fa fa-linkedin text-s circle" aria-hidden="true"></i>
+                        <span class="ml-2">See linkedin profile.</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

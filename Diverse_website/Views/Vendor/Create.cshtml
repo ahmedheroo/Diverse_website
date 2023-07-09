@@ -1,0 +1,224 @@
+﻿@model Diverse_website.ViewModels.VendorsWithImagesVM
+@{
+    ViewData["Title"] = "Create";
+}
+
+<style>
+    .image-input-placeholder {
+        background-image: Url('admin/assets/media/avatars/vendorplaceholder.jpg');
+    }
+
+    [data-bs-theme="dark"] .image-input-placeholder {
+        background-image: url('assets/media/avatars/vendorplaceholder.jpg');
+    }
+</style>
+<div id="kt_app_toolbar" class="app-toolbar  py-3 py-lg-6 ">
+
+    <!--begin::Toolbar container-->
+    <div id="kt_app_toolbar_container" class="app-container  container-xxl d-flex flex-stack ">
+
+
+
+        <!--begin::Page title-->
+        <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 ">
+            <!--begin::Title-->
+            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">
+                The Vendors
+            </h1>
+            <!--end::Title-->
+            <!--begin::Breadcrumb-->
+            <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
+                <!--begin::Item-->
+                <li class="breadcrumb-item text-muted">
+                    <a asp-action="Index" class="text-muted text-hover-primary">
+                        Home
+                    </a>
+                </li>
+                <!--end::Item-->
+                <!--begin::Item-->
+                <li class="breadcrumb-item">
+                    <span class="bullet bg-gray-400 w-5px h-2px"></span>
+                </li>
+                <!--end::Item-->
+                <!--begin::Item-->
+                <li class="breadcrumb-item text-muted">
+                    Create Vendor
+                </li>
+                <!--end::Item-->
+
+            </ul>
+            <!--end::Breadcrumb-->
+        </div>
+        <!--end::Page title-->
+
+    </div>
+    <!--end::Toolbar container-->
+</div>
+<div id="kt_app_content" class="app-content  flex-column-fluid ">
+
+
+    <!--begin::Content container-->
+    <div id="kt_app_content_container" class="app-container  container-xxl ">
+
+        <div class="card">
+            <!--begin::Body-->
+            <div class="card-body p-lg-10">
+                <!--begin::Latest posts-->
+                <form class="form-horizontal" enctype="multipart/form-data" asp-controller="Vendor" method="post" asp-action="Create">
+
+                    <div class="fv-row mb-7">
+                        <!--begin::Label-->
+                        <label asp-for="vendor.TitleEn" class="required fs-6 fw-semibold mb-2">Title English</label>
+                        <!--end::Label-->
+                        <!--begin::Input-->
+                        <input asp-for="vendor.TitleEn" type="text" class="form-control form-control-solid" placeholder="Title English" />
+
+                        <span asp-validation-for="vendor.TitleEn" class="text-danger"></span>
+                        <!--end::Input-->
+                    </div>
+                    <div class="fv-row mb-7">
+                        <!--begin::Label-->
+                        <label asp-for="vendor.TitleAr" class="required fs-6 fw-semibold mb-2">Title Arabic</label>
+                        <!--end::Label-->
+                        <!--begin::Input-->
+                        <input asp-for="vendor.TitleAr" type="text" class="form-control form-control-solid" placeholder="Title Arabic" />
+
+                        <span asp-validation-for="vendor.TitleAr" class="text-danger"></span>
+                        <!--end::Input-->
+                    </div>
+                    <div class="fv-row mb-7">
+                        <!--begin::Label-->
+                        <label asp-for="vendor.DescEn" class="required fs-6 fw-semibold mb-2">Description English</label>
+                        <!--end::Label-->
+                        <!--begin::Input-->
+
+
+
+
+                        <textarea asp-for="vendor.DescEn" class="form-control form-control-solid" placeholder="Description English">
+
+</textarea>
+                        <span asp-validation-for="vendor.DescEn" class="text-danger"></span>
+
+                        <!--end::Input-->
+                    </div>
+                    <div class="fv-row mb-7">
+                        <!--begin::Label-->
+                        <label asp-for="vendor.DescAr" class="required fs-6 fw-semibold mb-2">Description Arabic</label>
+                        <!--end::Label-->
+                        <!--begin::Input-->
+                        <textarea asp-for="vendor.DescAr" class="form-control form-control-solid" placeholder="Description Arabic">
+
+</textarea>
+                        <span asp-validation-for="vendor.DescAr" class="text-danger"></span>
+
+                        <!--end::Input-->
+                    </div>
+                    <div class="fv-row mb-7">
+                        <!--begin::Label-->
+                        <label asp-for="vendor.VendorUrl" class="required fs-6 fw-semibold mb-2">Vendor URL</label>
+                        <!--end::Label-->
+                        <!--begin::Input-->
+                        <input asp-for="vendor.VendorUrl" type="url" class="form-control form-control-solid" placeholder="Vendor URL" />
+
+                        <span asp-validation-for="vendor.VendorUrl" class="text-danger"></span>
+                        <!--end::Input-->
+                    </div>
+
+                    <!--begin::Image input-->
+                    <div class="fv-row mb-7">
+                        <div class="image-input image-input-empty" data-kt-image-input="true">
+                            <!--begin::Image preview wrapper-->
+                            <div class="image-input-wrapper h-125px" style="width:18rem !important;background-image:Url('@Url.Content("~/admin/assets/media/avatars/vendorplaceholder.png")')"></div>
+                            <!--end::Image preview wrapper-->
+                            <!--begin::Edit button-->
+                            <label class="btn btn-icon btn-circle btn-color-muted btn-active-color-primary w-25px h-25px bg-body shadow"
+                                   data-kt-image-input-action="change"
+                                   data-bs-toggle="tooltip"
+                                   data-bs-dismiss="click"
+                                   title="Change banner">
+                                <i class="ki-duotone ki-pencil fs-6"><span class="path1"></span><span class="path2"></span></i>
+
+                                <!--begin::Inputs-->
+                                <input asp-for="VendorImage" type="file" accept=".png, .jpg, .jpeg" />
+                                <input type="hidden" name="avatar_remove" />
+                                <!--end::Inputs-->
+                            </label>
+                            <!--end::Edit button-->
+                            <!--begin::Cancel button-->
+                            <span class="btn btn-icon btn-circle btn-color-muted btn-active-color-primary w-25px h-25px bg-body shadow"
+                                  data-kt-image-input-action="cancel"
+                                  data-bs-toggle="tooltip"
+                                  data-bs-dismiss="click"
+                                  title="Cancel banner">
+                                <i class="ki-outline ki-cross fs-3"></i>
+                            </span>
+                            <!--end::Cancel button-->
+                            <!--begin::Remove button-->
+                            <span class="btn btn-icon btn-circle btn-color-muted btn-active-color-primary w-25px h-25px bg-body shadow"
+                                  data-kt-image-input-action="remove"
+                                  data-bs-toggle="tooltip"
+                                  data-bs-dismiss="click"
+                                  title="Remove avatar">
+                                <i class="ki-outline ki-cross fs-3"></i>
+                            </span>
+                            <!--end::Remove button-->
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="fv-row mb-7">
+                            <button type="submit" class="btn btn-sm btn-primary" style="float:right">Save</button>
+                            <a type="submit" class="btn btn-sm btn-secondary" asp-action="Index">Back</a>
+                        </div>
+                    </div>
+
+
+                </form>
+
+
+
+            </div>
+            <!--end::Body-->
+        </div>
+    </div>
+</div>
+
+<!--CKEditor Build Bundles:: Only include the relevant bundles accordingly-->
+@section Scripts{
+    @*<script>
+            toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": false,
+                "positionClass": "toastr-top-right",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            };
+
+            toastr.success("Inconceivable!");
+
+
+        </script>*@
+    @*<script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
+        <script>
+
+            ClassicEditor.create(document.querySelector('#editoren'))
+                .catch(error => {
+                    console.error(error);
+                });
+            ClassicEditor.create(document.querySelector('#editorar'))
+                .catch(error => {
+                    console.error(error);
+                });
+        </script>*@
+}

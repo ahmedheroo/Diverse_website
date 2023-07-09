@@ -1,0 +1,190 @@
+﻿@using System.Globalization
+@using Microsoft.AspNetCore.Mvc.Localization
+@model ReflectionIT.Mvc.Paging.PagingList<Blog>
+@using ReflectionIT.Mvc.Paging
+@addTagHelper *,ReflectionIT.Mvc.Paging
+
+@{
+    ViewData["Title"] = "Blogs";
+    ViewData["ActiveLi"] = "Blogsli";
+
+    Layout = "~/Views/Shared/_ClientLayout.cshtml";
+}
+@{string LongContent = " .... Read more"; }
+
+<style>
+</style>
+<div class="header-title" id="headerB">
+    <div class="container">
+        <div class="title-base">
+            <hr class="anima" />
+            <h1 class="title">@T["Blogs"] </h1>
+            <p class="title-text">@T["Discover valuable resources, helpful tips, and company updates on our informative blog."]</p>
+        </div>
+    </div>
+</div>
+<div class="section-bg-color">
+    <div class="container content">
+        <div class="row">
+            <div class="col-md-9 col-sm-12">
+                <div class="grid-list grid-layout grid-15">
+                    <div class="grid-box row">
+                        <!-- card -->
+                        @foreach (var item in Model)
+                        {
+                            <div class="grid-item col-md-6" >
+                                <div class="advs-box advs-box-top-icon-img niche-box-post boxed-inverse hov" data-anima="scale-rotate" data-trigger="hover">
+                                    <!-- Date -->
+                                    <div class="block-infos">
+                                        <div class="block-data">
+                                            <p class="bd-day">@item.CreatedDate.ToString("dd")</p>
+                                            <p class="bd-month">@item.CreatedDate.ToString("MMMM yyyy")</p>
+                                        </div>
+                                    </div>
+                                    <!-- Single Post link -->
+                                    <a class="img-box" href="#" style=" max-height: 220px !important">
+                                        <img class="anima image" src="@Url.Content(@item.PhotoUrl)" alt="" />
+                                    </a>
+                                    <!-- Content -->
+                                    <div class="advs-box-content">
+                                        @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                        {
+                                            <h2 class="text-m">
+                                                <a asp-action="ViewBlog" asp-route-id="@item.Id">@item.TitleAr</a>
+                                            </h2>
+                                        }
+                                        else
+                                        {
+                                            <h2 class="text-m">
+                                                <a asp-action="ViewBlog" asp-route-id="@item.Id">@item.TitleEn</a>
+                                            </h2>
+                                        }
+
+                                        <hr class="hrC">
+                                        <div class="tag-row">
+                                            @if (item.Tag != null)
+                                            {
+                                                @foreach (var tagsingle in item.Tag.Split(','))
+                                                {
+                                                    <span><i class="fa fa-bookmark"></i><a href="#">@tagsingle</a></span>
+
+                                                }
+                                            }
+
+                                        </div>
+                                        <p class="niche-box-content">
+                                            @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                            {
+                                                @if (item.ContentAr.Length >= 210)
+                                                {
+                                                    @item.ContentAr.Substring(0, 210);
+                                                    <a  asp-action="ViewBlog" asp-route-id="@item.Id" style="color: #5584ff">@LongContent</a>
+                                                }
+                                                else
+                                                {
+                                                    @item.ContentAr
+                                                }
+                                            }
+                                            else
+                                            {
+                                                @if (item.ContentEn.Length >= 210)
+                                                {
+                                                    @item.ContentEn.Substring(0, 210);
+                                                    <a  asp-action="ViewBlog" asp-route-id="@item.Id"  style="color: #5584ff">@LongContent</a>
+                                                }
+                                                else
+                                                {
+                                                    @item.ContentEn
+                                                }
+                                            }
+
+
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+                    <div class="list-nav text-right" id="pagesNUM">
+                        <ul class="pagination pagination-sm pagination-grid" data-page-items="6" data-pagination-anima="fade-bottom" data-options="scrollTop:true">@await this.Component.InvokeAsync("Pager", new { PagingList = this.Model })</ul>
+
+                    </div>
+                </div>
+            </div>
+            <!-- right section -->
+            <div class="col-md-3 col-sm-12 widget right-section">
+
+                <hr class="space s" />
+                <!-- Categories -->
+                <!--<div class="list-group list-blog">
+                    <p class="list-group-item active">Categories</p>
+                    <a href="#" class="list-group-item">Category one</a>
+                    <a href="#" class="list-group-item">Category two</a>
+                    <a href="#" class="list-group-item">Category three</a>
+                </div>-->
+                <!-- latest posts -->
+                <div class="list-group list-blog">
+                    <p class="list-group-item active">@T["Latest Blogs"]</p>
+
+                    @foreach (var item in Model.Take(3))
+                    {
+                        <div class="list-group-item">
+
+                            <div class="tag-row icon-row"><span><i class="fa fa-calendar"></i>@item.CreatedDate.ToString("dd.MM.yyyy")</span></div>
+                            <a asp-action="ViewBlog" asp-route-id="@item.Id">
+                                @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                {
+                                    <h5>@item.TitleAr</h5>
+                                }
+
+                            else
+                            {
+                                <h5>@item.TitleEn</h5>
+                                }
+                            </a>
+                            <p>
+                                @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                {
+                                    @if (item.ContentAr.Length >= 75)
+                                    {
+                                        @item.ContentAr.Substring(0, 75);
+                                        <a asp-action="ViewBlog" asp-route-id="@item.Id" style="color: #5584ff">@LongContent</a>
+                                    }
+                                    else
+                                    {
+                                        @item.ContentAr
+                                    }
+                                }
+                                else
+                                {
+                                    @if (item.ContentAr.Length >= 75)
+                                    {
+                                        @item.ContentAr.Substring(0, 75);
+                                        <a asp-action="ViewBlog" asp-route-id="@item.Id" style="color: #5584ff">@LongContent</a>
+                                    }
+                                    else
+                                    {
+                                        @item.ContentAr
+                                    }
+                                }
+
+                            </p>
+                        </div>
+                    }
+
+
+
+                </div>
+                <!-- Tags -->
+                <div class="list-group list-blog">
+                    <p class="list-group-item active">@T["Tags"]</p>
+                    <div class="tagbox">
+                        <span>IT</span><!--Other Categories goes in spans here-->
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

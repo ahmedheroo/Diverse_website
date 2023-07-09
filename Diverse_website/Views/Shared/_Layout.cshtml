@@ -14,19 +14,20 @@
 }
 
 <!DOCTYPE html>
-@if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+@*@if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
 {
     <html direction="rtl" dir="rtl" style="direction: rtl">
 </html>
-}
+}*@
     <html lang="en">
      
 
 
-    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 
     <head>
-        <title>@T["Diverse - For Network Solutions"]</title>
+        <title>@T["Diverse - Dashboard"]</title>
+        <link rel="icon" href="~/client/assets/images/diverse logo cut circle.png">
+        <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
         <meta charset="utf-8" />
         <meta name="description"
               content="Diverse - For Network Solutions." />
@@ -37,16 +38,15 @@
         <meta property="og:type" content="article" />
         <meta property="og:title" content="Diverse - For Network Solutions" />
         @*<meta property="og:url" content="https://keenthemes.com/keen" />*@
-        <meta property="og:site_name" content="Keenthemes | Keen" />
-        <link rel="shortcut icon" href="~/admin/assets/media/logos/favicon.ico" />
-
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" /> 
+        <meta property="og:site_name" content="Diverse - For Network Solutions" />
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
 
 
         <link href="~/admin/assets/plugins/custom/datatables-bs4/css/datatables.bootstrap4.min.css" rel="stylesheet" />
         <link href="~/admin/assets/plugins/custom/datatables-responsive/css/responsive.bootstrap4.min.css" rel="stylesheet" />
         <link href="~/admin/assets/plugins/custom/datatables-buttons/css/buttons.bootstrap4.min.css" rel="stylesheet" />
-         @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+        @*@if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
         {
             <link href="~/admin/assets/plugins/global/plugins.bundle.rtl.css" rel="stylesheet" type="text/css" />
             <link href="~/admin/assets/css/style.bundle.rtl.css" rel="stylesheet" type="text/css" />
@@ -55,8 +55,9 @@
         {
             <link href="~/admin/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
             <link href="~/admin/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
-        }
-
+        }*@
+        <link href="~/admin/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+        <link href="~/admin/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
 
     </head>
  
@@ -65,73 +66,80 @@
           data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true"
           data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true"
           data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
-    @inject SignInManager<IdentityUser> SignInManager
-    @inject UserManager<IdentityUser> userManager
-    @inject RoleManager<IdentityRole> Roles
-        <script>
-            var defaultThemeMode = "light";
-            var themeMode;
-
-            if (document.documentElement) {
-                if (document.documentElement.hasAttribute("data-bs-theme-mode")) {
-                    themeMode = document.documentElement.getAttribute("data-bs-theme-mode");
-                } else {
-                    if (localStorage.getItem("data-bs-theme") !== null) {
-                        themeMode = localStorage.getItem("data-bs-theme");
-                    } else {
-                        themeMode = defaultThemeMode;
-                    }
-                }
-
-                if (themeMode === "system") {
-                    themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-                }
-
-                document.documentElement.setAttribute("data-bs-theme", themeMode);
+        @inject SignInManager<IdentityUser> SignInManager
+        @inject UserManager<IdentityUser> userManager
+        @inject RoleManager<IdentityRole> Roles
+       
+        @{
+            string username = User.Identity.Name;
+           
+            var user = await userManager.GetUserAsync(User);
+            
             }
-        </script>
+            <script>
+                var defaultThemeMode = "light";
+                var themeMode;
 
-   
+                if (document.documentElement) {
+                    if (document.documentElement.hasAttribute("data-bs-theme-mode")) {
+                        themeMode = document.documentElement.getAttribute("data-bs-theme-mode");
+                    } else {
+                        if (localStorage.getItem("data-bs-theme") !== null) {
+                            themeMode = localStorage.getItem("data-bs-theme");
+                        } else {
+                            themeMode = defaultThemeMode;
+                        }
+                    }
 
-        <div class="d-flex flex-column flex-root app-root" id="kt_app_root">
-            <div class="app-page  flex-column flex-column-fluid " id="kt_app_page">
+                    if (themeMode === "system") {
+                        themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+                    }
+
+                    document.documentElement.setAttribute("data-bs-theme", themeMode);
+                }
+            </script>
 
 
-                <div id="kt_app_header" class="app-header ">
 
-                    <div class="app-container  container-fluid d-flex align-items-stretch justify-content-between "
-                         id="kt_app_header_container">
+            <div class="d-flex flex-column flex-root app-root" id="kt_app_root">
+                <div class="app-page  flex-column flex-column-fluid " id="kt_app_page">
 
-                        <div class="d-flex align-items-center d-lg-none ms-n3 me-2" title="Show sidebar menu">
-                            <div class="btn btn-icon btn-active-color-primary w-35px h-35px"
-                                 id="kt_app_sidebar_mobile_toggle">
-                                <i class="ki-duotone ki-abstract-14 fs-1">
-                                    <span class="path1"></span><span class="path2"></span>
-                                </i>
+
+                    <div id="kt_app_header" class="app-header ">
+
+                        <div class="app-container  container-fluid d-flex align-items-stretch justify-content-between "
+                             id="kt_app_header_container">
+
+                            <div class="d-flex align-items-center d-lg-none ms-n3 me-2" title="Show sidebar menu">
+                                <div class="btn btn-icon btn-active-color-primary w-35px h-35px"
+                                     id="kt_app_sidebar_mobile_toggle">
+                                    <i class="ki-duotone ki-abstract-14 fs-1">
+                                        <span class="path1"></span><span class="path2"></span>
+                                    </i>
+                                </div>
                             </div>
-                        </div>
-                         <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
-                            <a href="../index.html" class="d-lg-none">
-                                <img alt="Logo" src="~/admin/assets/media/logos/logo2 (1).png"
-                                     class="theme-light-show h-30px" />
-                                <img alt="Logo" src="~/admin/assets/media/logos/logo2 (1).png"
-                                     class="theme-dark-show h-30px" />
-                            </a>
-                        </div>
-                         <div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1"
-                             id="kt_app_header_wrapper">
+                            <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
+                                <a href="../index.html" class="d-lg-none">
+                                    <img alt="Logo" src="~/admin/assets/media/logos/moblogo.png"
+                                         class="theme-light-show h-30px" />
+                                    <img alt="Logo" src="~/admin/assets/media/logos/moblogo.png"
+                                         class="theme-dark-show h-30px" />
+                                </a>
+                            </div>
+                            <div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1"
+                                 id="kt_app_header_wrapper">
 
 
-                            <div class="
+                                <div class="
     app-header-menu
     app-header-mobile-drawer
     align-items-stretch
 " data-kt-drawer="true" data-kt-drawer-name="app-header-menu" data-kt-drawer-activate="{default: true, lg: false}"
-                                 data-kt-drawer-overlay="true" data-kt-drawer-width="225px" data-kt-drawer-direction="end"
-                                 data-kt-drawer-toggle="#kt_app_header_menu_toggle" data-kt-swapper="true"
-                                 data-kt-swapper-mode="{default: 'append', lg: 'prepend'}"
-                                 data-kt-swapper-parent="{default: '#kt_app_body', lg: '#kt_app_header_wrapper'}">
-                                <div class="
+                                     data-kt-drawer-overlay="true" data-kt-drawer-width="225px" data-kt-drawer-direction="end"
+                                     data-kt-drawer-toggle="#kt_app_header_menu_toggle" data-kt-swapper="true"
+                                     data-kt-swapper-mode="{default: 'append', lg: 'prepend'}"
+                                     data-kt-swapper-parent="{default: '#kt_app_body', lg: '#kt_app_header_wrapper'}">
+                                    <div class="
         menu
         menu-rounded
         menu-column
@@ -143,123 +151,136 @@
         px-2 px-lg-0
     " id="kt_app_header_menu" data-kt-menu="true">
 
-                                </div> 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="app-navbar flex-shrink-0">
-                        <div class="app-navbar-item align-items-stretch ms-1 ms-lg-3">
-
-                        </div>
-                        <div class="app-navbar-item ms-2 ms-1 ms-lg-3" id="kt_header_user_menu_toggle" style="margin-right: 2rem;">
-                            <div class="cursor-pointer symbol symbol-35px symbol-md-40px"
-                                 data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent"
-                                 data-kt-menu-placement="bottom-end">
-                                <img src="~/admin/assets/media/avatars/300-3.jpg" alt="user" />
-                            </div>
-
-                            <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px"
-                                 data-kt-menu="true">
-                                <div class="menu-item px-3">
-                                    <div class="menu-content d-flex align-items-center px-3">
-                                        <div class="symbol symbol-50px me-5">
-                                            <img alt="Logo" src="~/admin/assets/media/avatars/300-3.jpg" />
-                                        </div>
-                                        <div class="d-flex flex-column">
-                                            <div class="fw-bold d-flex align-items-center fs-5">
-                                                Admin User
-                                            </div>
-
-                                            <a href="#" class="fw-semibold text-muted text-hover-primary fs-7">
-                                                Admin@test.com
-                                            </a>
-                                        </div>
                                     </div>
                                 </div>
-                                <div class="separator my-2"></div>
-                                <div class="menu-item px-5" data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
-                                     data-kt-menu-placement="left-start" data-kt-menu-offset="-15px, 0">
-                                    <form id="selecteLanguage" asp-controller="Home" asp-action="SetLanguage" asp-route-returnUrl="@returnUrl">
-                                        @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
-                                        {
-                                            <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[0].Value" type="hidden" />
+                            </div>
+                        </div>
+                        <div class="app-navbar flex-shrink-0">
+                            <div class="app-navbar-item align-items-stretch ms-1 ms-lg-3">
 
-                                            <a class="menu-link px-5">
-                                                <span class="menu-title position-relative">
-                                                    <span style="margin-left: 15rem;">
-                                                        @T["Language"]
+                            </div>
+                            <div class="app-navbar-item ms-2 ms-1 ms-lg-3" id="kt_header_user_menu_toggle" style="margin-right: 2rem;">
+                                @*<div class="cursor-pointer symbol symbol-35px symbol-md-40px"
+                                     data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent"
+                                     data-kt-menu-placement="bottom-end">
+                                    <img src="~/admin/assets/media/avatars/300-3.jpg" alt="user" />
+                                </div>*@
+                                <div class="cursor-pointer symbol symbol-35px symbol-md-40px"
+                                     data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent"
+                                     data-kt-menu-placement="bottom-end">
+                                    <div class="symbol-label fs-2 fw-semibold bg-primary text-inverse-primary">
+                                        @username.First().ToString().ToUpper()
+                                    </div>
+                                </div>
+
+                                <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px"
+                                     data-kt-menu="true">
+                                    <div class="menu-item px-3">
+                                        <div class="menu-content d-flex align-items-center px-3">
+                                            @*<div class="symbol symbol-50px me-5">
+                                                <img alt="Logo" src="~/admin/assets/media/avatars/300-3.jpg" />
+                                            </div>*@
+                                            <div class="symbol symbol-40px me-4">
+                                                <div class="symbol-label fs-2 fw-semibold bg-primary text-inverse-primary">
+                                                    @username.First().ToString().ToUpper()
+                                                </div>
+                                            </div>
+                                            <div class="d-flex flex-column">
+                                                <div class="fw-bold d-flex align-items-center fs-5">
+                                                    @username
+                                                </div>
+
+                                                <a href="#" class="fw-semibold text-muted text-hover-primary fs-7">
+                                                    @*Admin@test.com*@
+                                                   
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="separator my-2"></div>
+                                    @*<div class="menu-item px-5" data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
+                                         data-kt-menu-placement="left-start" data-kt-menu-offset="-15px, 0">
+                                        <form id="selecteLanguage" asp-controller="Home" asp-action="SetLanguage" asp-route-returnUrl="@returnUrl">
+                                            @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                            {
+                                                <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[0].Value" type="hidden" />
+
+                                                <a class="menu-link px-5">
+                                                    <span class="menu-title position-relative">
+                                                        <span style="margin-left: 15rem;">
+                                                            @T["Language"]
+                                                        </span>
+
+                                                        <button type="submit" class="fs-8 rounded px-3 py-2 position-absolute translate-middle-y top-50 end-0" style="border-color: #ffffff00">
+                                                            @T["English"]  <img class="w-15px h-15px rounded-1 ms-2"
+                                                                                src="~/admin/assets/media/flags/united-states.svg" alt="" />
+                                                        </button>
                                                     </span>
+                                                </a>
+                                            }
+                                            else
+                                            {
+                                                <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[1].Value" type="hidden" />
 
-                                                    <button type="submit" class="fs-8 rounded px-3 py-2 position-absolute translate-middle-y top-50 end-0" style="border-color: #ffffff00">
-                                                        @T["English"]  <img class="w-15px h-15px rounded-1 ms-2"
-                                                                            src="~/admin/assets/media/flags/united-states.svg" alt="" />
-                                                    </button>
-                                                </span>
-                                            </a>
-                                        }
-                                        else
-                                        {
-                                            <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[1].Value" type="hidden" />
+                                                <a class="menu-link px-5">
+                                                    <span class="menu-title position-relative">
+                                                        @T["Language"]
 
-                                            <a class="menu-link px-5">
-                                                <span class="menu-title position-relative">
-                                                    @T["Language"]
+                                                        <button type="submit" class="fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0" style="border-color: #ffffff00">
+                                                            @T["Arabic"]  <img class="w-15px h-15px rounded-1 ms-2"
+                                                                               src="~/admin/assets/media/flags/saudi-arabia.svg" alt="" />
+                                                        </button>
+                                                    </span>
+                                                </a>
+                                            }
+                                        </form>
+                                    </div>*@
 
-                                                    <button type="submit" class="fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0" style="border-color: #ffffff00">
-                                                        @T["Arabic"]  <img class="w-15px h-15px rounded-1 ms-2"
-                                                                           src="~/admin/assets/media/flags/saudi-arabia.svg" alt="" />
-                                                    </button>
-                                                </span>
-                                            </a>
-                                        }
-                                    </form>
-                                </div>
-
-                                <div class="menu-item px-5 my-1">
-                                    <a class="menu-link px-5">
-                                        @T["AccountSettings"]
-                                    </a>
-                                </div>
-                                <div class="menu-item px-5">
-                                <a class="menu-link px-5" asp-area="Identity" asp-page="/Account/Logout">
-                                        @T["SignOut"]
-                                    </a>
+                                    @*<div class="menu-item px-5 my-1">
+                                        <a class="menu-link px-5">
+                                            @T["AccountSettings"]
+                                        </a>
+                                    </div>*@
+                                    <div class="menu-item px-5">
+                                        <a class="menu-link px-5" asp-area="Identity" asp-page="/Account/Logout">
+                                            @T["SignOut"]
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
-                </div>
-                <div class="app-wrapper  flex-column flex-row-fluid " id="kt_app_wrapper">
+                    <div class="app-wrapper  flex-column flex-row-fluid " id="kt_app_wrapper">
 
 
-                    <div id="kt_app_sidebar" class="app-sidebar  flex-column " data-kt-drawer="true"
-                         data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}"
-                         data-kt-drawer-overlay="true" data-kt-drawer-width="225px" data-kt-drawer-direction="start"
-                         data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
+                        <div id="kt_app_sidebar" class="app-sidebar  flex-column " data-kt-drawer="true"
+                             data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}"
+                             data-kt-drawer-overlay="true" data-kt-drawer-width="225px" data-kt-drawer-direction="start"
+                             data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
 
 
-                        <div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
-                            <a>
-                                <img alt="Logo" src="~/admin/assets/media/logos/Full-logo.png"
-                                     class="h-30px app-sidebar-logo-default" />
-                            </a>
-                            <div id="kt_app_sidebar_toggle"
-                                 class="app-sidebar-toggle btn btn-icon btn-sm h-30px w-30px rotate " data-kt-toggle="true"
-                                 data-kt-toggle-state="active" data-kt-toggle-target="body"
-                                 data-kt-toggle-name="app-sidebar-minimize">
+                            <div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
+                                <a>
+                                    <img alt="Logo" src="~/admin/assets/media/logos/Full-logo.png"
+                                         class="h-30px app-sidebar-logo-default" style=" height: 66px !important;width: 170px;" />
+                                </a>
+                                <div id="kt_app_sidebar_toggle"
+                                     class="app-sidebar-toggle btn btn-icon btn-sm h-30px w-30px rotate " data-kt-toggle="true"
+                                     data-kt-toggle-state="active" data-kt-toggle-target="body"
+                                     data-kt-toggle-name="app-sidebar-minimize">
 
-                                <i class="ki-duotone ki-double-left fs-2 rotate-180">
-                                    <span class="path1"></span><span class="path2"></span>
-                                </i>
+                                    <i class="ki-duotone ki-double-left fs-2 rotate-180">
+                                        <span class="path1"></span><span class="path2"></span>
+                                    </i>
+                                </div>
                             </div>
-                        </div>
-                        <div class="app-sidebar-menu overflow-hidden flex-column-fluid">
-                            <div id="kt_app_sidebar_menu_wrapper" class="app-sidebar-wrapper hover-scroll-overlay-y my-5"
-                                 data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-height="auto"
-                                 data-kt-scroll-dependencies="#kt_app_sidebar_logo, #kt_app_sidebar_footer"
-                                 data-kt-scroll-wrappers="#kt_app_sidebar_menu" data-kt-scroll-offset="5px">
-                                <div class="
+                            <div class="app-sidebar-menu overflow-hidden flex-column-fluid">
+                                <div id="kt_app_sidebar_menu_wrapper" class="app-sidebar-wrapper hover-scroll-overlay-y my-5"
+                                     data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-height="auto"
+                                     data-kt-scroll-dependencies="#kt_app_sidebar_logo, #kt_app_sidebar_footer"
+                                     data-kt-scroll-wrappers="#kt_app_sidebar_menu" data-kt-scroll-offset="5px">
+                                    <div class="
                 menu
                 menu-column
                 menu-rounded
@@ -270,186 +291,136 @@
 
 
 
-                                    <div class="menu-item">
-                                    <a class="menu-link">
-                                            <span class="menu-icon">
-                                                <i class="ki-duotone ki-abstract-28 fs-1">
-                                                    <i class="path1"></i>
-                                                    <i class="path2"></i>
-                                                    
-                                                </i>
-                                            </span><span class="menu-title"> @T["DashBoard"]</span>
-                                        </a> 
-                                    </div>
-                                    <div class="menu-item">
-                                         <a class="menu-link">
-                                            <span class="menu-icon">
-                                                <i class="ki-duotone ki-user fs-2">
-                                                    <span class="path1"></span>
-                                                    <span class="path2"></span>
-                                                </i>
-                                            </span><span class="menu-title"> @T["Client WebPage"]</span>
-                                        </a> 
-                                    </div>
-                                    <div class="menu-item">
-                                         <a class="menu-link" asp-action="Index" asp-controller="Blogs">
-                                            <span class="menu-icon">
-                                                <i class="ki-duotone ki-book-square fs-2">
-                                                    <i class="path1"></i>
-                                                    <i class="path2"></i>
-                                                    <i class="path3"></i>
-                                                    
-                                                </i>
-                                            </span><span class="menu-title"> @T["Blogs"]</span>
-                                        </a> 
-                                    </div>
-
-                                    @if (User.IsInRole("admin"))
-                                                    {
-                                        <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                                            <span class="menu-link">
+                                        @*<div class="menu-item">
+                                            <a class="menu-link">
                                                 <span class="menu-icon">
-                                                    <i class="ki-duotone ki-security-user fs-2">
+                                                    <i class="ki-duotone ki-abstract-28 fs-1">
                                                         <i class="path1"></i>
                                                         <i class="path2"></i>
-                                                    </i>
-                                                </span><span class="menu-title">
-                                                    @T["UserManagement"]
-                                                </span><span class="menu-arrow"></span>
-                                            </span> 
-                                            <div class="menu-sub menu-sub-accordion">
-                                                <div data-kt-menu-trigger="click" class="menu-item menu-accordion mb-1">
-                                                    <span class="menu-link">
-                                                        <span class="menu-bullet">
-                                                            <span class="bullet bullet-dot"></span>
-                                                        </span><span class="menu-title">Users</span><span class="menu-arrow"></span>
-                                                    </span> 
-                                                    <div class="menu-sub menu-sub-accordion">
-                                                        <div class="menu-item">
-                                                            <a class="menu-link"
-                                                            href="#">
-                                                                <span class="menu-bullet">
-                                                                    <span class="bullet bullet-dot"></span>
-                                                                </span><span class="menu-title">
-                                                                    @T["UsersList"]
-                                                                </span>
-                                                            </a> 
-                                                        </div>
 
-                                                        <div class="menu-item">
-                                                            <a class="menu-link"
-                                                            href="#">
-                                                                <span class="menu-bullet">
-                                                                    <span class="bullet bullet-dot"></span>
-                                                                </span><span class="menu-title">
-                                                                    @T["ViewUser"]
-                                                                </span>
-                                                            </a> 
-                                                        </div>
-                                                    </div> 
-                                                </div> 
-                                                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                                                    <span class="menu-link">
-                                                        <span class="menu-bullet">
-                                                            <span class="bullet bullet-dot"></span>
-                                                        </span><span class="menu-title"> @T["Roles"]</span><span class="menu-arrow"></span>
-                                                    </span>
-                                                    <div class="menu-sub menu-sub-accordion">
-                                                        <div class="menu-item">
-                                                            <a class="menu-link"
-                                                            href="../apps/user-management/roles/list.html">
-                                                                <span class="menu-bullet">
-                                                                    <span class="bullet bullet-dot"></span>
-                                                                </span><span class="menu-title">
-                                                                    @T["RolesList"]
-                                                                </span>
-                                                            </a> 
-                                                        </div>
-                                                        <div class="menu-item">
-                                                            <a class="menu-link"
-                                                            href="../apps/user-management/roles/view.html">
-                                                                <span class="menu-bullet">
-                                                                    <span class="bullet bullet-dot"></span>
-                                                                </span><span class="menu-title">
-                                                                    @T["ViewRole"]
-                                                                </span>
-                                                            </a> 
-                                                        </div>
-                                                    </div> 
-                                                </div> 
-                                                <div class="menu-item">
-                                                    <a class="menu-link"
-                                                    href="../apps/user-management/permissions.html">
-                                                        <span class="menu-bullet">
-                                                            <span class="bullet bullet-dot"></span>
-                                                        </span><span class="menu-title"> @T["Permissions"]</span>
-                                                    </a> 
-                                                </div>
-                                            </div> 
+                                                    </i>
+                                                </span><span class="menu-title"> @T["DashBoard"]</span>
+                                            </a>
+                                        </div>*@
+                                        <div class="menu-item">
+                                            <a class="menu-link" asp-action="Index" asp-controller="Home">
+                                                <span class="menu-icon">
+                                                    <i class="ki-duotone ki-user fs-2">
+                                                        <span class="path1"></span>
+                                                        <span class="path2"></span>
+                                                    </i>
+                                                </span><span class="menu-title"> @T["Client WebPage"]</span>
+                                            </a>
+                                        </div>
+                                        <div class="menu-item">
+                                            <a class="menu-link" asp-action="Index" asp-controller="Project">
+                                                <span class="menu-icon">
+                                                    <i class="ki-duotone ki-book-square fs-2">
+                                                        <i class="path1"></i>
+                                                        <i class="path2"></i>
+                                                        <i class="path3"></i>
+
+                                                    </i>
+                                                </span><span class="menu-title"> @T["Projects"]</span>
+                                            </a>
+                                        </div>
+                                        <div class="menu-item">
+                                            <a class="menu-link" asp-action="Index" asp-controller="Vendor">
+                                                <span class="menu-icon">
+                                                    <i class="ki-duotone ki-book-square fs-2">
+                                                        <i class="path1"></i>
+                                                        <i class="path2"></i>
+                                                        <i class="path3"></i>
+
+                                                    </i>
+                                                </span><span class="menu-title"> @T["Vendors"]</span>
+                                            </a>
+                                        </div>
+                                        <div class="menu-item">
+                                            <a class="menu-link" asp-action="Index" asp-controller="Blogs">
+                                                <span class="menu-icon">
+                                                    <i class="ki-duotone ki-book-square fs-2">
+                                                        <i class="path1"></i>
+                                                        <i class="path2"></i>
+                                                        <i class="path3"></i>
+
+                                                    </i>
+                                                </span><span class="menu-title"> @T["Blogs"]</span>
+                                            </a>
                                         </div>
 
+                                        @if (User.IsInRole("admin"))
+                                        {
+                                            <div class="menu-item">
+                                                <a class="menu-link" asp-action="Index" asp-controller="User">
+                                                    <span class="menu-icon">
+                                                        <i class="ki-duotone ki-security-user fs-2">
+                                                            <i class="path1"></i>
+                                                            <i class="path2"></i>
+                                                        </i>
+                                                    </span><span class="menu-title"> System Users</span>
+                                                </a>
+                                            </div>
 
+                                        }
 
-                                     
-                                    }
-
-                            </div>
-                            </div>
-                        </div>
-
-                    </div>
-                
-                    <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
-                        <div class="d-flex flex-column flex-column-fluid">
-
-                            
-
-                            @RenderBody()
-
-
- 
-                        </div>
-                        <div id="kt_app_footer" class="app-footer ">
-                            <div class="app-container  container-fluid d-flex flex-column flex-md-row flex-center flex-md-stack py-3 ">
-                                <div class="text-dark order-2 order-md-1">
-                                    <span class="text-muted fw-semibold me-1"> 2023 &copy;</span>
-                                    <a class="text-gray-800 text-hover-primary">Diverse</a>
+                                    </div>
                                 </div>
+                            </div>
+
+                        </div>
+
+                        <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+                            <div class="d-flex flex-column flex-column-fluid">
+
+
+
+                                @RenderBody()
+
 
 
                             </div>
+                            <div id="kt_app_footer" class="app-footer ">
+                                <div class="app-container  container-fluid d-flex flex-column flex-md-row flex-center flex-md-stack py-3 ">
+                                    <div class="text-dark order-2 order-md-1">
+                                        <span class="text-muted fw-semibold me-1"> 2023 &copy;</span>
+                                        <a class="text-gray-800 text-hover-primary">Diverse</a>
+                                    </div>
+
+
+                                </div>
+                            </div>
                         </div>
+
+
                     </div>
 
 
                 </div>
-
-
             </div>
-        </div>
-       
-        <div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
-            <i class="ki-duotone ki-arrow-up"><span class="path1"></span><span class="path2"></span></i>
-        </div>
-       
-        <script src="~/admin/assets/plugins/global/plugins.bundle.js"></script>
-        <script src="~/admin/assets/js/scripts.bundle.js"></script>
-    
-        <script src="~/admin/assets/plugins/custom/datatables/jquery.datatables.min.js"></script>
-        <script src="~/admin/assets/plugins/custom/fslightbox/fslightbox.bundle.js"></script>
-        <script src="~/admin/assets/plugins/custom/datatables-bs4/js/datatables.bootstrap4.min.js"></script>
-        <script src="~/admin/assets/plugins/custom/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-        <script src="~/admin/assets/plugins/custom/datatables-buttons/js/buttons.colvis.min.js"></script>
-        <script src="~/admin/assets/plugins/custom/datatables-buttons/js/buttons.html5.min.js"></script>
-        <script src="~/admin/assets/plugins/custom/datatables-buttons/js/buttons.print.min.js"></script>
-        <script src="~/admin/assets/plugins/custom/datatables-buttons/js/datatables.buttons.min.js"></script>
-        <script src="~/admin/assets/plugins/custom/datatables-responsive/js/datatables.responsive.min.js"></script>
-        <script src="~/admin/assets/plugins/custom/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-       
 
-        <script src="~/admin/assets/js/widgets.bundle.js"></script>
-       
-        @await RenderSectionAsync("Scripts", required: false);
-    </body>
+            <div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
+                <i class="ki-duotone ki-arrow-up"><span class="path1"></span><span class="path2"></span></i>
+            </div>
+
+            <script src="~/admin/assets/plugins/global/plugins.bundle.js"></script>
+            <script src="~/admin/assets/js/scripts.bundle.js"></script>
+
+            <script src="~/admin/assets/plugins/custom/datatables/jquery.datatables.min.js"></script>
+            <script src="~/admin/assets/plugins/custom/fslightbox/fslightbox.bundle.js"></script>
+            <script src="~/admin/assets/plugins/custom/datatables-bs4/js/datatables.bootstrap4.min.js"></script>
+            <script src="~/admin/assets/plugins/custom/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+            <script src="~/admin/assets/plugins/custom/datatables-buttons/js/buttons.colvis.min.js"></script>
+            <script src="~/admin/assets/plugins/custom/datatables-buttons/js/buttons.html5.min.js"></script>
+            <script src="~/admin/assets/plugins/custom/datatables-buttons/js/buttons.print.min.js"></script>
+            <script src="~/admin/assets/plugins/custom/datatables-buttons/js/datatables.buttons.min.js"></script>
+            <script src="~/admin/assets/plugins/custom/datatables-responsive/js/datatables.responsive.min.js"></script>
+            <script src="~/admin/assets/plugins/custom/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+
+
+            <script src="~/admin/assets/js/widgets.bundle.js"></script>
+            @await Html.PartialAsync("_notificationPartial")
+            @await RenderSectionAsync("Scripts", required: false);
+        </body>
 
 </html>

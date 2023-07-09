@@ -1,0 +1,264 @@
+﻿
+@using System.Globalization
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.AspNetCore.Identity
+
+@inject IStringLocalizer<Resource> T
+@inject IOptions<RequestLocalizationOptions> locOptions
+@{
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+    var culureItems = localOptions.Value.SupportedCultures
+        .Select(c => new SelectListItem { Value = c.Name, Text = c.NativeName }).ToList();
+    var returnUrl = string.IsNullOrEmpty(Context.Request.Path) ? "~/" : $"~{Context.Request.Path + Context.Request.QueryString}";
+
+}
+
+<!DOCTYPE html>
+@if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+{
+    <html lang="ar-eg" dir="rtl">
+</html>
+
+}
+else
+{
+<html lang="en">
+</html>
+}
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Diverse" content="Diverse Company">
+    <meta name="Diverse" content="Diverse Company">
+    <meta name="description" content="Explore our diverse range of projects and discover valuable resources, helpful tips, and company updates on our informative blog.">
+    <meta name="keywords" content="projects, blog, company updates, resources">
+    <title>Diverse - @ViewData["Title"]</title>
+
+    <link rel="icon" href="~/client/assets/images/diverse logo cut circle.png">
+    @*@if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+        {
+            <link rel="stylesheet" href="~/client/assets/styles/HTWF/scripts/bootstrap/css/bootstrap.rtl.css">
+            <link rel="stylesheet" href="~/client/assets/styles/HTWF/style.rtl.css">
+            <link rel="stylesheet" href="~/client/assets/styles/css/style.rtl.css">
+
+        }
+        else
+        {
+            <link rel="stylesheet" href="~/client/assets/styles/HTWF/scripts/bootstrap/css/bootstrap.css">
+            <link rel="stylesheet" href="~/client/assets/styles/HTWF/style.css">
+            <link rel="stylesheet" href="~/client/assets/styles/css/style.css">
+
+        }*@
+    <script src="~/client/assets/styles/HTWF/scripts/jquery.min.js"></script>
+    <link rel="stylesheet" href="~/client/assets/styles/HTWF/scripts/bootstrap/css/bootstrap.css">
+    <script src="~/client/assets/styles/HTWF/scripts/script.js"></script>
+    <link rel="stylesheet" href="~/client/assets/styles/HTWF/style.css">
+    <link rel="stylesheet" href="~/client/assets/styles/HTWF/css/content-box.css">
+    <link rel="stylesheet" href="~/client/assets/styles/HTWF/css/image-box.css" />
+    <link rel="stylesheet" href="~/client/assets/styles/HTWF/css/animations.css">
+    <link rel="stylesheet" href="~/client/assets/styles/HTWF/css/components.css">
+    <link href="~/client/assets/styles/HTWF/scripts/magnific-popup.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/client/assets/styles/css/style.css">
+
+    <link href="~/client/assets/styles/HTWF/scripts/flexslider/flexslider.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/client/assets/styles/HTWF/scripts/font-awesome/css/font-awesome.css">
+    @await RenderSectionAsync("Styles", false)
+</head>
+<body class="blog-masonry">
+    <div id="preloader"></div>
+    <header class="fixed-top scroll-change bg-color-2" data-menu-anima="fade-bottom">
+        <div class="navbar navbar-default mega-menu-fullwidth navbar-fixed-top" role="navigation">
+            <div class="navbar navbar-main">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <a class="navbar-brand" asp-action="Index" asp-controller="Home">
+                            <img class="logo-default" src="~/client/assets/images/diverse logo cut.png" alt="logo" />
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse">
+                        <div class="nav navbar-nav navbar-right">
+                            <ul class="nav navbar-nav">
+                                <li class="dropdown" id="Homeli"><a asp-action="Index" asp-controller="Home">@T["Home"]</a></li>
+                                <li class="dropdown" id="solutionsli">
+                                    <a asp-action="Solutions" asp-controller="Home" class="dropdown-toggle" data-toggle="dropdown" role="button">@T["Solutions"] <span class="caret"></span></a>
+                                    <ul class="dropdown-menu multi-level">
+                                        <li id="solutionsli"><a asp-action="Solution1" asp-controller="Home">Solution one</a></li>
+                                        <li id="solutionsli"><a asp-action="Solution1" asp-controller="Home">Solution two</a></li>
+                                        <li id="solutionsli"><a asp-action="Solution1" asp-controller="Home">Solution three</a></li>
+                                        <li id="solutionsli"><a asp-action="Solution1" asp-controller="Home">Solution four</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown" id="servicesli">
+                                    <a asp-action="Services" asp-controller="Home" class="dropdown-toggle" data-toggle="dropdown" role="button">@T["Services"] <span class="caret"></span></a>
+                                    <ul class="dropdown-menu multi-level">
+                <li id="servicesli"><a asp-action="Service1" asp-controller="Home">Service one</a></li>
+                <li id="servicesli"><a asp-action="Service1" asp-controller="Home">Service two</a></li>
+                <li id="servicesli"><a asp-action="Service1" asp-controller="Home">Service three</a></li>
+                <li id="servicesli"><a asp-action="Service1" asp-controller="Home">Service four</a></li>
+            </ul>
+                                </li>
+                                <li class="dropdown" id="Projectsli">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" role="button">Clients<span class="caret"></span></a>
+                                    <ul class="dropdown-menu multi-level">
+                <li><a asp-action="OurClients" asp-controller="Home">Our Clients</a></li>
+                <li><a asp-action="Projects" asp-controller="Home">Our Projects</a></li>
+               
+            </ul> 
+                                </li>
+                                <li class="dropdown"  id="Vendorsli"><a asp-action="Vendors" asp-controller="Home">@T["Vendors"]</a></li>
+
+                                <li class="dropdown" id="Blogsli"><a asp-action="Blogs" asp-controller="Home">@T["Blogs"]</a></li>
+                                <li class="dropdown" id="Contactli"><a asp-action="ContactUs" asp-controller="Home">@T["Contact Us"]</a></li>
+                                <li class="dropdown" id="AboutUsli">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" role="button">@T["About Us"] <span class="caret"></span></a>
+                                    <ul class="dropdown-menu multi-level">
+                                        <li id="AboutUsli"><a asp-action="AboutUs" asp-controller="Home">About Diverse</a></li>
+                                        <li id="AboutUsli"><a asp-action="faq" asp-controller="Home">FAQs</a></li>
+                                        
+                                    </ul>
+                                </li>
+                               @* <li class="dropdown" id="AboutUsli"><a asp-action="AboutUs" asp-controller="Home">@T["About Us"]</a></li>*@
+                               @* <li class="dropdown" id="faqli"><a >FAQ</a></li>*@
+                                @*<li class="dropdown nav navbar-nav lan-menu">
+                                    @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                    {
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images/eg flag.png" alt="lan" />  العربية  <span class="caret"></span></a>
+
+                                    }
+                                    else
+                                    {
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images/en.png" alt="lan" />  EN  <span class="caret"></span></a>
+
+                                    }*@
+                                    @*<ul class="dropdown-menu">
+                                        <li>
+                                            <form id="selecteLanguage" asp-controller="Home" asp-action="SetLanguage" asp-route-returnUrl="@returnUrl">
+                                                @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                                {
+                                                    <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[0].Value" type="hidden" />
+                                                    <button type="submit"><img src="~/client/assets/images/en.png" alt="lan" width="20px" height="20px" />  EN  </button>
+
+                                                }
+                                                else
+                                                {
+                                                    <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[1].Value" type="hidden" />
+                                                    <button type="submit"><img src="~/client/assets/images/eg flag.png" alt="lan" width="20px" height="20px" />  العربية  </button>
+
+                                                }
+                                            </form>
+                                        </li>
+
+                                    </ul>*@
+                                    @*<form id="selecteLanguage" asp-controller="Home" asp-action="SetLanguage" asp-route-returnUrl="@returnUrl">
+                @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                {
+                    <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[0].Value" type="hidden" />
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images/eg flag.png" alt="lan" />العربية <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><button type="submit"><img src="~/client/assets/images/en.png" alt="lan" width="20px" height="20px" />EN</button></li>
+                    </ul>
+                }
+                else
+                {
+                    <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[1].Value" type="hidden" />
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images/en.png" alt="lan" />EN <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><button type="submit"><img src="~/client/assets/images/eg flag.png" alt="lan" width="20px" height="20px" />العربية</button></li>
+                    </ul>
+                }
+            </form>*@
+
+                               @* </li>*@
+                                @*<form id="selecteLanguage" asp-controller="Home" asp-action="SetLanguage" asp-route-returnUrl="@returnUrl">
+
+
+                @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                {
+                    <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[0].Value" type="hidden" />
+                <li class="dropdown nav navbar-nav lan-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images//eg flag.png" alt="lan" />العربية <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><button type="submit"><img src="~/client/assets/images/en.png" alt="lan" width="20px" height="20px" />EN</button></li>
+                    </ul>
+                </li>
+            }
+            else
+            {
+        <li class="dropdown nav navbar-nav lan-menu">
+            <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[1].Value" type="hidden" />
+
+            <button type="submit"><img src="~/client/assets/images/eg flag.png" alt="lan" width="20px" height="20px" />العربية</button>
+        </li>
+            }
+                </form>*@
+
+
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    @RenderBody()
+
+    <i class="scroll-top scroll-top-mobile show fa fa-sort-asc"></i>
+    <footer class="footer-base">
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 footer-center text-left">
+                        <img width="120" src="~/client/assets/images/diverse logo.png" alt="" />
+                    </div>
+                    <div class="col-md-6 footer-left text-left">
+                        <p>Specified Location for each zone</p>
+                        <div class="tag-row">
+                            <span>Specified Email for each zone</span>
+                            <span>Specified fax number for each zone</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row copy-row">
+                <div class="col-md-12 copy-text">
+                    © 2023 Diverse. All rights reserved.
+                </div>
+            </div>
+        </div>
+
+        <link rel="stylesheet" href="~/client/assets/styles/HTWF/scripts/font-awesome/css/font-awesome.css">
+        <script async src="~/client/assets/styles/HTWF/scripts/bootstrap/js/bootstrap.min.js"></script>
+        @*<script src="https://kit.fontawesome.com/e4374ef880.js" crossorigin="anonymous"></script>*@
+        <script src="~/client/assets/styles/HTWF/scripts/imagesloaded.min.js"></script>
+        <script src="~/client/assets/styles/HTWF/scripts/isotope.min.js"></script>
+        <script src="~/client/assets/styles/HTWF/scripts/jquery.tab-accordion.js"></script>
+        <script src='~/client/assets/styles/HTWF/scripts/jquery.progress-counter.js'></script>
+        <script src="~/client/assets/styles/HTWF/scripts/jquery.twbsPagination.min.js"></script>
+        <script src="~/client/assets/styles/HTWF/scripts/jquery.magnific-popup.min.js"></script>
+        <script src="~/client/assets/styles/HTWF/scripts/flexslider/jquery.flexslider-min.js"></script>
+        <script src="~/client/assets/styles/HTWF/scripts/jquery.bootgrid.min.js"></script>
+        <script src="~/client/assets/styles/HTWF/scripts/jquery.flipster.min.js"></script>
+        <script src="~/client/assets/styles/HTWF/scripts/parallax.min.js"></script>
+        @*<script src="~/client/assets/styles/HTWF/scripts/jquery.flipster.min.js"></script>*@
+        @*<script src="~/client/assets/styles/js/script.js"></script>*@
+        <script src="~/client/assets/js/script.js"></script>
+
+        <script src="~/client/assets/js/fontawesome.js"></script>
+        <script>
+            var activenav = document.getElementById('@ViewData["ActiveLi"]');
+            activenav.classList.add("active");
+            activenav.classList.add("selected");
+        </script>
+        @await RenderSectionAsync("Scripts", required: false)
+
+    </footer>
+
+</body>
+</html>

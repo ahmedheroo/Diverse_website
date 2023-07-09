@@ -22,8 +22,12 @@ namespace Diverse_website.Repository
         {
             return context.Blogs.FirstOrDefault();
         }
-      
+        public IQueryable<Blog> GetAllblogsWithLatest()
+        {
+            return context.Blogs.AsNoTracking().Reverse().Take(3);
+        }
 
-       
+
+
     }
 }
