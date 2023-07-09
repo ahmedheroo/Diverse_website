@@ -27,12 +27,15 @@ namespace Diverse_website.Models
         public virtual DbSet<Blog> Blogs { get; set; }
         public virtual DbSet<Project> Projects { get; set; }
         public virtual DbSet<SysUser> SysUsers { get; set; }
+        public virtual DbSet<Vendor> Vendors { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=.;Database=Diverse_website;Trusted_Connection=True;");
+                  optionsBuilder.UseSqlServer("Data Source=N1NWPLSK12SQL-v02.shr.prod.ams1.secureserver.net;Initial Catalog=ph13423754189_;User Id=Diverse_User;Password=Diverse_User");
+                //optionsBuilder.UseSqlServer("Server=.;Database=DiverseDB;Trusted_Connection=True;MultipleActiveResultSets=true");
+
             }
         }
 
@@ -160,6 +163,12 @@ namespace Diverse_website.Models
                 entity.Property(e => e.UserName)
                     .IsRequired()
                     .HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<Vendor>(entity =>
+            {
+                entity.Property(e => e.Id).HasColumnName("Id");
+
             });
 
             OnModelCreatingPartial(modelBuilder);

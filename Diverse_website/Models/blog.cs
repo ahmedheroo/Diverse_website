@@ -16,5 +16,7 @@ namespace Diverse_website.Models
         public DateTime? UpdatedDate { get; set; }
         public string PhotoUrl { get; set; }
         public bool IsDeleted { get; set; }
+        public string Tag { get; set; }
+        public string userid { get; set; }
     }
 }

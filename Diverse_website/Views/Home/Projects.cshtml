@@ -1,0 +1,105 @@
+﻿@model ReflectionIT.Mvc.Paging.PagingList<Project>
+    @using ReflectionIT.Mvc.Paging
+    @addTagHelper *,ReflectionIT.Mvc.Paging
+
+
+    @{
+        ViewData["Title"] = "Projects";
+        ViewData["ActiveLi"] = "Projectsli";
+        Layout = "~/Views/Shared/_ClientLayout.cshtml";
+    }
+    @{string LongContent = " .... Read more"; }
+
+
+<div class="header-title" id="headerB">
+    <div class="container">
+        <div class="title-base">
+            <hr class="anima" />
+            <h1 class="title">@T["Our Projects"]</h1>
+            <p class="title-text">@T["Discover valuable resources, helpful tips, and company updates on our informative blog."]</p>
+        </div>
+    </div>
+</div>
+<div class="section-empty section-item text-center">
+    <div class="container content">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="grid-list grid-layout grid-15">
+                    <div class="grid-box row">
+
+                        @foreach (var item in Model)
+                        {
+                        <div class="grid-item col-md-12">
+
+                            <div class="advs-box advs-box-side-img advs-box-blog boxed white project" data-anima="scale-rotate" data-trigger="hover">
+
+                                <div class="row projectC">
+                                    <div class="col-md-4">
+                                        <a class="img-box img-scale-up">
+                                            <img class="anima" src="@Url.Content(@item.PhotoUrl)" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="col-md-8 text-primary">
+                                        @if (System.Globalization.CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                        {
+                                            <h2><a asp-action="ViewProject" asp-route-id="@item.Id">@item.TitleAr</a></h2>
+
+                                        }
+                                        else
+                                        {
+                                            <h2><a asp-action="ViewProject" asp-route-id="@item.Id">@item.TitleEn</a></h2>
+
+                                        }
+                                        <hr>
+                                        <p>
+                                            @if (System.Globalization.CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                            {
+                                                @if (item.DescAr.Length >= 110)
+                                                {
+                                                    <h2><a>@item.DescAr.Substring(0, 110);</a></h2>
+
+                                                }
+                                                else
+                                                {
+                                                    <h2><a>@item.DescAr</a></h2>
+
+                                                }
+
+                                            }
+                                            else
+                                            {
+                                                @if (item.DescEn.Length >= 110)
+                                                {
+                                                    <h2><a>@item.DescEn.Substring(0, 110);</a></h2>
+
+                                                }
+                                                else
+                                                {
+                                                    <h2><a>@item.DescEn</a></h2>
+
+                                                }
+
+                                            }
+                                        </p>
+                                        <a class="btn btn-sm" asp-action="ViewProject" asp-route-id="@item.Id"><i class="fas fa-info-circle" id="info"></i>@T["Read more"]</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                
+                                }
+                                <div class="list-nav text-right" id="pagesNUM">
+                                    <ul class="pagination pagination-sm pagination-grid" data-page-items="5" data-pagination-anima="fade-bottom" data-options="scrollTop:true">
+
+                                        @await this.Component.InvokeAsync("Pager", new { PagingList = this.Model })
+
+                                    </ul>
+
+                                </div>
+
+                            </div>
+                        </div>
+            </div>
+        </div>
+    </div>
+                </div>

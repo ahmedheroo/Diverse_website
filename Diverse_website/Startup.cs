@@ -18,6 +18,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
+using ReflectionIT.Mvc.Paging;
+using Diverse_website.Helpers;
 
 namespace Diverse_website
 {
@@ -53,6 +55,10 @@ namespace Diverse_website
                 option.SupportedCultures = supportedCultures;
                 option.SupportedUICultures = supportedCultures;
             });
+            services.AddMvc(mvc =>
+            {
+                mvc.Conventions.Add(new ControllerNameAttributeConvention());
+            });
             services.AddDbContext<Diverse_websiteContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
@@ -86,10 +92,13 @@ namespace Diverse_website
                 o.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
             })
                 .AddCookie(o => o.LoginPath = "/identity/account/login");
-                
+            services.AddAuthorization(op => op.AddPolicy("AdminRole", p => p.RequireRole("admin")));
+         
             //services.AddAuthentication( CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(q => q.LoginPath = "/identity/account/login");
             services.AddScoped<IUserRepo, UserRepo>();
             services.AddScoped<IBlogsRepo, BlogsRepo>();
+            services.AddScoped<IProjectRepo, ProjectRepo>();
+            services.AddScoped<IVendorsRepo, VendorsRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -108,7 +117,7 @@ namespace Diverse_website
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-            DBIntializer.seed(userManager);
+           // DBIntializer.seed(userManager);
            // DBIntializer.seedroles(userrole);
 
             app.UseHttpsRedirection();
@@ -122,12 +131,12 @@ namespace Diverse_website
             using var scope = app.ApplicationServices.CreateScope();
             var services = scope.ServiceProvider;
             var context = services.GetRequiredService<Diverse_websiteContext>();
-            var Identitycontext = services.GetRequiredService<ApplicationDbContext>();
-            var logger = services.GetRequiredService<ILogger<Program>>();
+           // var Identitycontext = services.GetRequiredService<ApplicationDbContext>();
+            var logger = services.GetRequiredService<ILogger<Startup>>();
             try
             {
-                Identitycontext.Database.MigrateAsync();
-                context.Database.MigrateAsync();
+                // Identitycontext.Database.MigrateAsync();
+                 context.Database.MigrateAsync();
             }
             catch (Exception ex)
             {

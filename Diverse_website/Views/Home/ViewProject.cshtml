@@ -1,0 +1,114 @@
+﻿@using System.Net
+@using System.Globalization
+@using Microsoft.AspNetCore.Mvc.Localization
+@model Diverse_website.ViewModels.ProjectsImages
+
+@{
+    ViewData["Title"] = "ViewProject";
+    ViewData["ActiveLi"] = "Projectsli";
+    Layout = "~/Views/Shared/_ClientLayout.cshtml";
+}
+
+<div class="header-title" style="background-image:url('@Url.Content(Model.projects.PhotoUrl)')">
+    <div class="container">
+        <div class="title-base">
+            <hr class="anima" />
+            <h1 class="title">@T["Our Projects"]</h1>
+                <p class="title-text">@T["Discover valuable resources, helpful tips, and company updates on our informative blog."]</p>
+        </div>
+    </div>
+</div>
+<div class="section-empty section-item">
+    <div class="container content">
+        <div class="row">
+            <div class="col-md-8 col-sm-12">
+                @if (System.Globalization.CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                {
+                    <h4 class="text-xl">@Model.projects.TitleAr</h4>
+
+                }
+                else
+                {
+                    <h4 class="text-xl">@Model.projects.TitleEn</h4>
+
+                }
+                <hr class="space xs" />
+                <div class="collapse-box" data-height="240">
+                    <div class="panel">
+                        @*   <h4 class="Project-single-title">This is the future</h4>*@
+                        @if (System.Globalization.CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                        {
+                            <p>
+                                @Model.projects.DescAr
+                            </p>
+
+                        }
+                        else
+                        {
+                            <p>
+                                @Model.projects.DescEn
+                                @*@WebUtility.HtmlDecode(@Model.projects.DescEn)*@
+                            </p>
+
+                        }
+
+
+                    </div>
+                    <div class="text-center">
+                        <a class="collapse-button" data-button-open-text="Hide all" data-button-close-text="Read all">
+                            <b>@T["Read all"]</b> <span class="caret"></span>
+                        </a>
+                    </div>
+                </div>
+                <hr class="space visible-sm" />
+            </div>
+            <div class="col-md-4 col-sm-12 boxed-inverse shadow-1">
+                <hr class="space m" />
+                <div class="list-group latest-post-list list-blog">
+                    <p class="list-group-item active">@T["Latest projects"]</p>
+                    @foreach (var item in Model.LatestProjects)
+                    {
+                        <input type="hidden" asp-for="@item.Id" />
+
+                        <div class="list-group-item">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <a class="img-box circle">
+                                        <img src="@Url.Content( @item.PhotoUrl)" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-md-8">
+                                    <a asp-action="ViewProject" asp-route-id="@item.Id">
+                                        @if (System.Globalization.CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                        {
+                                            <h5>@item.TitleAr</h5>
+
+                                        }
+                                        else
+                                        {
+                                            <h5>@item.TitleEn</h5>
+
+                                        }
+                                    </a>
+                                    <div class="tag-row icon-row"><span><i class="fa fa-calendar"></i>@item.CreatedDate.ToString("dd.MM.yyyy")</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+
+
+                </div>
+                @*<div class="list-group list-blog">
+                        <p class="list-group-item active">Tags</p>
+                        <div class="tagbox">
+                            <span>Hello!</span><span>Big deal</span><span>A new happy time</span><span>Food</span><span>Cheese</span><span>Food</span>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <hr class="space m" />*@
+            </div>
+        </div>
+    </div>
+</div>
+

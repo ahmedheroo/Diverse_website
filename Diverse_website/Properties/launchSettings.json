@@ -16,7 +16,7 @@
     },
     "Diverse_website": {
       "commandName": "Project",
-      "dotnetRunMessages": "true",
+      "dotnetRunMessages": true,
       "launchBrowser": true,
       "applicationUrl": "http://localhost:5000",
       "environmentVariables": {

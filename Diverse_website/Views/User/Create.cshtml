@@ -42,7 +42,7 @@
 
 </div>
 <!--end::Toolbar container-->
-</div>
+ 
 <div id="kt_app_content" class="app-content  flex-column-fluid ">
 
 
@@ -53,7 +53,7 @@
             <!--begin::Body-->
             <div class="card-body p-lg-10">
                 <!--begin::Latest posts-->
-                <form class="form-horizontal" enctype="multipart/form-data" asp-controller="User" method="post" asp-action="Create">
+                <form class="form-horizontal needs-validation" enctype="multipart/form-data" asp-controller="User" method="post" asp-action="Create" novalidate>
 
                     <div class="fv-row mb-7">
                         <!--begin::Label-->
@@ -61,6 +61,8 @@
                         <!--end::Label-->
                         <!--begin::Input-->
                         <input asp-for="User.UserName" type="text" class="form-control form-control-solid" placeholder="User Name" />
+                        <span asp-validation-for="User.UserName" class="text-danger"></span>
+
                         <!--end::Input-->
                     </div>
                     <div class="fv-row mb-7">
@@ -69,6 +71,8 @@
                         <!--end::Label-->
                         <!--begin::Input-->
                         <input asp-for="User.Email" type="email" class="form-control form-control-solid" placeholder="User's Email" />
+                        <span asp-validation-for="User.Email" class="text-danger"></span>
+
                         <!--end::Input-->
                     </div>
                     <div class="fv-row mb-7">
@@ -77,6 +81,7 @@
                         <!--end::Label-->
                         <!--begin::Input-->
                         <input asp-for="User.PasswordHash" type="password" class="form-control form-control-solid" placeholder="User's Password" />
+                        <span asp-validation-for="User.PasswordHash" class="text-danger"></span>
                         <!--end::Input-->
                     </div>
                     <div class="row">

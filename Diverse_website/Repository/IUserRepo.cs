@@ -14,5 +14,6 @@ namespace Diverse_website.Repository
         IEnumerable<AspNetRole> GetAllRoles();
         string GetRoleNameUsingRoleId(string roleId);
         string GetUserRoleId(string userId);
+        void Delete(string id);
     }
 }
