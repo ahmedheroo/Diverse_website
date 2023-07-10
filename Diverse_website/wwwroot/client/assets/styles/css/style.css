@@ -3265,6 +3265,11 @@ textarea.in-bg{
     .panel-fix{
         display: block;
     }
+    .card-container{
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin: 10px;
+    }
 
 }
 .index-box{
@@ -3308,6 +3313,7 @@ margin-left: 0% !important;
     .p-20P{
         padding: 0 6%;
     }
+    
 }
 .card-container{
     display: flex ;
@@ -3385,6 +3391,7 @@ margin-left: 0% !important;
         line-height: 10px;
 
     }
+    
 
   }
   .margin-m{
