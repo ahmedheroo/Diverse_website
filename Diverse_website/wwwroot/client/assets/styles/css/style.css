@@ -3268,6 +3268,7 @@ textarea.in-bg{
     border-radius: 10px;
     padding: 10px 10px 10px 10px;
     margin: 10px;
+    background-color: white;
 }
 .index-box-1{
     padding: 20px 20px 20px 20px;
@@ -3375,6 +3376,11 @@ margin-left: 0% !important;
     .padding-m{
         padding: 0 !important;
     }
+    .finale{
+        font-size: 24px !important;
+        line-height: 10px;
+
+    }
 
   }
   .margin-m{
@@ -3455,5 +3461,23 @@ margin-left: 0% !important;
   .lol-fix-1{
     width: 75% !important ;
   }
-
-
+.finale{
+    color: #5584FF !important;
+    font-weight: 300 !important;
+    font-size: 36px ;
+    margin: 15px;
+    line-height: 40px;
+    text-align: center !important;
+}
+.xmmm{
+    background-color: #DD3994 !important;
+    height: 2px !important;
+    width: 50% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+.finale-1{
+    color: #909090;
+    text-align: center;
+}
