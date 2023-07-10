@@ -10,6 +10,8 @@ namespace Diverse_website.ViewModels
     public class BlogsWithImages
     {
         public Blog Blog { get; set; }
+        public AspNetUser user { get; set; }
+        public IEnumerable<Blog> LatestBlogs { get; set; }
         public IFormFile BlogImage { get; set; }
     }
 }

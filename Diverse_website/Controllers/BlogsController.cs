@@ -1,18 +1,24 @@
-﻿using Diverse_website.Models;
+﻿using Diverse_website.Data;
+using Diverse_website.Models;
 using Diverse_website.Repository;
 using Diverse_website.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using ReflectionIT.Mvc.Paging;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Threading.Tasks;
 
 namespace Diverse_website.Controllers
-{ 
+{
+   
     [Authorize]
-    public class BlogsController : Controller
+    public class BlogsController : BaseController
     {
        
         private readonly IBlogsRepo blogsRepo;
@@ -22,13 +28,14 @@ namespace Diverse_website.Controllers
             blogsRepo = _blogsRepo;
             webHostEnvironment = _webHostEnvironment;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index(int page=1)
         {
-              IQueryable<Blog> model ;
-              model = blogsRepo.Getblogs();
+             // IQueryable<Blog> model ;
+              var item = blogsRepo.Getblogs().OrderByDescending(s=>s.CreatedDate);
+              var model =await PagingList.CreateAsync(item, 100, page);
  
             return View(model);
-        }
+        } 
         public IActionResult ViewBlog(int Id)
         {
             BlogsWithImages model = new BlogsWithImages();
@@ -47,26 +54,43 @@ namespace Diverse_website.Controllers
         {
             if (ModelState.IsValid)
             {
-                string uniqueFileName = UploadedFile(model);
                 
-                Blog blog= new Blog()
+                
+                try
                 {
-                    TitleEn = model.Blog.TitleEn,
-                    TitleAr = model.Blog.TitleAr,
-                    ContentEn = model.Blog.ContentEn,
-                    ContentAr = model.Blog.ContentAr,
-                    PhotoUrl = uniqueFileName,
-                    IsDeleted = false,
-                    CreatedDate = DateTime.Now,
-                    UpdatedDate = DateTime.Now
+                    string uniqueFileName = UploadedFile(model);
+                    //  string username = GetUserId(model);
 
-                };
+                    Blog blog = new Blog()
+                    {
 
-                blogsRepo.Insert(blog);  
-                return RedirectToAction("Index", "Blogs");
+                        TitleEn = model.Blog.TitleEn,
+                        TitleAr = model.Blog.TitleAr,
+                        ContentEn = model.Blog.ContentEn,
+                        ContentAr = model.Blog.ContentAr,
+                        PhotoUrl = uniqueFileName,
+                        IsDeleted = false,
+                        CreatedDate = DateTime.Now,
+                        UpdatedDate = DateTime.Now,
+                        Tag = model.Blog.Tag,
+                        userid = model.Blog.userid
+
+
+                    };
+                    NotifyAlert("success", "Blog has been saved");
+                    blogsRepo.Insert(blog);
+                    return RedirectToAction("Index", "Blogs");
+                }
+                catch  
+                {
+
+                    NotifyAlert("error", "An error has occured !!", NotificationType.error);
+                    return View(model);
+                }
+              
             }
-
-            return View();
+            NotifyAlert("error", "An error has occured !!", NotificationType.error);
+            return View(model);
         }
         [HttpGet]
         public IActionResult Edit(int Id)
@@ -84,6 +108,9 @@ namespace Diverse_website.Controllers
             
                 if (ModelState.IsValid)
                 {
+                    
+                try
+                {
                     string uniqueFileName = UploadedFile(model);
 
                     if (model.BlogImage != null)
@@ -93,20 +120,33 @@ namespace Diverse_website.Controllers
                     }
                     Blog blog = new Blog()
                     {
+                        Id = model.Blog.Id,
                         TitleEn = model.Blog.TitleEn,
                         TitleAr = model.Blog.TitleAr,
                         ContentEn = model.Blog.ContentEn,
                         ContentAr = model.Blog.ContentAr,
                         PhotoUrl = uniqueFileName,
                         CreatedDate = DateTime.Now,
-                        UpdatedDate = DateTime.Now
+                        UpdatedDate = DateTime.Now,
+                        userid = model.Blog.userid
+
 
                     };
-                    blogsRepo.Update(model.Blog);
+                    NotifyAlert("success", "Blog has been updated");
+                    blogsRepo.Update(blog);
                     return RedirectToAction("Index");
+                }
+                catch  
+                {
 
-                }       
-                return View(model);
+                    NotifyAlert("error", "An error has occured !!", NotificationType.error);
+                    return View(model);
+                }
+                  
+
+                }  
+                    NotifyAlert("error", "An error has occured !!", NotificationType.error);
+                    return View(model);
              
             
         }
@@ -119,9 +159,22 @@ namespace Diverse_website.Controllers
                 ExitingFile = ExitingFile.Replace("~/", "");
                 System.IO.File.Delete(ExitingFile);
             }
- 
-            blogsRepo.Delete(Id);
-            return RedirectToAction("Index"); 
+            try
+            {
+                NotifyAlert("success", "Blog has been deleted");
+                blogsRepo.Delete(Id);
+                return RedirectToAction("Index");
+
+            }
+            catch
+            {
+
+                NotifyAlert("error", "An error has occured !!", NotificationType.error);
+                return RedirectToAction("Index");
+
+            }
+             
+
         }
         private string UploadedFile(BlogsWithImages model)
         {
@@ -141,5 +194,11 @@ namespace Diverse_website.Controllers
             }
             return ImgUrl;
         }
+        //private string GetUserId(BlogsWithImages model)
+        //{
+        //    string userName = null;
+        //    userName = model.user.UserName;
+        //    return userName;
+        //}
     }
 }

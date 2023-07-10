@@ -1,9 +1,17 @@
-﻿@model IQueryable<Blog>
+﻿@model ReflectionIT.Mvc.Paging.PagingList<Blog>
+@using ReflectionIT.Mvc.Paging
+@addTagHelper *,ReflectionIT.Mvc.Paging
 
 @{
     ViewData["Title"] = "Index";
+
 }
-@{string LongContent = " ...... "; }
+@{
+
+    var start = this.Model.StartPageIndex;
+    var stop = this.Model.StopPageIndex;
+    string LongContent = " ...... ";
+    }
 
 
 <div id="kt_app_toolbar" class="app-toolbar  py-3 py-lg-6 ">
@@ -17,7 +25,7 @@
         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 ">
             <!--begin::Title-->
             <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">
-                The Blog
+                The Blogs
             </h1>
             <!--end::Title-->
             <!--begin::Breadcrumb-->
@@ -66,6 +74,7 @@
             <div class="card-body p-lg-10">
                 <div class="mb-15">
                     <!--begin::Posts-->
+
                     <div class="row g-10">
                         @foreach (var item in Model)
                         {
@@ -117,7 +126,7 @@
                                         <div class="fs-6 fw-bold">
                                             <!--begin::Author-->
                                             <a class="text-gray-700 text-hover-primary">
-                                                Admin User
+                                                @item.userid
                                             </a>
                                             <!--end::Author-->
                                             <!--begin::Date-->
@@ -137,60 +146,64 @@
                     </div>
                     <!--end::Posts-->
                 </div>
+  
             </div>
         </div>
     </div>
 </div>
-        <!--end::Latest posts-->
+<!--end::Latest posts-->
 
 
 
 
 
-        @section Scripts{
-            <script>
-                $(function () {
-                    $("#example1").DataTable({
-                        "responsive": true, "lengthChange": false, "autoWidth": false, "searching": false,
-                        buttons: [{
-                            extend: 'excel',
-                            text: ' Export',
-                            title: 'All Categories',
-                            className: 'btn btn-sm mr-1',
-                            exportOptions: {
-                                columns: 'th:not(:last-child)'
-                            }
-                        }, {
-                            extend: 'print',
-                            text: 'print',
-                            title: 'All Categories',
-                            className: 'btn btn-sm mr-1',
-                            exportOptions: {
-                                columns: 'th:not(:last-child)'
-                            }
-                        }],
-                    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+@section Scripts{
+   @* <script src="~/client/assets/styles/HTWF/scripts/jquery.twbsPagination.min.js"></script>*@
+
+    @*<script>
+        $(function () {
+            $("#example1").DataTable({
+                "responsive": true, "lengthChange": false, "autoWidth": false, "searching": false,
+                buttons: [{
+                    extend: 'excel',
+                    text: ' Export',
+                    title: 'All Categories',
+                    className: 'btn btn-sm mr-1',
+                    exportOptions: {
+                        columns: 'th:not(:last-child)'
+                    }
+                }, {
+                    extend: 'print',
+                    text: 'print',
+                    title: 'All Categories',
+                    className: 'btn btn-sm mr-1',
+                    exportOptions: {
+                        columns: 'th:not(:last-child)'
+                    }
+                }],
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+        });
+        $('#btnSearch').keyup(function () {
+            search_table($(this).val());
+        });
+        function search_table(value) {
+            $("#tblProduct tr").each(function () {
+                var found = 'false';
+                $(this).each(function () {
+                    if ($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0) {
+                        found = 'true';
+                    }
                 });
-                $('#btnSearch').keyup(function () {
-                    search_table($(this).val());
-                });
-                function search_table(value) {
-                    $("#tblProduct tr").each(function () {
-                        var found = 'false';
-                        $(this).each(function () {
-                            if ($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0) {
-                                found = 'true';
-                            }
-                        });
-                        if (found == 'true') {
-                            $(this).show();
-                        } else {
-                            $(this).hide();
-                        }
-                    });
-                };
-            </script>
-        }
+                if (found == 'true') {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        };
+    </script>*@
+}
 
 
 

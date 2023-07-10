@@ -3360,6 +3360,42 @@ margin-left: 0% !important;
 .xxm{
     padding: 10px!important;
 }
+@media only screen and (max-width: 500px) {
+    .lol-fix-2{
+        display: contents;
+        text-align: left;
+        padding: 10px !important;
+    }
+    .lol-fix-3{
+        width: 100% !important;
+    }
+    .a7a{
+        padding-right: 0 !important;
+    }
+    .padding-m{
+        padding: 0 !important;
+    }
+
+  }
+  .margin-m{
+    margin: 30px 0 30px 0 !important;
+    padding: 0 !important;
+  }
+  .margin-mm{
+    margin-left: -170px !important;
+  }
+.lol-fix-5{
+    margin-left: -500px !important;
+}
+.sol-txt-1{
+    color: #5584FF !important;
+    font-weight: 300 !important;
+    font-size: 36px !important;
+    padding: 0 50% !important;
+    margin: 15px;
+    line-height: 40px;
+    text-align: center !important;
+  }
 /* FAQ */
 .full{
     width: 100% !important;
@@ -3414,16 +3450,10 @@ margin-left: 0% !important;
   .lol-fix{
     width: 40% ;
     text-align: right ;
+    margin: -25px 0 0 190px !important;
   }
   .lol-fix-1{
     width: 75% !important ;
   }
-  @media only screen and (max-width: 500px) {
-    .lol-fix-2{
-        display: none !important;
-    }
-    .lol-fix-3{
-        width: 100% !important;
-    }
-  }
+
 

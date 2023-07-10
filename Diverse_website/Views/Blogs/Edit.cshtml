@@ -1,15 +1,22 @@
 ﻿@model Diverse_website.ViewModels.BlogsWithImages
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> userManager
+@inject RoleManager<IdentityRole> Roles
+@{string username = User.Identity.Name;
+
+}
 @{
     ViewData["Title"] = "Create";
 }
 
 <style>
     .image-input-placeholder {
-        background-image: Url('admin/assets/media/avatars/blogplaceholder.jpg');
+        background-image: Url('@Url.Content(Model.Blog.PhotoUrl)');
     }
 
     [data-bs-theme="dark"] .image-input-placeholder {
-        background-image: url('assets/media/avatars/blogplaceholder.jpg');
+        background-image: Url('@Url.Content(Model.Blog.PhotoUrl)');
     }
 </style>
 
@@ -41,7 +48,7 @@
                 <li class="breadcrumb-item text-muted">
                     <a asp-action="ViewBlog" asp-route-id="@Model.Blog.Id" class="text-muted text-hover-primary">
                         View Blog
-                        </a>
+                    </a>
                 </li>
                 <!--end::Item-->
                 <!--begin::Item-->
@@ -74,6 +81,7 @@
                 <!--begin::Latest posts-->
                 <form class="form-horizontal" enctype="multipart/form-data" asp-controller="Blogs" method="post" asp-action="Edit">
                     <input type="hidden" asp-for="Blog.Id" />
+                    <input type="hidden" asp-for="Blog.userid" value="@username" />
                     <input type="hidden" asp-for="Blog.CreatedDate" />
 
                     <div class="fv-row mb-7">
@@ -99,6 +107,16 @@
                         <textarea asp-for="Blog.ContentAr" type="text" class="form-control form-control-solid" placeholder="Content Arabic">
 
 </textarea>
+                    </div>
+                    <div class="fv-row mb-7">
+                        <!--begin::Label-->
+                        <label asp-for="Blog.Tag" class="required fs-6 fw-semibold mb-2">Tags</label>
+                        <!--end::Label-->
+                        <!--begin::Input-->
+                        <input asp-for="Blog.Tag" type="text" class="form-control form-control-solid" placeholder="Tag1, Tag2, Tag3 ..... " />
+
+                        <span asp-validation-for="Blog.Tag" class="text-danger"></span>
+                        <!--end::Input-->
                     </div>
                     @*<input type="hidden" asp-for="Blog.UpdatedDate"/>*@
                     <div class="fv-row mb-7">

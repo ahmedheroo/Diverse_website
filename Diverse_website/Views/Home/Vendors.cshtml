@@ -1,0 +1,101 @@
+﻿@using System.Globalization
+@model ReflectionIT.Mvc.Paging.PagingList<Vendor>
+@using ReflectionIT.Mvc.Paging
+@addTagHelper *,ReflectionIT.Mvc.Paging
+
+@{
+    ViewData["Title"] = "Vendors";
+    ViewData["ActiveLi"] = "Vendorsli";
+    Layout = "~/Views/Shared/_ClientLayout.cshtml";
+}
+@{string LongContent = " .... "; }
+
+<div class="header-title" style="background-image:url('../../client/assets/images/Vendors/vendorsbg.jpg')">
+    <div class="container">
+        <div class="title-base">
+            <hr class="anima" />
+            <h1 class="title">@T["Vendors"]</h1>
+            <p class="title-text">@T["Discover our Vendors , We make sure that we provide the best Services and solutions, That's why we provide it from the best vendors in the market , Check them out"]</p>
+        </div>
+    </div>
+</div>
+<div class="section-empty section-item text-center">
+    <div class="container content">
+        <hr class="space m" />
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="grid-list grid-layout grid-15">
+                    <div class="grid-box row">
+
+                        @foreach (var item in Model)
+                        {
+                            <div class="grid-item col-md-4">
+
+                                <div class="advs-box advs-box-top-icon-img niche-box-post boxed-inverse"  id="box" @*style="height:46rem !important"*@ data-anima="scale-rotate" data-trigger="hover">
+
+                                    <a class="img-box" style=" max-height: 200px !important"><img class="anima" src="@Url.Content(@item.PhotoUrl)" alt="" /> </a>
+                                    <div class="advs-box-content">
+                                        @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                        {
+                                            <h2><a>@item.TitleAr</a></h2>
+                                            @if (item.DescAr.Length >= 150)
+                                            {
+                                                <p class="niche-box-content">
+
+                                                    @item.DescAr.Substring(0, 150)
+                                                    <span>@LongContent</span>
+                                                </p>
+
+                                            }
+                                            else
+                                            {
+                                                <p class="niche-box-content">
+                                                    @item.DescAr
+                                                </p>
+
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <h2><a>@item.TitleEn</a></h2>
+                                            @if (item.DescEn.Length >= 150)
+                                            {
+                                                <p class="niche-box-content">
+
+                                                    @item.DescEn.Substring(0, 150)
+                                                    <span>@LongContent</span>
+                                                </p>
+
+                                            }
+                                            else
+                                            {
+                                                <p class="niche-box-content">
+                                                    @item.DescEn
+                                                </p>
+
+                                            }
+                                        }
+
+
+                                        <a href="@item.VendorUrl" target="_blank" class="btn btn-sm">@T["Read more"]</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        }
+
+
+                    </div>
+                    <div class="list-nav text-right" id="pagesNUM">
+                        <ul class="pagination pagination-sm pagination-grid" data-page-items="6" data-pagination-anima="fade-bottom" data-options="scrollTop:true">@await this.Component.InvokeAsync("Pager", new { PagingList = this.Model })</ul>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>
