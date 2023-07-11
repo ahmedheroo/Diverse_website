@@ -3492,3 +3492,8 @@ margin-left: 0% !important;
     color: #909090;
     text-align: center;
 }
+@media only screen and (min-width: 992px){
+    .dis-off{
+        display: none;
+    }
+}
