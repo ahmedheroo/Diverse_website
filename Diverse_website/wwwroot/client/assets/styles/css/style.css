@@ -2871,6 +2871,10 @@ i#info{
     padding-bottom: 0 !important;
 }
 
+.d-flex-2{
+    display: flex;
+}
+
 /* ------------- */
 
 article {
@@ -3167,6 +3171,10 @@ textarea.in-bg{
 
 .ml-2{
     margin-left: 8px;
+}
+
+.ml-3{
+    margin-left: 10px;
 }
 
 .fw-b{
