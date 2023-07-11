@@ -3195,7 +3195,7 @@ textarea.in-bg{
 .d-flex{
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    /* width: 100%; */
 }
 
 .d-flex div{
