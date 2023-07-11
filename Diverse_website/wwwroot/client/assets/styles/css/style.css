@@ -2779,12 +2779,25 @@ i#info{
     box-shadow: #0000003c 0 0 4px 0px;
 }
 
+#mb-0{
+    margin-bottom: 0 !important;
+}
+
 #btn-a:hover{
     box-shadow: #0000003c 0 0 10px 0px;
 }
 
 .offwhite{
     color: #bfbfbf;
+}
+
+.img-box:hover img{
+    opacity: unset !important;
+}
+
+.bg-t::before{
+    content: '';
+    background-color: transparent !important;
 }
 
 #ls{
