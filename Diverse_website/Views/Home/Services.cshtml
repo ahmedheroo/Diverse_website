@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewData["Title"] = "Services";
+    ViewData["Title"] = "Our Services";
     ViewData["ActiveLi"] = "servicesli";
     Layout = "~/Views/Shared/_ClientLayout.cshtml";
 }
@@ -10,19 +10,72 @@
             <div class="title-base">
                 <hr class="anima" />
                 <h1 style="color: aliceblue;">Our Services</h1>
-                <p class="title-text" style="color: aliceblue;">"Discover Our Wide Range of Cutting-edge ICT Services, Tailored to Empower Businesses and Drive Digital Transformation."</p>
+                <p class="title-text" style="color: aliceblue;">Discover Our Wide Range of Cutting-edge ICT Services, Tailored to Empower Businesses and Drive Digital Transformation.</p>
             </div>
         </div>
     </div>
 
     <div class="section-empty section-item text-center">
         <div class="container content pt-2 pb-0 mb-7">
+            <div class="row mb-7 mt-2">
+                <div class="col-md-4">
+                    <div class="advs-box advs-box-top-icon-img niche-box-post boxed-inverse card" data-anima="scale-rotate" data-trigger="hover">
+                        <a class="img-box bg-t" href="Consultancy.html"><img class="anima" src="~/client/assets/images/Services/consulting-bg.jpg" alt=""> </a>
+                        <div class="advs-box-content">
+                            <h2 class="txt-center"><a  asp-action="Consultancy" asp-controller="Home">Consultancy</a></h2>
+                            <!-- <h2 class="txt-center"><a href="#">تصميم البنية التحتية للشبكة</a></h2> -->
+                            <p class="niche-box-content">
+                                Advanced solutions, global consulting expertise, and cost-effective delivery for your business needs.
+                            </p>
+                            <!-- <p class="niche-box-content">
+                        حلول مصممة للاتصال السلس والأداء الأمثل.
+                    </p> -->
+                            <a class="btn btn-sm"  asp-action="Consultancy" asp-controller="Home">Read more</a>
+                            <!-- <a class="btn btn-sm" href="#">قراءة المزيد </a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="advs-box advs-box-top-icon-img niche-box-post boxed-inverse card" data-anima="scale-rotate" data-trigger="hover">
+                        <a class="img-box bg-t" href="Implementation.html"><img class="anima" src="~/client/assets/images/Services/Clients-Header-bg (1).jpg" alt="" aid="0.4605169796458808" style="position: relative; animation-duration: 500ms; transition-timing-function: ease; transition-delay: 0ms;"> </a>
+                        <div class="advs-box-content">
+                            <h2 class="txt-center"><a  asp-action="Implementation" asp-controller="Home">Implementation</a></h2>
+                            <!-- <h2 class="txt-center"><a href="#">الأمن السيبراني وأمن المعلومات</a></h2> -->
+                            <p class="niche-box-content">
+                                Efficient implementation, seamless expansion, and optimization of your solution for sustainable business success.
+                            </p>
+                            <!-- <p class="niche-box-content">
+                        إجراءات قوية لحماية البيانات والحماية من التهديدات.
+                    </p> -->
+                            <a class="btn btn-sm" asp-action="Implementation" asp-controller="Home">Read more</a>
+                            <!-- <a class="btn btn-sm" href="#">قراءة المزيد </a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="advs-box advs-box-top-icon-img niche-box-post boxed-inverse card" data-anima="scale-rotate" data-trigger="hover">
+                        <a class="img-box bg-t" href="support.html"><img class="anima" src="~/client/assets/images/Services/support.jpg" alt="" aid="0.3555198752028368" style="position: relative; animation-duration: 500ms; transition-timing-function: ease; transition-delay: 0ms;"> </a>
+                        <div class="advs-box-content">
+                            <h2 class="txt-center"><a asp-action="support" asp-controller="Home">Operational Support</a></h2>
+                            <!-- <h2 class="txt-center"><a href="#">حلول الحوسبة السحابية</a></h2> -->
+                            <p class="niche-box-content">
+                                Streamlined operational support ensures solution health, availability, and proactive fault detection for optimal performance.
+                            </p>
+                            <!-- <p class="niche-box-content">
+                        أطلق العنان لإمكانيات الحوسبة السحابية لتحويل عملك.
+                    </p> -->
+                            <a class="btn btn-sm" asp-action="support" asp-controller="Home">Read more</a>
+                            <!-- <a class="btn btn-sm" href="#">قراءة المزيد </a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="advs-box advs-box-side-img advs-box-blog boxed Bwhite">
                 <div class="row service">
                     <div class="col-md-4" id="ls">
                         <div class="slider">
                             <div class="slide">
-                                <img src="../../client/assets/images/networkbg1.png" alt="Photo1" />
+                                <img src="~/client/assets/images/networkbg1.png" alt="Photo1" />
                             </div>
                             <div class="slide">
                                 <img src="https://images.unsplash.com/photo-1619266465172-02a857c3556d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1031&q=80" alt="Photo3" />
@@ -63,7 +116,7 @@
             <div class="row mb-7">
                 <div class="col-md-4">
                     <div class="advs-box advs-box-top-icon-img niche-box-post boxed-inverse card" data-anima="scale-rotate" data-trigger="hover">
-                        <a class="img-box"><img class="anima" src="../../client/assets/images/networkcut.jpg" alt=""> </a>
+                        <a class="img-box"><img class="anima" src="~/client/assets/images/networkcut.jpg" alt=""> </a>
                         <div class="advs-box-content">
                             <h2 class="txt-center"><a href="#">Network Infrastructure <br class="disp-b"> Design</a></h2>
                             <p class="niche-box-content">
@@ -75,7 +128,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="advs-box advs-box-top-icon-img niche-box-post boxed-inverse card" data-anima="scale-rotate" data-trigger="hover">
-                        <a class="img-box"><img class="anima" src="../../client/assets/images/securitycut(1).jpg" alt="" aid="0.4605169796458808" style="position: relative; animation-duration: 500ms; transition-timing-function: ease; transition-delay: 0ms;"> </a>
+                        <a class="img-box"><img class="anima" src="~/client/assets/images/securitycut(1).jpg" alt="" aid="0.4605169796458808" style="position: relative; animation-duration: 500ms; transition-timing-function: ease; transition-delay: 0ms;"> </a>
                         <div class="advs-box-content">
                             <h2 class="txt-center"><a href="#">Cybersecurity and <br class="disp-b"> Information Security</a></h2>
                             <p class="niche-box-content">
@@ -87,7 +140,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="advs-box advs-box-top-icon-img niche-box-post boxed-inverse card" data-anima="scale-rotate" data-trigger="hover">
-                        <a class="img-box"><img class="anima" src="../../client/assets/images/cloudcut.jpg" alt="" aid="0.3555198752028368" style="position: relative; animation-duration: 500ms; transition-timing-function: ease; transition-delay: 0ms;"> </a>
+                        <a class="img-box"><img class="anima" src="~/client/assets/images/cloudcut.jpg" alt="" aid="0.3555198752028368" style="position: relative; animation-duration: 500ms; transition-timing-function: ease; transition-delay: 0ms;"> </a>
                         <div class="advs-box-content">
                             <h2 class="txt-center"><a href="#">Cloud Computing <br class="disp-b"> Solutions</a></h2>
                             <p class="niche-box-content">
@@ -139,7 +192,7 @@
                         <div class="col-md-4 boxed-inverse shadow-1 anima fade-bottom p-20 crcd equal-height" aid="0.7979026468847672">
                             <div class="icon-box icon-box-top-bottom">
                                 <div class="icon-box-cell mb-4">
-                                    <img src="../../client/assets/images/Services/preparation1.png" alt="">
+                                    <img src="~/client/assets/images/Services/preparation1.png" alt="">
                                 </div>
                                 <div class="icon-box-cell">
                                     <label class="text-m">Planning and Preparation</label>
@@ -150,10 +203,10 @@
                         <div class="col-md-4 boxed-inverse shadow-1 anima fade-bottom p-20 crcd equal-height" aid="0.5027059489967733">
                             <div class="icon-box icon-box-top-bottom">
                                 <div class="icon-box-cell mb-4">
-                                    <img src="../../client/assets/images/Services/tools1.png" alt="">
+                                    <img src="~/client/assets/images/Services/tools1.png" alt="">
                                 </div>
                                 <div class="icon-box-cell">
-                                    <label class="text-m">Design and Implemnting</label>
+                                    <label class="text-m">Design and Implementation</label>
                                     <p class="text-s">Solution architecture, deployment, functionality expansion</p>
                                 </div>
                             </div>
@@ -161,7 +214,7 @@
                         <div class="col-md-4 boxed-inverse shadow-1 anima fade-bottom p-20 crcd equal-height" aid="0.6209801221459992">
                             <div class="icon-box icon-box-top-bottom">
                                 <div class="icon-box-cell mb-4">
-                                    <img src="../../clients/assets/images/Services/maintenance1.png" alt="">
+                                    <img src="~/client/assets/images/Services/maintenance1.png" alt="">
                                 </div>
                                 <div class="icon-box-cell">
                                     <label class="text-m">Operation and Optimization</label>

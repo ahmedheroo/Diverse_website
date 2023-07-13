@@ -46,12 +46,18 @@ namespace Diverse_website.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-           
+            //BlogsWithImages model = new BlogsWithImages()
+            //{
+            //    CountryList = blogsRepo.GetAllCountries()
+            //};
+            //return View(model);
             return View();
+
         }
         [HttpPost]
         public IActionResult Create(BlogsWithImages model)
         {
+           // string CountryName = "";
             if (ModelState.IsValid)
             {
                 
@@ -70,14 +76,17 @@ namespace Diverse_website.Controllers
                         ContentAr = model.Blog.ContentAr,
                         PhotoUrl = uniqueFileName,
                         IsDeleted = false,
-                        CreatedDate = DateTime.Now,
-                        UpdatedDate = DateTime.Now,
+                        CreatedDate = model.Blog.CreatedDate,
+                        UpdatedDate = model.Blog.UpdatedDate,
                         Tag = model.Blog.Tag,
-                        userid = model.Blog.userid
+                        userid = model.Blog.userid,
+                      //  CounrtId=model.Blog.CounrtId
+                        
 
 
                     };
                     NotifyAlert("success", "Blog has been saved");
+               
                     blogsRepo.Insert(blog);
                     return RedirectToAction("Index", "Blogs");
                 }
@@ -98,7 +107,8 @@ namespace Diverse_website.Controllers
             BlogsWithImages model = new BlogsWithImages()
             {
                 Blog = blogsRepo.GetById(Id)
-              };
+
+            };
 
             return View(model);
         }
@@ -126,8 +136,8 @@ namespace Diverse_website.Controllers
                         ContentEn = model.Blog.ContentEn,
                         ContentAr = model.Blog.ContentAr,
                         PhotoUrl = uniqueFileName,
-                        CreatedDate = DateTime.Now,
-                        UpdatedDate = DateTime.Now,
+                        CreatedDate = model.Blog.CreatedDate,
+                        UpdatedDate = model.Blog.UpdatedDate,
                         userid = model.Blog.userid
 
 

@@ -374,7 +374,8 @@
     <link rel="stylesheet" href="../HTWF/scripts/php/contact-form.css">
     <link rel="stylesheet" href="../HTWF/scripts/magnific-popup.css">
     <link rel="icon" href="../images/favicon.png">
-    <link rel="stylesheet" href="../skin.css">
+   @* <link rel="stylesheet" href="../skin.css">*@
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="icon" href="~/client/assets/images/diverse logo cut circle.png">
     <link rel="stylesheet" href="~/client/assets/styles/HTWF/style.css">
     <link rel="stylesheet" href="~/client/assets/styles/HTWF/scripts/flexslider/flexslider.css">
@@ -419,10 +420,9 @@
                                 <li class="dropdown" id="servicesli">
                                     <a asp-action="Services" asp-controller="Home" class="dropdown-toggle" data-toggle="dropdown" role="button">@T["Services"] <span class="caret"></span></a>
                                     <ul class="dropdown-menu multi-level">
-                                        <li id="servicesli"><a asp-action="Service1" asp-controller="Home">Service one</a></li>
-                                        <li id="servicesli"><a asp-action="Service1" asp-controller="Home">Service two</a></li>
-                                        <li id="servicesli"><a asp-action="Service1" asp-controller="Home">Service three</a></li>
-                                        <li id="servicesli"><a asp-action="Service1" asp-controller="Home">Service four</a></li>
+                                        <li id="servicesli"><a asp-action="Consultancy" asp-controller="Home">Consultancy</a></li>
+                                        <li id="servicesli"><a asp-action="Implementation" asp-controller="Home">Implementation</a></li>
+                                        <li id="servicesli"><a asp-action="support" asp-controller="Home">support</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown" id="Projectsli">
@@ -448,77 +448,77 @@
                                 @* <li class="dropdown" id="AboutUsli"><a asp-action="AboutUs" asp-controller="Home">@T["About Us"]</a></li>*@
                                 @* <li class="dropdown" id="faqli"><a >FAQ</a></li>*@
                                 @*<li class="dropdown nav navbar-nav lan-menu">
-        @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
-        {
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images/eg flag.png" alt="lan" />  العربية  <span class="caret"></span></a>
+                                    @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                    {
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images/eg flag.png" alt="lan" />  العربية  <span class="caret"></span></a>
 
-        }
-        else
-        {
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images/en.png" alt="lan" />  EN  <span class="caret"></span></a>
+                                    }
+                                    else
+                                    {
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images/en.png" alt="lan" />  EN  <span class="caret"></span></a>
 
-        }*@
+                                    }*@
                                 @*<ul class="dropdown-menu">
-            <li>
-                <form id="selecteLanguage" asp-controller="Home" asp-action="SetLanguage" asp-route-returnUrl="@returnUrl">
-                    @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
-                    {
-                        <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[0].Value" type="hidden" />
-                        <button type="submit"><img src="~/client/assets/images/en.png" alt="lan" width="20px" height="20px" />  EN  </button>
+                                        <li>
+                                            <form id="selecteLanguage" asp-controller="Home" asp-action="SetLanguage" asp-route-returnUrl="@returnUrl">
+                                                @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                                {
+                                                    <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[0].Value" type="hidden" />
+                                                    <button type="submit"><img src="~/client/assets/images/en.png" alt="lan" width="20px" height="20px" />  EN  </button>
 
-                    }
-                    else
-                    {
-                        <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[1].Value" type="hidden" />
-                        <button type="submit"><img src="~/client/assets/images/eg flag.png" alt="lan" width="20px" height="20px" />  العربية  </button>
+                                                }
+                                                else
+                                                {
+                                                    <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[1].Value" type="hidden" />
+                                                    <button type="submit"><img src="~/client/assets/images/eg flag.png" alt="lan" width="20px" height="20px" />  العربية  </button>
 
-                    }
-                </form>
-            </li>
+                                                }
+                                            </form>
+                                        </li>
 
-        </ul>*@
+                                    </ul>*@
                                 @*<form id="selecteLanguage" asp-controller="Home" asp-action="SetLanguage" asp-route-returnUrl="@returnUrl">
-            @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
-            {
-                <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[0].Value" type="hidden" />
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images/eg flag.png" alt="lan" />العربية <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><button type="submit"><img src="~/client/assets/images/en.png" alt="lan" width="20px" height="20px" />EN</button></li>
-                </ul>
-            }
-            else
-            {
-                <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[1].Value" type="hidden" />
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images/en.png" alt="lan" />EN <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><button type="submit"><img src="~/client/assets/images/eg flag.png" alt="lan" width="20px" height="20px" />العربية</button></li>
-                </ul>
-            }
-        </form>*@
+                                        @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                        {
+                                            <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[0].Value" type="hidden" />
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images/eg flag.png" alt="lan" />العربية <span class="caret"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><button type="submit"><img src="~/client/assets/images/en.png" alt="lan" width="20px" height="20px" />EN</button></li>
+                                            </ul>
+                                        }
+                                        else
+                                        {
+                                            <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[1].Value" type="hidden" />
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images/en.png" alt="lan" />EN <span class="caret"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><button type="submit"><img src="~/client/assets/images/eg flag.png" alt="lan" width="20px" height="20px" />العربية</button></li>
+                                            </ul>
+                                        }
+                                    </form>*@
 
                                 @* </li>*@
                                 @*<form id="selecteLanguage" asp-controller="Home" asp-action="SetLanguage" asp-route-returnUrl="@returnUrl">
 
 
-                @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
-                {
-                    <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[0].Value" type="hidden" />
-                <li class="dropdown nav navbar-nav lan-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images//eg flag.png" alt="lan" />العربية <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><button type="submit"><img src="~/client/assets/images/en.png" alt="lan" width="20px" height="20px" />EN</button></li>
-                    </ul>
-                </li>
-            }
-            else
-            {
-        <li class="dropdown nav navbar-nav lan-menu">
-            <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[1].Value" type="hidden" />
+                                            @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                            {
+                                                <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[0].Value" type="hidden" />
+                                            <li class="dropdown nav navbar-nav lan-menu">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images//eg flag.png" alt="lan" />العربية <span class="caret"></span></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><button type="submit"><img src="~/client/assets/images/en.png" alt="lan" width="20px" height="20px" />EN</button></li>
+                                                </ul>
+                                            </li>
+                                        }
+                                        else
+                                        {
+                                    <li class="dropdown nav navbar-nav lan-menu">
+                                        <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[1].Value" type="hidden" />
 
-            <button type="submit"><img src="~/client/assets/images/eg flag.png" alt="lan" width="20px" height="20px" />العربية</button>
-        </li>
-            }
-                </form>*@
+                                        <button type="submit"><img src="~/client/assets/images/eg flag.png" alt="lan" width="20px" height="20px" />العربية</button>
+                                    </li>
+                                        }
+                                            </form>*@
 
 
                             </ul>
@@ -532,13 +532,12 @@
     </header>
 
     <body class="device-l">
-        <div class="section-bg-image text-center bg-bottom bg-g" style="background-image:url(../../client/assets/images/bg-22.png)">
+        <div class="section-bg-image text-center bg-bottom bg-g">
             <div class="container content">
-
                 <hr class="space">
                 <div class="row">
                     <div class="col-md-9 std">
-                        <h1 class="title home-title index-text-color">Welcome to Diverse</h1>
+                        <h1 class="title home-title index-text-color">Welcome to Diverse®</h1>
                         <hr class="space m xm">
                         <p class="index-pcolor index-text-color-1">Welcome to Diverse, your ultimate destination for innovative IT solutions, where technology meets diversity to bring you a world of possibilities.</p>
                     </div>
@@ -556,32 +555,32 @@
                     <div class="flex-viewport" style="overflow: hidden; position: relative;">
                         <ul class="slides" style="width: 1400%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
                             <li style="padding-right: 30px; width: 292.5px; float: left; display: block;">
-                                <a class="img-box lightbox" href="../client/assets/images/Vendors/fortinet.jpg" data-lightbox-anima="fade-top">
+                                <a class="img-box lightbox" href="~/client/assets/images/Vendors/fortinet.jpg" data-lightbox-anima="fade-top">
                                     <img src="~/client/assets/images/Vendors/fortinet.jpg" alt="" draggable="false">
                                 </a>
                             </li>
                             <li style="padding-right: 30px; width: 292.5px; float: left; display: block;">
-                                <a class="img-box lightbox" href="../client/assets/images/Vendors/juniper.jpg" data-lightbox-anima="fade-top">
+                                <a class="img-box lightbox" href="~/client/assets/images/Vendors/juniper.jpg" data-lightbox-anima="fade-top">
                                     <img src="~/client/assets/images/Vendors/juniper.jpg" alt="" draggable="false">
                                 </a>
                             </li>
                             <li style="padding-right: 30px; width: 292.5px; float: left; display: block;">
-                                <a class="img-box lightbox" href="../client/assets/images/Vendors/microfocuslogo.jpg" data-lightbox-anima="fade-top">
+                                <a class="img-box lightbox" href="~/client/assets/images/Vendors/microfocuslogo.jpg" data-lightbox-anima="fade-top">
                                     <img src="~/client/assets/images/Vendors/microfocuslogo.jpg" alt="" draggable="false">
                                 </a>
                             </li>
                             <li style="padding-right: 30px; width: 292.5px; float: left; display: block;">
-                                <a class="img-box lightbox" href="../client/assets/images/Vendors/netscout.jpg" data-lightbox-anima="fade-top">
+                                <a class="img-box lightbox" href="~/client/assets/images/Vendors/netscout.jpg" data-lightbox-anima="fade-top">
                                     <img src="~/client/assets/images/Vendors/netscout.jpg" alt="" draggable="false">
                                 </a>
                             </li>
                             <li style="padding-right: 30px; width: 292.5px; float: left; display: block;">
-                                <a class="img-box lightbox" href="../client/assets/images/Vendors/paloalto.jpg" data-lightbox-anima="fade-top">
+                                <a class="img-box lightbox" href="~/client/assets/images/Vendors/paloalto.jpg" data-lightbox-anima="fade-top">
                                     <img src="~/client/assets/images/Vendors/paloalto.jpg" alt="" draggable="false">
                                 </a>
                             </li>
                             <li style="padding-right: 30px; width: 292.5px; float: left; display: block;">
-                                <a class="img-box lightbox" href="../client/assets/images/Vendors/redhat.jpg" data-lightbox-anima="fade-top">
+                                <a class="img-box lightbox" href="~/client/assets/images/Vendors/redhat.jpg" data-lightbox-anima="fade-top">
                                     <img src="~/client/assets/images/Vendors/redhat.jpg" alt="" draggable="false">
                                 </a>
                             </li>
@@ -589,7 +588,7 @@
                     </div><ul class="flex-direction-nav"><li class="flex-nav-prev"><a class="flex-prev" href="#"></a></li><li class="flex-nav-next"><a class="flex-next" href="#"></a></li></ul>
                 </div>
                 <hr class="space">
-                <div class="row vertical-row">
+                <div class="row vertical-row" data-aos="fade-up" data-aos-duration="1500">
                     <div class="col-md-6">
                         <h4 class="ss">
                             Diverse®<br>
@@ -609,11 +608,11 @@
                         </ul>
                     </div>
                     <div class="col-md-6">
-                        <img src="~/client/assets/images/Picture1.png" alt="" data-anima="" data-time="1000" aid="0.8337633449769928" class="fade-right" style="position: relative; animation-duration: 1000ms; transition-timing-function: ease; transition-delay: 0ms;">
+                        <img src="~/client/assets/images/Picture2.png" alt="" data-anima="" data-time="1000" aid="0.8337633449769928" class="fade-right" style="position: relative; animation-duration: 1000ms; transition-timing-function: ease; transition-delay: 0ms;">
                     </div>
                 </div>
             </div>
-            <div class="section-empty">
+            <div class="section-empty" style="background-image:url(../../client/assets/images/bg-12.png)" >
                 <div class="container content int-fix">
                     <!-- <div class="row div-background">
                         <div class="col-md-8 panel-fix">
@@ -689,29 +688,43 @@
                     <div class="row">
                         <div class="col-md-8">
                             <ul class="timeline">
-                                <li class="a7a">
+                                <li class="a7a" data-aos="fade-right" data-aos-duration="1500">
                                     <div class="timeline-badge" style="margin-left: 150px;"></div>
-                                    <div class="timeline-label lol-fix lol-fix-2"><h4>2018</h4><p>25 febbruary 2018</p></div>
+                                    <div class="timeline-label lol-fix lol-fix-2"><h4>2016</h4><p>25 febbruary 2018</p></div>
                                     <div class="timeline-panel lol-fix-1 lol-fix-3">
                                         <div class="timeline-heading ">
                                             <h4 class="timeline-title">From Humble Beginnings to Remarkable Growth</h4>
                                         </div>
                                         <div class="timeline-body">
                                             <!-- <p>
-                    Since our inception in 2016, we have experienced remarkable growth year after year, with an organic increase of over 200% each year. This phenomenal success has propelled us from a small enterprise to a medium-sized company that now caters to tier one mobile operators. Our dedication and commitment to excellence have been the driving forces behind our consistent expansion
-                </p> -->
+                                                Since our inception in 2016, we have experienced remarkable growth year after year, with an organic increase of over 200% each year. This phenomenal success has propelled us from a small enterprise to a medium-sized company that now caters to tier one mobile operators. Our dedication and commitment to excellence have been the driving forces behind our consistent expansion
+                                            </p> -->
                                             <p>
-                                                Since 2016, we have achieved remarkable annual growth of over 200%, propelling us from a small enterprise to a medium-sized company serving tier one mobile operators. Our dedication to excellence and consistent expansion are the driving forces behind our phenomenal success.
+                                                At Diverse, we are driven by a passion to revolutionize the EMEA region with our exceptional services and cutting-edge solutions. With our roots in Germany and Egypt, we have embarked on an incredible journey to provide our customers with unparalleled professionalism and world-class telco-grade products, services and support.
                                             </p>
                                         </div>
                                     </div>
                                 </li>
-                                <li class="timeline-inverted">
-                                    <div class="timeline-badge"></div>
-                                    <div class="timeline-label "><h4>2016</h4><p>10 March 2016</p></div>
-                                    <div class="timeline-panel ">
+                                <li class="timeline-inverted padding-m" data-aos="fade-left" data-aos-duration="1500">
+                                    <div class="timeline-badge margin-mm"></div>
+                                    <div class="timeline-label lol-fix-5 lol-fix-2"><h4>2016</h4><p>10 March 2016</p></div>
+                                    <div class="timeline-panel lol-fix-1 lol-fix-3">
                                         <div class="timeline-heading">
-                                            <h4 class="timeline-title">GCC Expansion: Embracing New Horizons</h4>
+                                            <h4 class="timeline-title">From Humble Beginnings to Remarkable Growth</h4>
+                                        </div>
+                                        <div class="timeline-body">
+                                            <p>
+                                                Since our inception in 2016, we have experienced remarkable growth year after year, with an organic increase of over 200% each year. This phenomenal success has propelled us from a small enterprise to a medium-sized company that now caters to tier one mobile operators. Our dedication and commitment to excellence have been the driving forces behind our consistent expansion.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="a7a" data-aos="fade-right" data-aos-duration="1500">
+                                    <div class="timeline-badge" style="margin-left: 150px;"></div>
+                                    <div class="timeline-label lol-fix lol-fix-2"><h4>2012</h4><p>14 January 2012</p></div>
+                                    <div class="timeline-panel lol-fix-1 lol-fix-3">
+                                        <div class="timeline-heading">
+                                            <h4 class="timeline-title">GCC Expansion: Embracing New Horizons </h4>
                                         </div>
                                         <div class="timeline-body">
                                             <p>
@@ -720,13 +733,12 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li class="a7a">
-                                    <div class="timeline-badge" style="margin-left: 150px;"></div>
-                                    <div class="timeline-label lol-fix lol-fix-2"><h4>2012</h4><p>14 January 2012</p></div>
+                                <li class="timeline-inverted padding-m" data-aos="fade-left" data-aos-duration="1500">
+                                    <div class="timeline-badge margin-mm"></div>
+                                    <div class="timeline-label lol-fix-5 lol-fix-2"><h4>2016</h4><p>10 March 2016</p></div>
                                     <div class="timeline-panel lol-fix-1 lol-fix-3">
                                         <div class="timeline-heading">
-                                            <h4 class="timeline-title">East Africa Expansion: Unleashing Technological Potential </h4>
-                                            <p><small class="text-muted"><i class="fa fa-free-code-camp"></i> Capital increasing</small></p>
+                                            <h4 class="timeline-title">East Africa Expansion: Unleashing Technological Potential</h4>
                                         </div>
                                         <div class="timeline-body">
                                             <p>
@@ -738,41 +750,100 @@
                             </ul>
                         </div>
                         <div class="col-md-4">
-                            <h2>Company road map with our history</h2>
-                            <hr class="space">
-                            <a class="img-box lightbox" href="../client/assets/images/Nuremberg.jpeg" data-lightbox-anima="fade-top">
+                            <hr class="space m" />
+                            <div class="col-sm-12 boxed-inverse shadow-1">
+                                <hr class="space m" />
+                                <div class="list-group latest-post-list list-blog">
+                                    <p class="list-group-item active">What's New</p>
+                                    <div class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <a class="img-box circle">
+                                                    <img src="~/client/assets/images/gallery/image-10.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <a href="#">
+                                                    <h5>Return to the future day</h5>
+                                                </a>
+                                                <div class="tag-row icon-row"><span><i class="fa fa-calendar"></i>02.06.2018</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <a class="img-box circle">
+                                                    <img src="~/client/assets/images/gallery/image-17.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <a href="#">
+                                                    <h5>We can do</h5>
+                                                </a>
+                                                <div class="tag-row icon-row"><span><i class="fa fa-calendar"></i>02.06.2018</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <a class="img-box circle">
+                                                    <img src="~/client/assets/images/gallery/image-7.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <a href="#">
+                                                    <h5>Hacking team 24</h5>
+                                                </a>
+                                                <div class="tag-row icon-row"><span><i class="fa fa-calendar"></i>02.06.2018</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-group list-blog">
+                                    <p class="list-group-item active">Tags</p>
+                                    <div class="tagbox">
+                                        <span>Hello!</span><span>Big deal</span><span>A new happy time</span><span>Food</span><span>Cheese</span><span>Food</span>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="space m" />
+                            <h3 class="text-m sol-txt margin-m"><i class="fas fa-map-marker-alt " style="color: rgb(255, 0, 0) !important;"></i>      Numberg, Germany</h3>
+                            <a class="img-box lightbox" href="~/client/assets/images/Nuremberg.jpeg" data-lightbox-anima="fade-top">
                                 <img src="~/client/assets/images/Nuremberg.jpeg" alt="">
                             </a>
-                            <hr class="space m">
-                            <a class="img-box lightbox" href="../client/assets/images/Egypt.jpeg" data-lightbox-anima="fade-top">
+                            <h3 class="text-m sol-txt margin-m"><i class="fas fa-map-marker-alt " style="color: rgb(255, 0, 0) !important;"></i>      Cairo, Egypt</h3>
+                            <a class="img-box lightbox" href="~/client/assets/images/Egypt.jpeg" data-lightbox-anima="fade-top">
                                 <img src="~/client/assets/images/Egypt.jpeg" alt="">
                             </a>
-                            <hr class="space m">
-                            <a class="img-box lightbox" href="../client/assets/images/Kenya.jpeg" data-lightbox-anima="fade-top">
+                            <h3 class="text-m sol-txt margin-m"><i class="fas fa-map-marker-alt " style="color: rgb(255, 0, 0) !important;"></i>      Kenya</h3>
+
+                            <a class="img-box lightbox " href="~/client/assets/images/Kenya.jpeg" data-lightbox-anima="fade-top">
                                 <img src="~/client/assets/images/Kenya.jpeg" alt="">
                             </a>
-                            <hr class="space m">
-                            <a class="img-box lightbox" href="../client/assets/images/Saudi.jpeg" data-lightbox-anima="fade-top">
+                            <h3 class="text-m sol-txt margin-m"><i class="fas fa-map-marker-alt " style="color: rgb(255, 0, 0) !important;"></i>       Saudi Arabia</h3>
+                            <a class="img-box lightbox" href="~/client/assets/images/Saudi.jpeg" data-lightbox-anima="fade-top">
                                 <img src="~/client/assets/images/Saudi.jpeg" alt="">
                             </a>
-                            <hr class="space">
-                            <h4>A good team</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elitsed do eiusmod tempo..</p>
-                            <a   asp-action="AboutUs" asp-controller="Home" class="btn-text">View team</a>
-                            <hr class="space m">
-                            <h4>Contact us</h4>
-                            <p>Lorem ipsum dolor sit amet consecteaugue nunc elit dolor, piscing elitse.</p>
-                            <a  asp-action="ContactUs" asp-controller="Home" class="btn-text">Contact page</a>
                         </div>
                     </div>
                     <div class="grid-list">
+                        <h2 class="finale">Providing The Top Solutions in The Information Technology Industry </h2>
+                        <hr class="xmmm">
+                        <p class="finale-1">
+                            Lorem ipsum dolor sit amet consectetur adipiscing elitsed do eiusmod tempor incididunte.
+                        </p>
+                        <br class="xxm">
+                        <hr class="space s">
                         <div class="grid-box row card-container">
-                            <div class="grid-item col-md-4 index-box">
-                                <div class="icon-box">
+                            <div class="grid-item col-md-4 index-box" data-aos="zoom-out-up" data-aos-duration="1500">
+                                <div class="icon-box" >
                                     <div class="icon-box-cell">
                                         <i class="fa-solid fa-network-wired fa-2xl text-xl"></i>
                                     </div>
-                                    <div class="icon-box-cell ">
+                                    <div class="icon-box-cell" >
                                         <label class="text-m sol-txt">
                                             Networking
                                             <br class="xxm">
@@ -784,8 +855,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="grid-item col-md-4 index-box flex-position">
-                                <div class="icon-box">
+                            <div class="grid-item col-md-4 index-box flex-position" data-aos="zoom-out-up" data-aos-duration="1500">
+                                <div class="icon-box" >
                                     <div class="icon-box-cell ">
                                         <i class="fa-solid fa-server text-xl"></i>
                                     </div>
@@ -800,8 +871,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="grid-item col-md-4 index-box">
-                                <div class="icon-box ">
+                            <div class="grid-item col-md-4 index-box" data-aos="zoom-out-up" data-aos-duration="1500">
+                                <div class="icon-box " >
                                     <div class="icon-box-cell">
                                         <i class="fa-solid fa-shield-halved text-xl"></i>
                                     </div>
@@ -819,12 +890,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="section-bg-image bg-top cr-bg">
+                <div class="section-bg-image bg-top cr-bg" data-aos="fade-down" data-aos-duration="1500">
                     <div class="container content">
                         <div class="row">
                             <div class="col-md-8 col-center text-center cdcr">
                                 <div class="bc">
-                                    <h4>Deployment phases</h4>
+                                    <h4>Our Methodology</h4>
                                     <!-- <h4>مراحل النشر</h4> -->
                                     <p>
                                         Methodical phases, from planning to implementation and training, ensure a seamless
@@ -918,7 +989,11 @@
         <script src="~/client/assets/styles/HTWF/scripts/jquery.magnific-popup.min.js"></script>
         <script src="~/client/assets/styles/HTWF/scripts/jquery.tab-accordion.js"></script>
         <script src="~/client/assets/styles/js/script.js"></script>
-        </footer>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+    </footer>
 </body>
 
 </html>
