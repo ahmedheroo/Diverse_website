@@ -92,7 +92,15 @@ namespace Diverse_website.Controllers
         {
             return View();
         }
-        public IActionResult Service1()
+        public IActionResult Consultancy()
+        {
+            return View();
+        }
+        public IActionResult support()
+        {
+            return View();
+        }
+        public IActionResult Implementation()
         {
             return View();
         }
