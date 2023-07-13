@@ -3518,3 +3518,8 @@ margin-left: 0% !important;
         display: none;
     }
 }
+.btn-fix{
+    padding: 8px 20px 8px 20px !important;
+    margin-top: 15px !important;
+    margin-left: 15px;
+}
