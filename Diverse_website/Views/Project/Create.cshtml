@@ -155,7 +155,17 @@
                             <!--end::Remove button-->
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="SelectedCountryId">Location</label>
+                                @* @Html.DropDownListFor(x => Model.SelectedCountryId, new SelectList(Model.CountryList, "Id", "CountryName"), htmlAttributes: new { @class = "form-control", id = "SelectedCountryId" })*@
+                                @Html.DropDownListFor(x => Model.projects.CountryId, new SelectList(Model.CountryList, "Id", "CountryName"), htmlAttributes: new { @class = "form-control", id = "SelectedCountryId" })
 
+                                <span asp-validation-for="SelectedCountryId" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
                     <div class="card-footer">
                         <div class="fv-row mb-7">
                             <button type="submit" class="btn btn-sm btn-primary" style="float:right">Save</button>

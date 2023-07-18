@@ -20,11 +20,14 @@ namespace Diverse_website.Controllers
     public class ProjectController : BaseController
     {
         private readonly IProjectRepo projectRepo;
+        private readonly IBlogsRepo blogsRepo;
+
         private readonly IWebHostEnvironment webHostEnvironment;
 
-        public ProjectController(IProjectRepo _projectRepo , IWebHostEnvironment _webHostEnvironment)
+        public ProjectController(IProjectRepo _projectRepo , IBlogsRepo _blogsRepo,IWebHostEnvironment _webHostEnvironment)
         {
             projectRepo = _projectRepo;
+            blogsRepo = _blogsRepo;
             webHostEnvironment = _webHostEnvironment;
         }
         public async Task<IActionResult> Index(int page = 1)
@@ -46,7 +49,11 @@ namespace Diverse_website.Controllers
         public IActionResult Create()
         {
 
-            return View();
+            ProjectsImages model = new ProjectsImages()
+            {
+                CountryList = blogsRepo.GetAllCountries()
+            };
+            return View(model);
         }
         [HttpPost]
         public IActionResult Create(ProjectsImages model)
@@ -63,11 +70,12 @@ namespace Diverse_website.Controllers
                         TitleEn = model.projects.TitleEn,
                         TitleAr = model.projects.TitleAr,
                         DescEn = model.projects.DescEn,
-                        DescAr = WebUtility.HtmlEncode(model.projects.DescAr),
+                        DescAr = model.projects.DescAr,
                         PhotoUrl = uniqueFileName,
                         IsDeleted = false,
                         CreatedDate = DateTime.Now,
-                        UpdatedDate = DateTime.Now
+                        UpdatedDate = DateTime.Now,
+                        CountryId = model.projects.CountryId
 
                     };
                     //try save data into database
@@ -78,13 +86,14 @@ namespace Diverse_website.Controllers
                 catch (Exception)
                 {
                     NotifyAlert("error", "An error has occured !!", NotificationType.error);
+                    model.CountryList = blogsRepo.GetAllCountries();
                     return View(model);
 
                 }
 
             }
             NotifyAlert("error", "An error has occured !!", NotificationType.error);
-
+            model.CountryList = blogsRepo.GetAllCountries();
             return View(model);
         }
         [HttpGet]
@@ -92,7 +101,9 @@ namespace Diverse_website.Controllers
         {
             ProjectsImages model = new ProjectsImages()
             {
-                projects = projectRepo.GetById(id)
+                projects = projectRepo.GetById(id),
+                CountryList = blogsRepo.GetAllCountries()
+
             };
 
             return View(model);
@@ -122,7 +133,9 @@ namespace Diverse_website.Controllers
                         DescAr = model.projects.DescAr,
                         PhotoUrl = uniqueFileName,
                         CreatedDate = DateTime.Now,
-                        UpdatedDate = DateTime.Now
+                        UpdatedDate = DateTime.Now,
+                        CountryId = model.projects.CountryId
+
 
                     };
 
@@ -133,6 +146,7 @@ namespace Diverse_website.Controllers
                 catch (Exception)
                 {
                     NotifyAlert("error", "An error has occured !!", NotificationType.error);
+                    model.CountryList = blogsRepo.GetAllCountries();
                     return View(model);
 
                 }
@@ -140,6 +154,7 @@ namespace Diverse_website.Controllers
 
             }
             NotifyAlert("error", "An error has occured !!", NotificationType.error);
+            model.CountryList = blogsRepo.GetAllCountries();
 
             return View(model);
 
@@ -184,6 +199,10 @@ namespace Diverse_website.Controllers
                 {
                     model.ProjectImage.CopyTo(fileStream);
                 }
+            }
+            else
+            {
+                ImgUrl = model.projects.PhotoUrl;
             }
             return ImgUrl;
         }

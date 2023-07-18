@@ -33,7 +33,7 @@
 
                                 <div class="advs-box advs-box-top-icon-img niche-box-post boxed-inverse"  id="box" @*style="height:46rem !important"*@ data-anima="scale-rotate" data-trigger="hover">
 
-                                    <a class="img-box" style=" max-height: 200px !important"><img class="anima" src="@Url.Content(@item.PhotoUrl)" alt="" /> </a>
+                                    <a  href="@item.VendorUrl" target="_blank" class="img-box" style=" max-height: 200px !important"><img class="anima" src="@Url.Content(@item.PhotoUrl)" alt="" /> </a>
                                     <div class="advs-box-content">
                                         @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
                                         {

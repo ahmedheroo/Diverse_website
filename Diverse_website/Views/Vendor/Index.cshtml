@@ -44,7 +44,8 @@
                                         <th>#</th>
                                         <th>Title</th>
                                         <th>Description</th>
-                                        <th>UpdatedDate</th>
+                                        <th>Location</th>
+                                        <th>Created Date</th>
                                         <th style="width:180px"> </th>
                                     </tr>
                                 </thead>
@@ -64,8 +65,29 @@
 
 
                                         }
-                                        <td>@item.UpdatedDate</td>
-                                       
+                                        @if (@item.CountryId == 1)
+                                        {
+                                    <td>Egypt</td>
+
+                                        }
+                                        else if (@item.CountryId == 2)
+                                        {
+                                            <td>Saudi Arabia</td>
+
+                                        }
+                                        else if (@item.CountryId == 3)
+                                        {
+                                    <td>Kenya</td>
+
+                                        }
+                                        @*<td>
+            @Html.DropDownListFor(x => Model.vendor.CountryId, new SelectList(Model.CountryList, "Id", "CountryName"), htmlAttributes: new { @class = "form-control", id = "SelectedCountryId" })
+
+                   @Html.LabelFor(x => item.CountryId, new string(item.CountryId, "Id", "CountryName"), htmlAttributes: new { @class = "form-control", id = "SelectedCountryId" })
+
+        </td>*@
+                                        <td>@item.CreatedDate.ToString("dd MMMM yyyy hh:mm tt")</td>
+
 
                                         <td style="width:180px">
 

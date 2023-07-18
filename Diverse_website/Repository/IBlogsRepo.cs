@@ -10,6 +10,8 @@ namespace Diverse_website.Repository
         IQueryable<Blog> Getblogs();
         IQueryable<Blog> GetAllblogsWithLatest();
         Blog GetBlogWithImage();
+        IEnumerable<Counrty> GetAllCountries();
+        string GetCountryNameUsingCountryId(int Id);
         //void Insert(blog obj);
 
     }

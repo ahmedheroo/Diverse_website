@@ -10,7 +10,9 @@
 
     Layout = "~/Views/Shared/_ClientLayout.cshtml";
 }
-@{string LongContent = " .... Read more"; }
+@{string LongContent = " .... Read more";
+    System.Collections.ArrayList listoftags = new System.Collections.ArrayList();
+    }   
 
 <style>
 </style>
@@ -32,7 +34,7 @@
                         <!-- card -->
                         @foreach (var item in Model)
                         {
-                            <div class="grid-item col-md-6" >
+                            <div class="grid-item col-md-6">
                                 <div class="advs-box advs-box-top-icon-img niche-box-post boxed-inverse hov" data-anima="scale-rotate" data-trigger="hover">
                                     <!-- Date -->
                                     <div class="block-infos">
@@ -42,7 +44,7 @@
                                         </div>
                                     </div>
                                     <!-- Single Post link -->
-                                    <a class="img-box" href="#" style=" max-height: 220px !important">
+                                    <a class="img-box" asp-action="ViewBlog" asp-route-id="@item.Id" style=" max-height: 220px !important">
                                         <img class="anima image" src="@Url.Content(@item.PhotoUrl)" alt="" />
                                     </a>
                                     <!-- Content -->
@@ -66,7 +68,7 @@
                                             {
                                                 @foreach (var tagsingle in item.Tag.Split(','))
                                                 {
-                                                    <span><i class="fa fa-bookmark"></i><a href="#">@tagsingle</a></span>
+                                                    <span><i class="fa fa-bookmark"></i><a href="#">@tagsingle.ToString().ToUpper()</a></span>
 
                                                 }
                                             }
@@ -75,10 +77,10 @@
                                         <p class="niche-box-content">
                                             @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
                                             {
-                                                @if (item.ContentAr.Length >= 210)
+                                                @if (item.ContentAr.Length >= 150)
                                                 {
-                                                    @item.ContentAr.Substring(0, 210);
-                                                    <a  asp-action="ViewBlog" asp-route-id="@item.Id" style="color: #5584ff">@LongContent</a>
+                                                    @item.ContentAr.Substring(0, 150);
+                                                    <a asp-action="ViewBlog" asp-route-id="@item.Id" style="color: #5584ff">@LongContent</a>
                                                 }
                                                 else
                                                 {
@@ -87,10 +89,10 @@
                                             }
                                             else
                                             {
-                                                @if (item.ContentEn.Length >= 210)
+                                                @if (item.ContentEn.Length >= 150)
                                                 {
-                                                    @item.ContentEn.Substring(0, 210);
-                                                    <a  asp-action="ViewBlog" asp-route-id="@item.Id"  style="color: #5584ff">@LongContent</a>
+                                                    @item.ContentEn.Substring(0, 150);
+                                                    <a asp-action="ViewBlog" asp-route-id="@item.Id" style="color: #5584ff">@LongContent</a>
                                                 }
                                                 else
                                                 {
@@ -118,11 +120,11 @@
                 <hr class="space s" />
                 <!-- Categories -->
                 <!--<div class="list-group list-blog">
-                    <p class="list-group-item active">Categories</p>
-                    <a href="#" class="list-group-item">Category one</a>
-                    <a href="#" class="list-group-item">Category two</a>
-                    <a href="#" class="list-group-item">Category three</a>
-                </div>-->
+        <p class="list-group-item active">Categories</p>
+        <a href="#" class="list-group-item">Category one</a>
+        <a href="#" class="list-group-item">Category two</a>
+        <a href="#" class="list-group-item">Category three</a>
+    </div>-->
                 <!-- latest posts -->
                 <div class="list-group list-blog">
                     <p class="list-group-item active">@T["Latest Blogs"]</p>
@@ -138,9 +140,9 @@
                                     <h5>@item.TitleAr</h5>
                                 }
 
-                            else
-                            {
-                                <h5>@item.TitleEn</h5>
+                                else
+                                {
+                                    <h5>@item.TitleEn</h5>
                                 }
                             </a>
                             <p>
@@ -158,14 +160,14 @@
                                 }
                                 else
                                 {
-                                    @if (item.ContentAr.Length >= 75)
+                                    @if (item.ContentEn.Length >= 75)
                                     {
-                                        @item.ContentAr.Substring(0, 75);
+                                        @item.ContentEn.Substring(0, 75);
                                         <a asp-action="ViewBlog" asp-route-id="@item.Id" style="color: #5584ff">@LongContent</a>
                                     }
                                     else
                                     {
-                                        @item.ContentAr
+                                        @item.ContentEn
                                     }
                                 }
 
@@ -176,13 +178,38 @@
 
 
                 </div>
-                <!-- Tags -->
+                <!-- Tags --> 
+                <label style="display:none">
+                    @foreach (var item in Model)
+                    {
+                        if (item.Tag.Contains(','))
+                        {
+                            @listoftags.Add(@item.Tag.Split(',')[0])
+                            @listoftags.Add(@item.Tag.Split(',')[1])
+
+                        }
+                        else
+                        {
+                            @listoftags.Add(@item.Tag)
+
+                        }
+                    }
+                </label>
+               
                 <div class="list-group list-blog">
                     <p class="list-group-item active">@T["Tags"]</p>
+
+
                     <div class="tagbox">
-                        <span>IT</span><!--Other Categories goes in spans here-->
+                        @foreach (var item in listoftags.Cast<object>().Distinct())
+                        {
+                            <span>@item</span>
+
+                        }
                         <div class="clear"></div>
                     </div>
+
+
                 </div>
             </div>
         </div>

@@ -11,7 +11,12 @@ namespace Diverse_website.ViewModels
     {
         public Blog Blog { get; set; }
         public AspNetUser user { get; set; }
+        public Counrty counrty { get; set; }
+
         public IEnumerable<Blog> LatestBlogs { get; set; }
         public IFormFile BlogImage { get; set; }
+        public string SelectedCountryId { get; set; }
+        public IEnumerable<Counrty> CountryList { get; set; }
+
     }
 }

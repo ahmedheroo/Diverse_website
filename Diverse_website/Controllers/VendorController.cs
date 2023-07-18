@@ -5,6 +5,7 @@ using Diverse_website.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using ReflectionIT.Mvc.Paging;
 using System;
 using System.Collections.Generic;
@@ -18,19 +19,23 @@ namespace Diverse_website.Controllers
     public class VendorController : BaseController
     {
         private readonly IVendorsRepo vendorsRepo;
+        private readonly IBlogsRepo blogsRepo;
+
         private readonly IWebHostEnvironment webHostEnvironment;
 
-        public VendorController(IVendorsRepo _vendorsRepo, IWebHostEnvironment _webHostEnvironment)
+        public VendorController(IVendorsRepo _vendorsRepo, IBlogsRepo _blogsRepo, IWebHostEnvironment _webHostEnvironment)
         {
             vendorsRepo = _vendorsRepo;
+            blogsRepo = _blogsRepo;
             webHostEnvironment = _webHostEnvironment;
         }
         public async Task<IActionResult> Index(int page = 1)
         {
             // IQueryable<Blog> model ;
-            var item = vendorsRepo.GetAll().OrderByDescending(s => s.CreatedDate);
+            var item = vendorsRepo.GetVendorsIncludeCountries().OrderByDescending(s => s.CreatedDate);
+           
             var model = await PagingList.CreateAsync(item, 100, page);
-
+            
             return View(model);
         }
         public IActionResult ViewVendor(int Id)
@@ -44,7 +49,11 @@ namespace Diverse_website.Controllers
         public IActionResult Create()
         {
 
-            return View();
+            VendorsWithImagesVM model = new VendorsWithImagesVM()
+            {
+                CountryList = blogsRepo.GetAllCountries()
+            };
+            return View(model);
         }
         [HttpPost]
         public IActionResult Create(VendorsWithImagesVM model)
@@ -67,7 +76,9 @@ namespace Diverse_website.Controllers
                         VendorUrl = model.vendor.VendorUrl,
                         IsDeleted = false,
                         CreatedDate = DateTime.Now,
-                        UpdatedDate = DateTime.Now
+                        UpdatedDate = DateTime.Now,
+                        CountryId = model.vendor.CountryId
+
 
                     };
                     NotifyAlert("success", "Vendor has been saved");
@@ -78,11 +89,14 @@ namespace Diverse_website.Controllers
                 {
 
                     NotifyAlert("error", "An error has occured !!",NotificationType.error);
+                    model.CountryList = blogsRepo.GetAllCountries();
+
                     return View(model);
                 }
 
             }
             NotifyAlert("error", "An error has occured !!", NotificationType.error);
+            model.CountryList = blogsRepo.GetAllCountries();
 
             return View(model);
         }
@@ -91,8 +105,11 @@ namespace Diverse_website.Controllers
         {
             VendorsWithImagesVM model = new VendorsWithImagesVM()
             {
-                vendor = vendorsRepo.GetById(Id)
-            };
+                vendor = vendorsRepo.GetById(Id),
+                CountryList = blogsRepo.GetAllCountries()
+
+
+        };
 
             return View(model);
         }
@@ -122,7 +139,9 @@ namespace Diverse_website.Controllers
                         VendorUrl = model.vendor.VendorUrl,
                         PhotoUrl = uniqueFileName,
                         CreatedDate = DateTime.Now,
-                        UpdatedDate = DateTime.Now
+                        UpdatedDate = DateTime.Now,
+                        CountryId = model.vendor.CountryId
+
 
                     };
                     NotifyAlert("success", "Vendor has been updated");
@@ -133,12 +152,15 @@ namespace Diverse_website.Controllers
                 {
 
                     NotifyAlert("error", "An error has occured !!", NotificationType.error);
+                    model.CountryList = blogsRepo.GetAllCountries();
+
                     return View(model);
                 }
 
 
             }
             NotifyAlert("error", "An error has occured !!", NotificationType.error);
+            model.CountryList = blogsRepo.GetAllCountries();
 
             return View(model);
 
@@ -185,6 +207,10 @@ namespace Diverse_website.Controllers
                 {
                     model.VendorImage.CopyTo(fileStream);
                 }
+            }
+            else
+            {
+                ImgUrl = model.vendor.PhotoUrl;
             }
             return ImgUrl;
         }

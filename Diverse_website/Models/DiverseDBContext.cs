@@ -6,13 +6,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Diverse_website.Models
 {
-    public partial class Diverse_websiteContext : DbContext
+    public partial class DiverseDBContext : DbContext
     {
-        public Diverse_websiteContext()
+        public DiverseDBContext()
         {
         }
 
-        public Diverse_websiteContext(DbContextOptions<Diverse_websiteContext> options)
+        public DiverseDBContext(DbContextOptions<DiverseDBContext> options)
             : base(options)
         {
         }
@@ -25,18 +25,17 @@ namespace Diverse_website.Models
         public virtual DbSet<AspNetUserRole> AspNetUserRoles { get; set; }
         public virtual DbSet<AspNetUserToken> AspNetUserTokens { get; set; }
         public virtual DbSet<Blog> Blogs { get; set; }
+        public virtual DbSet<Counrty> Counrties { get; set; }
         public virtual DbSet<Project> Projects { get; set; }
         public virtual DbSet<SysUser> SysUsers { get; set; }
         public virtual DbSet<Vendor> Vendors { get; set; }
-        public virtual DbSet<Counrty> Counrties { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                  optionsBuilder.UseSqlServer("Data Source=N1NWPLSK12SQL-v02.shr.prod.ams1.secureserver.net;Initial Catalog=ph13423754189_;User Id=Diverse_User;Password=Diverse_User");
-                //optionsBuilder.UseSqlServer("Server=.;Database=Diverse_website;Trusted_Connection=True;MultipleActiveResultSets=true");
-
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseSqlServer("Server=.;Database=DiverseDBLast;Trusted_Connection=True;");
             }
         }
 
@@ -144,6 +143,17 @@ namespace Diverse_website.Models
                 entity.ToTable("blogs");
 
                 entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.Userid).HasColumnName("userid");
+            });
+
+            modelBuilder.Entity<Counrty>(entity =>
+            {
+                entity.ToTable("Counrty");
+
+                entity.Property(e => e.CountryName)
+                    .IsRequired()
+                    .HasMaxLength(50);
             });
 
             modelBuilder.Entity<Project>(entity =>
@@ -164,12 +174,6 @@ namespace Diverse_website.Models
                 entity.Property(e => e.UserName)
                     .IsRequired()
                     .HasMaxLength(50);
-            });
-
-            modelBuilder.Entity<Vendor>(entity =>
-            {
-                entity.Property(e => e.Id).HasColumnName("Id");
-
             });
 
             OnModelCreatingPartial(modelBuilder);

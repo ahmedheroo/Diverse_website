@@ -8,6 +8,6 @@ namespace Diverse_website.Repository
 {
    public interface IVendorsRepo:IRepository<Vendor>
     {
-
+        IQueryable<Vendor> GetVendorsIncludeCountries();
     }
 }

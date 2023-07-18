@@ -35,7 +35,7 @@
 
                                 <div class="row projectC">
                                     <div class="col-md-4">
-                                        <a class="img-box img-scale-up">
+                                        <a class="img-box img-scale-up" style="max-width: 360px; width: 100%; height: 100%; margin: auto;" asp-action="ViewProject" asp-route-id="@item.Id">
                                             <img class="anima" src="@Url.Content(@item.PhotoUrl)" alt="" />
                                         </a>
                                     </div>
@@ -51,17 +51,17 @@
 
                                         }
                                         <hr>
-                                        <p>
+                                        
                                             @if (System.Globalization.CultureInfo.CurrentCulture.Name.StartsWith("ar"))
                                             {
                                                 @if (item.DescAr.Length >= 110)
                                                 {
-                                                    <h2><a>@item.DescAr.Substring(0, 110);</a></h2>
+                                                  <p>@item.DescAr.Substring(0, 110) </p>
 
                                                 }
                                                 else
                                                 {
-                                                    <h2><a>@item.DescAr</a></h2>
+                                                    <p>@item.DescAr</p>
 
                                                 }
 
@@ -70,17 +70,17 @@
                                             {
                                                 @if (item.DescEn.Length >= 110)
                                                 {
-                                                    <h2><a>@item.DescEn.Substring(0, 110);</a></h2>
+                                                    <p>@item.DescEn.Substring(0, 110)</p>
 
                                                 }
                                                 else
                                                 {
-                                                    <h2><a>@item.DescEn</a></h2>
+                                                    <p>@item.DescEn</p>
 
                                                 }
 
                                             }
-                                        </p>
+                                        
                                         <a class="btn btn-sm" asp-action="ViewProject" asp-route-id="@item.Id"><i class="fas fa-info-circle" id="info"></i>@T["Read more"]</a>
                                     </div>
                                 </div>

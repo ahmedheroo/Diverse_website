@@ -4,17 +4,17 @@
 @model Diverse_website.ViewModels.ProjectsImages
 
 @{
-    ViewData["Title"] = "ViewProject";
+    ViewData["Title"] = @Model.projects.TitleEn+" Project";
     ViewData["ActiveLi"] = "Projectsli";
     Layout = "~/Views/Shared/_ClientLayout.cshtml";
 }
 
-<div class="header-title" style="background-image:url('@Url.Content(Model.projects.PhotoUrl)')">
+<div class="header-title" id="headerB" ">
     <div class="container">
         <div class="title-base">
             <hr class="anima" />
             <h1 class="title">@T["Our Projects"]</h1>
-                <p class="title-text">@T["Discover valuable resources, helpful tips, and company updates on our informative blog."]</p>
+            <p class="title-text">@T["Discover valuable resources, helpful tips, and company updates on our informative blog."]</p>
         </div>
     </div>
 </div>
@@ -32,6 +32,10 @@
                     <h4 class="text-xl">@Model.projects.TitleEn</h4>
 
                 }
+                <a class="img-box lightbox i-left" data-lightbox-anima="fade-bottom">
+                    <i class="fa fa-photo"></i>
+                    <img src="@Url.Content(Model.projects.PhotoUrl)" alt="">
+                </a>
                 <hr class="space xs" />
                 <div class="collapse-box" data-height="240">
                     <div class="panel">

@@ -27,7 +27,14 @@ namespace Diverse_website.Repository
             return context.Blogs.AsNoTracking().Reverse().Take(3);
         }
 
+        public IEnumerable<Counrty> GetAllCountries()
+        {
+            return context.Counrties.ToList();
+        }
 
-
+        public string GetCountryNameUsingCountryId(int Id)
+        {
+            return context.Counrties.Where(x => x.Id == Id).FirstOrDefault().CountryName;
+        }
     }
 }

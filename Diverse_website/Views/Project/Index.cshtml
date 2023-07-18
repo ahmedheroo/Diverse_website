@@ -45,7 +45,8 @@
                                         <th>#</th>
                                         <th>Title</th>
                                         <th>Description</th>
-                                        <th>UpdatedDate</th>
+                                        <th>Location</th>
+                                        <th>Created Date</th>
                                         @*  <th>IsActive</th>*@
                                         <th style="width:180px"> </th>
                                     </tr>
@@ -58,7 +59,7 @@
                                         <td>@item.TitleEn</td>
                                         @if (item.DescEn.Length >= 210)
                                         {
-                                          <td>@item.DescEn.Substring(0, 210) @LongContent</td>
+                                            <td>@item.DescEn.Substring(0, 210) @LongContent</td>
                                         }
                                         else
                                         {
@@ -66,7 +67,23 @@
 
 
                                         }
-                                        <td>@item.UpdatedDate</td>
+
+                                        @if (@item.CountryId == 1)
+                                        {
+                                            <td>Egypt</td>
+
+                                        }
+                                        else if (@item.CountryId == 2)
+                                        {
+                                            <td>Saudi Arabia</td>
+
+                                        }
+                                        else if (@item.CountryId == 3)
+                                        {
+                                            <td>Kenya</td>
+
+                                        }
+                                        <td>@item.CreatedDate.ToString("dd MMMM yyyy hh:mm tt")</td>
                                         @*  <td>@item.IsDeleted</td>*@
 
                                         <td style="width:180px">
