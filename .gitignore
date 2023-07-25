@@ -361,6 +361,3 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-/Diverse_website/wwwroot/admin/assets/media/avatars/blogplaceholderr.jpg
-/Diverse_website/wwwroot/admin/assets/media/avatars/projectplaceholderr.png
-/Diverse_website/wwwroot/admin/assets/media/avatars/vendorplaceholderr.png
