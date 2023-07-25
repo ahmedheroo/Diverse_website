@@ -30,24 +30,24 @@ namespace Diverse_website.Controllers
         private readonly IVendorsRepo vendorsRepo;
         //Egypt 1 , Saudi Arabia 2, Kenya 3, Germany
         //IPa---- EG , KE , SA
-       // public string UserCountryName = "";
+        // public string UserCountryName = "";
 
-        public HomeController(ILogger<HomeController> logger, IWebHostEnvironment _webHostEnvironment, IBlogsRepo _blogsRepo,IProjectRepo _projectRepo,IVendorsRepo _vendorsRepo)
+        public HomeController(ILogger<HomeController> logger, IWebHostEnvironment _webHostEnvironment, IBlogsRepo _blogsRepo, IProjectRepo _projectRepo, IVendorsRepo _vendorsRepo)
         {
             _logger = logger;
             webHostEnvironment = _webHostEnvironment;
             blogsRepo = _blogsRepo;
             projectsRepo = _projectRepo;
             vendorsRepo = _vendorsRepo;
-           
+
         }
 
         public IActionResult Index()
         {
-          
-                //TempData["IP"] = GetCountry();
 
-         
+            //TempData["IP"] = GetCountry();
+
+
             var model = blogsRepo.Getblogs().OrderByDescending(s => s.CreatedDate);
             return View(model);
         }
@@ -91,7 +91,7 @@ namespace Diverse_website.Controllers
 
             //}
             var item = blogsRepo.Getblogs().OrderByDescending(s => s.Id);
-            var model = await PagingList.CreateAsync(item,100, page);   
+            var model = await PagingList.CreateAsync(item, 100, page);
             return View(model);
         }
         public async Task<IActionResult> Projects(int page = 1)
@@ -118,11 +118,11 @@ namespace Diverse_website.Controllers
 
             //}
             var item = projectsRepo.GetProjects().OrderBy(s => s.Id);
-            
+
             var model = await PagingList.CreateAsync(item, 100, page);
             return View(model);
         }
-        public IActionResult ViewBlog(int Id)                
+        public IActionResult ViewBlog(int Id)
         {
             BlogsWithImages model = new BlogsWithImages();
             model.Blog = blogsRepo.GetById(Id);
@@ -134,8 +134,8 @@ namespace Diverse_website.Controllers
         {
             ProjectsImages model = new ProjectsImages();
             model.projects = projectsRepo.GetById(Id);
-           // model.projects.DescAr = WebUtility.HtmlDecode(model.projects.DescAr);
-            model.LatestProjects = projectsRepo.GetAll().OrderByDescending(s=>s.CreatedDate).Take(3);
+            // model.projects.DescAr = WebUtility.HtmlDecode(model.projects.DescAr);
+            model.LatestProjects = projectsRepo.GetAll().OrderByDescending(s => s.CreatedDate).Take(3);
             return View(model);
         }
         public async Task<IActionResult> Vendors(int page = 1)
@@ -162,11 +162,11 @@ namespace Diverse_website.Controllers
 
             //}
             var item = vendorsRepo.GetAll().OrderBy(s => s.Id);
-            
+
             var model = await PagingList.CreateAsync(item, 100, page);
             return View(model);
         }
-        
+
         public IActionResult Services()
         {
             return View();
@@ -240,7 +240,7 @@ namespace Diverse_website.Controllers
         //        request.AddParameter("text", "Dear ahmed, this is mail body text with placeholders in body");
         //        request.AddParameter("html", "<h1>Html body</h1><p>Rich HTML message body.</p>");
         //        RestResponse response = client.Execute(request);
-                
+
 
         //        NotifyAlert("success", "Blog has been saved");
 
@@ -277,11 +277,10 @@ namespace Diverse_website.Controllers
 
         //        return "WO";
         //    }
-          
+
 
         //}
-       
-         
+
+
     }
-} 
-    
+}

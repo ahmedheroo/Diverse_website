@@ -44,9 +44,9 @@ namespace Diverse_website.Repository
             return context.AspNetUserRoles.Where(x => x.UserId == userId).FirstOrDefault().RoleId;
         }
 
-        public IQueryable<AspNetUser> GetUsersIncludeRoles()
+        public IQueryable<SysUser> GetUsersIncludeRoles()
         {
-            return context.AspNetUsers.AsNoTracking();
+            return context.SysUsers.AsNoTracking();
 
         }
 

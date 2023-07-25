@@ -117,45 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&quot;We are committed to delivering cutting-edge ICT solutions that drive business success. With a customer-centric approach, we strive to exceed expectations and empower our clients to thrive in the digital era.&quot;" xml:space="preserve">
-    <value>"نحن ملتزمون بتقديم حلول تكنولوجيا المعلومات والاتصالات المتطورة التي تدفع نجاح الأعمال. من خلال نهج يركز على العملاء ، نسعى جاهدين لتجاوز التوقعات وتمكين عملائنا من الازدهار في العصر الرقمي."</value>
-  </data>
   <data name="About Us" xml:space="preserve">
     <value>معلومات عنا</value>
   </data>
   <data name="AccountSettings" xml:space="preserve">
     <value>إعدادات الحساب</value>
   </data>
-  <data name="Ahmed Ibrahim" xml:space="preserve">
-    <value>Ahmed Ibrahim</value>
-  </data>
   <data name="Arabic" xml:space="preserve">
     <value>العربية</value>
   </data>
-  <data name="Ayman Saad" xml:space="preserve">
-    <value>Ayman Saad</value>
-  </data>
-  <data name="Before commencement of Diverse, Ayman was the CEO of multiple multi-national organization in Middle East. He managed to bring&#xD;&#xA;                        value to Telecommunications Industry in Egypt and Middle East. Ayman has more than 25 years of&#xD;&#xA;                        experience in ICT business with major international suppliers combined with great leadership to all team members and overall organizations." xml:space="preserve">
-    <value>Before commencement of Diverse, Ayman was the CEO of multiple multi-national organization in Middle East. He managed to bring
-                        value to Telecommunications Industry in Egypt and Middle East. Ayman has more than 25 years of
-                        experience in ICT business with major international suppliers combined with great leadership to all team members and overall organizations.</value>
-  </data>
-  <data name="Before joining Diverse and being one of its key assets, Ahmed was a super star in banking industry in MEA as a head for&#xD;&#xA;                        many reputable commercial banks. Overlooking Diverse&#xD;&#xA;                        financials and keeping Diverse the best system integrator towards our customers, suppliers, and Diverse." xml:space="preserve">
-    <value>Before joining Diverse and being one of its key assets, Ahmed was a super star in banking industry in MEA as a head for
-                        many reputable commercial banks. Overlooking Diverse
-                        financials and keeping Diverse the best system integrator towards our customers, suppliers, and Diverse.</value>
-  </data>
   <data name="Blogs" xml:space="preserve">
     <value>التدوينات</value>
-  </data>
-  <data name="CCO - Chief Commercial Officer" xml:space="preserve">
-    <value>CCO - Chief Commercial Officer</value>
-  </data>
-  <data name="CEO - Chief Executive Officer" xml:space="preserve">
-    <value>CEO - Chief Executive Officer</value>
-  </data>
-  <data name="CFO - Chief Financial Officer" xml:space="preserve">
-    <value>CFO - Chief Financial Officer</value>
   </data>
   <data name="Client WebPage" xml:space="preserve">
     <value>صفحة العملاء</value>
@@ -193,18 +165,6 @@
   <data name="Latest Blogs" xml:space="preserve">
     <value>أخر التدوينات</value>
   </data>
-  <data name="Our Mission" xml:space="preserve">
-    <value>Our Mission</value>
-  </data>
-  <data name="Our Stellar Team" xml:space="preserve">
-    <value>Our Stellar Team</value>
-  </data>
-  <data name="Our Values" xml:space="preserve">
-    <value>Our Values</value>
-  </data>
-  <data name="Our Vision" xml:space="preserve">
-    <value>Our Vision</value>
-  </data>
   <data name="Phone number" xml:space="preserve">
     <value>رقم الهاتف</value>
   </data>
@@ -232,28 +192,10 @@
   <data name="Vendors" xml:space="preserve">
     <value>الموردين</value>
   </data>
-  <data name="Yasser joined Diverse since the first moments; he was a key player in bringing Diverse&#xD;&#xA;                        to be a key system integrator within MEA region. He had 15 years of experience in Sales with multi-national companies in Egypt with regional exposure over&#xD;&#xA;                        Africa and Middle East markets. He is a results-oriented and a leader of people who can&#xD;&#xA;                        build teams and organizations from scratch with clear view on target and company business goals." xml:space="preserve">
-    <value>Yasser joined Diverse since the first moments; he was a key player in bringing Diverse
-                        to be a key system integrator within MEA region. He had 15 years of experience in Sales with multi-national companies in Egypt with regional exposure over
-                        Africa and Middle East markets. He is a results-oriented and a leader of people who can
-                        build teams and organizations from scratch with clear view on target and company business goals.</value>
-  </data>
-  <data name="Yasser Zaky" xml:space="preserve">
-    <value>Yasser Zaky</value>
-  </data>
   <data name="Your message" xml:space="preserve">
     <value>رسالتك</value>
   </data>
   <data name="Your name" xml:space="preserve">
     <value>الأسم</value>
-  </data>
-  <data name="“Earn customer loyalty , Pursue best practices , Improve service levels, Be reliable &amp; responsive, Enable customers to better manage costs, Minimize risks associated with outsourcing, Adapt to varying business demands”" xml:space="preserve">
-    <value>كسب ولاء العملاء ، واتباع أفضل الممارسات ، وتحسين مستويات الخدمة ، والتحلي بالثقة والاستجابة ، وتمكين العملاء من إدارة التكاليف بشكل أفضل ، وتقليل المخاطر المرتبطة بالاستعانة بمصادر خارجية ، والتكيف مع متطلبات الأعمال المتنوعة</value>
-  </data>
-  <data name="“Is to become the premium business solutions provider for ICT market in Europe, Middle East, and Africa”" xml:space="preserve">
-    <value>"أن تصبح المزود المتميز لحلول الأعمال لسوق تكنولوجيا المعلومات والاتصالات في أوروبا والشرق الأوسط وأفريقيا"</value>
-  </data>
-  <data name="“To provide our customers with quick, secure, reliable and high-quality ICT solutions, services, and consultancies that accelerate and sustain success for their businesses and increase end-customer satisfaction”" xml:space="preserve">
-    <value>"لتزويد عملائنا بحلول وخدمات واستشارات لتكنولوجيا المعلومات والاتصالات سريعة وآمنة وموثوقة وعالية الجودة من شأنها تسريع واستدامة نجاح أعمالهم وزيادة رضا العملاء النهائيين"</value>
   </data>
 </root>

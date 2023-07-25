@@ -94,7 +94,7 @@ namespace Diverse_website
             })
                 .AddCookie(o => o.LoginPath = "/identity/account/login");
             services.AddAuthorization(op => op.AddPolicy("AdminRole", p => p.RequireRole("admin")));
-         
+
             //services.AddAuthentication( CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(q => q.LoginPath = "/identity/account/login");
             services.AddScoped<IUserRepo, UserRepo>();
             services.AddScoped<IBlogsRepo, BlogsRepo>();
@@ -136,12 +136,12 @@ namespace Diverse_website
             using var scope = app.ApplicationServices.CreateScope();
             var services = scope.ServiceProvider;
             var context = services.GetRequiredService<Diverse_websiteContext>();
-           // var Identitycontext = services.GetRequiredService<ApplicationDbContext>();
+            // var Identitycontext = services.GetRequiredService<ApplicationDbContext>();
             var logger = services.GetRequiredService<ILogger<Startup>>();
             try
             {
                 // Identitycontext.Database.MigrateAsync();
-                 context.Database.MigrateAsync();
+                context.Database.MigrateAsync();
             }
             catch (Exception ex)
             {

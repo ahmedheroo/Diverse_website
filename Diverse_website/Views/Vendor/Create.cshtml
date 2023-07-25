@@ -180,7 +180,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="card-footer">
                         <div class="fv-row mb-2">
                             <button type="submit" class="btn btn-sm btn-primary" style="float:right">Save</button>
@@ -236,27 +236,27 @@
                     console.error(error);
                 });
         </script>*@
-<script>
-    $('#Desc1').keyup(function (e) {
-        if (e.keyCode == 32) {
-            $(this).trigger("enterKey");
-        }
-    });
-    $('#Desc1').on("enterKey", function (e) {
-        var words = $('#Desc1').val().split(' ');
-        $("#WordsCounter").text(words.length - 1);
-        //$("#Desc1").text();
-    });
+    <script>
+        $('#Desc1').keyup(function (e) {
+            if (e.keyCode == 32) {
+                $(this).trigger("enterKey");
+            }
+        });
+        $('#Desc1').on("enterKey", function (e) {
+            var words = $('#Desc1').val().split(' ');
+            $("#WordsCounter").text(words.length - 1);
+            //$("#Desc1").text();
+        });
 
-    $('#Desc2').keyup(function (e) {
-        if (e.keyCode == 32) {
-            $(this).trigger("enterKey");
-        }
-    });
-    $('#Desc2').on("enterKey", function (e) {
-        var words = $('#Desc2').val().split(' ');
-        $("#WordsCounterar").text(words.length - 1);
-        //$("#Desc1").text();
-    });
-</script>
+        $('#Desc2').keyup(function (e) {
+            if (e.keyCode == 32) {
+                $(this).trigger("enterKey");
+            }
+        });
+        $('#Desc2').on("enterKey", function (e) {
+            var words = $('#Desc2').val().split(' ');
+            $("#WordsCounterar").text(words.length - 1);
+            //$("#Desc1").text();
+        });
+    </script>
 }

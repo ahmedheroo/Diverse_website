@@ -15,25 +15,25 @@ using System.Threading.Tasks;
 namespace Diverse_website.Controllers
 {
     [Authorize("AdminRole")]
-   // [ControllerName("Test")]
+    // [ControllerName("Test")]
     public class UserController : BaseController
     {
         private readonly UserManager<IdentityUser> userManager;
         private readonly RoleManager<IdentityRole> roleManager;
-      //  private readonly IDataProtector protector;
+        //  private readonly IDataProtector protector;
         private readonly IUserRepo userRepo;
-       // public string encurl;
-        public UserController(UserManager<IdentityUser> _userManager,RoleManager<IdentityRole> _roleManager, IUserRepo _userRepo/*,IDataProtectionProvider _protector*/) 
+        // public string encurl;
+        public UserController(UserManager<IdentityUser> _userManager, RoleManager<IdentityRole> _roleManager, IUserRepo _userRepo/*,IDataProtectionProvider _protector*/)
         {
             userRepo = _userRepo;
             userManager = _userManager;
             roleManager = _roleManager;
             //protector = _protector.CreateProtector("") ;
-           // encurl=  protector.Protect("Protection string encrypted");
+            // encurl=  protector.Protect("Protection string encrypted");
         }
         public IActionResult Index()
         {
-            IEnumerable<AspNetUserRole> model= userRepo.GetAllUsers();
+            IEnumerable<AspNetUserRole> model = userRepo.GetAllUsers();
             return View(model);
         }
         [HttpGet]
@@ -103,14 +103,14 @@ namespace Diverse_website.Controllers
             }
             else
             {
-               
-                   
-            
+
+
+
                 NotifyAlert("error", "An error has occured !! ", NotificationType.error);
                 return View();
 
             }
-           
+
         }
         [HttpGet]
         public IActionResult Edit(string UserId)
@@ -150,15 +150,15 @@ namespace Diverse_website.Controllers
 
                     }
                     NotifyAlert("success", "User has been Updated ");
-                         roleName = userRepo.GetRoleNameUsingRoleId(model.SelectedRoleId);
-                         await userManager.AddToRoleAsync(user, roleName);
+                    roleName = userRepo.GetRoleNameUsingRoleId(model.SelectedRoleId);
+                    await userManager.AddToRoleAsync(user, roleName);
                     return RedirectToAction("Index");
                 }
                 catch (Exception)
                 {
                     NotifyAlert("error", "An error has occured !! ", NotificationType.error);
-                          model.RoleList = userRepo.GetAllRoles();
-                            return View(model);
+                    model.RoleList = userRepo.GetAllRoles();
+                    return View(model);
 
                 }
 
@@ -209,11 +209,11 @@ namespace Diverse_website.Controllers
                 return View(model);
             }
 
-          
-           
+
+
 
         }
-       
+
         public async Task<IActionResult> DeleteUser(string UserId)
         {
             var user = await userManager.FindByIdAsync(UserId);
