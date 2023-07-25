@@ -3529,3 +3529,13 @@ margin-left: 0% !important;
 .feature-no-margin{
     margin-bottom: 0px !important;
 }
+
+#rm-hv:after{
+content: '' !important;
+height: 0 !important;
+}
+
+[data-height].collapse-box #rm-hv:after{
+    content: '' !important;
+    height: 0 !important;
+}
