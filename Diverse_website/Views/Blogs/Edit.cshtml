@@ -98,16 +98,18 @@
                     <div class="fv-row mb-7">
                         <label asp-for="Blog.ContentEn" class="required fs-6 fw-semibold mb-2">Content English</label>
 
-                        <textarea asp-for="Blog.ContentEn" type="text" class="form-control form-control-solid" placeholder="Content English">
+                        <textarea asp-for="Blog.ContentEn" type="text" id="Desc1" class="form-control form-control-solid" placeholder="Content English">
 
 </textarea>
+                        <span class="text-dark">words count:<label id="WordsCounter">0</label>  </span>
                     </div>
                     <div class="fv-row mb-7">
                         <label asp-for="Blog.ContentAr" class="required fs-6 fw-semibold mb-2">Content Arabic</label>
 
-                        <textarea asp-for="Blog.ContentAr" type="text" class="form-control form-control-solid" placeholder="Content Arabic">
+                        <textarea asp-for="Blog.ContentAr" type="text" id="Desc2" class="form-control form-control-solid" placeholder="Content Arabic">
 
 </textarea>
+                        <span class="text-dark">words count:<label id="WordsCounterar">0</label>  </span>
                     </div>
                     <div class="fv-row mb-7">
                         <!--begin::Label-->
@@ -222,6 +224,27 @@
         //    }
         //});
 
+        $('#Desc1').keyup(function (e) {
+            if (e.keyCode == 32) {
+                $(this).trigger("enterKey");
+            }
+        });
+        $('#Desc1').on("enterKey", function (e) {
+            var words = $('#Desc1').val().split(' ');
+            $("#WordsCounter").text(words.length - 1);
+            //$("#Desc1").text();
+        });
+
+        $('#Desc2').keyup(function (e) {
+            if (e.keyCode == 32) {
+                $(this).trigger("enterKey");
+            }
+        });
+        $('#Desc2').on("enterKey", function (e) {
+            var words = $('#Desc2').val().split(' ');
+            $("#WordsCounterar").text(words.length - 1);
+            //$("#Desc1").text();
+        });
 
     </script>
 

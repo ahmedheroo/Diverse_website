@@ -129,48 +129,82 @@ namespace Diverse_website.Controllers
         {
             try
             {
-                var user = new IdentityUser
-                {
-                    UserName = model.User.UserName,
-                    Email = model.User.Email,
-                    PhoneNumber = model.User.PhoneNumber
-                };
+                var user = await userManager.FindByIdAsync(model.User.Id);
                 string roleName = "";
-                IdentityResult result = new IdentityResult();
-                if (model.User.PasswordHash != null)
-                {
-                    result = await userManager.CreateAsync(user, model.User.PasswordHash);
-                }
-                if (result.Succeeded)
-                {
-                    try
-                    {
-                        NotifyAlert("success", "User has been Updated ");
-                        roleName = userRepo.GetRoleNameUsingRoleId(model.SelectedRoleId);
-                        await userManager.AddToRoleAsync(user, roleName);
-                        return RedirectToAction("Index");
-                    }
-                    catch (Exception)
-                    {
-                        NotifyAlert("error", "An error has occured !! ", NotificationType.error);
-                        model.RoleList = userRepo.GetAllRoles();
-                        return View(model);
-                    }
-                }
 
-                else
+                //var user = new IdentityUser()
+                //{
+                //  Email=model.User.Email,
+                //  UserName=model.User.UserName,
+                //  PasswordHash=model.User.PasswordHash
+                //};
+                user.Email = model.User.Email;
+                user.UserName = model.User.UserName;
+                user.PasswordHash = model.User.PasswordHash;
+                //var result = await userManager.UpdateAsync(user);
+                try
                 {
-                        NotifyAlert("error", "An error has occured !! ", NotificationType.error);
-                    model.RoleList = userRepo.GetAllRoles();
-                    return View(model);
+                    if (model.User.PasswordHash != null)
+                    {
+                        var result = await userManager.UpdateAsync(user);
 
                     }
+                    NotifyAlert("success", "User has been Updated ");
+                         roleName = userRepo.GetRoleNameUsingRoleId(model.SelectedRoleId);
+                         await userManager.AddToRoleAsync(user, roleName);
+                    return RedirectToAction("Index");
+                }
+                catch (Exception)
+                {
+                    NotifyAlert("error", "An error has occured !! ", NotificationType.error);
+                          model.RoleList = userRepo.GetAllRoles();
+                            return View(model);
+
+                }
+
+
+                //IdentityResult result = new IdentityResult();
+                //if (model.User.PasswordHash != null)
+                //{
+                //    result = await userManager.CreateAsync(user, model.User.PasswordHash);
+                //}
+                //var alreadyfoundyser = userManager.FindByNameAsync(user.UserName);
+                //var alreadyfoundymail = userManager.FindByEmailAsync(user.Email);
+                //if (alreadyfoundyser!=null || alreadyfoundymail!=null)
+                //{
+                //    NotifyAlert("Warning", "UserName or Email already exist !!", NotificationType.warning);
+
+                //}
+                //if (result.Succeeded)
+                //{
+                //    try
+                //    {
+                //        NotifyAlert("success", "User has been Updated ");
+                //        roleName = userRepo.GetRoleNameUsingRoleId(model.SelectedRoleId);
+                //        await userManager.AddToRoleAsync(user, roleName);
+                //        return RedirectToAction("Index");
+                //    }
+                //    catch (Exception)
+                //    {
+                //        NotifyAlert("error", "An error has occured !! ", NotificationType.error);
+                //        model.RoleList = userRepo.GetAllRoles();
+                //        return View(model);
+                //    }
+                //}
+
+                //else
+                //{
+                //        NotifyAlert("error", "An error has occured !! ", NotificationType.error);
+                //    model.RoleList = userRepo.GetAllRoles();
+                //    return View(model);
+
+                //    }
 
             }
             catch (Exception)
             {
 
-                NotifyAlert("error", "An error has occured !! ", NotificationType.error);
+                NotifyAlert("error", "An error has occured !!", NotificationType.error);
                 model.RoleList = userRepo.GetAllRoles();
                 return View(model);
             }
