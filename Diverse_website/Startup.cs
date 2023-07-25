@@ -20,6 +20,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
 using ReflectionIT.Mvc.Paging;
 using Diverse_website.Helpers;
+using Microsoft.AspNetCore.HttpOverrides;
 
 namespace Diverse_website
 {
@@ -93,7 +94,7 @@ namespace Diverse_website
             })
                 .AddCookie(o => o.LoginPath = "/identity/account/login");
             services.AddAuthorization(op => op.AddPolicy("AdminRole", p => p.RequireRole("admin")));
-         
+
             //services.AddAuthentication( CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(q => q.LoginPath = "/identity/account/login");
             services.AddScoped<IUserRepo, UserRepo>();
             services.AddScoped<IBlogsRepo, BlogsRepo>();
@@ -104,6 +105,10 @@ namespace Diverse_website
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, UserManager<IdentityUser> userManager)
         {
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
             app.UseRequestLocalization(
            app.ApplicationServices.GetRequiredService<IOptions<RequestLocalizationOptions>>().Value);
             if (env.IsDevelopment())
@@ -117,9 +122,9 @@ namespace Diverse_website
                 //app.UseExceptionHandler("/Shared/PageNotFound");
                 //app.UseHsts();
             }
-           // DBIntializer.seed(userManager);
-           // DBIntializer.seedroles(userrole);
-
+            // DBIntializer.seed(userManager);
+            // DBIntializer.seedroles(userrole);
+            app.UseForwardedHeaders();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
@@ -131,12 +136,12 @@ namespace Diverse_website
             using var scope = app.ApplicationServices.CreateScope();
             var services = scope.ServiceProvider;
             var context = services.GetRequiredService<Diverse_websiteContext>();
-           // var Identitycontext = services.GetRequiredService<ApplicationDbContext>();
+            // var Identitycontext = services.GetRequiredService<ApplicationDbContext>();
             var logger = services.GetRequiredService<ILogger<Startup>>();
             try
             {
                 // Identitycontext.Database.MigrateAsync();
-                 context.Database.MigrateAsync();
+                context.Database.MigrateAsync();
             }
             catch (Exception ex)
             {

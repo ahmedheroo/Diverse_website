@@ -98,9 +98,11 @@
 
 
 
-                        <textarea asp-for="vendor.DescEn" class="form-control form-control-solid" placeholder="Description English">
+                        <textarea asp-for="vendor.DescEn" id="Desc1" class="form-control form-control-solid" placeholder="Description English">
 
 </textarea>
+                        <span class="text-dark">words count:<label id="WordsCounter">0</label>  </span>
+
                         <span asp-validation-for="vendor.DescEn" class="text-danger"></span>
 
                         <!--end::Input-->
@@ -110,9 +112,11 @@
                         <label asp-for="vendor.DescAr" class="required fs-6 fw-semibold mb-2">Content Arabic</label>
                         <!--end::Label-->
                         <!--begin::Input-->
-                        <textarea asp-for="vendor.DescAr" class="form-control form-control-solid" placeholder="Description Arabic">
+                        <textarea asp-for="vendor.DescAr" id="Desc2" class="form-control form-control-solid" placeholder="Description Arabic">
 
 </textarea>
+                        <span class="text-dark">words count:<label id="WordsCounterar">0</label>  </span>
+
                         <span asp-validation-for="vendor.DescAr" class="text-danger"></span>
 
                         <!--end::Input-->
@@ -198,17 +202,29 @@
 </div>
 
 <!--CKEditor Build Bundles:: Only include the relevant bundles accordingly-->
-@*@section Scripts{
-    <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
-    <script>
+@section Scripts{
 
-        ClassicEditor.create(document.querySelector('#editoren'))
-            .catch(error => {
-                console.error(error);
-            });
-        ClassicEditor.create(document.querySelector('#editorar'))
-            .catch(error => {
-                console.error(error);
-            });
-    </script>*@
+    <script>
+        $('#Desc1').keyup(function (e) {
+            if (e.keyCode == 32) {
+                $(this).trigger("enterKey");
+            }
+        });
+        $('#Desc1').on("enterKey", function (e) {
+            var words = $('#Desc1').val().split(' ');
+            $("#WordsCounter").text(words.length - 1);
+            //$("#Desc1").text();
+        });
+
+        $('#Desc2').keyup(function (e) {
+            if (e.keyCode == 32) {
+                $(this).trigger("enterKey");
+            }
+        });
+        $('#Desc2').on("enterKey", function (e) {
+            var words = $('#Desc2').val().split(' ');
+            $("#WordsCounterar").text(words.length - 1);
+            //$("#Desc1").text();
+        });
+    </script>
 }

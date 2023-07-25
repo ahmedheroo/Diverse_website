@@ -35,8 +35,9 @@ else
     <meta name="description" content="Explore our diverse range of projects and discover valuable resources, helpful tips, and company updates on our informative blog.">
     <meta name="keywords" content="projects, blog, company updates, resources">
     <title>Diverse - @ViewData["Title"]</title>
-
+    <link rel="icon" href="../images/favicon.png">
     <link rel="icon" href="~/client/assets/images/diverse logo cut circle.png">
+
     @*@if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
         {
             <link rel="stylesheet" href="~/client/assets/styles/HTWF/scripts/bootstrap/css/bootstrap.rtl.css">
@@ -60,6 +61,9 @@ else
     <link rel="stylesheet" href="~/client/assets/styles/HTWF/css/animations.css">
     <link rel="stylesheet" href="~/client/assets/styles/HTWF/css/components.css">
     <link href="~/client/assets/styles/HTWF/scripts/magnific-popup.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="~/client/assets/styles/css/saxicons.css">
+
     <link rel="stylesheet" href="~/client/assets/styles/css/style.css">
 
     <link href="~/client/assets/styles/HTWF/scripts/flexslider/flexslider.css" rel="stylesheet" />
@@ -96,17 +100,17 @@ else
                                 <li class="dropdown" id="servicesli">
                                     <a asp-action="Services" asp-controller="Home" class="dropdown-toggle" data-toggle="dropdown" role="button">@T["Services"] <span class="caret"></span></a>
                                     <ul class="dropdown-menu multi-level">
-                <li id="servicesli"><a asp-action="Consultancy" asp-controller="Home">Consultancy</a></li>
-                <li id="servicesli"><a asp-action="Implementation" asp-controller="Home">Implementation</a></li>
-                <li id="servicesli"><a asp-action="support" asp-controller="Home">support</a></li>
-            </ul>
+                                        <li id="servicesli"><a asp-action="Consultancy" asp-controller="Home">Consultancy</a></li>
+                                        <li id="servicesli"><a asp-action="Implementation" asp-controller="Home">Implementation</a></li>
+                                        <li id="servicesli"><a asp-action="support" asp-controller="Home">support</a></li>
+                                    </ul>
                                 </li>
                                 <li class="dropdown" id="Projectsli">
                                     <a class="dropdown-toggle" data-toggle="dropdown" role="button">Clients<span class="caret"></span></a>
                                     <ul class="dropdown-menu multi-level">
-                <li><a asp-action="OurClients" asp-controller="Home">Our Clients</a></li>
-                <li><a asp-action="Projects" asp-controller="Home">Our Projects</a></li>
-                             </ul> 
+                                        <li><a asp-action="OurClients" asp-controller="Home">Our Clients</a></li>
+                                        <li><a asp-action="Projects" asp-controller="Home">Our Projects</a></li>
+                                    </ul>
                                 </li>
                                 <li class="dropdown" id="Vendorsli"><a asp-action="Vendors" asp-controller="Home">@T["Vendors"]</a></li>
 
@@ -117,11 +121,11 @@ else
                                     <ul class="dropdown-menu multi-level">
                                         <li id="AboutUsli"><a asp-action="AboutUs" asp-controller="Home">About Diverse®</a></li>
                                         <li id="AboutUsli"><a asp-action="faq" asp-controller="Home">FAQs</a></li>
-                                        
+
                                     </ul>
                                 </li>
-                               @* <li class="dropdown" id="AboutUsli"><a asp-action="AboutUs" asp-controller="Home">@T["About Us"]</a></li>*@
-                               @* <li class="dropdown" id="faqli"><a >FAQ</a></li>*@
+                                @* <li class="dropdown" id="AboutUsli"><a asp-action="AboutUs" asp-controller="Home">@T["About Us"]</a></li>*@
+                                @* <li class="dropdown" id="faqli"><a >FAQ</a></li>*@
                                 @*<li class="dropdown nav navbar-nav lan-menu">
                                     @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
                                     {
@@ -133,7 +137,7 @@ else
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images/en.png" alt="lan" />  EN  <span class="caret"></span></a>
 
                                     }*@
-                                    @*<ul class="dropdown-menu">
+                                @*<ul class="dropdown-menu">
                                         <li>
                                             <form id="selecteLanguage" asp-controller="Home" asp-action="SetLanguage" asp-route-returnUrl="@returnUrl">
                                                 @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
@@ -152,48 +156,48 @@ else
                                         </li>
 
                                     </ul>*@
-                                    @*<form id="selecteLanguage" asp-controller="Home" asp-action="SetLanguage" asp-route-returnUrl="@returnUrl">
-                @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
-                {
-                    <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[0].Value" type="hidden" />
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images/eg flag.png" alt="lan" />العربية <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><button type="submit"><img src="~/client/assets/images/en.png" alt="lan" width="20px" height="20px" />EN</button></li>
-                    </ul>
-                }
-                else
-                {
-                    <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[1].Value" type="hidden" />
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images/en.png" alt="lan" />EN <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><button type="submit"><img src="~/client/assets/images/eg flag.png" alt="lan" width="20px" height="20px" />العربية</button></li>
-                    </ul>
-                }
-            </form>*@
+                                @*<form id="selecteLanguage" asp-controller="Home" asp-action="SetLanguage" asp-route-returnUrl="@returnUrl">
+                                        @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                        {
+                                            <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[0].Value" type="hidden" />
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images/eg flag.png" alt="lan" />العربية <span class="caret"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><button type="submit"><img src="~/client/assets/images/en.png" alt="lan" width="20px" height="20px" />EN</button></li>
+                                            </ul>
+                                        }
+                                        else
+                                        {
+                                            <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[1].Value" type="hidden" />
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images/en.png" alt="lan" />EN <span class="caret"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><button type="submit"><img src="~/client/assets/images/eg flag.png" alt="lan" width="20px" height="20px" />العربية</button></li>
+                                            </ul>
+                                        }
+                                    </form>*@
 
-                               @* </li>*@
+                                @* </li>*@
                                 @*<form id="selecteLanguage" asp-controller="Home" asp-action="SetLanguage" asp-route-returnUrl="@returnUrl">
 
 
-                @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
-                {
-                    <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[0].Value" type="hidden" />
-                <li class="dropdown nav navbar-nav lan-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images//eg flag.png" alt="lan" />العربية <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><button type="submit"><img src="~/client/assets/images/en.png" alt="lan" width="20px" height="20px" />EN</button></li>
-                    </ul>
-                </li>
-            }
-            else
-            {
-        <li class="dropdown nav navbar-nav lan-menu">
-            <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[1].Value" type="hidden" />
+                                            @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                                            {
+                                                <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[0].Value" type="hidden" />
+                                            <li class="dropdown nav navbar-nav lan-menu">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images//eg flag.png" alt="lan" />العربية <span class="caret"></span></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><button type="submit"><img src="~/client/assets/images/en.png" alt="lan" width="20px" height="20px" />EN</button></li>
+                                                </ul>
+                                            </li>
+                                        }
+                                        else
+                                        {
+                                    <li class="dropdown nav navbar-nav lan-menu">
+                                        <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[1].Value" type="hidden" />
 
-            <button type="submit"><img src="~/client/assets/images/eg flag.png" alt="lan" width="20px" height="20px" />العربية</button>
-        </li>
-            }
-                </form>*@
+                                        <button type="submit"><img src="~/client/assets/images/eg flag.png" alt="lan" width="20px" height="20px" />العربية</button>
+                                    </li>
+                                        }
+                                            </form>*@
 
 
                             </ul>
@@ -216,10 +220,10 @@ else
                         <img width="120" src="~/client/assets/images/diverse logo.png" alt="" />
                     </div>
                     <div class="col-md-6 footer-left text-left">
-                        <p>Specified Location for each zone</p>
+                        <p> 506, First Tower – Silver Mall, Central Axis – 6th Oct. City  </p>
                         <div class="tag-row">
-                            <span>Specified Email for each zone</span>
-                            <span>Specified fax number for each zone</span>
+                            <span>Email : <a href="mailto:info@diverseltd.com">info@diverseltd.com </a></span>
+                            <span>Fax: +20238332974</span>
                         </div>
                     </div>
                 </div>
