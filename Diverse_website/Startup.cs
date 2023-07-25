@@ -20,7 +20,6 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
 using ReflectionIT.Mvc.Paging;
 using Diverse_website.Helpers;
-using Microsoft.AspNetCore.HttpOverrides;
 
 namespace Diverse_website
 {
@@ -105,10 +104,6 @@ namespace Diverse_website
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, UserManager<IdentityUser> userManager)
         {
-            app.UseForwardedHeaders(new ForwardedHeadersOptions
-            {
-                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
-            });
             app.UseRequestLocalization(
            app.ApplicationServices.GetRequiredService<IOptions<RequestLocalizationOptions>>().Value);
             if (env.IsDevelopment())
@@ -122,9 +117,9 @@ namespace Diverse_website
                 //app.UseExceptionHandler("/Shared/PageNotFound");
                 //app.UseHsts();
             }
-            // DBIntializer.seed(userManager);
-            // DBIntializer.seedroles(userrole);
-            app.UseForwardedHeaders();
+           // DBIntializer.seed(userManager);
+           // DBIntializer.seedroles(userrole);
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

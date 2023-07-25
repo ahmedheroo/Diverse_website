@@ -99,10 +99,9 @@
                         <label asp-for="Blog.ContentEn" class="required fs-6 fw-semibold mb-2">Content English</label>
 
 
-                        <textarea type="text" id="Desc1" asp-for="Blog.ContentEn" class="form-control form-control-solid" placeholder="Content English">
+                        <textarea type="text" asp-for="Blog.ContentEn" class="form-control form-control-solid" placeholder="Content English">
 
 </textarea>
-                        <span class="text-dark" >words count:<label id="WordsCounter">0</label>  </span>
                         <span asp-validation-for="Blog.ContentEn" class="text-danger"></span>
 
                         <!--end::Input-->
@@ -112,10 +111,9 @@
                         <label asp-for="Blog.ContentAr" class="required fs-6 fw-semibold mb-2">Content Arabic</label>
                         <!--end::Label-->
                         <!--begin::Input-->
-                        <textarea type="text" id="Desc2" asp-for="Blog.ContentAr" class="form-control form-control-solid" placeholder="Content Arabic">
+                        <textarea type="text" asp-for="Blog.ContentAr" class="form-control form-control-solid" placeholder="Content Arabic">
 
 </textarea>
-                        <span class="text-dark">words count:<label id="WordsCounterar">0</label>  </span>
                         <span asp-validation-for="Blog.ContentAr" class="text-danger"></span>
 
                         <!--end::Input-->
@@ -131,7 +129,7 @@
                         <span asp-validation-for="Blog.Tag" class="text-danger"></span>
                         <!--end::Input-->
                     </div>
-
+                  
 
                     <!--begin::Image input-->
                     <div class="row row-cols-lg-2 mb-7">
@@ -246,29 +244,7 @@
             }
         });
 
-        
-        $('#Desc1').keyup(function (e) {
-            if (e.keyCode == 32) {
-                $(this).trigger("enterKey");
-            }
-        });
-        $('#Desc1').on("enterKey", function (e) {
-            var words = $('#Desc1').val().split(' ');
-            $("#WordsCounter").text(words.length-1);
-            //$("#Desc1").text();
-        });
 
-        $('#Desc2').keyup(function (e) {
-            if (e.keyCode == 32) {
-                $(this).trigger("enterKey");
-            }
-        });
-        $('#Desc2').on("enterKey", function (e) {
-            var words = $('#Desc2').val().split(' ');
-            $("#WordsCounterar").text(words.length - 1);
-            //$("#Desc1").text();
-        });
-   
     </script>
 
     @*<script src="~/client/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>

@@ -95,10 +95,9 @@
 
 
 
-                        <textarea asp-for="projects.DescEn" id="Desc1" class="form-control form-control-solid" placeholder="Description English">
+                        <textarea asp-for="projects.DescEn" class="form-control form-control-solid" placeholder="Description English">
 
 </textarea>
-                        <span class="text-dark">words count:<label id="WordsCounter">0</label>  </span>
                         <span asp-validation-for="projects.DescEn" class="text-danger"></span>
 
                         <!--end::Input-->
@@ -108,10 +107,9 @@
                         <label asp-for="projects.DescAr" class="required fs-6 fw-semibold mb-2">Description Arabic</label>
                         <!--end::Label-->
                         <!--begin::Input-->
-                        <textarea asp-for="projects.DescAr" id="Desc2" class="form-control form-control-solid" placeholder="Description Arabic">
+                        <textarea asp-for="projects.DescAr" class="form-control form-control-solid" placeholder="Description Arabic">
 
 </textarea>
-                        <span class="text-dark">words count:<label id="WordsCounterar">0</label>  </span>
                         <span asp-validation-for="projects.DescAr" class="text-danger"></span>
 
                         <!--end::Input-->
@@ -185,28 +183,42 @@
         </div>
     </div>
 </div>
-@section Scripts{
-    <script>
-        $('#Desc1').keyup(function (e) {
-            if (e.keyCode == 32) {
-                $(this).trigger("enterKey");
-            }
-        });
-        $('#Desc1').on("enterKey", function (e) {
-            var words = $('#Desc1').val().split(' ');
-            $("#WordsCounter").text(words.length - 1);
-            //$("#Desc1").text();
-        });
 
-        $('#Desc2').keyup(function (e) {
-            if (e.keyCode == 32) {
-                $(this).trigger("enterKey");
-            }
-        });
-        $('#Desc2').on("enterKey", function (e) {
-            var words = $('#Desc2').val().split(' ');
-            $("#WordsCounterar").text(words.length - 1);
-            //$("#Desc1").text();
-        });
-    </script>
+<!--CKEditor Build Bundles:: Only include the relevant bundles accordingly-->
+@section Scripts{
+    @*<script>
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toastr-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        };
+
+        toastr.success("Inconceivable!");
+
+
+    </script>*@
+    <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
+        <script>
+
+            ClassicEditor.create(document.querySelector('#editoren'))
+                .catch(error => {
+                    console.error(error);
+                });
+            ClassicEditor.create(document.querySelector('#editorar'))
+                .catch(error => {
+                    console.error(error);
+                });
+        </script>
 }

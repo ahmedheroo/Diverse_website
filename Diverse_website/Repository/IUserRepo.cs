@@ -7,7 +7,7 @@ namespace Diverse_website.Repository
 {
     public interface IUserRepo 
     {
-        IQueryable<AspNetUser> GetUsersIncludeRoles();
+        IQueryable<SysUser> GetUsersIncludeRoles();
         IEnumerable<AspNetUserRole> GetAllAdmins();
         IEnumerable<AspNetUserRole> GetAllUsers();
         AspNetUser GetUserById(object id);
