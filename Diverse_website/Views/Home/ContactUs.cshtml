@@ -82,7 +82,7 @@
             <div class="col-md-6 col-sm-12 pd-20-40">
                 <h2 class="text-color fw-b"> @T["Contact us now"]</h2>
                 <hr class="space s" />
-                <form action="" class="form-box form-ajax" method="post">
+                <form class="form-box form-ajax" method="post">
                     <div class="d-flex">
                         <div class="pd">
                             <p>@T["Your name"]</p>
@@ -103,7 +103,7 @@
                             <p>@T["Your message"]</p>
                             <textarea id="messagge" name="messagge" placeholder="@T[""]" class="form-control form-value in-bg" required></textarea>
                             <hr class="space s" />
-                            <a class="circle-button btn-sm btn"><i class="fa fa-send-o"></i>@T["Send message"]</a>
+                            <button type="submit" onclick="sendEmail()" class="circle-button btn-sm btn"><i class="fa fa-send-o"></i>@T["Send message"]</button>
                         </div>
                     </div>
                     <!-- <div class="success-box">
@@ -143,3 +143,23 @@
         </div>
     </div>
 </div>
+@section Scripts{
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+    function sendEmail() {
+        Email.send({
+            Host: "smtp.gmail.com",
+            Username: "ahmedmhassan077@gmail.com",
+            Password: "hero2020",
+            To: 'ahmedhassssan2016.com',
+            From: "ahmedmhassan077@gmail.com",
+            Subject: "Sending Email using javascript",
+            Body: "Well that was easy!!",
+        })
+            .then(function (message) {
+                alert("mail sent successfully")
+            });
+    }
+</script>
+
+ }

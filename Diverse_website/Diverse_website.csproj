@@ -6,11 +6,31 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20230702170725_createDB.cs" />
+    <Compile Remove="Migrations\20230702170725_createDB.Designer.cs" />
+    <Compile Remove="Migrations\20230713215413_addcountry.cs" />
+    <Compile Remove="Migrations\20230713215413_addcountry.Designer.cs" />
+    <Compile Remove="Migrations\20230713223602_addcountries.cs" />
+    <Compile Remove="Migrations\20230713223602_addcountries.Designer.cs" />
+    <Compile Remove="Migrations\20230714005707_country.cs" />
+    <Compile Remove="Migrations\20230714005707_country.Designer.cs" />
+    <Compile Remove="Migrations\20230714130627_countries.cs" />
+    <Compile Remove="Migrations\20230714130627_countries.Designer.cs" />
+    <Compile Remove="Migrations\20230714130931_countriess.cs" />
+    <Compile Remove="Migrations\20230714130931_countriess.Designer.cs" />
+    <Compile Remove="Migrations\20230714152103_createdb.cs" />
+    <Compile Remove="Migrations\20230714152103_createdb.Designer.cs" />
     <Compile Remove="Models\DiverseContext.cs" />
+    <Compile Remove="Models\DiverseDBContext.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Remove="Views\Blogs\Index - Copy.cshtml" />
+    <Content Remove="Views\Home\Solution1.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\admin\assets\js\custom\calendar\calendar.js" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,6 +45,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.17" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
     <PackageReference Include="ReflectionIT.Mvc.Paging" Version="7.0.0" />
+    <PackageReference Include="RestSharp" Version="110.2.0" />
   </ItemGroup>
 
 </Project>
