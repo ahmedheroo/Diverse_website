@@ -3298,7 +3298,7 @@ COLLAPSE
 ------------------------------
 */
 [data-height].collapse-box .panel:after {
-    content: '';
+    /* content: ''; */
     position: absolute;
     height: 60px;
     right: 0;
