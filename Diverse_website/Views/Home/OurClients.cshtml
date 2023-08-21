@@ -1,4 +1,4 @@
-﻿
+﻿@model SendEmail
 @{
     ViewData["Title"] = "OurClients";
     ViewData["ActiveLi"] = "Projectsli";
@@ -35,8 +35,8 @@
                             Empowering digital connectivity and communication in Egypt with advanced telecommunication solutions.
                         </p>
                         <!-- <p class="niche-box-content">
-                    تمكين الاتصالات الرقمية والتواصل في مصر من خلال حلول الاتصالات المتقدمة.
-                </p> -->
+                            تمكين الاتصالات الرقمية والتواصل في مصر من خلال حلول الاتصالات المتقدمة.
+                        </p> -->
                         <a class="btn btn-sm" asp-action="Projects" asp-controller="Home">Explore Projects</a>
                         <!-- <a class="btn btn-sm" href="#">اكتشف المشاريع</a> -->
                     </div>
@@ -51,8 +51,8 @@
                             Revolutionizing transportation with innovative solutions for efficient and sustainable mobility worldwide.
                         </p>
                         <!-- <p class="niche-box-content">
-                    تعزيز الحياة والأعمال من خلال التواصل السلس والخدمات المبتكرة.
-                </p> -->
+                            تعزيز الحياة والأعمال من خلال التواصل السلس والخدمات المبتكرة.
+                        </p> -->
                         <a class="btn btn-sm" asp-action="Projects" asp-controller="Home">Explore Projects</a>
                         <!-- <a class="btn btn-sm" href="#">اكتشف المشاريع</a> -->
                     </div>
@@ -66,7 +66,7 @@
                         <p class="niche-box-content">
                             Enabling Vodafone's digital innovation and superior customer experiences through ICT solutions.
                         </p>
-                        <a class="btn btn-sm" asp-action="Projects" >Explore Projects</a>
+                        <a class="btn btn-sm" asp-action="Projects">Explore Projects</a>
                         <!-- <a class="btn btn-sm" href="#">اكتشف المشاريع</a> -->
                     </div>
                 </div>
@@ -80,8 +80,8 @@
                             Providing comprehensive banking services, supporting economic growth and financial inclusion.
                         </p>
                         <!-- <p class="niche-box-content">
-                    توفير خدمات مصرفية شاملة، ودعم النمو الاقتصادي والشمول المالي.
-                </p> -->
+                            توفير خدمات مصرفية شاملة، ودعم النمو الاقتصادي والشمول المالي.
+                        </p> -->
                         <a class="btn btn-sm" asp-action="Projects" asp-controller="Home">Explore Projects</a>
                         <!-- <a class="btn btn-sm" href="#">اكتشف المشاريع</a> -->
                     </div>
@@ -96,8 +96,8 @@
                             Shaping Egypt's education system and promoting quality learning for all students.
                         </p>
                         <!-- <p class="niche-box-content">
-                    تشكيل نظام التعليم في مصر وتعزيز التعلم ذو الجودة لجميع الطلاب.
-                </p> -->
+                            تشكيل نظام التعليم في مصر وتعزيز التعلم ذو الجودة لجميع الطلاب.
+                        </p> -->
                         <a class="btn btn-sm" asp-action="Projects" asp-controller="Home">Explore Projects</a>
                         <!-- <a class="btn btn-sm" href="#">اكتشف المشاريع</a> -->
                     </div>
@@ -112,8 +112,8 @@
                             Enabling digital transformation and connectivity for individuals and businesses in Egypt.
                         </p>
                         <!-- <p class="niche-box-content">
-                    تمكين التحول الرقمي والتواصل للأفراد والشركات في مصر.
-                </p> -->
+                            تمكين التحول الرقمي والتواصل للأفراد والشركات في مصر.
+                        </p> -->
                         <a class="btn btn-sm" asp-action="Projects" asp-controller="Home">Explore Projects</a>
                         <!-- <a class="btn btn-sm" href="#">اكتشف المشاريع</a> -->
                     </div>
@@ -145,22 +145,22 @@
                 </p> -->
             </div>
             <hr class="space m">
-            <form action="" class="form-box form-ajax" method="post">
+            <form asp-action="OurClients" asp-controller="Home" class="form-box form-ajax" method="post">
                 <div class="row">
                     <div class="col-md-4">
                         <p>Name</p>
                         <!-- <p>اسمك</p> -->
-                        <input id="name" name="name" placeholder="" type="text" class="form-control form-value in-bg" required="">
+                        <input id="name" asp-for="senderName" placeholder="" type="text" class="form-control form-value in-bg" required>
                     </div>
                     <div class="col-md-4">
                         <p>Email</p>
                         <!-- <p>بريد إلكتروني</p> -->
-                        <input id="email" name="email" placeholder="" type="email" class="form-control form-value in-bg" required="">
+                        <input id="email" asp-for="senderemail" placeholder="" type="email" class="form-control form-value in-bg" required>
                     </div>
                     <div class="col-md-4">
                         <p>Phone</p>
                         <!-- <p>رقم التليفون</p> -->
-                        <input id="phone" name="phone" placeholder="" type="text" class="form-control form-value in-bg" required>
+                        <input id="phone" asp-for="Phone" placeholder="" type="text" class="form-control form-value in-bg" required>
                     </div>
                 </div>
                 <hr class="space s">
@@ -168,9 +168,9 @@
                     <div class="col-md-12">
                         <p>Your message</p>
                         <!-- <p>رسالتك</p> -->
-                        <textarea id="messagge" name="messagge" placeholder="" class="form-control form-value in-bg" required=""></textarea>
+                        <textarea id="messagge" asp-for="message" placeholder="" class="form-control form-value in-bg" required></textarea>
                         <hr class="space mm">
-                        <a class="circle-button btn-sm btn"><i class="fa fa-send-o" aria-hidden="true"></i>Send message</a>
+                        <button type="submit" class="circle-button btn-sm btn"><i class="fa fa-send-o" aria-hidden="true"></i>Send message</button>
                         <!-- <a class="circle-button btn-sm btn"><i class="fa fa-send-o" aria-hidden="true"></i>أرسل رسالة</a> -->
                     </div>
                 </div>
@@ -185,3 +185,32 @@
         </div>
     </div>
 </div>
+<!--<div id="sentmodal" class="modal">-->
+<!-- Modal content -->
+<!--<div class="modal-content">
+        <span class="closesentmodalbtn">&times;</span>
+        <div>thank you</div>
+    </div>
+
+</div>
+
+
+@*@if (ViewData["EmailSent"] != null && (bool)ViewData["EmailSent"])*@
+{
+    <script>
+
+        var modalsent = document.getElementById("sentmodal");
+
+        var spanclose = document.getElementsByClassName("closesentmodalbtn")[0];
+
+        modalsent.style.display = "block";
+
+        spanclose.onclick = function () {
+            modalsent.style.display = "none";
+        }
+        window.onclick = function (event) {
+            if (event.target == modalsent) {
+                modalsent.style.display = "none";
+            }
+        }
+    </script>-->

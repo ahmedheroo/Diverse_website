@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About Diverse®" xml:space="preserve">
-    <value>About Diverse®</value>
-  </data>
   <data name="About Us" xml:space="preserve">
     <value>About Us</value>
   </data>
@@ -138,29 +135,14 @@
   <data name="Client WebPage" xml:space="preserve">
     <value>Client WebPage</value>
   </data>
-  <data name="Clients" xml:space="preserve">
-    <value>Clients</value>
-  </data>
-  <data name="Consultancy" xml:space="preserve">
-    <value>Consultancy</value>
-  </data>
   <data name="Contact Us" xml:space="preserve">
     <value>Contact Us</value>
   </data>
   <data name="Contact us now" xml:space="preserve">
     <value>Contact us now</value>
   </data>
-  <data name="copyrights" xml:space="preserve">
-    <value>© 2023 Diverse. All rights reserved.</value>
-  </data>
-  <data name="Cyber Security" xml:space="preserve">
-    <value>Cyber Security</value>
-  </data>
   <data name="DashBoard" xml:space="preserve">
     <value>DashBoard</value>
-  </data>
-  <data name="Data Center" xml:space="preserve">
-    <value>Data Center</value>
   </data>
   <data name="Discover the diverse range of industry-leading organizations that have chosen us as their trusted partner for cutting-edge ICT solutions and services." xml:space="preserve">
     <value>Discover the diverse range of industry-leading organizations that have chosen us as their trusted partner for cutting-edge ICT solutions and services.</value>
@@ -183,142 +165,8 @@
   <data name="Explore Projects" xml:space="preserve">
     <value>Explore Projects</value>
   </data>
-  <data name="FAQs" xml:space="preserve">
-    <value>FAQs</value>
-  </data>
   <data name="Home" xml:space="preserve">
     <value>Home</value>
-  </data>
-  <data name="home10" xml:space="preserve">
-    <value>At Diverse, we are driven by a passion to revolutionize the EMEA region with our exceptional services and cutting-edge solutions. With our roots in Germany and Egypt, we have embarked on an incredible journey to provide our customers with unparalleled professionalism and world-class telco-grade products, services and support.</value>
-  </data>
-  <data name="home11" xml:space="preserve">
-    <value>The Phenomenal Growth</value>
-  </data>
-  <data name="home12" xml:space="preserve">
-    <value>From Humble Beginnings to Remarkable Growth</value>
-  </data>
-  <data name="home13" xml:space="preserve">
-    <value>Since our inception in 2016, we have experienced remarkable growth year after year, with an organic increase of over 200% each year. This phenomenal success has propelled us from a small enterprise to a medium-sized company that now caters to tier one mobile operators. Our dedication and commitment to excellence have been the driving forces behind our consistent expansion.</value>
-  </data>
-  <data name="home14" xml:space="preserve">
-    <value>GCC Expansion</value>
-  </data>
-  <data name="home15" xml:space="preserve">
-    <value>GCC Expansion: Embracing New Horizons</value>
-  </data>
-  <data name="home16" xml:space="preserve">
-    <value>In 2023, we are expanding further and embracing the abundant opportunities in the captivating Gulf Cooperation Council (GCC) region. With a proven track record and financial stability spanning seven years, our thrilling adventure begins with the establishment of our first office in the Kingdom of Saudi Arabia (KSA). Our vision is to make KSA the vibrant hub that propels our operations and fosters innovation throughout the entire region. Join us as we embark on this remarkable journey, shaping the future of GCC.</value>
-  </data>
-  <data name="home17" xml:space="preserve">
-    <value>East Africa Expansion</value>
-  </data>
-  <data name="home18" xml:space="preserve">
-    <value>East Africa Expansion: Unleashing Technological Potential</value>
-  </data>
-  <data name="home19" xml:space="preserve">
-    <value>East Africa, a region brimming with untapped possibilities, presents an exciting frontier for Diverse. As we expand our operations to Kenya in 2023, we are eager to make a lasting impact and drive technological progress in this dynamic landscape. By leveraging our market insights and understanding of the region, we aim to bridge the gaps in technology and deliver unparalleled solutions that empower business and individuals alike. Join us as we embark on this transformative journey, igniting a new era of innovation and growth throughout East Africa.</value>
-  </data>
-  <data name="home20" xml:space="preserve">
-    <value>What's New</value>
-  </data>
-  <data name="home21" xml:space="preserve">
-    <value>Diverse®'s Current Regions</value>
-  </data>
-  <data name="home22" xml:space="preserve">
-    <value>Numberg, Germany</value>
-  </data>
-  <data name="home23" xml:space="preserve">
-    <value>Cairo, Egypt</value>
-  </data>
-  <data name="home24" xml:space="preserve">
-    <value>Kenya</value>
-  </data>
-  <data name="home25" xml:space="preserve">
-    <value>Saudi Arabia</value>
-  </data>
-  <data name="home26" xml:space="preserve">
-    <value>Providing The Top Solutions in The Information Technology Industry</value>
-  </data>
-  <data name="home27" xml:space="preserve">
-    <value>With the variety in our solutions we aim to achive highest quality with the most modern Technology</value>
-  </data>
-  <data name="home28" xml:space="preserve">
-    <value>Networking</value>
-  </data>
-  <data name="home29" xml:space="preserve">
-    <value>Our division delivers advanced connectivity solutions with a perfect blend of wired and wireless options, backed by a team of highly qualified Engineers.</value>
-  </data>
-  <data name="home3" xml:space="preserve">
-    <value>Working towards our mission the year 2023 denotes the launch of Diverse into selected international markets.
-                            Starting with Kenya as a hub for east Africa sub region, Saudi as a hub for GCC and Egypt as a hub for West Africa.
-                            we aim to help these regions with world class solutions and services.</value>
-  </data>
-  <data name="home30" xml:space="preserve">
-    <value>Read more</value>
-  </data>
-  <data name="home31" xml:space="preserve">
-    <value>Data Center</value>
-  </data>
-  <data name="home32" xml:space="preserve">
-    <value>Robust data centers, equipped with powerful compute capabilities, storage, reliable backup solutions, essential in today's competitive marketplace to enable efficiency.</value>
-  </data>
-  <data name="home33" xml:space="preserve">
-    <value>Cyber Security</value>
-  </data>
-  <data name="home34" xml:space="preserve">
-    <value>Diverse offers comprehensive security solutions designed to help organizations adapt to traffic bursts, complex and rapidly evolving applications in datacenters.</value>
-  </data>
-  <data name="home35" xml:space="preserve">
-    <value>Our Methodology</value>
-  </data>
-  <data name="home36" xml:space="preserve">
-    <value>Methodical phases, from planning to implementation and training, ensure a seamless and successful deployment of ICT solutions, promoting integration and user proficiency.</value>
-  </data>
-  <data name="home37" xml:space="preserve">
-    <value>Planning and Preparation</value>
-  </data>
-  <data name="home38" xml:space="preserve">
-    <value>Scope definition, solution exploration, stakeholder alignment</value>
-  </data>
-  <data name="home39" xml:space="preserve">
-    <value>Design and Implementation</value>
-  </data>
-  <data name="home4" xml:space="preserve">
-    <value>Egypt</value>
-  </data>
-  <data name="home40" xml:space="preserve">
-    <value>Solution architecture, deployment, functionality expansion</value>
-  </data>
-  <data name="home41" xml:space="preserve">
-    <value>Operation and Optimization</value>
-  </data>
-  <data name="home42" xml:space="preserve">
-    <value>Maintain solution, resolve issues, optimize performance</value>
-  </data>
-  <data name="home5" xml:space="preserve">
-    <value>Saudi Arabia</value>
-  </data>
-  <data name="home6" xml:space="preserve">
-    <value>Kenya</value>
-  </data>
-  <data name="home7" xml:space="preserve">
-    <value>Germany</value>
-  </data>
-  <data name="home8" xml:space="preserve">
-    <value>The Very Beginnings</value>
-  </data>
-  <data name="home9" xml:space="preserve">
-    <value>Ambitious Beginnings in Europe and North Africa</value>
-  </data>
-  <data name="hometitle1" xml:space="preserve">
-    <value>Welcome to Diverse®</value>
-  </data>
-  <data name="hometitle2" xml:space="preserve">
-    <value>Welcome to Diverse, your ultimate destination for innovative IT solutions, where technology meets diversity to bring you a world of possibilities.</value>
-  </data>
-  <data name="Implementation" xml:space="preserve">
-    <value>Implementation</value>
   </data>
   <data name="Key Customers" xml:space="preserve">
     <value>Key Customers</value>
@@ -331,18 +179,6 @@
   </data>
   <data name="Load More" xml:space="preserve">
     <value>Load More</value>
-  </data>
-  <data name="locationaddress" xml:space="preserve">
-    <value>Smart Village - Building A218 , Km 28 Cairo Alexandria Desert Road 6th of October City – Giza, Egypt</value>
-  </data>
-  <data name="Networking" xml:space="preserve">
-    <value>Networking</value>
-  </data>
-  <data name="Our Clients" xml:space="preserve">
-    <value>Our Clients</value>
-  </data>
-  <data name="Our Projects" xml:space="preserve">
-    <value>Our Projects</value>
   </data>
   <data name="Phone number" xml:space="preserve">
     <value>Phone number</value>
@@ -370,9 +206,6 @@
   </data>
   <data name="Solutions" xml:space="preserve">
     <value>Solutions</value>
-  </data>
-  <data name="support" xml:space="preserve">
-    <value>support</value>
   </data>
   <data name="Tags" xml:space="preserve">
     <value>Tags</value>

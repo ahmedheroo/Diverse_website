@@ -21,6 +21,8 @@ using Microsoft.Extensions.Options;
 using ReflectionIT.Mvc.Paging;
 using Diverse_website.Helpers;
 using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
 namespace Diverse_website
 {
@@ -37,6 +39,7 @@ namespace Diverse_website
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            //services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
             services.AddMvc()
       .AddDataAnnotationsLocalization(options =>
@@ -100,6 +103,10 @@ namespace Diverse_website
             services.AddScoped<IBlogsRepo, BlogsRepo>();
             services.AddScoped<IProjectRepo, ProjectRepo>();
             services.AddScoped<IVendorsRepo, VendorsRepo>();
+            services.AddScoped<ISearchRepo, SearchRepo>();
+            services.AddTransient<IEmailSender, EmailSender>();
+            //services.AddSingleton<IRazorViewEngine, RazorViewEngine>();
+            //services.AddSingleton<ITempDataProvider, CookieTempDataProvider>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
