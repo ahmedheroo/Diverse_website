@@ -1,0 +1,90 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Diverse" content="Diverse Company">
+    <meta name="Diverse" content="Diverse Company">
+    <meta name="description" content="Explore our diverse range of projects and discover valuable resources, helpful tips, and company updates on our informative blog.">
+    <meta name="keywords" content="projects, blog, company updates, resources">
+    <title>Diverse - @ViewData["Not Found"]</title>
+
+    <link rel="icon" href="~/client/assets/images/diverse logo cut circle.png">
+
+    <!--begin::Fonts(mandatory for all pages)-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />        <!--end::Fonts-->
+    <!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
+    <link href="~/admin/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="~/admin/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+
+</head>
+<!--end::Head-->
+<!--begin::Body-->
+<body id="kt_body" class="app-blank app-blank bgi-size-cover bgi-position-center bgi-no-repeat">
+
+    <div class="d-flex flex-column flex-root" id="kt_app_root">
+        <!--begin::Page bg image-->
+        <style>
+            body {
+                background-image: url('~/admin/assets/media/auth/bg12.jpg');
+            }
+
+            [data-bs-theme="dark"] body {
+                background-image: url('~/admin/assets/media/auth/bg12-dark.jpg');
+            }
+        </style>
+        <!--end::Page bg image-->
+        <!--begin::Authentication - Signup Welcome Message -->
+        <div class="d-flex flex-column flex-center flex-column-fluid">
+            <!--begin::Content-->
+            <div class="d-flex flex-column flex-center text-center p-10">
+                <!--begin::Wrapper-->
+                <div class="card w-lg-650px py-5">
+                    <div class="card-body py-15 py-lg-20">
+
+                        <!--begin::Logo-->
+                        <div class="mb-13">
+                            <a  class="">
+                                <img alt="Logo" src="http://diverseltd.com/client/assets/images/diverse%20logo%20cut.png" class="h-40px" />
+                            </a>
+                        </div>
+
+                        <p>
+                            Dears all Diverse Team, kindly be notified that a new contact has been registered with the below details:<br />
+                            </p>
+
+                        <div class="fw-semibold fs-6 text-gray-500 mb-7">
+                            "<h3>Contact Name:  " + model.senderName + "</h3>" +
+                                       "<h3>Contact Email: " + model.senderemail + "</h3>" +
+                                     "<h3>Contact Phone: " + model.Phone + "</h3>" +
+                                    "<h4>Message: '" + model.message + "'</h4>";
+
+                        </div>
+
+                            <div class="fv-row text-start">
+                                <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
+
+                                    Please do not reply to this email. Emails sent to this address will not be answered.
+
+                                    Copyright © 2023 DiverseLtd Company. All rights reserved.
+
+                                </div>
+                            </div>
+                </div>
+                
+            </div>
+            <!--end::Content-->
+        </div>
+
+    </div>
+  
+</body>
+</html>

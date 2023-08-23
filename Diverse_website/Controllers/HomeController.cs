@@ -2,6 +2,9 @@
 using Diverse_website.Models;
 using Diverse_website.Repository;
 using Diverse_website.ViewModels;
+using HtmlAgilityPack;
+using ScrapySharp.Extensions;
+using ScrapySharp.Network;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Localization;
@@ -9,14 +12,18 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using ReflectionIT.Mvc.Paging;
-using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Mail;
 using System.Threading.Tasks;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Microsoft.AspNetCore.Mvc.Razor;
 
 namespace Diverse_website.Controllers
 {
@@ -28,28 +35,39 @@ namespace Diverse_website.Controllers
         private readonly IBlogsRepo blogsRepo;
         private readonly IProjectRepo projectsRepo;
         private readonly IVendorsRepo vendorsRepo;
+        private readonly IEmailSender emailSender;
+        private readonly ISearchRepo searchRepo;
+
+        private readonly IRazorViewEngine _viewEngine;
+        private readonly ITempDataProvider _tempDataProvider;
+
+        static ScrapingBrowser _scrapbrowser = new ScrapingBrowser();
         //Egypt 1 , Saudi Arabia 2, Kenya 3, Germany
         //IPa---- EG , KE , SA
         // public string UserCountryName = "";
 
-        public HomeController(ILogger<HomeController> logger, IWebHostEnvironment _webHostEnvironment, IBlogsRepo _blogsRepo, IProjectRepo _projectRepo, IVendorsRepo _vendorsRepo)
+        public HomeController(ILogger<HomeController> logger, IWebHostEnvironment _webHostEnvironment, IBlogsRepo _blogsRepo, IProjectRepo _projectRepo, IVendorsRepo _vendorsRepo,IEmailSender _emailSender, IRazorViewEngine viewEngine, ITempDataProvider tempDataProvider, ISearchRepo _searchRepo)
         {
             _logger = logger;
             webHostEnvironment = _webHostEnvironment;
             blogsRepo = _blogsRepo;
             projectsRepo = _projectRepo;
             vendorsRepo = _vendorsRepo;
-
+            emailSender = _emailSender;
+            _viewEngine = viewEngine;
+            _tempDataProvider = tempDataProvider;
+            searchRepo = _searchRepo;
         }
 
         public IActionResult Index()
         {
 
             //TempData["IP"] = GetCountry();
-
-
-            var model = blogsRepo.Getblogs().OrderByDescending(s => s.CreatedDate);
-            return View(model);
+            // Search();
+            //SearchVM model = new SearchVM();
+            //model.LatestBlogs = blogsRepo.Getblogs().OrderByDescending(s => s.CreatedDate);
+              //Search();
+            return View();
         }
         [HttpPost]
         public IActionResult SetLanguage(string culture, string returnUrl)
@@ -195,6 +213,28 @@ namespace Diverse_website.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public IActionResult ContactUs(SendEmail model)
+        {
+            try
+            {
+                string htmlContent = "<body style=\"background - color: #F5F5F5;\"><div class=\"card\" style=\"background-color: #ffff;\"><div class=\"card-header\"><img src = \"http://diverseltd.com/client/assets/images/diverse%20logo%20cut.png \" style=\"width: 50px;\"></div><div class=\"card-body\"><h4 class=\"card-title\" style=\"padding-top: 20px;\">Dears all Diverse Team, kindly be notified that a new contact has been registered with the below details:</h4><p class=\"card-text\"><h4>Contact Name: " + model.senderName + "</h3></p><p class=\"card-text\"><h4>Contact Email: " + model.senderemail + "</h3></p><p class=\"card-text\"><h4>Contact Phone: " + model.Phone + "</h3></p><p class=\"card-text\"><h4>Message: " + model.message + "</h3></p></div><div class=\"card-footer text-muted \" style=\"padding-top: 20px;font-size: 11px;color: #6C6C6C;\">Please do not reply to this email.Emails sent to this address will not be answered.Copyright © 2023 DiverseLtd Company. All rights reserved.</div></div></body> ";
+
+                emailSender.SendEmailasync("info@diverseltd.com", "New Contact", htmlContent);
+
+               // NotifyAlert("success", "Your Email has been sent successfully, Thanks for contacting us");
+               // ViewData["EmailSent"] = true;
+                return View();
+            }
+            catch (Exception)
+            {
+
+                //NotifyAlert("error", "There is an error happened in sending contact Email,Please Try again");
+               // ViewData["EmailSent"] = false;
+                return View();
+
+            }
+        }
         public IActionResult AboutUs()
         {
 
@@ -202,10 +242,33 @@ namespace Diverse_website.Controllers
         }
         public IActionResult OurClients()
         {
+          
 
             return View();
         }
-        public IActionResult faq()
+        [HttpPost]
+        public IActionResult OurClients(SendEmail model)
+        {
+            try
+            {
+                string htmlContent = "<body style=\"background - color: #F5F5F5;\"><div class=\"card\" style=\"background-color: #ffff;\"><div class=\"card-header\"><img src = \"http://diverseltd.com/client/assets/images/diverse%20logo%20cut.png \" style=\"width: 50px;\"></div><div class=\"card-body\"><h4 class=\"card-title\" style=\"padding-top: 20px;\">Dears all Diverse Team, kindly be notified that a new contact has been registered with the below details:</h4><p class=\"card-text\"><h4>Contact Name: " + model.senderName + "</h3></p><p class=\"card-text\"><h4>Contact Email: " + model.senderemail + "</h3></p><p class=\"card-text\"><h4>Contact Phone: " + model.Phone + "</h3></p><p class=\"card-text\"><h4>Message: " + model.message + "</h3></p></div><div class=\"card-footer text-muted \" style=\"padding-top: 20px;font-size: 11px;color: #6C6C6C;\">Please do not reply to this email.Emails sent to this address will not be answered.Copyright © 2023 DiverseLtd Company. All rights reserved.</div></div></body> ";  
+
+                emailSender.SendEmailasync("ahmedhassssan2016@gmail.com", "New Contact", htmlContent);
+
+                //NotifyAlert("success", "Your Email has been sent successfully, Thanks for contacting us");
+               // ViewData["EmailSent"] = true;
+                return View();
+            }
+            catch (Exception)
+            {
+
+                //NotifyAlert("error", "There is an error happened in sending contact Email,Please Try again");
+               // ViewData["EmailSent"] = false;
+                return View();
+
+            }
+        }
+            public IActionResult faq()
         {
 
             return View();
@@ -225,37 +288,63 @@ namespace Diverse_website.Controllers
 
             return View();
         }
-        //public IActionResult sendcontactemail()
+        //public SearchVM GetPartialView()
         //{
-        //    try
-        //    {
-        //        var client = new RestClient("https://ejnjk3.api.infobip.com/email/3/send");
-        //        // client.Timeout = -1;
-        //        var request = new RestRequest();
-        //        request.AddHeader("Authorization", "Basic {AhmedHassan25:Ahmedhero2020@}");
-        //        request.AlwaysMultipartFormData = true;
-        //        request.AddParameter("from", "Ahmed Hassan <AhmedHassan25@selfserviceib.com>");
-        //        request.AddParameter("to", "ahmedhassssan2016.com");
-        //        request.AddParameter("subject", "Mail subject text and placeholder ph1");
-        //        request.AddParameter("text", "Dear ahmed, this is mail body text with placeholders in body");
-        //        request.AddParameter("html", "<h1>Html body</h1><p>Rich HTML message body.</p>");
-        //        RestResponse response = client.Execute(request);
+        //       SearchVM model = new SearchVM();
+        //       model.result= Search();
 
-
-        //        NotifyAlert("success", "Blog has been saved");
-
-        //        return RedirectToAction("ContactUs");
-        //    }
-        //    catch (Exception)
-        //    {
-
-        //        NotifyAlert("success", "Blog has been saved");
-        //        return RedirectToAction("ContactUs");
-
-
-        //    }
-
+        //      return model;
         //}
+
+
+        public static HtmlNode GetHtml(string url)
+        {
+            _scrapbrowser.IgnoreCookies = true;
+            _scrapbrowser.Timeout = TimeSpan.FromMinutes(15);
+            _scrapbrowser.Headers["user-agent"] = "Mozilla/4.0 (compatible ; Windows NT 5.1 ; MSIE 6.0)"
+                + "compatible ; MSIE 6.0 ; Windows NT 5.1 ; .NET CLR 1.1.4322; .NET CLR 2.0.50727)";
+            WebPage _webpage = _scrapbrowser.NavigateToPage(new Uri(url));
+            return _webpage.Html;
+        }
+        public static string Search()
+        {
+            //var IndexPage =      GetHtml("http://www.diverseltd.com").InnerText;
+            //var Solutionspage =  GetHtml("http://www.diverseltd.com/Home/Solutions").InnerText;
+            //var Solutionspage1 = GetHtml("http://www.diverseltd.com/Home/Networking").InnerText;
+            //var Solutionspage2 = GetHtml("http://www.diverseltd.com/Home/DataCenter").InnerText;
+            //var Solutionspage3 = GetHtml("http://www.diverseltd.com/Home/CyberSecurity").InnerText;
+            //var servicespage =   GetHtml("http://www.diverseltd.com/Home/Services").InnerText;
+            //var servicespage1 =  GetHtml("http://www.diverseltd.com/Home/Consultancy").InnerText;
+            //var servicespage2 =  GetHtml("http://www.diverseltd.com/Home/Implementation").InnerText;
+            //var servicespage3 =  GetHtml("http://www.diverseltd.com/Home/support").InnerText;
+            //var Clientspage =    GetHtml("http://www.diverseltd.com/Home/OurClients").InnerText;
+            //var ProjectsPage =   GetHtml("http://www.diverseltd.com/Home/Projects").InnerText;
+            //var VendorsPage =    GetHtml("http://www.diverseltd.com/Home/Vendors").InnerText;
+            //var BlogsPage =      GetHtml("http://www.diverseltd.com/Home/Blogs").InnerText;
+            //string index = null;
+            ////string[] foundpages = new string[] { };
+            ////string[] pages = new string[] { IndexPage, Solutionspage, Solutionspage1, Solutionspage2, Solutionspage3, servicespage, servicespage1, servicespage2, servicespage3, Clientspage, ProjectsPage, BlogsPage, VendorsPage };
+            //////foreach (var item in pages)
+            //////{
+            //if (IndexPage.Contains("Welcome to"))
+            //{
+
+            //    index = "found";
+            //    return (index);
+
+            //}
+            //else
+            //{
+            //    return ("Not");
+            //}
+
+
+            return ("Not");
+            //}
+
+
+        }
+      
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

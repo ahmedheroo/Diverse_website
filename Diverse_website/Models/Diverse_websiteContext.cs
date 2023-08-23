@@ -29,13 +29,15 @@ namespace Diverse_website.Models
         public virtual DbSet<SysUser> SysUsers { get; set; }
         public virtual DbSet<Vendor> Vendors { get; set; }
         public virtual DbSet<Counrty> Counrties { get; set; }
+        public virtual DbSet<KeyWordSearch> KeyWordSearches { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                  optionsBuilder.UseSqlServer("Data Source=N1NWPLSK12SQL-v02.shr.prod.ams1.secureserver.net;Initial Catalog=ph13423754189_;User Id=Diverse_User;Password=Diverse_User");
-                //optionsBuilder.UseSqlServer("Server=.;Database=Diverse_website;Trusted_Connection=True;MultipleActiveResultSets=true");
+                //optionsBuilder.UseSqlServer("Data Source=N1NWPLSK12SQL-v02.shr.prod.ams1.secureserver.net;Initial Catalog=ph13423754189_;User Id=Diverse_User;Password=Diverse_User");
+                //optionsBuilder.UseSqlServer("Data Source=N1NWPLSK12SQL-v02.shr.prod.ams1.secureserver.net;Initial Catalog=DiverseLiveDB;User Id=DiverseLiveDBUser;Password=DiverseLiveDBUser@123");
+                  optionsBuilder.UseSqlServer("Server=.;Database=Diverse_website;Trusted_Connection=True;MultipleActiveResultSets=true");
 
             }
         }

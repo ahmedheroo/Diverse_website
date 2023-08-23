@@ -144,7 +144,7 @@ namespace Diverse_website.Models
 
                 entity.Property(e => e.Id).HasColumnName("ID");
 
-                entity.Property(e => e.Userid).HasColumnName("userid");
+                entity.Property(e => e.userid).HasColumnName("userid");
             });
 
             modelBuilder.Entity<Counrty>(entity =>

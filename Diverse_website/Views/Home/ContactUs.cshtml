@@ -1,4 +1,5 @@
 ﻿@using System.Globalization
+@model SendEmail
 @{
     ViewData["Title"] = "ContactUs";
     ViewData["ActiveLi"] = "Contactli";
@@ -82,19 +83,19 @@
             <div class="col-md-6 col-sm-12 pd-20-40">
                 <h2 class="text-color fw-b"> @T["Contact us now"]</h2>
                 <hr class="space s" />
-                <form class="form-box form-ajax" method="post">
+                <form class="form-box form-ajax" asp-action="ContactUs" asp-controller="Home" method="post">
                     <div class="d-flex">
                         <div class="pd">
                             <p>@T["Your name"]</p>
-                            <input id="name" name="name" placeholder="@T[""]" type="text" class="form-control form-value in-bg pd-10" required>
+                            <input id="name" asp-for="senderName" placeholder="@T[""]" type="text" class="form-control form-value in-bg pd-10" required>
                         </div>
                         <div class="pd">
                             <p>@T["Email"]</p>
-                            <input id="email" name="email" placeholder="@T[""]" type="email" class="form-control form-value in-bg pd-10" required>
+                            <input id="email" asp-for="senderemail" placeholder="@T[""]" type="email" class="form-control form-value in-bg pd-10" required>
                         </div>
                         <div class="pd">
                             <p>@T["Phone number"]</p>
-                            <input id="phone" name="phone" placeholder="@T[""]" type="text" class="form-control form-value in-bg pd-10" required>
+                            <input id="phone" asp-for="Phone" placeholder="@T[""]" type="text" class="form-control form-value in-bg pd-10" required>
                         </div>
                     </div>
                     <hr class="space xs" />
@@ -103,7 +104,7 @@
                             <p>@T["Your message"]</p>
                             <textarea id="messagge" name="messagge" placeholder="@T[""]" class="form-control form-value in-bg" required></textarea>
                             <hr class="space s" />
-                            <button type="submit" onclick="sendEmail()" class="circle-button btn-sm btn"><i class="fa fa-send-o"></i>@T["Send message"]</button>
+                            <button type="submit" class="circle-button btn-sm btn"><i class="fa fa-send-o"></i>@T["Send message"]</button>
                         </div>
                     </div>
                     <!-- <div class="success-box">
@@ -121,7 +122,7 @@
                         <ul class="fa-ul">
                             <li>
                                 <i class="fa-li fa fa-home"></i>
-                                506, First Tower - Silver Mall, Central Axis - 6th Oct. City
+                                @T["locationaddress"]
                             </li>
                         </ul>
                     </div>
@@ -143,23 +144,4 @@
         </div>
     </div>
 </div>
-@section Scripts{
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script>
-        function sendEmail() {
-            Email.send({
-                Host: "smtp.gmail.com",
-                Username: "ahmedmhassan077@gmail.com",
-                Password: "hero2020",
-                To: 'ahmedhassssan2016.com',
-                From: "ahmedmhassan077@gmail.com",
-                Subject: "Sending Email using javascript",
-                Body: "Well that was easy!!",
-            })
-                .then(function (message) {
-                    alert("mail sent successfully")
-                });
-        }
-    </script>
-
-}
+ 

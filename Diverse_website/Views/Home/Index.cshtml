@@ -1,359 +1,11 @@
-﻿@model IQueryable<Blog>
+﻿@*@model SearchVM*@
 @{
     Layout = null;
     ViewData["Title"] = "Home";
     ViewData["ActiveLi"] = "Homeli";
 
 }
-<!--<body class="device-l">
-    <div class="section-bg-image text-center bg-bottom bg-g" style="background-image:url(../../client/assets/images/bg-22.png)">
-        <div class="container content">
-
-            <hr class="space">
-            <div class="row">
-                <div class="col-md-9 std">
-                    <h1 class="title home-title index-text-color">Welcome to Diverse</h1>
-                    <hr class="space m xm">
-                    <p class="index-pcolor index-text-color-1">Welcome to Diverse, your ultimate destination for innovative IT solutions, where technology meets diversity to bring you a world of possibilities.</p>
-                </div>
-                <div class="img-box adv-img adv-img-down-text lol" style="opacity: 1;">
-                    <a class="img-box lightbox i-center ">
-                        <img src="../../client/assets/images/1.png" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="section-bg-image bg-top" style="background-image:url(../images/long-1.jpg)">
-        <div class="container content">
-            <div class="flexslider carousel outer-navs no-navs" data-options="numItems:4,controlNav:false,itemMargin:30">
-                <div class="flex-viewport" style="overflow: hidden; position: relative;">
-                    <ul class="slides" style="width: 1400%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
-                        <li style="padding-right: 30px; width: 292.5px; float: left; display: block;">
-                            <a class="img-box lightbox" href="../images/gallery/image-1.jpg" data-lightbox-anima="fade-top">
-                                <img src="../../client/assets/images/Vendors/fortinet.jpg" alt="" draggable="false">
-                            </a>
-                        </li>
-                        <li style="padding-right: 30px; width: 292.5px; float: left; display: block;">
-                            <a class="img-box lightbox" href="../images/gallery/image-2.jpg" data-lightbox-anima="fade-top">
-                                <img src="../../client/assets/images/Vendors/juniper.jpg" alt="" draggable="false">
-                            </a>
-                        </li>
-                        <li style="padding-right: 30px; width: 292.5px; float: left; display: block;">
-                            <a class="img-box lightbox" href="../images/gallery/image-3.jpg" data-lightbox-anima="fade-top">
-                                <img src="../../client/assets/images/Vendors/microfocuslogo.jpg" alt="" draggable="false">
-                            </a>
-                        </li>
-                        <li style="padding-right: 30px; width: 292.5px; float: left; display: block;">
-                            <a class="img-box lightbox" href="../images/gallery/image-4.jpg" data-lightbox-anima="fade-top">
-                                <img src="../../client/assets/images/Vendors/netscout.jpg" alt="" draggable="false">
-                            </a>
-                        </li>
-                        <li style="padding-right: 30px; width: 292.5px; float: left; display: block;">
-                            <a class="img-box lightbox" href="../images/gallery/image-5.jpg" data-lightbox-anima="fade-top">
-                                <img src="../../client/assets/images/Vendors/paloalto.jpg" alt="" draggable="false">
-                            </a>
-                        </li>
-                        <li style="padding-right: 30px; width: 292.5px; float: left; display: block;">
-                            <a class="img-box lightbox" href="../images/gallery/image-6.jpg" data-lightbox-anima="fade-top">
-                                <img src="../../client/assets/images/Vendors/redhat.jpg" alt="" draggable="false">
-                            </a>
-                        </li>
-                    </ul>
-                </div><ul class="flex-direction-nav"><li class="flex-nav-prev"><a class="flex-prev" href="#"></a></li><li class="flex-nav-next"><a class="flex-next" href="#"></a></li></ul>
-            </div>
-            <hr class="space">
-            <div class="row vertical-row">
-                <div class="col-md-6">
-                    <h4 class="ss">
-                        Diverse®<br>
-                        International
-                    </h4>
-                    <p>
-                        Working towards our mission the year 2023 denotes the launch of Diverse into selected international markets.
-                        Starting with Kenya as a hub for east Africa sub region, Saudi as a hub for GCC and Egypt as a hub for West Africa.
-                        we aim to help these regions with world class solutions and services.
-                    </p>
-                    <hr class="space s">
-                    <ul class="fa-ul text-color mmm">
-                        <li><i id="" class="fas fa-map-marker-alt mmm"></i> Egypt</li>
-                        <li><i class="fas fa-map-marker-alt mmm"></i> Germany</li>
-                        <li><i class="fas fa-map-marker-alt mmm"></i> Kenya</li>
-                        <li><i class="fas fa-map-marker-alt mmm"></i> Saudi Arabia</li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <img src="../../client/assets/images/Picture1.png" alt="" data-anima="" data-time="1000" aid="0.8337633449769928" class="fade-right" style="position: relative; animation-duration: 1000ms; transition-timing-function: ease; transition-delay: 0ms;">
-                </div>
-            </div>
-        </div>
-        <div class="section-empty">
-            <div class="container content int-fix">-->
-<!-- <div class="row div-background">
-    <div class="col-md-8 panel-fix">
-        <ul class="timeline">
-            <li>
-
-                <div class="timeline-badge"></div>
-                <div class="timeline-label"><h4>2018</h4><p>25 febbruary 2018</p>
-                <div class="egypt-photo"></div>
-                </div>
-                <div class="timeline-panel">
-                    <div class="timeline-heading">
-                        <h4 class="timeline-title">From Humble Beginnings to Remarkable Growth</h4>
-                    </div>
-                    <div class="timeline-body">
-                        <p>
-                            Since our inception in 2016, we have experienced remarkable growth year after year, with an organic increase of over 200% each year. This phenomenal success has propelled us from a small enterprise to a medium-sized company that now caters to tier one mobile operators. Our dedication and commitment to excellence have been the driving forces behind our consistent expansion.
-                        </p>
-                    </div>
-                    <div class="egypt-photo"></div>
-                </div>
-            </li>
-            <li class="timeline-inverted">
-                <div class="timeline-badge"></div>
-                <div class="timeline-label"><h4>2016</h4><p>10 March 2016</p>
-                <div class="ksa-photo"></div>
-                </div>
-                <div class="timeline-panel">
-                    <div class="timeline-heading">
-                        <h4 class="timeline-title">GCC Expansion: Embracing New Horizons</h4>
-                    </div>
-                    <div class="timeline-body">
-                        <p>
-                            In 2023, we are expanding further and embracing the abundant opportunities in the captivating Gulf Cooperation Council (GCC) region. With a proven track record and financial stability spanning seven years, our thrilling adventure begins with the establishment of our first office in the Kingdom of Saudi Arabia (KSA). Our vision is to make KSA the vibrant hub that propels our operations and fosters innovation throughout the entire region. Join us as we embark on this remarkable journey, shaping the future of GCC.
-                        </p>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="timeline-badge"></div>
-                <div class="timeline-label"><h4>2012</h4><p>14 January 2012</p>
-                <div class="kenya-photo"></div>
-                </div>
-                <div class="timeline-panel">
-                    <div class="timeline-heading">
-                        <h4 class="timeline-title">East Africa Expansion: Unleashing Technological Potential </h4>
-                    </div>
-                    <div class="timeline-body">
-                        <p>
-                            East Africa, a region brimming with untapped possibilities, presents an exciting frontier for Diverse. As we expand our operations to Kenya in 2023, we are eager to make a lasting impact and drive technological progress in this dynamic landscape. By leveraging our market insights and understanding of the region, we aim to bridge the gaps in technology and deliver unparalleled solutions that empower business and individuals alike. Join us as we embark on this transformative journey, igniting a new era of innovation and growth throughout East Africa.
-                        </p>
-                    </div>
-                </div>
-            </li>
-            <li class="timeline-inverted">
-                <div class="timeline-badge"></div>
-                <div class="timeline-label"><h4>2016</h4><p>10 March 2016</p>
-                <div class="ksa-photo"></div></div>
-                <div class="timeline-panel">
-                    <div class="timeline-heading">
-                        <h4 class="timeline-title">GCC Expansion: Embracing New Horizons</h4>
-                    </div>
-                    <div class="timeline-body">
-                        <p>
-                            In 2023, we are expanding further and embracing the abundant opportunities in the captivating Gulf Cooperation Council (GCC) region. With a proven track record and financial stability spanning seven years, our thrilling adventure begins with the establishment of our first office in the Kingdom of Saudi Arabia (KSA). Our vision is to make KSA the vibrant hub that propels our operations and fosters innovation throughout the entire region. Join us as we embark on this remarkable journey, shaping the future of GCC.
-                        </p>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
-</div> -->
-<!--<div class="row">
-        <div class="col-md-8">
-            <ul class="timeline">
-                <li>
-                    <div class="timeline-badge" style="margin-left: 50%;"></div>
-                    <div class="timeline-label lol-fix lol-fix-2"><h4>2018</h4><p>25 febbruary 2018</p></div>
-                    <div class="timeline-panel lol-fix-1 lol-fix-3">
-                        <div class="timeline-heading ">
-                            <h4 class="timeline-title">From Humble Beginnings to Remarkable Growth</h4>
-                        </div>
-                        <div class="timeline-body">
-                            <p>
-                                Since our inception in 2016, we have experienced remarkable growth year after year, with an organic increase of over 200% each year. This phenomenal success has propelled us from a small enterprise to a medium-sized company that now caters to tier one mobile operators. Our dedication and commitment to excellence have been the driving forces behind our consistent expansion
-                            </p>
-                        </div>
-                    </div>
-                </li>
-                <li class="timeline-inverted">
-                    <div class="timeline-badge"></div>
-                    <div class="timeline-label"><h4>2016</h4><p>10 March 2016</p></div>
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4 class="timeline-title">GCC Expansion: Embracing New Horizons</h4>
-                        </div>
-                        <div class="timeline-body">
-                            <p>
-                                In 2023, we are expanding further and embracing the abundant opportunities in the captivating Gulf Cooperation Council (GCC) region. With a proven track record and financial stability spanning seven years, our thrilling adventure begins with the establishment of our first office in the Kingdom of Saudi Arabia (KSA). Our vision is to make KSA the vibrant hub that propels our operations and fosters innovation throughout the entire region. Join us as we embark on this remarkable journey, shaping the future of GCC.
-                            </p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="timeline-badge"></div>
-                    <div class="timeline-label"><h4>2012</h4><p>14 January 2012</p></div>
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4 class="timeline-title">East Africa Expansion: Unleashing Technological Potential </h4>
-                            <p><small class="text-muted"><i class="fa fa-free-code-camp"></i> Capital increasing</small></p>
-                        </div>
-                        <div class="timeline-body">
-                            <p>
-                                East Africa, a region brimming with untapped possibilities, presents an exciting frontier for Diverse. As we expand our operations to Kenya in 2023, we are eager to make a lasting impact and drive technological progress in this dynamic landscape. By leveraging our market insights and understanding of the region, we aim to bridge the gaps in technology and deliver unparalleled solutions that empower business and individuals alike. Join us as we embark on this transformative journey, igniting a new era of innovation and growth throughout East Africa.
-                            </p>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="col-md-4">
-            <h2>Company road map with our history</h2>
-            <hr class="space">
-            <a class="img-box lightbox" href="../images/gallery/image-3.jpg" data-lightbox-anima="fade-top">
-                <img src="../../client/assets/images/Nuremberg.jpeg" alt="">
-            </a>
-            <hr class="space m">
-            <a class="img-box lightbox" href="../images/gallery/image-10.jpg" data-lightbox-anima="fade-top">
-                <img src="../../client/assets/images/Egypt.jpeg" alt="">
-            </a>
-            <hr class="space m">
-            <a class="img-box lightbox" href="../images/gallery/image-10.jpg" data-lightbox-anima="fade-top">
-                <img src="../../client/assets/images/Kenya.jpeg" alt="">
-            </a>
-            <hr class="space m">
-            <a class="img-box lightbox" href="../images/gallery/image-10.jpg" data-lightbox-anima="fade-top">
-                <img src="../../client/assets/images/Saudi.jpeg" alt="">
-            </a>
-            <hr class="space">
-            <h4>A good team</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipiscing elitsed do eiusmod tempo..</p>
-            <a href="#" class="btn-text">View team</a>
-            <hr class="space m">
-            <h4>Contact us</h4>
-            <p>Lorem ipsum dolor sit amet consecteaugue nunc elit dolor, piscing elitse.</p>
-            <a href="#" class="btn-text">Contacts page</a>
-        </div>
-    </div>
-    <div class="grid-list">
-        <div class="grid-box row card-container">
-            <div class="grid-item col-md-4 index-box">
-                <div class="icon-box">
-                    <div class="icon-box-cell">
-                        <i class="fa-solid fa-network-wired fa-2xl text-xl"></i>
-                    </div>
-                    <div class="icon-box-cell ">
-                        <label class="text-m sol-txt">
-                            Networking
-                            <br class="xxm">
-                            <hr class="space m xm">
-                        </label>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipiscing elitsed do eiusmod tempor incididunte.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item col-md-4 index-box flex-position">
-                <div class="icon-box">
-                    <div class="icon-box-cell ">
-                        <i class="fa-solid fa-server text-xl"></i>
-                    </div>
-                    <div class="icon-box-cell">
-                        <label class="text-m sol-txt">
-                            Data Center
-                            <hr class="space m xm">
-                        </label>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipiscing elitsed do eiusmod tempor incididunte.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item col-md-4 index-box">
-                <div class="icon-box ">
-                    <div class="icon-box-cell">
-                        <i class="fa-solid fa-shield-halved text-xl"></i>
-                    </div>
-                    <div class="icon-box-cell">
-                        <label class="text-m sol-txt">
-                            Cyber Security
-                            <hr class="space m xm">
-                        </label>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipiscing elitsed do eiusmod tempor incididunte.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="section-bg-image bg-top cr-bg">
-    <div class="container content">
-        <div class="row">
-            <div class="col-md-8 col-center text-center cdcr">
-                <div class="bc">
-                    <h4>Deployment phases</h4>-->
-<!-- <h4>مراحل النشر</h4> -->
-<!--<p>
-    Methodical phases, from planning to implementation and training, ensure a seamless
-    and successful deployment of ICT solutions, promoting integration and user proficiency.
-</p>-->
-<!-- <p>
-    تضمن المراحل المنهجية ، من التخطيط إلى التنفيذ والتدريب ، النشر السلس والناجح لحلول تكنولوجيا المعلومات والاتصالات ، وتعزيز التكامل وكفاءة المستخدم.
-</p> -->
-<!--<hr class="space">
-</div>
-<div class="row" data-anima="" data-timeline="asc">
-    <div class="col-md-4 boxed-inverse shadow-1 anima fade-bottom p-20 crcd equal-height" aid="0.7979026468847672" style="opacity: 0;">
-        <div class="icon-box icon-box-top-bottom">
-            <div class="icon-box-cell mb-4">
-                <img src="../../client/assets/images/Services/preparation 1 (1).png" alt="">
-            </div>
-            <div class="icon-box-cell">
-                <label class="text-m">Planning and Preparation</label>-->
-<!-- <label class="text-m">التخطيط والتحضير</label> -->
-<!--<p class="text-s">Scope definition, solution exploration, stakeholder alignment</p>-->
-<!-- <p class="text-s">تعريف النطاق واستكشاف الحلول ومواءمة أصحاب المصلحة</p> -->
-<!--</div>
-    </div>
-</div>
-<div class="col-md-4 boxed-inverse shadow-1 anima fade-bottom p-20 crcd equal-height" aid="0.5027059489967733" style="opacity: 0;">
-    <div class="icon-box icon-box-top-bottom">
-        <div class="icon-box-cell mb-4">
-            <img src="../../client/assets/images/Services/tools 1 (1).png" alt="">
-        </div>
-        <div class="icon-box-cell">
-            <label class="text-m">Design and Implemnting</label>-->
-<!-- <label class="text-m">تصميم و تنفيذ</label> -->
-<!--<p class="text-s">Solution architecture, deployment, functionality expansion</p>-->
-<!-- <p class="text-s">هندسة الحل والنشر وتوسيع الوظائف</p> -->
-<!--</div>
-    </div>
-</div>
-<div class="col-md-4 boxed-inverse shadow-1 anima fade-bottom p-20 crcd equal-height" aid="0.6209801221459992" style="opacity: 0;">
-    <div class="icon-box icon-box-top-bottom">
-        <div class="icon-box-cell mb-4">
-            <img src="../../client/assets/images/Services/maintenance 1 (1).png" alt="">
-        </div>
-        <div class="icon-box-cell">
-            <label class="text-m">Operation and Optimization</label>-->
-<!-- <label class="text-m">التشغيل والتحسين</label> -->
-<!--<p class="text-s">Maintain solution, resolve issues, optimize performance</p>-->
-<!-- <p class="text-s">الحفاظ على الحل وحل المشكلات وتحسين الأداء</p> -->
-<!--</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-</body>-->
-
+ 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -362,10 +14,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="Diverse" content="Diverse Company">
-    <meta name="Diverse" content="Diverse Company">
     <title>Diverse</title>
     <meta name="description" content="Explore our diverse range of projects and discover valuable resources, helpful tips, and company updates on our informative blog.">
     <meta name="keywords" content="projects, blog, company updates, resources">
+    <meta name="google-site-verification" content="21cNSG7l7S_JwypAFuI-rmzX5vDq2aE0xTAKrgqLUss" />
     <script src="~/client/assets/styles/HTWF/scripts/jquery.bootgrid.min.js"></script>
     <script src="~/client/assets/styles/HTWF/scripts/script.js"></script>
     <script src="~/client/assets/styles/HTWF/scripts/jquery.min.js"></script>
@@ -374,10 +26,9 @@
     <link rel="stylesheet" href="~/client/assets/styles/HTWF/css/animations.css">
     <link rel="stylesheet" href="../HTWF/scripts/php/contact-form.css">
     <link rel="stylesheet" href="../HTWF/scripts/magnific-popup.css">
-    <link rel="icon" href="../images/favicon.png">
-    @* <link rel="stylesheet" href="../skin.css">*@
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="icon" href="~/client/assets/images/diverse logo cut circle.png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" href="../client/assets/images/diverse logo cut circle.png">
     <link rel="stylesheet" href="~/client/assets/styles/HTWF/style.css">
     <link rel="stylesheet" href="~/client/assets/styles/HTWF/scripts/flexslider/flexslider.css">
     <link rel="stylesheet" href="~/client/assets/styles/HTWF/css/content-box.css">
@@ -388,6 +39,8 @@
     <link rel="stylesheet" href="~/client/assets/styles/css/saxicons.css">
     <link rel="stylesheet" href="~/client/assets/styles/HTWF/scripts/jquery.flipster.min.css">
     <link rel="stylesheet" href="~/client/assets/styles/HTWF/scripts/magnific-popup.css">
+    <link href="~/admin/assets/css/custom.css" rel="stylesheet" />
+
 </head>
 
 <body class="post-single vendors-body">
@@ -412,25 +65,30 @@
                                 <li class="dropdown" id="solutionsli">
                                     <a asp-action="Solutions" asp-controller="Home" class="dropdown-toggle" data-toggle="dropdown" role="button">@T["Solutions"] <span class="caret"></span></a>
                                     <ul class="dropdown-menu multi-level">
-                                        <li id="solutionsli"><a asp-action="Networking" asp-controller="Home">Networking</a></li>
-                                        <li id="solutionsli"><a asp-action="DataCenter" asp-controller="Home">Data Center</a></li>
-                                        <li id="solutionsli"><a asp-action="CyberSecurity" asp-controller="Home">Cyber Security</a></li>
+                                        <li class="dis-off" id="solutionsli">
+                                            <a asp-action="Solutions" asp-controller="Home">@T["Solutions"]</a>
+                                            <!-- [French] -->
+                                        </li>
+                                        <li id="solutionsli"><a asp-action="Networking" asp-controller="Home">@T["Networking"]</a></li>
+                                        <li id="solutionsli"><a asp-action="DataCenter" asp-controller="Home">@T["Data Center"]</a></li>
+                                        <li id="solutionsli"><a asp-action="CyberSecurity" asp-controller="Home">@T["Cyber Security"]</a></li>
 
                                     </ul>
                                 </li>
                                 <li class="dropdown" id="servicesli">
                                     <a asp-action="Services" asp-controller="Home" class="dropdown-toggle" data-toggle="dropdown" role="button">@T["Services"] <span class="caret"></span></a>
                                     <ul class="dropdown-menu multi-level">
-                                        <li id="servicesli"><a asp-action="Consultancy" asp-controller="Home">Consultancy</a></li>
-                                        <li id="servicesli"><a asp-action="Implementation" asp-controller="Home">Implementation</a></li>
-                                        <li id="servicesli"><a asp-action="support" asp-controller="Home">support</a></li>
+                                        <li id="servicesli" class="dis-off"><a asp-action="Services" asp-controller="Home">@T["Services"]</a></li>
+                                        <li id="servicesli"><a asp-action="Consultancy" asp-controller="Home">@T["Consultancy"]</a></li>
+                                        <li id="servicesli"><a asp-action="Implementation" asp-controller="Home">@T["Implementation"]</a></li>
+                                        <li id="servicesli"><a asp-action="support" asp-controller="Home">@T["support"]</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown" id="Projectsli">
-                                    <a class="dropdown-toggle" data-toggle="dropdown" role="button">Clients<span class="caret"></span></a>
+                                    <a class="dropdown-toggle" data-toggle="dropdown" role="button">@T["Clients"]<span class="caret"></span></a>
                                     <ul class="dropdown-menu multi-level">
-                                        <li><a asp-action="OurClients" asp-controller="Home">Our Clients</a></li>
-                                        <li><a asp-action="Projects" asp-controller="Home">Our Projects</a></li>
+                                        <li><a asp-action="OurClients" asp-controller="Home">@T["Our Clients"]</a></li>
+                                        <li><a asp-action="Projects" asp-controller="Home">@T["Our Projects"]</a></li>
 
                                     </ul>
                                 </li>
@@ -441,85 +99,87 @@
                                 <li class="dropdown" id="AboutUsli">
                                     <a class="dropdown-toggle" data-toggle="dropdown" role="button">@T["About Us"] <span class="caret"></span></a>
                                     <ul class="dropdown-menu multi-level">
-                                        <li id="AboutUsli"><a asp-action="AboutUs" asp-controller="Home">About Diverse®</a></li>
-                                        <li id="AboutUsli"><a asp-action="faq" asp-controller="Home">FAQs</a></li>
+                                        <li id="AboutUsli"><a asp-action="AboutUs" asp-controller="Home">@T["About Diverse®"]</a></li>
+                                        <li id="AboutUsli"><a asp-action="faq" asp-controller="Home">@T["FAQs"]</a></li>
 
                                     </ul>
                                 </li>
+                                <li class="dropdown" id="AboutUsli"><a id="myBtn" role="button"><i class="fas fa-search mmm" aria-hidden="true"></i></a></li>
+
                                 @* <li class="dropdown" id="AboutUsli"><a asp-action="AboutUs" asp-controller="Home">@T["About Us"]</a></li>*@
                                 @* <li class="dropdown" id="faqli"><a >FAQ</a></li>*@
                                 @*<li class="dropdown nav navbar-nav lan-menu">
-                                    @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
-                                    {
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images/eg flag.png" alt="lan" />  العربية  <span class="caret"></span></a>
+        @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+        {
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images/eg flag.png" alt="lan" />  العربية  <span class="caret"></span></a>
 
-                                    }
-                                    else
-                                    {
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images/en.png" alt="lan" />  EN  <span class="caret"></span></a>
+        }
+        else
+        {
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images/en.png" alt="lan" />  EN  <span class="caret"></span></a>
 
-                                    }*@
+        }*@
                                 @*<ul class="dropdown-menu">
-                                        <li>
-                                            <form id="selecteLanguage" asp-controller="Home" asp-action="SetLanguage" asp-route-returnUrl="@returnUrl">
-                                                @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
-                                                {
-                                                    <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[0].Value" type="hidden" />
-                                                    <button type="submit"><img src="~/client/assets/images/en.png" alt="lan" width="20px" height="20px" />  EN  </button>
+            <li>
+                <form id="selecteLanguage" asp-controller="Home" asp-action="SetLanguage" asp-route-returnUrl="@returnUrl">
+                    @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                    {
+                        <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[0].Value" type="hidden" />
+                        <button type="submit"><img src="~/client/assets/images/en.png" alt="lan" width="20px" height="20px" />  EN  </button>
 
-                                                }
-                                                else
-                                                {
-                                                    <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[1].Value" type="hidden" />
-                                                    <button type="submit"><img src="~/client/assets/images/eg flag.png" alt="lan" width="20px" height="20px" />  العربية  </button>
+                    }
+                    else
+                    {
+                        <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[1].Value" type="hidden" />
+                        <button type="submit"><img src="~/client/assets/images/eg flag.png" alt="lan" width="20px" height="20px" />  العربية  </button>
 
-                                                }
-                                            </form>
-                                        </li>
+                    }
+                </form>
+            </li>
 
-                                    </ul>*@
+        </ul>*@
                                 @*<form id="selecteLanguage" asp-controller="Home" asp-action="SetLanguage" asp-route-returnUrl="@returnUrl">
-                                        @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
-                                        {
-                                            <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[0].Value" type="hidden" />
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images/eg flag.png" alt="lan" />العربية <span class="caret"></span></a>
-                                            <ul class="dropdown-menu">
-                                                <li><button type="submit"><img src="~/client/assets/images/en.png" alt="lan" width="20px" height="20px" />EN</button></li>
-                                            </ul>
-                                        }
-                                        else
-                                        {
-                                            <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[1].Value" type="hidden" />
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images/en.png" alt="lan" />EN <span class="caret"></span></a>
-                                            <ul class="dropdown-menu">
-                                                <li><button type="submit"><img src="~/client/assets/images/eg flag.png" alt="lan" width="20px" height="20px" />العربية</button></li>
-                                            </ul>
-                                        }
-                                    </form>*@
+            @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+            {
+                <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[0].Value" type="hidden" />
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images/eg flag.png" alt="lan" />العربية <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><button type="submit"><img src="~/client/assets/images/en.png" alt="lan" width="20px" height="20px" />EN</button></li>
+                </ul>
+            }
+            else
+            {
+                <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[1].Value" type="hidden" />
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images/en.png" alt="lan" />EN <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><button type="submit"><img src="~/client/assets/images/eg flag.png" alt="lan" width="20px" height="20px" />العربية</button></li>
+                </ul>
+            }
+        </form>*@
 
                                 @* </li>*@
                                 @*<form id="selecteLanguage" asp-controller="Home" asp-action="SetLanguage" asp-route-returnUrl="@returnUrl">
 
 
-                                            @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
-                                            {
-                                                <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[0].Value" type="hidden" />
-                                            <li class="dropdown nav navbar-nav lan-menu">
-                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images//eg flag.png" alt="lan" />العربية <span class="caret"></span></a>
-                                                <ul class="dropdown-menu">
-                                                    <li><button type="submit"><img src="~/client/assets/images/en.png" alt="lan" width="20px" height="20px" />EN</button></li>
-                                                </ul>
-                                            </li>
-                                        }
-                                        else
-                                        {
-                                    <li class="dropdown nav navbar-nav lan-menu">
-                                        <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[1].Value" type="hidden" />
+                @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                {
+                    <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[0].Value" type="hidden" />
+                <li class="dropdown nav navbar-nav lan-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images//eg flag.png" alt="lan" />العربية <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><button type="submit"><img src="~/client/assets/images/en.png" alt="lan" width="20px" height="20px" />EN</button></li>
+                    </ul>
+                </li>
+            }
+            else
+            {
+        <li class="dropdown nav navbar-nav lan-menu">
+            <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[1].Value" type="hidden" />
 
-                                        <button type="submit"><img src="~/client/assets/images/eg flag.png" alt="lan" width="20px" height="20px" />العربية</button>
-                                    </li>
-                                        }
-                                            </form>*@
+            <button type="submit"><img src="~/client/assets/images/eg flag.png" alt="lan" width="20px" height="20px" />العربية</button>
+        </li>
+            }
+                </form>*@
 
 
                             </ul>
@@ -538,9 +198,9 @@
                 <hr class="space">
                 <div class="row">
                     <div class="col-md-9 std">
-                        <h1 class="title home-title index-text-color">Welcome to Diverse®</h1>
+                        <h1 class="title home-title index-text-color"> @T["hometitle1"]</h1>
                         <hr class="space m xm">
-                        <p class="index-pcolor index-text-color-1">Welcome to Diverse, your ultimate destination for innovative IT solutions, where technology meets diversity to bring you a world of possibilities.</p>
+                        <p class="index-pcolor index-text-color-1"> @T["hometitle2"]</p>
                     </div>
                     <div class="img-box adv-img adv-img-down-text lol" style="opacity: 1;">
                         <a class="img-box lightbox i-center ">
@@ -596,16 +256,14 @@
                             International
                         </h4>
                         <p>
-                            Working towards our mission the year 2023 denotes the launch of Diverse into selected international markets.
-                            Starting with Kenya as a hub for east Africa sub region, Saudi as a hub for GCC and Egypt as a hub for West Africa.
-                            we aim to help these regions with world class solutions and services.
+                            @T["home3"]
                         </p>
                         <hr class="space s">
                         <ul class="fa-ul text-color mmm">
-                            <li><i id="" class="fas fa-map-marker-alt mmm"></i> Egypt</li>
-                            <li><i class="fas fa-map-marker-alt mmm"></i> Germany</li>
-                            <li><i class="fas fa-map-marker-alt mmm"></i> Kenya</li>
-                            <li><i class="fas fa-map-marker-alt mmm"></i> Saudi Arabia</li>
+                            <li><i id="" class="fas fa-map-marker-alt mmm"></i> @T["home4"]</li>
+                            <li><i class="fas fa-map-marker-alt mmm"></i> @T["home7"]</li>
+                            <li><i class="fas fa-map-marker-alt mmm"></i> @T["home6"]</li>
+                            <li><i class="fas fa-map-marker-alt mmm"></i> @T["home5"]</li>
                         </ul>
                     </div>
                     <div class="col-md-6">
@@ -615,136 +273,66 @@
             </div>
             <div class="section-empty" style="background-image:url(../../client/assets/images/bg-12.png)">
                 <div class="container content int-fix">
-                    <!-- <div class="row div-background">
-                        <div class="col-md-8 panel-fix">
-                            <ul class="timeline">
-                                <li>
 
-                                    <div class="timeline-badge"></div>
-                                    <div class="timeline-label"><h4>2018</h4><p>25 febbruary 2018</p>
-                                    <div class="egypt-photo"></div>
-                                    </div>
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <h4 class="timeline-title">From Humble Beginnings to Remarkable Growth</h4>
-                                        </div>
-                                        <div class="timeline-body">
-                                            <p>
-                                                Since our inception in 2016, we have experienced remarkable growth year after year, with an organic increase of over 200% each year. This phenomenal success has propelled us from a small enterprise to a medium-sized company that now caters to tier one mobile operators. Our dedication and commitment to excellence have been the driving forces behind our consistent expansion.
-                                            </p>
-                                        </div>
-                                        <div class="egypt-photo"></div>
-                                    </div>
-                                </li>
-                                <li class="timeline-inverted">
-                                    <div class="timeline-badge"></div>
-                                    <div class="timeline-label"><h4>2016</h4><p>10 March 2016</p>
-                                    <div class="ksa-photo"></div>
-                                    </div>
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <h4 class="timeline-title">GCC Expansion: Embracing New Horizons</h4>
-                                        </div>
-                                        <div class="timeline-body">
-                                            <p>
-                                                In 2023, we are expanding further and embracing the abundant opportunities in the captivating Gulf Cooperation Council (GCC) region. With a proven track record and financial stability spanning seven years, our thrilling adventure begins with the establishment of our first office in the Kingdom of Saudi Arabia (KSA). Our vision is to make KSA the vibrant hub that propels our operations and fosters innovation throughout the entire region. Join us as we embark on this remarkable journey, shaping the future of GCC.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="timeline-badge"></div>
-                                    <div class="timeline-label"><h4>2012</h4><p>14 January 2012</p>
-                                    <div class="kenya-photo"></div>
-                                    </div>
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <h4 class="timeline-title">East Africa Expansion: Unleashing Technological Potential </h4>
-                                        </div>
-                                        <div class="timeline-body">
-                                            <p>
-                                                East Africa, a region brimming with untapped possibilities, presents an exciting frontier for Diverse. As we expand our operations to Kenya in 2023, we are eager to make a lasting impact and drive technological progress in this dynamic landscape. By leveraging our market insights and understanding of the region, we aim to bridge the gaps in technology and deliver unparalleled solutions that empower business and individuals alike. Join us as we embark on this transformative journey, igniting a new era of innovation and growth throughout East Africa.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="timeline-inverted">
-                                    <div class="timeline-badge"></div>
-                                    <div class="timeline-label"><h4>2016</h4><p>10 March 2016</p>
-                                    <div class="ksa-photo"></div></div>
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <h4 class="timeline-title">GCC Expansion: Embracing New Horizons</h4>
-                                        </div>
-                                        <div class="timeline-body">
-                                            <p>
-                                                In 2023, we are expanding further and embracing the abundant opportunities in the captivating Gulf Cooperation Council (GCC) region. With a proven track record and financial stability spanning seven years, our thrilling adventure begins with the establishment of our first office in the Kingdom of Saudi Arabia (KSA). Our vision is to make KSA the vibrant hub that propels our operations and fosters innovation throughout the entire region. Join us as we embark on this remarkable journey, shaping the future of GCC.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div> -->
                     <div class="row">
                         <div class="col-md-8">
                             <h2>Our Road Map</h2>
                             <ul class="timeline">
                                 <li class="a7a" data-aos="fade-right" data-aos-duration="1500">
                                     <div class="timeline-badge" style="margin-left: 150px;"></div>
-                                    <div class="timeline-label lol-fix lol-fix-2"><h4>2016</h4><p>The Very Beginnings</p></div>
+                                    <div class="timeline-label lol-fix lol-fix-2"><h4>2016</h4><p> @T["home8"]</p></div>
                                     <div class="timeline-panel lol-fix-1 lol-fix-3">
                                         <div class="timeline-heading ">
-                                            <h4 class="timeline-title">Ambitious Beginnings in Europe and North Africa</h4>
+                                            <h4 class="timeline-title"> @T["home9"]</h4>
                                         </div>
                                         <div class="timeline-body">
                                             <!-- <p>
-                                                Since our inception in 2016, we have experienced remarkable growth year after year, with an organic increase of over 200% each year. This phenomenal success has propelled us from a small enterprise to a medium-sized company that now caters to tier one mobile operators. Our dedication and commitment to excellence have been the driving forces behind our consistent expansion
-                                            </p> -->
+                                        Since our inception in 2016, we have experienced remarkable growth year after year, with an organic increase of over 200% each year. This phenomenal success has propelled us from a small enterprise to a medium-sized company that now caters to tier one mobile operators. Our dedication and commitment to excellence have been the driving forces behind our consistent expansion
+                                    </p> -->
                                             <p>
-                                                At Diverse, we are driven by a passion to revolutionize the EMEA region with our exceptional services and cutting-edge solutions. With our roots in Germany and Egypt, we have embarked on an incredible journey to provide our customers with unparalleled professionalism and world-class telco-grade products, services and support.
+                                                @T["home10"]
                                             </p>
                                         </div>
                                     </div>
                                 </li>
                                 <li class="timeline-inverted padding-m" data-aos="fade-left" data-aos-duration="1500">
                                     <div class="timeline-badge margin-mm"></div>
-                                    <div class="timeline-label lol-fix-5 lol-fix-2"><h4>2018</h4><p>The Phenomenal Growth</p></div>
+                                    <div class="timeline-label lol-fix-5 lol-fix-2"><h4>2018</h4><p> @T["home11"]</p></div>
                                     <div class="timeline-panel lol-fix-1 lol-fix-3">
                                         <div class="timeline-heading">
-                                            <h4 class="timeline-title">From Humble Beginnings to Remarkable Growth</h4>
+                                            <h4 class="timeline-title"> @T["home12"]</h4>
                                         </div>
                                         <div class="timeline-body">
                                             <p>
-                                                Since our inception in 2016, we have experienced remarkable growth year after year, with an organic increase of over 200% each year. This phenomenal success has propelled us from a small enterprise to a medium-sized company that now caters to tier one mobile operators. Our dedication and commitment to excellence have been the driving forces behind our consistent expansion.
+                                                @T["home13"]
                                             </p>
                                         </div>
                                     </div>
                                 </li>
                                 <li class="a7a" data-aos="fade-right" data-aos-duration="1500">
                                     <div class="timeline-badge" style="margin-left: 150px;"></div>
-                                    <div class="timeline-label lol-fix lol-fix-2"><h4>2023</h4><p>GCC Expansion</p></div>
+                                    <div class="timeline-label lol-fix lol-fix-2"><h4>2023</h4><p> @T["home14"]</p></div>
                                     <div class="timeline-panel lol-fix-1 lol-fix-3">
                                         <div class="timeline-heading">
-                                            <h4 class="timeline-title">GCC Expansion: Embracing New Horizons </h4>
+                                            <h4 class="timeline-title"> @T["home15"] </h4>
                                         </div>
                                         <div class="timeline-body">
                                             <p>
-                                                In 2023, we are expanding further and embracing the abundant opportunities in the captivating Gulf Cooperation Council (GCC) region. With a proven track record and financial stability spanning seven years, our thrilling adventure begins with the establishment of our first office in the Kingdom of Saudi Arabia (KSA). Our vision is to make KSA the vibrant hub that propels our operations and fosters innovation throughout the entire region. Join us as we embark on this remarkable journey, shaping the future of GCC.
+                                                @T["home16"]
                                             </p>
                                         </div>
                                     </div>
                                 </li>
                                 <li class="timeline-inverted padding-m" data-aos="fade-left" data-aos-duration="1500">
                                     <div class="timeline-badge margin-mm"></div>
-                                    <div class="timeline-label lol-fix-5 lol-fix-2"><h4>2023</h4><p>East Africa Expansion</p></div>
+                                    <div class="timeline-label lol-fix-5 lol-fix-2"><h4>2023</h4><p> @T["home17"]</p></div>
                                     <div class="timeline-panel lol-fix-1 lol-fix-3">
                                         <div class="timeline-heading">
-                                            <h4 class="timeline-title">East Africa Expansion: Unleashing Technological Potential</h4>
+                                            <h4 class="timeline-title"> @T["home18"]</h4>
                                         </div>
                                         <div class="timeline-body">
                                             <p>
-                                                East Africa, a region brimming with untapped possibilities, presents an exciting frontier for Diverse. As we expand our operations to Kenya in 2023, we are eager to make a lasting impact and drive technological progress in this dynamic landscape. By leveraging our market insights and understanding of the region, we aim to bridge the gaps in technology and deliver unparalleled solutions that empower business and individuals alike. Join us as we embark on this transformative journey, igniting a new era of innovation and growth throughout East Africa.
+                                                @T["home19"]
                                             </p>
                                         </div>
                                     </div>
@@ -758,25 +346,25 @@
                             <div class="col-sm-12 boxed-inverse shadow-1">
                                 <hr class="space m" />
                                 <div class="list-group latest-post-list list-blog">
-                                    <p class="list-group-item active">What's New</p>
-                                    @foreach (var item in Model.Take(3))
-                                    {
-                                        <div class="list-group-item">
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <a class="img-box circle" asp-action="ViewBlog" asp-route-id="@item.Id">
-                                                        <img src="@Url.Content(@item.PhotoUrl)" alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="col-md-8">
-                                                    <a asp-action="ViewBlog" asp-route-id="@item.Id">
-                                                        <h5>@item.TitleEn</h5>
-                                                    </a>
-                                                    <div class="tag-row icon-row"><span><i class="fa fa-calendar"></i>@item.CreatedDate.ToString("dd.MM.yyyy")</span></div>
-                                                </div>
+                                    <p class="list-group-item active"> @T["home20"]</p>
+                                    @*@foreach (var item in Model.LatestBlogs.Take(3))
+                                {
+                                    <div class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <a class="img-box circle" asp-action="ViewBlog" asp-route-id="@item.Id">
+                                                    <img src="@Url.Content(@item.PhotoUrl)" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <a asp-action="ViewBlog" asp-route-id="@item.Id">
+                                                    <h5>@item.TitleEn</h5>
+                                                </a>
+                                                <div class="tag-row icon-row"><span><i class="fa fa-calendar"></i>@item.CreatedDate.ToString("dd.MM.yyyy")</span></div>
                                             </div>
                                         </div>
-                                    }
+                                    </div>
+                                }*@
 
 
 
@@ -784,31 +372,31 @@
 
                             </div>
                             <hr class="space m" />
-                            <h2>Diverse®'s Current Regions</h2>
-                            <h3 class="text-m sol-txt margin-m"><i class="fas fa-map-marker-alt " style="color: rgb(255, 0, 0) !important;"></i>      Numberg, Germany</h3>
+                            <h2> @T["home21"]</h2>
+                            <h3 class="text-m sol-txt margin-m"><i class="fas fa-map-marker-alt " style="color: rgb(255, 0, 0) !important;"></i>       @T["home22"]</h3>
                             <a class="img-box lightbox" href="~/client/assets/images/Nuremberg.jpeg" data-lightbox-anima="fade-top">
                                 <img src="~/client/assets/images/Nuremberg.jpeg" alt="">
                             </a>
-                            <h3 class="text-m sol-txt margin-m"><i class="fas fa-map-marker-alt " style="color: rgb(255, 0, 0) !important;"></i>      Cairo, Egypt</h3>
-                            <a class="img-box lightbox" href="~/client/assets/images/Egypt.jpeg" data-lightbox-anima="fade-top">
-                                <img src="~/client/assets/images/Egypt.jpeg" alt="">
+                            <h3 class="text-m sol-txt margin-m"><i class="fas fa-map-marker-alt " style="color: rgb(255, 0, 0) !important;"></i>       @T["home23"]</h3>
+                            <a class="img-box lightbox" href="~/client/assets/images/Egypt-bg.jpg" data-lightbox-anima="fade-top">
+                                <img src="~/client/assets/images/Egypt-bg.jpg" alt="">
                             </a>
-                            <h3 class="text-m sol-txt margin-m"><i class="fas fa-map-marker-alt " style="color: rgb(255, 0, 0) !important;"></i>      Kenya</h3>
+                            <h3 class="text-m sol-txt margin-m"><i class="fas fa-map-marker-alt " style="color: rgb(255, 0, 0) !important;"></i>      @T["home24"] </h3>
 
                             <a class="img-box lightbox " href="~/client/assets/images/Kenya.jpeg" data-lightbox-anima="fade-top">
                                 <img src="~/client/assets/images/Kenya.jpeg" alt="">
                             </a>
-                            <h3 class="text-m sol-txt margin-m"><i class="fas fa-map-marker-alt " style="color: rgb(255, 0, 0) !important;"></i>       Saudi Arabia</h3>
+                            <h3 class="text-m sol-txt margin-m"><i class="fas fa-map-marker-alt " style="color: rgb(255, 0, 0) !important;"></i>        @T["home25"]</h3>
                             <a class="img-box lightbox" href="~/client/assets/images/Saudi.jpeg" data-lightbox-anima="fade-top">
                                 <img src="~/client/assets/images/Saudi.jpeg" alt="">
                             </a>
                         </div>
                     </div>
                     <div class="grid-list">
-                        <h2 class="finale">Providing The Top Solutions in The Information Technology Industry </h2>
+                        <h2 class="finale"> @T["home26"] </h2>
                         <hr class="xmmm">
                         <p class="finale-1">
-                            With the variety in our solutions we aim to achive highest quality with the most modern Technology
+                            @T["home27"]
                         </p>
                         <br class="xxm">
                         <hr class="space s">
@@ -820,16 +408,16 @@
                                     </div>
                                     <div class="icon-box-cell">
                                         <label class="text-m sol-txt">
-                                            Networking
+                                            @T["home28"]
                                             <br class="xxm">
                                             <hr class="space m xm" />
 
                                         </label>
 
                                         <p>
-                                            Our division delivers advanced connectivity solutions with a perfect blend of wired and wireless options, backed by a team of highly qualified Engineers.
+                                            @T["home29"]
                                         </p>
-                                        <a class="btn btn-sm btn-fix" asp-action="Networking" asp-controller="Home">Read more</a>
+                                        <a class="btn btn-sm btn-fix" asp-action="Networking" asp-controller="Home"> @T["home30"]</a>
                                     </div>
                                 </div>
                             </div>
@@ -840,15 +428,15 @@
                                     </div>
                                     <div class="icon-box-cell">
                                         <label class="text-m sol-txt">
-                                            Data Center
+                                            @T["home31"]
                                             <hr class="space m xm">
                                         </label>
 
 
                                         <p>
-                                            Robust data centers, equipped with powerful compute capabilities, storage, reliable backup solutions, essential in today's competitive marketplace to enable efficiency.
+                                            @T["home32"]
                                         </p>
-                                        <a class="btn btn-sm btn-fix" asp-action="DataCenter" asp-controller="Home">Read more</a>
+                                        <a class="btn btn-sm btn-fix" asp-action="DataCenter" asp-controller="Home"> @T["home30"]</a>
                                     </div>
                                 </div>
                             </div>
@@ -859,15 +447,15 @@
                                     </div>
                                     <div class="icon-box-cell">
                                         <label class="text-m sol-txt">
-                                            Cyber Security
+                                            @T["home33"]
                                             <hr class="space m xm">
                                         </label>
 
 
                                         <p>
-                                            Diverse offers comprehensive security solutions designed to help organizations adapt to traffic bursts, complex and rapidly evolving applications in datacenters.
+                                            @T["home34"]
                                         </p>
-                                        <a class="btn btn-sm btn-fix" asp-action="CyberSecurity" asp-controller="Home">Read more</a>
+                                        <a class="btn btn-sm btn-fix" asp-action="CyberSecurity" asp-controller="Home"> @T["home30"]</a>
 
                                     </div>
                                 </div>
@@ -880,15 +468,14 @@
                         <div class="row">
                             <div class="col-md-8 col-center text-center cdcr">
                                 <div class="bc">
-                                    <h4>Our Methodology</h4>
+                                    <h4> @T["home35"]</h4>
                                     <!-- <h4>مراحل النشر</h4> -->
                                     <p>
-                                        Methodical phases, from planning to implementation and training, ensure a seamless
-                                        and successful deployment of ICT solutions, promoting integration and user proficiency.
+                                        @T["home36"]
                                     </p>
                                     <!-- <p>
-                                        تضمن المراحل المنهجية ، من التخطيط إلى التنفيذ والتدريب ، النشر السلس والناجح لحلول تكنولوجيا المعلومات والاتصالات ، وتعزيز التكامل وكفاءة المستخدم.
-                                    </p> -->
+                                تضمن المراحل المنهجية ، من التخطيط إلى التنفيذ والتدريب ، النشر السلس والناجح لحلول تكنولوجيا المعلومات والاتصالات ، وتعزيز التكامل وكفاءة المستخدم.
+                            </p> -->
                                     <hr class="space">
                                 </div>
                                 <div class="row" data-anima="" data-timeline="asc">
@@ -898,9 +485,9 @@
                                                 <img src="~/client/assets/images/Services/preparation 1 (1).png" alt="">
                                             </div>
                                             <div class="icon-box-cell">
-                                                <label class="text-m">Planning and Preparation</label>
+                                                <label class="text-m"> @T["home37"]</label>
                                                 <!-- <label class="text-m">التخطيط والتحضير</label> -->
-                                                <p class="text-s">Scope definition, solution exploration, stakeholder alignment</p>
+                                                <p class="text-s"> @T["home38"]</p>
                                                 <!-- <p class="text-s">تعريف النطاق واستكشاف الحلول ومواءمة أصحاب المصلحة</p> -->
                                             </div>
                                         </div>
@@ -911,9 +498,9 @@
                                                 <img src="~/client/assets/images/Services/tools 1 (1).png" alt="">
                                             </div>
                                             <div class="icon-box-cell">
-                                                <label class="text-m">Design and Implementation</label>
+                                                <label class="text-m"> @T["home39"]</label>
                                                 <!-- <label class="text-m">تصميم و تنفيذ</label> -->
-                                                <p class="text-s">Solution architecture, deployment, functionality expansion</p>
+                                                <p class="text-s"> @T["home40"]</p>
                                                 <!-- <p class="text-s">هندسة الحل والنشر وتوسيع الوظائف</p> -->
                                             </div>
                                         </div>
@@ -924,9 +511,9 @@
                                                 <img src="~/client/assets/images/Services/maintenance 1 (1).png" alt="">
                                             </div>
                                             <div class="icon-box-cell">
-                                                <label class="text-m">Operation and Optimization</label>
+                                                <label class="text-m"> @T["home41"]</label>
                                                 <!-- <label class="text-m">التشغيل والتحسين</label> -->
-                                                <p class="text-s">Maintain solution, resolve issues, optimize performance</p>
+                                                <p class="text-s"> @T["home42"]</p>
                                                 <!-- <p class="text-s">الحفاظ على الحل وحل المشكلات وتحسين الأداء</p> -->
                                             </div>
                                         </div>
@@ -937,7 +524,34 @@
                     </div>
                 </div>
             </div>
-    </body>
+            @*<script async src="https://cse.google.com/cse.js?cx=63fcb95f8ae8f4fa9">
+        </script>*@
+
+            @*@await Html.PartialAsync("_SearchParialView",Model)*@
+
+            <script async src="https://cse.google.com/cse.js?cx=63fcb95f8ae8f4fa9">
+            </script>
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="closebtn">&times;</span>
+                    <form method="get">
+                        <div class="gcse-search" dir="ltr"></div>
+                        @*<div class="col-12 col-md-12 input-group ">
+                        <input type="text" class="form-control" placeholder="Search for..." style="border: hidden">
+                        <span class="input-group-btn">
+                            <button class="btn btn-secondary" type="button" data-toggle="modal" role="button" style="width: 85%;"><i class="fas fa-search" aria-hidden="true"></i></button>
+                        </span>
+                    </div>*@
+                    </form>
+                </div>
+
+            </div>
+
+
+
+</body>
     <i class="scroll-top scroll-top-mobile show fa fa-sort-asc"></i>
     <footer class="footer-base">
         <div class="content">
@@ -947,7 +561,7 @@
                         <img width="120" src="~/client/assets/images/diverse logo cut.png" alt="" />
                     </div>
                     <div class="col-md-6 footer-left text-left">
-                        <p> 506, First Tower – Silver Mall, Central Axis – 6th Oct. City  </p> @*@TempData["IP"]*@
+                        <p>  @T["locationaddress"]  </p> @*@TempData["IP"]*@
                         <div class="tag-row">
                             <span>Email : <a href="mailto:info@diverseltd.com">info@diverseltd.com </a></span>
                             <span>Fax: +20238332974</span>
@@ -958,7 +572,7 @@
             </div>
             <div class="row copy-row">
                 <div class="col-md-12 copy-text">
-                    © 2023 Diverse. All rights reserved.
+                    @T["copyrights"]
                 </div>
             </div>
         </div>
@@ -978,6 +592,33 @@
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script>
             AOS.init();
+        </script>
+        <script>
+            // Get the modal
+            var modal = document.getElementById("myModal");
+
+            // Get the button that opens the modal
+            var btn = document.getElementById("myBtn");
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("closebtn")[0];
+
+            // When the user clicks the button, open the modal
+            btn.onclick = function () {
+                modal.style.display = "block";
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
         </script>
     </footer>
 </body>

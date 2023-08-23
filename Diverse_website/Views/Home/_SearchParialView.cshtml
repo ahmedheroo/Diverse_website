@@ -1,0 +1,186 @@
+﻿@model SearchVM
+
+<style>
+
+    .ibox-content {
+        background-color: #FFFFFF;
+        color: inherit;
+        padding: 15px 20px 20px 20px;
+        border-color: #E7EAEC;
+        border-image: none;
+        border-style: solid solid none;
+        border-width: 1px 0px;
+    }
+
+    .search-form {
+        margin-top: 10px;
+    }
+
+    .search-result h3 {
+        margin-bottom: 0;
+        color: #1E0FBE;
+    }
+
+    .search-result .search-link {
+        color: #006621;
+    }
+
+    .search-result p {
+        font-size: 12px;
+        margin-top: 5px;
+    }
+
+    .hr-line-dashed {
+        border-top: 1px dashed #E7EAEC;
+        color: #ffffff;
+        background-color: #ffffff;
+        height: 1px;
+        margin: 20px 0;
+    }
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content" >
+
+        <span class="closebtn">&times;</span>
+        <div class="search-form" style=" padding-top: 47px; ">
+            <form  method="get">
+                <div class="input-group">
+                    <input type="text" placeholder="Search For...." name="search" class="form-control input-lg">
+                    <div class="input-group-btn">
+                        <button class="btn btn-lg btn-primary" type="button" id="loadPartialViewButton">
+                            Search
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+       
+            @* <div class="gcse-search"></div>*@
+             
+
+        @*   serach results*@
+
+    <div class="row" id="partialViewContainer" style="overflow-y:auto; padding:20px 70px;display:none">
+        <h5>
+            160 results found for: <span class="text-navy">"Bootdey"</span>
+        </h5>
+
+        <div class="hr-line-dashed"></div>
+        <div class="search-result">
+            <h4><a>@Model.result</a></h4>
+            <a href="#" class="search-link">www.bootdey.com</a>
+            <p>
+
+            </p>
+        </div><div class="hr-line-dashed"></div>
+        <div class="search-result">
+            <h4><a href="#">Bootdey | Facebook</a></h4>
+            <a href="#" class="search-link">https://www.facebook.com/bootdey</a>
+            <p>
+                Bootdey is a gallery of free snippets resources templates and utilities for bootstrap css hmtl js framework. Codes for developers and web designers
+            </p>
+        </div>
+
+
+        @*additoonal info*@
+        <div class="hr-line-dashed"></div>
+        <div class="search-result">
+            <h4><a href="#">Bootdey | Facebook</a></h4>
+            <a href="#" class="search-link">https://www.facebook.com/bootdey</a>
+            <p>
+                Bootdey is a gallery of free snippets resources templates and utilities for bootstrap css hmtl js framework. Codes for developers and web designers
+            </p>
+        </div>
+        <div class="hr-line-dashed"></div>
+        <div class="search-result">
+            <h4><a href="#">Bootdey | Facebook</a></h4>
+            <a href="#" class="search-link">https://www.facebook.com/bootdey</a>
+            <p>
+                Bootdey is a gallery of free snippets resources templates and utilities for bootstrap css hmtl js framework. Codes for developers and web designers
+            </p>
+        </div>  <div class="hr-line-dashed"></div>
+        <div class="search-result">
+            <h4><a href="#">Bootdey | Facebook</a></h4>
+            <a href="#" class="search-link">https://www.facebook.com/bootdey</a>
+            <p>
+                Bootdey is a gallery of free snippets resources templates and utilities for bootstrap css hmtl js framework. Codes for developers and web designers
+            </p>
+        </div>  <div class="hr-line-dashed"></div>
+        <div class="search-result">
+            <h4><a href="#">Bootdey | Facebook</a></h4>
+            <a href="#" class="search-link">https://www.facebook.com/bootdey</a>
+            <p>
+                Bootdey is a gallery of free snippets resources templates and utilities for bootstrap css hmtl js framework. Codes for developers and web designers
+            </p>
+        </div>  <div class="hr-line-dashed"></div>
+        <div class="search-result">
+            <h4><a href="#">Bootdey | Facebook</a></h4>
+            <a href="#" class="search-link">https://www.facebook.com/bootdey</a>
+            <p>
+                Bootdey is a gallery of free snippets resources templates and utilities for bootstrap css hmtl js framework. Codes for developers and web designers
+            </p>
+        </div>  <div class="hr-line-dashed"></div>
+        <div class="search-result">
+            <h4><a href="#">Bootdey | Facebook</a></h4>
+            <a href="#" class="search-link">https://www.facebook.com/bootdey</a>
+            <p>
+                Bootdey is a gallery of free snippets resources templates and utilities for bootstrap css hmtl js framework. Codes for developers and web designers
+            </p>
+        </div>
+        @*additoonal info*@
+    </div>
+
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<script>
+
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("myBtn");
+        var span = document.getElementsByClassName("closebtn")[0];
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <script>
+
+        $(document).ready(function () {
+            $('#loadPartialViewButton').click(function () {
+                $('#partialViewContainer').css("display", "block");
+                $.ajax({
+                    url: '@Url.Action("GetPartialView", "Home")',
+                    type: 'GET',
+                    success: function (data) {
+                       
+                        $('#partialViewContainer').html(data);
+                       
+                    },
+                    error: function (error) {
+                        console.log('Error loading partial view:', error);
+                    }
+                });
+            });
+        });
+
+
+    </script>
