@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
+using System.Web;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
@@ -24,6 +25,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.AspNetCore.Identity;
 
 namespace Diverse_website.Controllers
 {
@@ -61,16 +63,16 @@ namespace Diverse_website.Controllers
 
         public IActionResult Index()
         {
-
             //TempData["IP"] = GetCountry();
             // Search();
             //SearchVM model = new SearchVM();
             //model.LatestBlogs = blogsRepo.Getblogs().OrderByDescending(s => s.CreatedDate);
-              //Search();
+            //Search();
+             
             return View();
         }
         [HttpPost]
-        public IActionResult SetLanguage(string culture, string returnUrl)
+        public IActionResult SetLanguage(string culture, string returnUrl="~/Home")
         {
 
             Response.Cookies.Append(
@@ -216,11 +218,13 @@ namespace Diverse_website.Controllers
         [HttpPost]
         public IActionResult ContactUs(SendEmail model)
         {
+               Diverse_websiteContext ctx=new Diverse_websiteContext();
+            string mailto = ctx.SMTPSettings.Select(c => c.EmailTo).FirstOrDefault();
             try
             {
                 string htmlContent = "<body style=\"background - color: #F5F5F5;\"><div class=\"card\" style=\"background-color: #ffff;\"><div class=\"card-header\"><img src = \"http://diverseltd.com/client/assets/images/diverse%20logo%20cut.png \" style=\"width: 50px;\"></div><div class=\"card-body\"><h4 class=\"card-title\" style=\"padding-top: 20px;\">Dears all Diverse Team, kindly be notified that a new contact has been registered with the below details:</h4><p class=\"card-text\"><h4>Contact Name: " + model.senderName + "</h3></p><p class=\"card-text\"><h4>Contact Email: " + model.senderemail + "</h3></p><p class=\"card-text\"><h4>Contact Phone: " + model.Phone + "</h3></p><p class=\"card-text\"><h4>Message: " + model.message + "</h3></p></div><div class=\"card-footer text-muted \" style=\"padding-top: 20px;font-size: 11px;color: #6C6C6C;\">Please do not reply to this email.Emails sent to this address will not be answered.Copyright © 2023 DiverseLtd Company. All rights reserved.</div></div></body> ";
 
-                emailSender.SendEmailasync("info@diverseltd.com", "New Contact", htmlContent);
+                emailSender.SendEmailasync(mailto, "New Contact", htmlContent);
 
                // NotifyAlert("success", "Your Email has been sent successfully, Thanks for contacting us");
                // ViewData["EmailSent"] = true;
@@ -249,21 +253,23 @@ namespace Diverse_website.Controllers
         [HttpPost]
         public IActionResult OurClients(SendEmail model)
         {
+            Diverse_websiteContext ctx = new Diverse_websiteContext();
+            string mailto = ctx.SMTPSettings.Select(c => c.EmailTo).FirstOrDefault();
             try
             {
-                string htmlContent = "<body style=\"background - color: #F5F5F5;\"><div class=\"card\" style=\"background-color: #ffff;\"><div class=\"card-header\"><img src = \"http://diverseltd.com/client/assets/images/diverse%20logo%20cut.png \" style=\"width: 50px;\"></div><div class=\"card-body\"><h4 class=\"card-title\" style=\"padding-top: 20px;\">Dears all Diverse Team, kindly be notified that a new contact has been registered with the below details:</h4><p class=\"card-text\"><h4>Contact Name: " + model.senderName + "</h3></p><p class=\"card-text\"><h4>Contact Email: " + model.senderemail + "</h3></p><p class=\"card-text\"><h4>Contact Phone: " + model.Phone + "</h3></p><p class=\"card-text\"><h4>Message: " + model.message + "</h3></p></div><div class=\"card-footer text-muted \" style=\"padding-top: 20px;font-size: 11px;color: #6C6C6C;\">Please do not reply to this email.Emails sent to this address will not be answered.Copyright © 2023 DiverseLtd Company. All rights reserved.</div></div></body> ";  
+                string htmlContent = "<body style=\"background - color: #F5F5F5;\"><div class=\"card\" style=\"background-color: #ffff;\"><div class=\"card-header\"><img src = \"http://diverseltd.com/client/assets/images/diverse%20logo%20cut.png \" style=\"width: 50px;\"></div><div class=\"card-body\"><h4 class=\"card-title\" style=\"padding-top: 20px;\">Dears all Diverse Team, kindly be notified that a new contact has been registered with the below details:</h4><p class=\"card-text\"><h4>Contact Name: " + model.senderName + "</h3></p><p class=\"card-text\"><h4>Contact Email: " + model.senderemail + "</h3></p><p class=\"card-text\"><h4>Contact Phone: " + model.Phone + "</h3></p><p class=\"card-text\"><h4>Message: " + model.message + "</h3></p></div><div class=\"card-footer text-muted \" style=\"padding-top: 20px;font-size: 11px;color: #6C6C6C;\">Please do not reply to this email.Emails sent to this address will not be answered.Copyright © 2023 DiverseLtd Company. All rights reserved.</div></div></body> ";
 
-                emailSender.SendEmailasync("ahmedhassssan2016@gmail.com", "New Contact", htmlContent);
+                emailSender.SendEmailasync(mailto, "New Contact", htmlContent);
 
-                //NotifyAlert("success", "Your Email has been sent successfully, Thanks for contacting us");
-               // ViewData["EmailSent"] = true;
+                // NotifyAlert("success", "Your Email has been sent successfully, Thanks for contacting us");
+                // ViewData["EmailSent"] = true;
                 return View();
             }
             catch (Exception)
             {
 
                 //NotifyAlert("error", "There is an error happened in sending contact Email,Please Try again");
-               // ViewData["EmailSent"] = false;
+                // ViewData["EmailSent"] = false;
                 return View();
 
             }

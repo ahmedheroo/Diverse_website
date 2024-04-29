@@ -1,8 +1,14 @@
-﻿@model IEnumerable<AspNetUserRole>
+﻿ 
+@model ReflectionIT.Mvc.Paging.PagingList<SMTPSetting>
 
+@using Diverse_website.Repository;
 @{
     ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+
+
 
 
 <div class="row">
@@ -12,7 +18,7 @@
                 <!-- /.card-header -->
                 <div class="card-body">
 
-                
+
                     <div class="row mb-3">
                         <div class="col-12">
                             <div class="input-group input-group-lg">
@@ -27,7 +33,15 @@
                     </div>
                     <div class="row">
                         <div class="col-12" style=" padding:1em; ">
-                            <a asp-action="Create" asp-controller="User" type="button" class="btn btn-info btn-sm" style="float: right"> <i class="fas fa-plus"></i> New</a>
+                            @{
+                                Diverse_websiteContext context = new Diverse_websiteContext();
+                                bool isexist = context.SMTPSettings.ToList().Any();
+                            }
+                            @if (!isexist)
+                            {
+                                <a asp-action="Create" asp-controller="SMTPSettings" type="button" class="btn btn-info btn-sm" style="float: right"> <i class="fas fa-plus"></i> New</a>
+
+                            }
                         </div>
                         <div class="col-12">
 
@@ -35,9 +49,10 @@
                             <table id="example1" class="table table-bordered  table-striped mt-3">
                                 <thead class="table-primary">
                                     <tr>
-                                        <th>UserName</th>
+                                        <th>#</th>
+                                        <th>Host Name</th>
                                         <th>Email</th>
-                                        <th>role</th>
+                                        <th>Email To</th>
                                         @*<th>IsActive</th>*@
                                         <th style="width:180px">Actions </th>
                                     </tr>
@@ -46,9 +61,10 @@
                                     @foreach (var item in Model)
                                     {
                                         <tr>
-                                            <td>@item.User.UserName</td>
-                                            <td>@item.User.Email</td>
-                                            <td>@item.Role.Name</td>
+                                            <td>@item.Id</td>
+                                            <td>@item.HostName</td>
+                                            <td>@item.EmailFrom</td>
+                                            <td>@item.EmailTo</td>
 
                                             <td style="width:180px">
 
@@ -65,14 +81,14 @@
                                                      data-kt-menu="true">
                                                     <!--begin::Menu item-->
                                                     <div class="menu-item px-3">
-                                                        <a asp-action="Edit" asp-route-UserId="@item.UserId" class="menu-link px-3">
+                                                        <a asp-action="Edit" asp-route-Id="@item.Id" class="menu-link px-3">
                                                             Edit
                                                         </a>
                                                     </div>
                                                     <!--end::Menu item-->
                                                     <!--begin::Menu item-->
                                                     <div class="menu-item px-3">
-                                                        <a asp-controller="User" asp-action="DeleteUser" asp-route-UserId="@item.UserId" class="menu-link px-3"
+                                                        <a asp-controller="SMTPSettings" asp-action="Delete" asp-route-Id="@item.Id" class="menu-link px-3"
                                                            data-kt-users-table-filter="delete_row">
                                                             Delete
                                                         </a>
@@ -83,8 +99,9 @@
                                             </td>
 
                                         </tr>
-
                                     }
+
+
                                 </tbody>
 
                             </table>

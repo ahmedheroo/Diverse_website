@@ -55,12 +55,19 @@
                                                 <a asp-action="ViewBlog" asp-route-id="@item.Id">@item.TitleAr</a>
                                             </h2>
                                         }
-                                        else
+                                        else if (CultureInfo.CurrentCulture.Name.StartsWith("en"))
                                         {
                                             <h2 class="text-m">
                                                 <a asp-action="ViewBlog" asp-route-id="@item.Id">@item.TitleEn</a>
                                             </h2>
                                         }
+                                        else
+                                        {
+                                            <h2 class="text-m">
+                                                <a asp-action="ViewBlog" asp-route-id="@item.Id">@item.TitleFr</a>
+                                            </h2>
+                                        }
+
 
                                         <hr class="hrC">
                                         <div class="tag-row">
@@ -87,7 +94,7 @@
                                                     @item.ContentAr
                                                 }
                                             }
-                                            else
+                                            else if(CultureInfo.CurrentCulture.Name.StartsWith("en"))
                                             {
                                                 @if (item.ContentEn.Length >= 150)
                                                 {
@@ -98,6 +105,18 @@
                                                 {
                                                     @item.ContentEn
                                                 }
+                                            }
+                                            else
+                                            {
+                                            @if (item.ContentFr.Length >= 150)
+                                            {
+                                                @item.ContentFr.Substring(0, 150);
+                                                <a asp-action="ViewBlog" asp-route-id="@item.Id" style="color: #5584ff">@LongContent</a>
+                                            }
+                                            else
+                                            {
+                                                @item.ContentFr
+                                            }
                                             }
 
 
@@ -140,9 +159,14 @@
                                     <h5>@item.TitleAr</h5>
                                 }
 
-                                else
+                                else if (CultureInfo.CurrentCulture.Name.StartsWith("en"))
                                 {
                                     <h5>@item.TitleEn</h5>
+                                }
+                                else
+                                {
+                                    <h5>@item.TitleFr</h5>
+
                                 }
                             </a>
                             <p>
@@ -158,7 +182,7 @@
                                         @item.ContentAr
                                     }
                                 }
-                                else
+                                else if (CultureInfo.CurrentCulture.Name.StartsWith("en"))
                                 {
                                     @if (item.ContentEn.Length >= 75)
                                     {
@@ -169,6 +193,18 @@
                                     {
                                         @item.ContentEn
                                     }
+                                }
+                                else
+                                {
+                                @if (item.ContentFr.Length >= 75)
+                                {
+                                    @item.ContentFr.Substring(0, 75);
+                                    <a asp-action="ViewBlog" asp-route-id="@item.Id" style="color: #5584ff">@LongContent</a>
+                                }
+                                else
+                                {
+                                    @item.ContentFr
+                                }
                                 }
 
                             </p>

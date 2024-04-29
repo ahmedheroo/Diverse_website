@@ -96,6 +96,16 @@
                     </div>
                     <div class="fv-row mb-7">
                         <!--begin::Label-->
+                        <label asp-for="Blog.TitleFr" class="required fs-6 fw-semibold mb-2">Title french</label>
+                        <!--end::Label-->
+                        <!--begin::Input-->
+                        <input asp-for="Blog.TitleFr" type="text" class="form-control form-control-solid" placeholder="Title french" />
+
+                        <span asp-validation-for="Blog.TitleFr" class="text-danger"></span>
+                        <!--end::Input-->
+                    </div>
+                    <div class="fv-row mb-7">
+                        <!--begin::Label-->
                         <label asp-for="Blog.ContentEn" class="required fs-6 fw-semibold mb-2">Content English</label>
 
 
@@ -120,7 +130,19 @@
 
                         <!--end::Input-->
                     </div>
+                    <div class="fv-row mb-7">
+                        <!--begin::Label-->
+                        <label asp-for="Blog.ContentFr" class="required fs-6 fw-semibold mb-2">Content french</label>
+                        <!--end::Label-->
+                        <!--begin::Input-->
+                        <textarea type="text" id="Desc2" asp-for="Blog.ContentAr" class="form-control form-control-solid" placeholder="Content french">
 
+</textarea>
+                        <span class="text-dark">words count:<label id="WordsCounterar">0</label>  </span>
+                        <span asp-validation-for="Blog.ContentFr" class="text-danger"></span>
+
+                        <!--end::Input-->
+                    </div>
                     <div class="fv-row mb-7">
                         <!--begin::Label-->
                         <label asp-for="Blog.Tag" class="required fs-6 fw-semibold mb-2">Tags</label>
@@ -186,6 +208,7 @@
                                         <i class="ki-duotone ki-calendar fs-2"><span class="path1"></span><span class="path2"></span></i>
                                     </span>
                                 </div>
+
                                 @*<input class="form-control form-control-solid blogdatepicker"  placeholder="Pick a time"  />*@
                                 <!--end::Input-->
                                 <span asp-validation-for="Blog.CreatedDate" class="text-danger"></span>

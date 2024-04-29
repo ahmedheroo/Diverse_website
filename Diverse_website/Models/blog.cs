@@ -12,14 +12,18 @@ namespace Diverse_website.Models
         [Required]
         public string TitleAr { get; set; }
         [Required]
-
         public string TitleEn { get; set; }
+        [Required]
+        public string TitleFr { get; set; }
         [Required]
 
         public string ContentAr { get; set; }
         [Required]
 
         public string ContentEn { get; set; }
+        [Required]
+
+        public string ContentFr { get; set; }
         [Required]
 
         public DateTime CreatedDate { get; set; }

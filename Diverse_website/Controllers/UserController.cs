@@ -33,9 +33,13 @@ namespace Diverse_website.Controllers
         }
         public IActionResult Index()
         {
+
+           
             IEnumerable<AspNetUserRole> model = userRepo.GetAllUsers();
+           
             return View(model);
         }
+       
         [HttpGet]
         public IActionResult Create()
         {

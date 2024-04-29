@@ -88,6 +88,16 @@
                     </div>
                     <div class="fv-row mb-7">
                         <!--begin::Label-->
+                        <label asp-for="projects.TitleFr" class="required fs-6 fw-semibold mb-2">Title French</label>
+                        <!--end::Label-->
+                        <!--begin::Input-->
+                        <input asp-for="projects.TitleFr" type="text" class="form-control form-control-solid" placeholder="Title French" />
+
+                        <span asp-validation-for="projects.TitleFr" class="text-danger"></span>
+                        <!--end::Input-->
+                    </div>
+                    <div class="fv-row mb-7">
+                        <!--begin::Label-->
                         <label asp-for="projects.DescEn" class="required fs-6 fw-semibold mb-2">Description English</label>
                         <!--end::Label-->
                         <!--begin::Input-->
@@ -113,6 +123,19 @@
 </textarea>
                         <span class="text-dark">words count:<label id="WordsCounterar">0</label>  </span>
                         <span asp-validation-for="projects.DescAr" class="text-danger"></span>
+
+                        <!--end::Input-->
+                    </div>
+                    <div class="fv-row mb-7">
+                        <!--begin::Label-->
+                        <label asp-for="projects.DescFr" class="required fs-6 fw-semibold mb-2">Description French</label>
+                        <!--end::Label-->
+                        <!--begin::Input-->
+                        <textarea asp-for="projects.DescFr" id="Desc3" class="form-control form-control-solid" placeholder="Description French">
+
+</textarea>
+                        <span class="text-dark">words count:<label id="WordsCounterfr">0</label>  </span>
+                        <span asp-validation-for="projects.DescFr" class="text-danger"></span>
 
                         <!--end::Input-->
                     </div>
@@ -206,6 +229,16 @@
         $('#Desc2').on("enterKey", function (e) {
             var words = $('#Desc2').val().split(' ');
             $("#WordsCounterar").text(words.length - 1);
+            //$("#Desc1").text();
+        });
+        $('#Desc3').keyup(function (e) {
+            if (e.keyCode == 32) {
+                $(this).trigger("enterKey");
+            }
+        });
+        $('#Desc3').on("enterKey", function (e) {
+            var words = $('#Desc3').val().split(' ');
+            $("#WordsCounterfr").text(words.length - 1);
             //$("#Desc1").text();
         });
     </script>

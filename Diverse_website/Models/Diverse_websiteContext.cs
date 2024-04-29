@@ -30,6 +30,7 @@ namespace Diverse_website.Models
         public virtual DbSet<Vendor> Vendors { get; set; }
         public virtual DbSet<Counrty> Counrties { get; set; }
         public virtual DbSet<KeyWordSearch> KeyWordSearches { get; set; }
+        public virtual DbSet<SMTPSetting> SMTPSettings { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

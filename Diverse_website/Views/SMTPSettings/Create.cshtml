@@ -1,0 +1,116 @@
+﻿@model SMTPSetting
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div id="kt_app_toolbar_container" class="app-container  container-xxl d-flex flex-stack ">
+
+
+
+    <!--begin::Page title-->
+    <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 ">
+        <!--begin::Title-->
+        <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">
+            SMTP Settings
+        </h1>
+        <!--end::Title-->
+        <!--begin::Breadcrumb-->
+        <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
+            <!--begin::Item-->
+            <li class="breadcrumb-item text-muted">
+                <a asp-action="Index" class="text-muted text-hover-primary">
+                    Home
+                </a>
+            </li>
+            <!--end::Item-->
+            <!--begin::Item-->
+            <li class="breadcrumb-item">
+                <span class="bullet bg-gray-400 w-5px h-2px"></span>
+            </li>
+            <!--end::Item-->
+            <!--begin::Item-->
+            <li class="breadcrumb-item text-muted">
+                Create SMTP
+            </li>
+            <!--end::Item-->
+
+        </ul>
+        <!--end::Breadcrumb-->
+    </div>
+    <!--end::Page title-->
+
+</div>
+<!--end::Toolbar container-->
+
+<div id="kt_app_content" class="app-content  flex-column-fluid ">
+
+
+    <!--begin::Content container-->
+    <div id="kt_app_content_container" class="app-container  container-xxl ">
+
+        <div class="card">
+            <!--begin::Body-->
+            <div class="card-body p-lg-10">
+                <!--begin::Latest posts-->
+                <form class="form-horizontal needs-validation" enctype="multipart/form-data" asp-controller="SMTPSettings" method="post" asp-action="Create" novalidate>
+
+                    <div class="fv-row mb-7">
+                        <!--begin::Label-->
+                        <label asp-for="HostName" class="required fs-6 fw-semibold mb-2">Host Name</label>
+                        <!--end::Label-->
+                        <!--begin::Input-->
+                        <input asp-for="HostName" type="text" class="form-control form-control-solid" placeholder="Host Name" />
+                        <span asp-validation-for="HostName" class="text-danger"></span>
+
+                        <!--end::Input-->
+                    </div>
+                    <div class="fv-row mb-7">
+                        <!--begin::Label-->
+                        <label asp-for="EmailFrom" class="required fs-6 fw-semibold mb-2">Email From</label>
+                        <!--end::Label-->
+                        <!--begin::Input-->
+                        <input asp-for="EmailFrom" type="email" class="form-control form-control-solid" placeholder="Email From" />
+                        <span asp-validation-for="EmailFrom" class="text-danger"></span>
+
+                        <!--end::Input-->
+                    </div>
+                    <div class="fv-row mb-7">
+                        <!--begin::Label-->
+                        <label asp-for="PassWordEmailFrom" class="required fs-6 fw-semibold mb-2">SMTP Password</label>
+                        <!--end::Label-->
+                        <!--begin::Input-->
+                        <input asp-for="PassWordEmailFrom" type="password" class="form-control form-control-solid" placeholder="SMTP Password" />
+                        <span asp-validation-for="PassWordEmailFrom" class="text-danger"></span>
+                        <!--end::Input-->
+                    </div>
+                    <div class="fv-row mb-7">
+                        <!--begin::Label-->
+                        <label asp-for="EmailTo" class="required fs-6 fw-semibold mb-2">Email To</label>
+                        <!--end::Label-->
+                        <!--begin::Input-->
+                        <input asp-for="EmailTo" type="text" class="form-control form-control-solid" placeholder="Email To" />
+                        <span asp-validation-for="EmailTo" class="text-danger"></span>
+                        <!--end::Input-->
+                    </div>
+
+
+                    <div class="card-footer">
+                        <div class="fv-row mb-7">
+                            <button type="submit" class="btn btn-sm btn-primary" style="float:right">Save</button>
+                            <a class="btn btn-sm btn-secondary" asp-action="Index">Back</a>
+                        </div>
+                    </div>
+
+
+                </form>
+
+
+
+            </div>
+            <!--end::Body-->
+        </div>
+    </div>
+</div>

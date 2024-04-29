@@ -117,109 +117,105 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About Us" xml:space="preserve">
-    <value>About Us</value>
+  <data name="About Diverse®" xml:space="preserve">
+    <value>À propos de Diverse®</value>
   </data>
-  <data name="AccountSettings" xml:space="preserve">
-    <value>AccountSettings</value>
+  <data name="Ahmed Ibrahim" xml:space="preserve">
+    <value>Ahmed Ibrahim</value>
   </data>
-  <data name="Arabic" xml:space="preserve">
-    <value>Arabic</value>
+  <data name="Ayman Saad" xml:space="preserve">
+    <value>Ayman Saad</value>
   </data>
-  <data name="Become our client" xml:space="preserve">
-    <value>Become our client</value>
+  <data name="Before commencement of Diverse, Ayman was the CEO of multiple multi-national organization in Middle East. He managed to bring value to Telecommunications Industry in Egypt and Middle East.Ayman has more than 25 years ofexperience in ICT business with major international suppliers combined with great leadership to all team members and overall organizations." xml:space="preserve">
+    <value>Avant le démarrage de Diverse, Ayman était le PDG de plusieurs organisations multinationales au Moyen-Orient. Il a réussi à apporter de la valeur à l'industrie des télécommunications en Égypte et au Moyen-Orient. Ayman a plus de 25 ans d'expérience dans le secteur des TIC avec de grands fournisseurs internationaux, combinée à un excellent leadership envers tous les membres de l'équipe et l'ensemble des organisations.</value>
+  </data>
+  <data name="Before joining Diverse and being one of its key assets, Ahmed was a super star in banking industry in MEA as a head for many reputable commercial banks.Overlooking Diversefinancials and keeping Diverse the best system integrator towards our customers, suppliers, and Diverse." xml:space="preserve">
+    <value>Avant de rejoindre Diverse et de devenir l'un de ses atouts clés, Ahmed était une superstar de l'industrie bancaire au sein de la région MEA en tant que responsable de nombreuses banques commerciales réputées. Il supervise les finances de Diverse et veille à ce que Diverse reste le meilleur intégrateur de systèmes pour nos clients, nos fournisseurs et Diverse.</value>
   </data>
   <data name="Blogs" xml:space="preserve">
     <value>Blogs</value>
   </data>
-  <data name="Client WebPage" xml:space="preserve">
-    <value>Client WebPage</value>
+  <data name="CCO - Chief Commercial Officer" xml:space="preserve">
+    <value>DCC - Directeur Commercial en Chef</value>
   </data>
-  <data name="Contact Us" xml:space="preserve">
-    <value>Contact Us</value>
+  <data name="CEO - Chief Executive Officer" xml:space="preserve">
+    <value>PDG - Président Directeur Général</value>
   </data>
-  <data name="Contact us now" xml:space="preserve">
-    <value>Contact us now</value>
+  <data name="CFO - Chief Financial Officer" xml:space="preserve">
+    <value>DFC - Directeur Financier en Chef</value>
   </data>
-  <data name="DashBoard" xml:space="preserve">
-    <value>DashBoard</value>
+  <data name="Comprehensive Solution Design:" xml:space="preserve">
+    <value>Conception d'une solution globale :</value>
   </data>
-  <data name="Discover the diverse range of industry-leading organizations that have chosen us as their trusted partner for cutting-edge ICT solutions and services." xml:space="preserve">
-    <value>Discover the diverse range of industry-leading organizations that have chosen us as their trusted partner for cutting-edge ICT solutions and services.</value>
+  <data name="Consultancy" xml:space="preserve">
+    <value>Conseils</value>
+  </data>
+  <data name="ConsultancyService" xml:space="preserve">
+    <value>Service de conseil</value>
+  </data>
+  <data name="consultncy1" xml:space="preserve">
+    <value>Chez "Diverse Consulting", notre objectif principal est d'habiliter nos clients en fournissant d'excellents services de conseil. 
+                                Nous combinons notre expertise approfondie de l'industrie, notre expérience technique et notre réseau mondial pour offrir des solutions spécialement conçues pour relever les défis uniques et ouvrir de nouvelles perspectives de croissance durable. Grâce à notre approche consultative, 
+                                nous guidons les entreprises vers le succès, les aidant à naviguer dans le paysage commercial complexe et à innover dans le monde des affaires dynamique d'aujourd'hui.</value>
   </data>
   <data name="Discover valuable resources, helpful tips, and company updates on our informative blog." xml:space="preserve">
-    <value>Discover valuable resources, helpful tips, and company updates on our informative blog.</value>
+    <value>Découvrez des ressources précieuses, des conseils utiles et les mises à jour de l'entreprise sur notre blog média.</value>
   </data>
-  <data name="Diverse - For Network Solutions" xml:space="preserve">
-    <value>Diverse - For Network Solutions</value>
+  <data name="Expertise and Experience:" xml:space="preserve">
+    <value>Expérience et expertise :</value>
   </data>
-  <data name="Email" xml:space="preserve">
-    <value>Email</value>
-  </data>
-  <data name="Enabling Vodafone's digital innovation and superior customer experiences through ICT solutions." xml:space="preserve">
-    <value>Enabling Vodafone's digital innovation and superior customer experiences through ICT solutions.</value>
-  </data>
-  <data name="English" xml:space="preserve">
-    <value>English</value>
-  </data>
-  <data name="Explore Projects" xml:space="preserve">
-    <value>Explore Projects</value>
-  </data>
-  <data name="Home" xml:space="preserve">
-    <value>Home</value>
-  </data>
-  <data name="Key Customers" xml:space="preserve">
-    <value>Key Customers</value>
-  </data>
-  <data name="Language" xml:space="preserve">
-    <value>Language</value>
+  <data name="Key Features" xml:space="preserve">
+    <value>Fonctionnalités principales</value>
   </data>
   <data name="Latest Blogs" xml:space="preserve">
-    <value>Latest Blogs</value>
+    <value>Les derniers blogs</value>
   </data>
-  <data name="Load More" xml:space="preserve">
-    <value>Load More</value>
+  <data name="Our consulting team possesses extensive industry expertise and experience, ensuring that we deliver high-quality solutions tailored to our clients' specific needs." xml:space="preserve">
+    <value>Notre équipe de consultants possède une vaste expérience et expertise dans l'industrie, garantissant ainsi la fourniture de solutions de haute qualité conçues sur mesure pour répondre précisément aux besoins de nos clients.</value>
   </data>
-  <data name="Phone number" xml:space="preserve">
-    <value>Phone number</value>
+  <data name="Our Mission" xml:space="preserve">
+    <value>Notre Mission</value>
   </data>
-  <data name="Projects" xml:space="preserve">
-    <value>Projects</value>
+  <data name="Our Stellar Team" xml:space="preserve">
+    <value>Notre Équipe Exceptionnelle</value>
   </data>
-  <data name="Read all" xml:space="preserve">
-    <value>Read all</value>
+  <data name="Our Values" xml:space="preserve">
+    <value>Nos Valeurs</value>
   </data>
-  <data name="Read more" xml:space="preserve">
-    <value>Read more</value>
-  </data>
-  <data name="Ready to join our growing family of satisfied clients? Take the first step towards success by becoming our valued client.Experience top - notch ICT solutions tailored to your business needs, exceptional customer service, and a partnership built on trust and excellence.Let us help you unlock your full potential and drive your business forward.Contact us today to begin your journey with us and become part of our success story." xml:space="preserve">
-    <value>Ready to join our growing family of satisfied clients? Take the first step towards success by becoming our valued client.Experience top - notch ICT solutions tailored to your business needs, exceptional customer service, and a partnership built on trust and excellence.Let us help you unlock your full potential and drive your business forward.Contact us today to begin your journey with us and become part of our success story.</value>
-  </data>
-  <data name="Send message" xml:space="preserve">
-    <value>Send message</value>
+  <data name="Our Vision" xml:space="preserve">
+    <value>Notre Vision</value>
   </data>
   <data name="Services" xml:space="preserve">
-    <value>Services</value>
-  </data>
-  <data name="SignOut" xml:space="preserve">
-    <value>SignOut</value>
-  </data>
-  <data name="Solutions" xml:space="preserve">
-    <value>Solutions</value>
+    <value>Les services</value>
   </data>
   <data name="Tags" xml:space="preserve">
-    <value>Tags</value>
+    <value>Les étiquettes</value>
   </data>
-  <data name="Vendors" xml:space="preserve">
-    <value>Vendors</value>
+  <data name="Vendor Support Integration:" xml:space="preserve">
+    <value>Intégration du support fournisseur :</value>
   </data>
-  <data name="Vodafone" xml:space="preserve">
-    <value>Vodafone</value>
+  <data name="We establish direct lines of communication with our vendors' support, enabling seamless collaboration and ensuring project success while minimizing risks." xml:space="preserve">
+    <value>Nous établissons des liaisons directes avec notre support fournisseur, favorisant une collaboration fluide et assurant le succès du projet tout en réduisant les risques.</value>
   </data>
-  <data name="Your message" xml:space="preserve">
-    <value>Your message</value>
+  <data name="We provide end-to-end solution design, encompassing all aspects of the project lifecycle, to deliver comprehensive and integrated solutions that meet our clients' objectives." xml:space="preserve">
+    <value>Nous proposons la conception de solutions globales de bout en bout, couvrant tous les aspects du cycle de vie du projet, afin de fournir des solutions complètes et intégrées qui répondent aux objectifs de nos clients.</value>
   </data>
-  <data name="Your name" xml:space="preserve">
-    <value>Your name</value>
+  <data name="Yasser joined Diverse since the first moments; he was a key player in bringing Diverseto be a key system integrator within MEA region.He had 15 years of experience in Sales with multi - national companies in Egypt with regional exposure overAfrica and Middle East markets.He is a results - oriented and a leader of people who canbuild teams and organizations from scratch with clear view on target and company business goals." xml:space="preserve">
+    <value>Yasser a rejoint Diverse dès les premiers moments ; il a été un acteur clé dans le développement de Diverse en tant qu'intégrateur système clé au sein de la région MEA. Il avait 15 ans d'expérience dans la vente au sein de sociétés multinationales en Égypte, avec une exposition régionale sur les marchés africains et du Moyen-Orient.Il est orienté vers les résultats et un leader capable de construire des équipes et des organisations à partir de zéro avec une vision claire des objectifs et des objectifs commerciaux de l'entreprise.</value>
+  </data>
+  <data name="Yasser Zaky" xml:space="preserve">
+    <value>Yasser Zaky</value>
+  </data>
+  <data name="“Earn customer loyalty , Pursue best practices , Improve service levels, Be reliable &amp; responsive, Enable customers to better manage costs, Minimize risks associated with outsourcing, Adapt to varying business demands”" xml:space="preserve">
+    <value>"Gagner la fidélité des clients, Poursuivre les meilleures pratiques, Améliorer les niveaux de service, Être fiable et réactif, Permettre aux clients de mieux gérer les coûts, Minimiser les risques liés à l'externalisation, S'adapter aux demandes commerciales variables"</value>
+  </data>
+  <data name="“Is to become the premium business solutions provider for ICT market in Europe, Middle East, and Africa”" xml:space="preserve">
+    <value>"Consiste à devenir le principal fournisseur de solutions d'affaires de qualité pour le marché des TIC en Europe, au Moyen-Orient et en Afrique"</value>
+  </data>
+  <data name="“To provide our customers with quick, secure, reliable and high-quality ICT solutions, services, and consultancies that accelerate and sustain success for their businesses and increase end-customer satisfaction”" xml:space="preserve">
+    <value>"Fournir à nos clients des solutions, des services et des conseils en TIC rapides, sûrs, fiables et de haute qualité, qui accélèrent et soutiennent le succès de leurs entreprises et augmentent la satisfaction de leurs clients finaux"</value>
+  </data>
+  <data name="“We are committed to delivering cutting - edge ICT solutions that drive business success.With a customer - centric approach, we strive to exceed expectations and empower our clients to thrive in the digital era.”" xml:space="preserve">
+    <value>"Nous nous engageons à fournir des solutions TIC de pointe qui favorisent le succès des entreprises. Avec une approche axée sur le client, nous nous efforçons de dépasser les attentes et d'autonomiser nos clients pour prospérer à l'ère numérique."</value>
   </data>
 </root>

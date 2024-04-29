@@ -17,11 +17,16 @@ namespace Diverse_website.Models
 
         public string TitleEn { get; set; }
         [Required]
+        public string TitleFr { get; set; }
+        [Required]
 
         public string DescAr { get; set; }
         [Required]
 
         public string DescEn { get; set; }
+        [Required]
+
+        public string DescFr { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
 

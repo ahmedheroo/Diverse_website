@@ -52,7 +52,8 @@ namespace Diverse_website
                 var supportedCultures = new[]
                 {
                     new CultureInfo("en"),
-                    new CultureInfo("ar-EG")
+                    new CultureInfo("ar-EG"),
+                    new CultureInfo("fr")
 
                 };
                 option.DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture(culture: "en", uiCulture: "en");
@@ -78,10 +79,10 @@ namespace Diverse_website
             {
                 options.SignIn.RequireConfirmedAccount = false;
                 options.User.RequireUniqueEmail = true;
-                options.Password.RequireDigit = false;
-                options.Password.RequireLowercase = false;
+                options.Password.RequireDigit = true;
+                options.Password.RequireLowercase = true;
                 options.Password.RequireNonAlphanumeric = false;
-                options.Password.RequireUppercase = false;
+                options.Password.RequireUppercase = true;
                 options.Password.RequiredUniqueChars = 0;
 
             }).AddRoles<IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
@@ -104,6 +105,7 @@ namespace Diverse_website
             services.AddScoped<IProjectRepo, ProjectRepo>();
             services.AddScoped<IVendorsRepo, VendorsRepo>();
             services.AddScoped<ISearchRepo, SearchRepo>();
+            services.AddScoped<ISMTPSettingsRepo, SMTPSettingsRepo>();
             services.AddTransient<IEmailSender, EmailSender>();
             //services.AddSingleton<IRazorViewEngine, RazorViewEngine>();
             //services.AddSingleton<ITempDataProvider, CookieTempDataProvider>();

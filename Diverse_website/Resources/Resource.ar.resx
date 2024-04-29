@@ -117,20 +117,59 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="About Diverse®" xml:space="preserve">
+    <value>Diverse®حول </value>
+  </data>
   <data name="About Us" xml:space="preserve">
     <value>معلومات عنا</value>
   </data>
   <data name="AccountSettings" xml:space="preserve">
     <value>إعدادات الحساب</value>
   </data>
+  <data name="Ahmed Ibrahim" xml:space="preserve">
+    <value>أحمد إبراهيم</value>
+  </data>
   <data name="Arabic" xml:space="preserve">
     <value>العربية</value>
+  </data>
+  <data name="Ayman Saad" xml:space="preserve">
+    <value>أيمن سعد</value>
+  </data>
+  <data name="Before commencement of Diverse, Ayman was the CEO of multiple multi-national organization in Middle East. He managed to bring value to Telecommunications Industry in Egypt and Middle East.Ayman has more than 25 years ofexperience in ICT business with major international suppliers combined with great leadership to all team members and overall organizations." xml:space="preserve">
+    <value>قبل تأسيس "Diverse®"، كان أيمن الرئيس التنفيذي لعدة شركات متعددة الجنسيات في منطقة الشرق الأوسط. نجح في إضافة قيمة لصناعة الاتصالات في مصر والشرق الأوسط. يمتلك أيمن أكثر من 25 عامًا من الخبرة في مجال أعمال تكنولوجيا المعلومات والاتصالات مع كبار الموردين الدوليين، ويتمتع بقيادة استثنائية لجميع أفراد الفريق والمنظمات بشكل عام.</value>
+  </data>
+  <data name="Before joining Diverse and being one of its key assets, Ahmed was a super star in banking industry in MEA as a head for many reputable commercial banks.Overlooking Diversefinancials and keeping Diverse the best system integrator towards our customers, suppliers, and Diverse." xml:space="preserve">
+    <value>قبل الانضمام إلى Diverse® وأن يكون واحدًا من أصولها الرئيسية، كان أحمد نجمًا متميزًا في صناعة البنوك في منطقة الشرق الأوسط وإفريقيا كرئيس للعديد من البنوك التجارية الرفيعة المستوى.
+                            إنه يطلع على الأمور المالية لDiverse® ويحافظ على Diverse® كأفضل متكامل للأنظمة تجاه عملائنا وموردينا وDiverse®.</value>
   </data>
   <data name="Blogs" xml:space="preserve">
     <value>التدوينات</value>
   </data>
+  <data name="CCO - Chief Commercial Officer" xml:space="preserve">
+    <value>رئيس العمليات التجارية</value>
+  </data>
+  <data name="CEO - Chief Executive Officer" xml:space="preserve">
+    <value>الرئيس التنفيذي</value>
+  </data>
+  <data name="CFO - Chief Financial Officer" xml:space="preserve">
+    <value>رئيس المالية    </value>
+  </data>
   <data name="Client WebPage" xml:space="preserve">
     <value>صفحة العملاء</value>
+  </data>
+  <data name="Comprehensive Solution Design:" xml:space="preserve">
+    <value>تصميم حل شامل:</value>
+  </data>
+  <data name="Consultancy" xml:space="preserve">
+    <value>الاستشارات</value>
+  </data>
+  <data name="ConsultancyService" xml:space="preserve">
+    <value>خدمة الاستشارات</value>
+  </data>
+  <data name="consultncy1" xml:space="preserve">
+    <value>في "ديفيرس كونسلتنج"، هدفنا الأسمى هو تمكين عملائنا من خلال تقديم خدمات استشارية ممتازة. 
+                                نجمع بين معرفتنا العميقة في الصناعة وخبرتنا التقنية وشبكتنا العالمية لتقديم حلول مصممة خصيصاً للتعامل مع التحديات الفريدة وفتح آفاق جديدة للنمو المستدام. بنهجنا الاستشاري، 
+                                نوجه المؤسسات نحو النجاح، مساعدتهم على التنقل في المشهد التجاري المعقد والابتكار في عالم الأعمال الديناميكي الحالي.</value>
   </data>
   <data name="Contact Us" xml:space="preserve">
     <value>تواصل معنا</value>
@@ -156,14 +195,35 @@
   <data name="English" xml:space="preserve">
     <value>الانجليزية</value>
   </data>
+  <data name="Expertise and Experience:" xml:space="preserve">
+    <value>الخبرة والاختصاص:</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>الصفحة الرئيسية</value>
+  </data>
+  <data name="Key Features" xml:space="preserve">
+    <value>الميزات الرئيسية</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>اللغة</value>
   </data>
   <data name="Latest Blogs" xml:space="preserve">
     <value>أخر التدوينات</value>
+  </data>
+  <data name="Our consulting team possesses extensive industry expertise and experience, ensuring that we deliver high-quality solutions tailored to our clients' specific needs." xml:space="preserve">
+    <value>فريقنا الاستشاري يمتلك خبرة واختصاص واسع في الصناعة، مما يضمن تقديم حلول عالية الجودة مصممة خصيصًا لتلبية احتياجات عملائنا بدقة.</value>
+  </data>
+  <data name="Our Mission" xml:space="preserve">
+    <value>مهمتنا</value>
+  </data>
+  <data name="Our Stellar Team" xml:space="preserve">
+    <value>فريقنا الممتاز</value>
+  </data>
+  <data name="Our Values" xml:space="preserve">
+    <value>قيمنا</value>
+  </data>
+  <data name="Our Vision" xml:space="preserve">
+    <value>رؤيتنا</value>
   </data>
   <data name="Phone number" xml:space="preserve">
     <value>رقم الهاتف</value>
@@ -189,13 +249,43 @@
   <data name="Tags" xml:space="preserve">
     <value>وسوم</value>
   </data>
+  <data name="Vendor Support Integration:" xml:space="preserve">
+    <value>دمج الدعم من الموردين:</value>
+  </data>
   <data name="Vendors" xml:space="preserve">
     <value>الموردين</value>
+  </data>
+  <data name="We establish direct lines of communication with our vendors' support, enabling seamless collaboration and ensuring project success while minimizing risks." xml:space="preserve">
+    <value>نقوم بإنشاء خطوط اتصال مباشرة مع دعم الموردين لدينا، مما يمكّن التعاون السلس وضمان نجاح المشروع مع تقليل المخاطر.</value>
+  </data>
+  <data name="We provide end-to-end solution design, encompassing all aspects of the project lifecycle, to deliver comprehensive and integrated solutions that meet our clients' objectives." xml:space="preserve">
+    <value>نقدم تصميم حلول شاملة من البداية إلى النهاية، يشمل جميع جوانب دورة حياة المشروع، لتقديم حلول شاملة ومتكاملة تلبي أهداف عملائنا.</value>
+  </data>
+  <data name="Yasser joined Diverse since the first moments; he was a key player in bringing Diverseto be a key system integrator within MEA region.He had 15 years of experience in Sales with multi - national companies in Egypt with regional exposure overAfrica and Middle East markets.He is a results - oriented and a leader of people who canbuild teams and organizations from scratch with clear view on target and company business goals." xml:space="preserve">
+    <value>انضم ياسر إلى Diverse® منذ اللحظات الأولى؛ وكان لاعبًا رئيسيًا في جعل Diverse® 
+                            متكامل الأنظمة رائدًا في منطقة الشرق الأوسط وإفريقيا. يمتلك 15 عامًا من الخبرة في المبيعات مع شركات متعددة الجنسيات في مصر مع تعرض إقليمي على 
+                            أسواق أفريقيا والشرق الأوسط. إنه متوجه نحو تحقيق النتائج وقائد للأشخاص القادر على 
+                            بناء فرق ومنظمات من البداية مع رؤية واضحة للأهداف وأهداف الشركة.</value>
+  </data>
+  <data name="Yasser Zaky" xml:space="preserve">
+    <value>ياسر ذكي</value>
   </data>
   <data name="Your message" xml:space="preserve">
     <value>رسالتك</value>
   </data>
   <data name="Your name" xml:space="preserve">
     <value>الأسم</value>
+  </data>
+  <data name="“Earn customer loyalty , Pursue best practices , Improve service levels, Be reliable &amp; responsive, Enable customers to better manage costs, Minimize risks associated with outsourcing, Adapt to varying business demands”" xml:space="preserve">
+    <value>"كسب ولاء العملاء ، واتباع أفضل الممارسات ، وتحسين مستويات الخدمة ، والتحلي بالثقة والاستجابة ، وتمكين العملاء من إدارة التكاليف بشكل أفضل ، وتقليل المخاطر المرتبطة بالاستعانة بمصادر خارجية ، والتكيف مع متطلبات الأعمال المتنوعة"</value>
+  </data>
+  <data name="“Is to become the premium business solutions provider for ICT market in Europe, Middle East, and Africa”" xml:space="preserve">
+    <value>"أن نصبح المزود المتميز لحلول الأعمال لسوق تكنولوجيا المعلومات والاتصالات في أوروبا والشرق الأوسط وأفريقيا"</value>
+  </data>
+  <data name="“To provide our customers with quick, secure, reliable and high-quality ICT solutions, services, and consultancies that accelerate and sustain success for their businesses and increase end-customer satisfaction”" xml:space="preserve">
+    <value>"لتزويد عملائنا بحلول وخدمات واستشارات لتكنولوجيا المعلومات والاتصالات سريعة وآمنة وموثوقة وعالية الجودة من شأنها تسريع واستدامة نجاح أعمالهم وزيادة رضا العملاء النهائيين"</value>
+  </data>
+  <data name="“We are committed to delivering cutting - edge ICT solutions that drive business success.With a customer - centric approach, we strive to exceed expectations and empower our clients to thrive in the digital era.”" xml:space="preserve">
+    <value>"نحن ملتزمون بتقديم حلول تكنولوجيا المعلومات والاتصالات المتطورة التي تدفع نجاح الأعمال. من خلال نهج يركز على العملاء ، نسعى جاهدين لتجاوز التوقعات وتمكين عملائنا من الازدهار في العصر الرقمي."</value>
   </data>
 </root>

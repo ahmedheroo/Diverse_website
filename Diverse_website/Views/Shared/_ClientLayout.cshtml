@@ -10,7 +10,7 @@
     var culureItems = localOptions.Value.SupportedCultures
         .Select(c => new SelectListItem { Value = c.Name, Text = c.NativeName }).ToList();
     var returnUrl = string.IsNullOrEmpty(Context.Request.Path) ? "~/" : $"~{Context.Request.Path + Context.Request.QueryString}";
-
+    string LangCode = "";
 }
 
 <!DOCTYPE html>
@@ -45,20 +45,20 @@ else
     <link rel="manifest" href="../client/assets/images/site.webmanifest">
     @* <link rel="icon" href="~/client/assets/images/diverse logo cut circle.png">*@
 
-    @*@if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
-        {
-            <link rel="stylesheet" href="~/client/assets/styles/HTWF/scripts/bootstrap/css/bootstrap.rtl.css">
-            <link rel="stylesheet" href="~/client/assets/styles/HTWF/style.rtl.css">
-            <link rel="stylesheet" href="~/client/assets/styles/css/style.rtl.css">
+    @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+    {
+        <link rel="stylesheet" href="~/client/assets/styles/HTWF/scripts/bootstrap/css/bootstrap.rtl.css">
+        <link rel="stylesheet" href="~/client/assets/styles/HTWF/style.rtl.css">
+        <link rel="stylesheet" href="~/client/assets/styles/css/style.rtl.css">
 
-        }
-        else
-        {
-            <link rel="stylesheet" href="~/client/assets/styles/HTWF/scripts/bootstrap/css/bootstrap.css">
-            <link rel="stylesheet" href="~/client/assets/styles/HTWF/style.css">
-            <link rel="stylesheet" href="~/client/assets/styles/css/style.css">
+    }
+    else
+    {
+        <link rel="stylesheet" href="~/client/assets/styles/HTWF/scripts/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="~/client/assets/styles/HTWF/style.css">
+        <link rel="stylesheet" href="~/client/assets/styles/css/style.css">
 
-        }*@
+    }
     <script src="~/client/assets/styles/HTWF/scripts/jquery.min.js"></script>
     <link rel="stylesheet" href="~/client/assets/styles/HTWF/scripts/bootstrap/css/bootstrap.css">
     <script src="~/client/assets/styles/HTWF/scripts/script.js"></script>
@@ -71,7 +71,7 @@ else
     <link href="~/admin/assets/css/custom.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/client/assets/styles/css/saxicons.css">
     @*<link href="~/client/assets/styles/HTWF/scripts/jquery-toast-plugin/jquery.toast.min.css" rel="stylesheet" />
-    <link href="~/client/assets/styles/HTWF/scripts/sweetalert2/sweetalert2.min.css" rel="stylesheet" />*@
+        <link href="~/client/assets/styles/HTWF/scripts/sweetalert2/sweetalert2.min.css" rel="stylesheet" />*@
 
     <link rel="stylesheet" href="~/client/assets/styles/css/style.css">
 
@@ -140,83 +140,101 @@ else
                                 </li>
                                 <li class="dropdown" id="AboutUsli"><a id="myBtn" role="button"><i class="fas fa-search mmm" aria-hidden="true"></i></a></li>
 
-                                @* <li class="dropdown" id="AboutUsli"><a asp-action="AboutUs" asp-controller="Home">@T["About Us"]</a></li>*@
-                                @* <li class="dropdown" id="faqli"><a >FAQ</a></li>*@
-                                @*<li class="dropdown nav navbar-nav lan-menu">
+                                <li class="dropdown nav navbar-nav lan-menu">
                                     @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
                                     {
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images/eg flag.png" alt="lan" />  العربية  <span class="caret"></span></a>
 
                                     }
-                                    else
+                                    else if (CultureInfo.CurrentCulture.Name.StartsWith("en"))
                                     {
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images/en.png" alt="lan" />  EN  <span class="caret"></span></a>
 
-                                    }*@
-                                @*<ul class="dropdown-menu">
+                                    }else
+                                    {
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images/french-flag.png" alt="lan" />  FR  <span class="caret"></span></a>
+
+                                    }
+                                    <ul class="dropdown-menu">
                                         <li>
-                                            <form id="selecteLanguage" asp-controller="Home" asp-action="SetLanguage" asp-route-returnUrl="@returnUrl">
-                                                @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
-                                                {
-                                                    <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[0].Value" type="hidden" />
-                                                    <button type="submit"><img src="~/client/assets/images/en.png" alt="lan" width="20px" height="20px" />  EN  </button>
+                                           
+                                                <button id="Enbtn" onclick="changeLangEn()" type="submit"><img src="~/client/assets/images/en.png" alt="lan" />  English  </button>
+                                                <button id="Frbtn" onclick="changeLangFr()" type="submit"><img src="~/client/assets/images/french-flag.png" alt="lan" />  Frensh  </button>
+                                                <button id="Arbtn" onclick="changeLangAr()" type="submit"><img src="~/client/assets/images/eg flag.png" alt="lan" />  العربية  </button>
 
-                                                }
-                                                else
-                                                {
-                                                    <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[1].Value" type="hidden" />
-                                                    <button type="submit"><img src="~/client/assets/images/eg flag.png" alt="lan" width="20px" height="20px" />  العربية  </button>
+                                            
+                                            @*<form id="selecteLanguage" asp-controller="Home" asp-action="SetLanguage" asp-route-returnUrl="@returnUrl">
+            @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+            {
+                <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[0].Value" type="hidden" />
+                <button type="submit"><img src="~/client/assets/images/en.png" alt="lan"  />  EN  </button>
+                <button type="submit"><img src="~/client/assets/images/french-flag.png" alt="lan"  />  Frensh  </button>
 
-                                                }
-                                            </form>
+
+            }
+            else if (CultureInfo.CurrentCulture.Name.StartsWith("en"))
+            {
+                <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[1].Value" type="hidden" />
+                <button type="submit"><img src="~/client/assets/images/eg flag.png" alt="lan"   />  العربية  </button>
+                <button type="submit"><img src="~/client/assets/images/french-flag.png" alt="lan"  />  Frensh  </button>
+
+
+            }
+            else
+            {
+                <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[2].Value" type="hidden" />
+                <button type="submit"><img src="~/client/assets/images/en.png" alt="lan"  />  EN  </button>
+                <button type="submit"><img src="~/client/assets/images/eg flag.png" alt="lan"  />  العربية  </button>
+            }
+        </form>*@
                                         </li>
 
-                                    </ul>*@
-                                @*<form id="selecteLanguage" asp-controller="Home" asp-action="SetLanguage" asp-route-returnUrl="@returnUrl">
-                                        @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
-                                        {
-                                            <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[0].Value" type="hidden" />
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images/eg flag.png" alt="lan" />العربية <span class="caret"></span></a>
-                                            <ul class="dropdown-menu">
-                                                <li><button type="submit"><img src="~/client/assets/images/en.png" alt="lan" width="20px" height="20px" />EN</button></li>
-                                            </ul>
-                                        }
-                                        else
-                                        {
-                                            <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[1].Value" type="hidden" />
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images/en.png" alt="lan" />EN <span class="caret"></span></a>
-                                            <ul class="dropdown-menu">
-                                                <li><button type="submit"><img src="~/client/assets/images/eg flag.png" alt="lan" width="20px" height="20px" />العربية</button></li>
-                                            </ul>
-                                        }
-                                    </form>*@
+                                    </ul>
+                                    @*<form id="selecteLanguage" asp-controller="Home" asp-action="SetLanguage" asp-route-returnUrl="@returnUrl">
+            @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+            {
+                <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[0].Value" type="hidden" />
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images/eg flag.png" alt="lan" />العربية <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><button type="submit"><img src="~/client/assets/images/en.png" alt="lan" width="20px" height="20px" />EN</button></li>
+                </ul>
+            }
+            else
+            {
+                <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[1].Value" type="hidden" />
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images/en.png" alt="lan" />EN <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><button type="submit"><img src="~/client/assets/images/eg flag.png" alt="lan" width="20px" height="20px" />العربية</button></li>
+                </ul>
+            }
+        </form>*@
 
-                                @* </li>*@
-                                @*<form id="selecteLanguage" asp-controller="Home" asp-action="SetLanguage" asp-route-returnUrl="@returnUrl">
-
-
-                                            @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
-                                            {
-                                                <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[0].Value" type="hidden" />
-                                            <li class="dropdown nav navbar-nav lan-menu">
-                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images//eg flag.png" alt="lan" />العربية <span class="caret"></span></a>
-                                                <ul class="dropdown-menu">
-                                                    <li><button type="submit"><img src="~/client/assets/images/en.png" alt="lan" width="20px" height="20px" />EN</button></li>
-                                                </ul>
-                                            </li>
-                                        }
-                                        else
-                                        {
-                                    <li class="dropdown nav navbar-nav lan-menu">
-                                        <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[1].Value" type="hidden" />
-
-                                        <button type="submit"><img src="~/client/assets/images/eg flag.png" alt="lan" width="20px" height="20px" />العربية</button>
-                                    </li>
-                                        }
-                                            </form>*@
+                                    @* </li>*@
+                                    @*<form id="selecteLanguage" asp-controller="Home" asp-action="SetLanguage" asp-route-returnUrl="@returnUrl">
 
 
-                            </ul>
+                @if (CultureInfo.CurrentCulture.Name.StartsWith("ar"))
+                {
+                    <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[0].Value" type="hidden" />
+                <li class="dropdown nav navbar-nav lan-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img src="~/client/assets/images//eg flag.png" alt="lan" />العربية <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><button type="submit"><img src="~/client/assets/images/en.png" alt="lan" width="20px" height="20px" />EN</button></li>
+                    </ul>
+                </li>
+            }
+            else
+            {
+        <li class="dropdown nav navbar-nav lan-menu">
+            <input name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" value="@culureItems[1].Value" type="hidden" />
+
+            <button type="submit"><img src="~/client/assets/images/eg flag.png" alt="lan" width="20px" height="20px" />العربية</button>
+        </li>
+            }
+                </form>*@
+
+
+</ul>
                         </div>
 
                     </div>
@@ -240,7 +258,7 @@ else
                         <span class="input-group-btn">
                             <button class="btn btn-secondary" type="button" data-toggle="modal" role="button" style="width: 85%;"><i class="fas fa-search" aria-hidden="true"></i></button>
                         </span>
-                    </div>*@ 
+                    </div>*@
             </form>
         </div>
 
@@ -283,7 +301,7 @@ else
         <script src="~/client/assets/styles/HTWF/scripts/jquery.flipster.min.js"></script>
         <script src="~/client/assets/styles/HTWF/scripts/parallax.min.js"></script>
         @*<script src="~/client/assets/styles/HTWF/scripts/sweetalert2/sweetalert2.all.min.js"></script>
-        <script src="~/client/assets/styles/HTWF/scripts/jquery-toast-plugin/jquery.toast.min.js"></script>*@
+            <script src="~/client/assets/styles/HTWF/scripts/jquery-toast-plugin/jquery.toast.min.js"></script>*@
         @*<script src="~/client/assets/js/swal.js"></script>*@
 
         @*<script src="~/client/assets/styles/HTWF/scripts/jquery.flipster.min.js"></script>*@
@@ -323,6 +341,54 @@ else
                     modal.style.display = "none";
                 }
             }
+        </script>
+        <script>
+            document.getElementById("Enbtn").onclick = function changeLangEn() {
+                var langCode = "en";
+
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("SetLanguage", "Home")',
+            data: { culture: langCode  },
+            success: function () {
+                location.reload();
+            },
+            error: function () {
+                console.error('Error passing value to C#');
+            }
+        });
+    };
+            document.getElementById("Arbtn").onclick = function changeLangAr() {
+                var langCode = "ar-EG";
+
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("SetLanguage", "Home")',
+            data: { culture: langCode  },
+            success: function () {
+                location.reload();
+            },
+            error: function () {
+                console.error('Error passing value to C#');
+            }
+        });
+    };;
+            document.getElementById("Frbtn").onclick = function changeLangFr() {
+                var langCode = "fr";
+
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("SetLanguage", "Home")',
+            data: { culture: langCode  },
+            success: function () {
+                location.reload();
+            },
+            error: function () {
+                console.error('Error passing value to C#');
+            }
+        });
+    };;
+
         </script>
 
 
