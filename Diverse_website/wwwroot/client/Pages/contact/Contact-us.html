@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" > <!--Add dir="rtl" For Arabic-->
+<html lang="en" > <!--Add dir="rtl" For Arabic-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +7,9 @@
     <meta name="Diverse" content="Diverse Company">
     <meta name="description" content="Explore our diverse range of projects and discover valuable resources, helpful tips, and company updates on our informative blog.">
     <meta name="keywords" content="projects, blog, company updates, resources">
-    <!-- <title>Contact Us - Diverse</title> -->
+    <title>Contact Us - Diverse</title>
     <!-- <title>اتصل بنا - Diverse</title> -->
-    <title>Contactez-nous - Diverse</title>
+    <!-- <title>Contactez-nous - Diverse</title> -->
     <link rel="icon" href="../../assets/images/diverse logo cut circle.png">
     <link rel="stylesheet" href="../../assets/styles/HTWF/scripts/bootstrap/css/bootstrap.css">
     <!-- <link rel="stylesheet" href="../../assets/styles/HTWF/scripts/bootstrap/css/bootstrap.rtl.css"> -->
@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="../../assets/styles/HTWF/css/animations.css">
     <link rel="stylesheet" href="../../assets/styles/HTWF/scripts/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="../../assets/styles/css/style.css">
+
     <!-- <link rel="stylesheet" href="../../assets/styles/css/style.rtl.css"> -->
 </head>
 
@@ -94,46 +95,67 @@
     </header>
     <div class="section-empty">
         <div class="container content">
-            <div class="google-map row-17 bx-sha" data-marker-pos-top="25" data-coords="40.741895,-73.989308" data-skin="" data-marker="http://templates.framework-y.com/signflow/images/marker-map.png"></div>
+            <div class="row">
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <div class="tab-box" data-tab-anima="fade-right">
+                                <ul class="nav nav-tabs nav-justified">
+                                    <li class="active" id="germany-tab"><a href="#">Germany</a></li>
+                                    <li id="egypt-tab"><a href="#">Egypt</a></li>
+                                </ul>
+                                <div class="panel active">
+                                    <div class="google-map row-17 bx-sha" data-marker-pos-top="25" data-coords="40.741895,-73.989308" data-skin=""
+                                                                                                data-marker="http://templates.framework-y.com/signflow/images/marker-map.png"></div>
+                                </div>
+                                <div class="panel">
+                                <div class="google-map row-17 bx-sha" data-marker-pos-top="25" data-coords="40.741895,-73.989308" data-skin=""
+                                                                                            data-marker="http://templates.framework-y.com/signflow/images/marker-map.png"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <hr class="space" />
             <div class="row proporzional-row">
                 <div class="col-md-6 col-sm-12 pd-20-40">
-                    <!-- <h2 class="text-color fw-b">Contact us now</h2> -->
+                    <h2 class="text-color fw-b">Contact us now</h2>
                     <!-- <h2 class="text-color fw-b">اتصل بنا الآن</h2> -->
-                    <h2 class="text-color fw-b">Contactez-nous maintenant</h2>
+                    <!-- <h2 class="text-color fw-b">Contactez-nous maintenant</h2> -->
                     <hr class="space s" />
                     <form action="" class="form-box form-ajax" method="post">
                         <div class="d-flex">
                             <div class=" pd">
-                                <!-- <p>Name</p> -->
+                                <p>Name</p>
                                 <!-- <p>اسمك</p> -->
-                                <p>Votre nom</p>
+                                <!-- <p>Votre nom</p> -->
                                 <input id="name" name="name" placeholder="" type="text" class="form-control form-value in-bg pd-10" required>
                             </div>
                             <div class=" pd">
-                                <!-- <p>Email</p> -->
-                                <!-- <p>البريد الإلكتروني</p> -->
                                 <p>Email</p>
+                                <!-- <p>البريد الإلكتروني</p> -->
+                                <!-- <p>Email</p> -->
                                 <input id="email" name="email" placeholder="" type="email" class="form-control form-value in-bg pd-10" required>
                             </div>
                             <div class=" pd">
-                                <!-- <p>Phone</p> -->
+                                <p>Phone</p>
                                 <!-- <p>رقم الهاتف</p> -->
-                                <p>Numéro de téléphone</p>
+                                <!-- <p>Numéro de téléphone</p> -->
                                 <input id="phone" name="phone" placeholder="" type="text" class="form-control form-value in-bg pd-10" required>
                             </div>
                         </div>
                         <hr class="space xs"/>
                         <div class="row">
                             <div class="col-md-12">
-                                <!-- <p>Your message</p> -->
+                                <p>Your message</p>
                                 <!-- <p>رسالتك</p> -->
-                                <p>Votre message</p>
+                                <!-- <p>Votre message</p> -->
                                 <textarea id="messagge" name="messagge" placeholder="" class="form-control form-value in-bg" required></textarea>
                                 <hr class="space s" />
-                                <!-- <a class="circle-button btn-sm btn"><i class="fa fa-send-o"></i>Send message</a> -->
+                                <a class="circle-button btn-sm btn"><i class="fa fa-send-o"></i>Send message</a>
                                 <!-- <a class="circle-button btn-sm btn"><i class="fa fa-send-o"></i>أرسل رسالة</a> -->
-                                <a class="circle-button btn-sm btn"><i class="fa fa-send-o"></i>Envoyer un message</a>
+                                <!-- <a class="circle-button btn-sm btn"><i class="fa fa-send-o"></i>Envoyer un message</a> -->
                             </div>
                         </div>
                         <!-- <div class="success-box">
@@ -149,18 +171,18 @@
                     <div class="row">
                         <div class="col-md-6">
                             <ul class="fa-ul">
-                                <!-- <li>
+                                <li id="location">
                                     <i class="fa-li fa fa-home"></i>
-                                    506, First Tower - Silver Mall, Central Axis - 6th Oct. City, Egypt
-                                </li> -->
+                                    Diverse GmbH, Am Weichselgarten 7, 91058, Erlangen, Germany
+                                </li>
                                 <!-- <li>
                                     <i class="fa-li fa fa-home wd-mx"></i>
                                     <div>506 البرج الأول - سيلفر مول المحور المركزي - 6 أكتوبر. المدينة ، مصر </div>
                                 </li> -->
-                                <li>
+                                <!-- <li>
                                     <i class="fa-li fa fa-home wd-mx"></i>
                                     <div>506 Premier Tower - Silver Mall, Central Axis - 6th of October. Ville, Égypte </div>
-                                </li>                                
+                                </li>                                 -->
                             </ul>
                         </div>
                         <div class="col-md-6" id="mt-0">
@@ -188,9 +210,9 @@
                     <div class="btn-group social-group btn-group-icons">
                         <a class="d-flex-align-center" target="_blank" href="https://www.linkedin.com/company/diverseltd-eg/about/" data-placement="top" title="LinkedIn">
                             <i class="fa fa-linkedin text-s circle" aria-hidden="true"></i>
-                            <!-- <span class="ml-2">See linkedin profile.</span> -->
+                            <span class="ml-2">See linkedin profile.</span>
                             <!-- <span class="ml-2">انظر ملف تعريف LinkedIn.</span> -->
-                            <span class="ml-2">Voir le profil LinkedIn.</span>
+                            <!-- <span class="ml-2">Voir le profil LinkedIn.</span> -->
                         </a>
                     </div>
                 </div>
@@ -250,7 +272,20 @@
         <script src="../../assets/styles/HTWF/scripts/jquery.magnific-popup.min.js"></script>
         <script src="../../assets/styles/HTWF/scripts/jquery.tab-accordion.js"></script>
         <script src="../../assets/js/script.js"></script>
+
+        <script>
+            document.getElementById("germany-tab").addEventListener("click", function () {
+                    document.getElementById("location").innerHTML = `
+                        <i class="fa-li fa fa-home"></i>
+                        506, First Tower - Silver Mall, Central Axis - Berlin, Germany`;
+                });
+
+                document.getElementById("egypt-tab").addEventListener("click", function () {
+                    document.getElementById("location").innerHTML = `
+                        <i class="fa-li fa fa-home"></i>
+                        506, First Tower - Silver Mall, Central Axis - 6th Oct. City, Egypt`;
+                });
+        </script>
     </footer>
 </body>
-
 </html>

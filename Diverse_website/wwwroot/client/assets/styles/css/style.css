@@ -2047,6 +2047,7 @@ CONTAINERS
 .tab-box .nav-tabs > li.active > a, .tab-box .nav-tabs > li:hover > a {
     border-radius: 6px;
     opacity: 1;
+    background-color: #f4f9fe
 }
 
 .nav-pills > li.active > a, .nav-pills > li:hover > a {
@@ -3214,6 +3215,10 @@ textarea.in-bg{
 
 .d-flex div{
     width: 30%;
+}
+
+.nav-tabs >li.active>a{
+    background-color: #f4f9fe
 }
 /****************** Clients Page ********************/
 
