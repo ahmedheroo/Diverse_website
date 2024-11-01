@@ -1,0 +1,846 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+<!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+		<xsd:element name="root" msdata:IsDataSet="true">
+		<xsd:complexType>
+			<xsd:choice maxOccurs="unbounded">
+			<xsd:element name="metadata">
+				<xsd:complexType>
+				<xsd:sequence>
+					<xsd:element name="value" type="xsd:string" minOccurs="0" />
+				</xsd:sequence>
+				<xsd:attribute name="name" use="required" type="xsd:string" />
+				<xsd:attribute name="type" type="xsd:string" />
+				<xsd:attribute name="mimetype" type="xsd:string" />
+				<xsd:attribute ref="xml:space" />
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="assembly">
+				<xsd:complexType>
+				<xsd:attribute name="alias" type="xsd:string" />
+				<xsd:attribute name="name" type="xsd:string" />
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="data">
+				<xsd:complexType>
+				<xsd:sequence>
+					<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+					<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+				</xsd:sequence>
+				<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+				<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+				<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+				<xsd:attribute ref="xml:space" />
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="resheader">
+				<xsd:complexType>
+				<xsd:sequence>
+					<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+				</xsd:sequence>
+				<xsd:attribute name="name" type="xsd:string" use="required" />
+				</xsd:complexType>
+			</xsd:element>
+			</xsd:choice>
+		</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data xml:space="preserve" name="About Diverse®">
+		<value>Über Diverse®</value>
+	</data>
+	<data xml:space="preserve" name="About Us">
+		<value>Über uns</value>
+	</data>
+	<data xml:space="preserve" name="AccountSettings">
+		<value>Kontoeinstellungen</value>
+	</data>
+	<data xml:space="preserve" name="Advanced solutions, global consulting expertise, and cost-effective delivery for your business needs.">
+		<value>Erweiterte Lösungen, globale Beratungsexpertise und kosteneffiziente Lieferung für Ihre Geschäftsbedürfnisse.</value>
+	</data>
+	<data xml:space="preserve" name="Ahmed Ibrahim">
+		<value>Ahmed Ibrahim</value>
+	</data>
+	<data xml:space="preserve" name="Arabic">
+		<value>Arabisch</value>
+	</data>
+	<data xml:space="preserve" name="Ayman Saad">
+		<value>Ayman Saad</value>
+	</data>
+	<data xml:space="preserve" name="Backup and archiving Solutions">
+		<value>Backup- und Archivierungslösungen</value>
+	</data>
+	<data xml:space="preserve" name="Become our client">
+		<value>Werden Sie unser Kunde</value>
+	</data>
+	<data xml:space="preserve" name="Before commencement of Diverse, Ayman was the CEO of multiple multi-national organization in Middle East. He managed to bring value to Telecommunications Industry in Egypt and Middle East.Ayman has more than 25 years ofexperience in ICT business with major international suppliers combined with great leadership to all team members and overall organizations.">
+		<value>Vor Beginn von Diverse war Ayman CEO mehrerer multinationaler Organisationen im Nahen Osten. Er schaffte es, dem Telekommunikationssektor in Ägypten und dem Nahen Osten Mehrwert zu bringen. Ayman verfügt über mehr als 25 Jahre Erfahrung im ICT-Geschäft mit großen internationalen Lieferanten, kombiniert mit großartiger Führung für alle Teammitglieder und die gesamten Organisationen.</value>
+	</data>
+	<data xml:space="preserve" name="Before joining Diverse and being one of its key assets, Ahmed was a super star in banking industry in MEA as a head for many reputable commercial banks.Overlooking Diversefinancials and keeping Diverse the best system integrator towards our customers, suppliers, and Diverse.">
+		<value>Bevor er sich Diverse anschloss und zu einem seiner wichtigsten Vermögenswerte wurde, war Ahmed ein Superstar in der Bankenbranche in MEA als Leiter mehrerer renommierter Geschäftsbanken. Die Überwachung der Finanzen von Diverse und die Sicherstellung, dass Diverse der beste Systemintegrator für unsere Kunden, Lieferanten und Diverse bleibt.</value>
+	</data>
+	<data xml:space="preserve" name="Blogs">
+		<value>Blogs</value>
+	</data>
+	<data xml:space="preserve" name="By partnering with Diverse, you can leverage their expertise in integrating complex systems. They can streamline your operations, enhance efficiency, improve communication, reduce costs, and help you achieve your business goals by providing tailored solutions based on your unique requirements.">
+		<value>Durch die Partnerschaft mit Diverse können Sie ihre Expertise bei der Integration komplexer Systeme nutzen. Sie können Ihre Abläufe straffen, die Effizienz steigern, die Kommunikation verbessern, die Kosten senken und Ihnen helfen, Ihre Geschäftsziele durch maßgeschneiderte Lösungen auf Basis Ihrer spezifischen Anforderungen zu erreichen.</value>
+	</data>
+	<data xml:space="preserve" name="Can Diverse work with existing systems in my organization ?">
+		<value>Kann Diverse mit bestehenden Systemen in meiner Organisation zusammenarbeiten?</value>
+	</data>
+	<data xml:space="preserve" name="CCO - Chief Commercial Officer">
+		<value>Chief Commercial Officer</value>
+	</data>
+	<data xml:space="preserve" name="CEO - Chief Executive Officer">
+		<value>Vorstandsvorsitzender</value>
+	</data>
+	<data xml:space="preserve" name="CFO - Chief Financial Officer">
+		<value>CFO - Chief Financial Officer (Finanzvorstand)</value>
+	</data>
+	<data xml:space="preserve" name="Client WebPage">
+		<value>Client-Webseite</value>
+	</data>
+	<data xml:space="preserve" name="Clients">
+		<value>Kunden</value>
+	</data>
+	<data xml:space="preserve" name="Comprehensive Management:">
+		<value>Umfassendes Management</value>
+	</data>
+	<data xml:space="preserve" name="Comprehensive Solution Design:">
+		<value>Umfassendes Lösungsdesign</value>
+	</data>
+	<data xml:space="preserve" name="Consultancy">
+		<value>Beratung</value>
+	</data>
+	<data xml:space="preserve" name="ConsultancyService">
+		<value>Beratungsdienst</value>
+	</data>
+	<data xml:space="preserve" name="consultncy1">
+		<value>Bei Diverse Consulting ist unser ultimatives Ziel, unsere Kunden durch die Bereitstellung von erstklassigen Beratungsdienstleistungen zu stärken. Wir kombinieren unser tiefes Branchenwissen, unsere technische Expertise und unser globales Netzwerk, um maßgeschneiderte Lösungen zu liefern, die einzigartige Herausforderungen angehen und neue Chancen für nachhaltiges Wachstum erschließen. Mit unserem beratenden Ansatz leiten wir Organisationen auf den Weg zum Erfolg und helfen ihnen, komplexe Landschaften zu navigieren und in der heutigen dynamischen Geschäftsumgebung voranzukommen.</value>
+	</data>
+	<data xml:space="preserve" name="Contact Us">
+		<value>Kontaktieren Sie uns</value>
+	</data>
+	<data xml:space="preserve" name="Contact us now">
+		<value>Kontaktieren Sie uns jetzt</value>
+	</data>
+	<data xml:space="preserve" name="Continuous Performance Optimization:">
+		<value>Kontinuierliche Leistungsverbesserung:</value>
+	</data>
+	<data xml:space="preserve" name="Cooling Technologies">
+		<value>Kühltechnologien</value>
+	</data>
+	<data xml:space="preserve" name="copyrights">
+		<value>© 2023 Diverse. Alle Rechte vorbehalten.</value>
+	</data>
+	<data xml:space="preserve" name="Customized Services for Your Business">
+		<value>Maßgeschneiderte Dienstleistungen für Ihr Unternehmen</value>
+	</data>
+	<data xml:space="preserve" name="Customized Solutions for Your Business">
+		<value>Maßgeschneiderte Lösungen für Ihr Unternehmen</value>
+	</data>
+	<data xml:space="preserve" name="Cyber Security">
+		<value>Cybersicherheit</value>
+	</data>
+	<data xml:space="preserve" name="Cyber Security Solutions">
+		<value>Cybersicherheitslösungen</value>
+	</data>
+	<data xml:space="preserve" name="Cybersecurity">
+		<value>Cybersicherheit</value>
+	</data>
+	<data xml:space="preserve" name="DashBoard">
+		<value>Instrumententafel</value>
+	</data>
+	<data xml:space="preserve" name="Data Center">
+		<value>Rechenzentrum</value>
+	</data>
+	<data xml:space="preserve" name="Data Center Solutions">
+		<value>Rechenzentrums-Lösungen</value>
+	</data>
+	<data xml:space="preserve" name="Data Security Solutions">
+		<value>Daten-Sicherheitslösungen</value>
+	</data>
+	<data xml:space="preserve" name="Data security solutions are designed to protect sensitive information from unauthorized access, disclosure, alteration, or destruction.">
+		<value>Datensicherheitslösungen sind so konzipiert, dass sie sensible Informationen vor unbefugtem Zugriff, Offenlegung, Änderung oder Zerstörung schützen.</value>
+	</data>
+	<data xml:space="preserve" name="Datacenter Preparation">
+		<value>Vorbereitung des Rechenzentrums</value>
+	</data>
+	<data xml:space="preserve" name="Deployment phases">
+		<value>Einsatzphasen</value>
+	</data>
+	<data xml:space="preserve" name="Design and Implementation">
+		<value>Entwurf und Implementierung</value>
+	</data>
+	<data xml:space="preserve" name="Design and Implemnting">
+		<value>Entwurf und Implementierung</value>
+	</data>
+	<data xml:space="preserve" name="Discover Our Diversity in the Range of Solutions, Combined With Top Technologies in the Modern World.">
+		<value>Entdecken Sie unsere Vielfalt in der Palette an Lösungen, kombiniert mit Top-Technologien in der modernen Welt</value>
+	</data>
+	<data xml:space="preserve" name="Discover our storage solutions - Low-end for cost-effectiveness, Mid-range for balanced performance, and High-end for mission-critical applications. Trust our expertise for optimal data management and accessibility, powering your success.">
+		<value>Entdecken Sie unsere Speicherlösungen - Low-End für Kosteneffizienz, Mid-Range für ausgewogenen Leistung und High-End für mission-kritische Anwendungen. Vertrauen Sie auf unsere Expertise für optimales Datenmanagement und Zugänglichkeit, um Ihren Erfolg zu fördern.</value>
+	</data>
+	<data xml:space="preserve" name="Discover Our Wide Range of Cutting-edge ICT Services, Tailored to Empower Businesses and Drive Digital Transformation.">
+		<value>Entdecken Sie unser breites Spektrum an innovativen ICT-Dienstleistungen, die darauf ausgelegt sind, Unternehmen zu stärken und die digitale Transformation voranzutreiben.</value>
+	</data>
+	<data xml:space="preserve" name="Discover seamless integration with our Hyper-Converged solutions - a powerful, all-in-one platform combining computing, storage, and virtualization. Simplify management, scale effortlessly, boost performance, and cut costs.">
+		<value>Entdecken Sie die nahtlose Integration mit unseren hyperkonvergenten Lösungen - eine leistungsstarke, in sich geschlossene Plattform, die Rechenleistung, Speicherung und Virtualisierung kombiniert. Vereinfachen Sie die Verwaltung, skalieren Sie mühelos, steigern Sie die Leistung und senken Sie die Kosten.</value>
+	</data>
+	<data xml:space="preserve" name="Discover the diverse range of industry-leading organizations that have chosen us as their trusted partner for cutting-edge ICT solutions and services.">
+		<value>Entdecken Sie die vielfältige Palette an branchenführenden Organisationen, die uns als ihren vertrauenswürdigen Partner für innovative ICT-Lösungen und -Dienstleistungen gewählt haben.</value>
+	</data>
+	<data xml:space="preserve" name="Discover valuable resources, helpful tips, and company updates on our informative blog.">
+		<value>Entdecken Sie wertvolle Ressourcen, hilfreiche Tipps und Unternehmensaktualisierungen auf unserem informativen Blog.</value>
+	</data>
+	<data xml:space="preserve" name="Diverse - For Network Solutions">
+		<value>Vielfältig - Für Netzwerklösungen</value>
+	</data>
+	<data xml:space="preserve" name="Diverse is a specialized organization that combines different technologies, software, and hardware components from different vendors to create comprehensive and integrated systems that meet your specific business requirements.">
+		<value>Diverse ist eine spezialisierte Organisation, die verschiedene Technologien, Software- und Hardwarekomponenten von verschiedenen Anbietern kombiniert, um umfassende und integrierte Systeme zu erstellen, die Ihren spezifischen Geschäftsanforderungen entsprechen.</value>
+	</data>
+	<data xml:space="preserve" name="Diverse offer a range of services, including system design, development, implementation, integration, testing, maintenance, and support. We also provide consultancy, project management, and training services related to the integrated systems.">
+		<value>Diverse bietet eine breite Palette von Dienstleistungen an, darunter Systemdesign, Entwicklung, Implementierung, Integration, Testen, Wartung und Support. Wir bieten auch Beratungs-, Projektmanagement- und Schulungsdienstleistungen in Bezug auf die integrierten Systeme an.</value>
+	</data>
+	<data xml:space="preserve" name="Diverse offer a range of services, including system design, development, implementation,integration, testing, maintenance, and support. We also provide consultancy, project management, and training services related to the integrated systems.">
+		<value>Diverse bietet eine breite Palette von Dienstleistungen an, darunter Systemdesign, Entwicklung, Implementierung, Integration, Testen, Wartung und Support. Wir bieten auch Beratungs-, Projektmanagement- und Schulungsdienstleistungen in Bezug auf die integrierten Systeme an.</value>
+	</data>
+	<data xml:space="preserve" name="Diverse offers cutting-edge IT datacenter solutions for modern businesses. With top-of-the-line servers, storage, virtualization software, and backup, we ensure enhanced performance and scalability. Our expert engineers design tailor-made solutions, optimizing resource utilization and reducing costs. Seamless integration guarantees efficient data management, helping clients stay ahead in today's competitive landscape. Embracing the latest technology, our solutions empower businesses with productivity, flexibility, and security, driving success in the digital age.">
+		<value>Diverse bietet innovative IT-Rechenzentrums-Lösungen für moderne Unternehmen. Mit High-End-Servern, Speicher, Virtualisierungs-Software und Backup stellen wir eine verbesserte Leistung und Skalierbarkeit sicher. Unsere erfahrenen Ingenieure entwerfen maßgeschneiderte Lösungen, die die Ressourcennutzung optimieren und die Kosten senken. Eine nahtlose Integration garantiert eine effiziente Datenverwaltung, die Kunden dabei hilft, in der heutigen Konkurrenzlandschaft voranzukommen. Durch die Nutzung der neuesten Technologien ermöglichen unsere Lösungen Unternehmen Produktivität, Flexibilität und Sicherheit, was zum Erfolg im digitalen Zeitalter führt.</value>
+	</data>
+	<data xml:space="preserve" name="Diverse provides a full range of cybersecurity options to assist you safeguard your network from intrusions that could compromise your data.">
+		<value>Diverse bietet eine vollständige Palette an Cybersicherheits-Optionen, um Ihnen zu helfen, Ihr Netzwerk vor Eingriffen zu schützen, die Ihre Daten gefährden könnten.</value>
+	</data>
+	<data xml:space="preserve" name="Diverse serve a wide range of industries, including manufacturing, healthcare, transportation, energy, telecommunications, finance, retail, and many others. They adapt their solutions to meet the specific needs and challenges of each industry.">
+		<value>Die Vielfältigen bedienen eine breite Palette von Branchen, darunter Fertigung, Gesundheitswesen, Verkehr, Energie, Telekommunikation, Finanzen, Einzelhandel und viele andere. Sie passen ihre Lösungen an, um die spezifischen Bedürfnisse und Herausforderungen jeder Branche zu erfüllen.</value>
+	</data>
+	<data xml:space="preserve" name="Diverse serve a wide range of industries, including manufacturing, healthcare, transportation, energy, telecommunications, finance, retail, and many others.They adapt their solutions to meet the specific needs and challenges of each industry.">
+		<value>Die Vielfältigen bedienen eine breite Palette von Branchen, darunter Fertigung, Gesundheitswesen, Verkehr, Energie, Telekommunikation, Finanzen, Einzelhandel und viele andere. Sie passen ihre Lösungen an, um die spezifischen Bedürfnisse und Herausforderungen jeder Branche zu erfüllen.</value>
+	</data>
+	<data xml:space="preserve" name="Diverse Services' Operational Support Service focuses on ensuring the smooth and efficient functioning of your solution. With a proactive and responsive approach, our team identifies and resolves issues before they impact your organization.">
+		<value>Der Betriebsunterstützungsdienst von Diverse Services konzentriert sich darauf, einen reibungslosen und effizienten Betrieb Ihrer Lösung sicherzustellen. Mit einem proaktiven und reaktionsfreudigen Ansatz identifiziert unser Team Probleme und löst sie, bevor sie Ihre Organisation beeinträchtigen.</value>
+	</data>
+	<data xml:space="preserve" name="Diverse's implementation service is created to make it easier for your solution to be successfully expanded and integrated. We collaborate with your team and draw on our vast network of expert engineers to ensure smooth implementation. Our objective is to enhance your solution, increase functionality, and promote growth whether through conventional projects or agile iterations.">
+		<value>Der Implementierungsdienst von Diverse wurde geschaffen, um es einfacher zu machen, Ihre Lösung erfolgreich zu erweitern und zu integrieren. Wir arbeiten mit Ihrem Team zusammen und nutzen unser umfangreiches Netzwerk an erfahrenen Ingenieuren, um eine reibungslose Implementierung sicherzustellen. Unser Ziel ist es, Ihre Lösung zu verbessern, die Funktionalität zu erhöhen und das Wachstum zu fördern, sei es durch konventionelle Projekte oder agile Iterationen.</value>
+	</data>
+	<data xml:space="preserve" name="Efficient and controlled rollout of services, ensuring smooth integration and user proficiency throughout the implementation process.">
+		<value>Effiziente und kontrollierte Einführung von Dienstleistungen, um eine reibungslose Integration und Benutzerkompetenz während des Implementierungsprozesses sicherzustellen.</value>
+	</data>
+	<data xml:space="preserve" name="Efficient implementation, seamless expansion, and optimization of your solution for sustainable business success.">
+		<value>Effiziente Implementierung, nahtlose Erweiterung und Optimierung Ihrer Lösung für nachhaltigen Geschäftserfolg</value>
+	</data>
+	<data xml:space="preserve" name="Email">
+		<value>E-Mail</value>
+	</data>
+	<data xml:space="preserve" name="Empowering digital connectivity and communication in Egypt with advanced telecommunication solutions.">
+		<value>Ermächtigung der digitalen Vernetzung und Kommunikation in Ägypten mit fortschrittlichen Telekommunikationslösungen</value>
+	</data>
+	<data xml:space="preserve" name="Enabling digital transformation and connectivity for individuals and businesses in Egypt.">
+		<value>Ermöglichung der digitalen Transformation und Vernetzung für Einzelpersonen und Unternehmen in Ägypten</value>
+	</data>
+	<data xml:space="preserve" name="Enabling Vodafone's digital innovation and superior customer experiences through ICT solutions.">
+		<value>Ermöglichung von Vodafones digitalem Innovations- und überlegenen Kundenerlebnissen durch IKT-Lösungen</value>
+	</data>
+	<data xml:space="preserve" name="Endpoint protection solutions">
+		<value>Endgeräteschutzlösungen</value>
+	</data>
+	<data xml:space="preserve" name="Endpoint protection solutions, also known as endpoint security solutions or endpoint protection platforms (EPPs), are designed to secure individual devices, such as desktops, laptops, servers, and mobile devices, from various cyber threats and attacks.">
+		<value>Endgeräteschutzlösungen, auch bekannt als Endgerätesicherheitslösungen oder Endgeräteschutzplattformen (EPPs), sind dazu ausgelegt, einzelne Geräte wie Desktop-Computer, Laptops, Server und mobile Geräte vor verschiedenen Cyber-Bedrohungen und -Angriffen zu schützen.</value>
+	</data>
+	<data xml:space="preserve" name="English">
+		<value>Englisch</value>
+	</data>
+	<data xml:space="preserve" name="Ensure data security with our Backup and Archiving Solutions. Trust seamless recovery, minimal downtime, and peace of mind. Focus on your business while we protect your data.">
+		<value>Sichern Sie die Datensicherheit mit unseren Backup- und Archivierungslösungen. Vertrauen Sie auf eine reibungslose Wiederherstellung, minimale Ausfallzeiten und einen klaren Kopf. Konzentrieren Sie sich auf Ihr Geschäft, während wir Ihre Daten schützen.</value>
+	</data>
+	<data xml:space="preserve" name="Experience the power of our tailored solutions, designed to fuel your business growth and maximize your competitive advantage. With expertise in network infrastructure, Cybersecurity, cloud services, and more, we deliver innovative and scalable solutions that drive digital transformation. Partner with us to unlock new possibilities and stay ahead in today's dynamic business landscape.">
+		<value>Erleben Sie die Kraft unserer maßgeschneiderten Lösungen, die darauf ausgelegt sind, Ihr Geschäftswachstum zu fördern und Ihren Wettbewerbsvorteil zu maximieren. Mit unserer Expertise in Netzwerkinfrastruktur, Cybersicherheit, Cloud-Diensten und mehr liefern wir innovative und skalierbare Lösungen, die den digitalen Wandel vorantreiben. Partner mit uns, um neue Möglichkeiten zu erschließen und in der heutigen dynamischen Geschäftswelt voranzukommen.</value>
+	</data>
+	<data xml:space="preserve" name="Experience unmatched performance and efficiency with our high-end compute nodes and farms. As a leading system integrator, we deliver cutting-edge solutions, offering unparalleled processing power and scalability to meet modern businesses' most demanding needs.">
+		<value>Erleben Sie unvergleichliche Leistung und Effizienz mit unseren High-End-Rechenknoten und -Farms. Als führender Systemintegrator liefern wir innovative Lösungen, die unvergleichliche Rechenleistung und Skalierbarkeit bieten, um die anspruchsvollsten Bedürfnisse moderner Unternehmen zu erfüllen.</value>
+	</data>
+	<data xml:space="preserve" name="Expertise and Experience:">
+		<value>Fachwissen und Erfahrung</value>
+	</data>
+	<data xml:space="preserve" name="Explore our top-tier vendors who enable us to deliver the best services and solutions in the market.">
+		<value>Entdecken Sie unsere erstklassigen Anbieter, die es uns ermöglichen, die besten Dienstleistungen und Lösungen auf dem Markt anzubieten.</value>
+	</data>
+	<data xml:space="preserve" name="Explore Projects">
+		<value>Projekte erkunden</value>
+	</data>
+	<data xml:space="preserve" name="Extensive compute power and extended storage along with proper backup and archiving solutions are key to today’s organizations’ efficiency and competitive edge.">
+		<value>Umfassende Rechenleistung und erweiterte Speicherung sowie geeignete Backup- und Archivierungslösungen sind der Schlüssel zur Effizienz und Wettbewerbsfähigkeit der heutigen Organisationen.</value>
+	</data>
+	<data xml:space="preserve" name="FAQs">
+		<value>Häufig gestellte Fragen</value>
+	</data>
+	<data xml:space="preserve" name="Functional Enhancement:">
+		<value>Funktionale Verbesserung</value>
+	</data>
+	<data xml:space="preserve" name="Future-proofing:">
+		<value>Zukunftssicherung</value>
+	</data>
+	<data xml:space="preserve" name="General questions">
+		<value>Allgemeine Fragen</value>
+	</data>
+	<data xml:space="preserve" name="Here you'll find answers to commonly asked questions about our solutions, and services.">
+		<value>Hier finden Sie Antworten auf häufig gestellte Fragen zu unseren Lösungen und Dienstleistungen</value>
+	</data>
+	<data xml:space="preserve" name="High end compute nodes and farms">
+		<value>High-End-Rechenknoten und -Farms</value>
+	</data>
+	<data xml:space="preserve" name="Home">
+		<value>Zuhause</value>
+	</data>
+	<data xml:space="preserve" name="home10">
+		<value>Bei Diverse werden wir von der Leidenschaft getrieben, die Region EMEA mit unseren außergewöhnlichen Dienstleistungen und bahnbrechenden Lösungen zu revolutionieren. Mit unseren Wurzeln in Deutschland und Ägypten haben wir uns auf eine unglaubliche Reise begeben, um unseren Kunden unübertroffene Professionalität und weltweit führende Telco-Produkte, -Dienstleistungen und -Support zu bieten</value>
+	</data>
+	<data xml:space="preserve" name="home11">
+		<value>Das Phänomenale Wachstum</value>
+	</data>
+	<data xml:space="preserve" name="home12">
+		<value>Von bescheidenen Anfängen zu bemerkenswertem Wachstum</value>
+	</data>
+	<data xml:space="preserve" name="home13">
+		<value>Seit unserer Gründung im Jahr 2016 haben wir ein bemerkenswertes Wachstum von Jahr zu Jahr erlebt, mit einer organischen Steigerung von über 200% pro Jahr. Dieser außergewöhnliche Erfolg hat uns von einem kleinen Unternehmen zu einem mittelständischen Unternehmen geführt, das nun die ersten Mobilfunkbetreiber bedient. Unser Engagement und unsere Verpflichtung zur Exzellenz waren die treibenden Kräfte hinter unserer kontinuierlichen Expansion.</value>
+	</data>
+	<data xml:space="preserve" name="home14">
+		<value>Erweiterung des Golf-Kooperationsrats</value>
+	</data>
+	<data xml:space="preserve" name="home15">
+		<value>GCC-Erweiterung: Neue Horizonte umarmen</value>
+	</data>
+	<data xml:space="preserve" name="home16">
+		<value>Im Jahr 2023 erweitern wir uns weiter und begrüßen die reichen Möglichkeiten in der faszinierenden Region des Golf-Kooperationsrats (GCC). Mit einer bewährten Erfolgsbilanz und finanzieller Stabilität, die sich über sieben Jahre erstreckt, beginnt unser aufregendes Abenteuer mit der Gründung unseres ersten Büros im Königreich Saudi-Arabien (KSA). Unsere Vision ist es, KSA zu einem lebendigen Zentrum zu machen, das unsere Aktivitäten vorantreibt und Innovationen in der gesamten Region fördert. Begleiten Sie uns auf dieser bemerkenswerten Reise, bei der wir die Zukunft des GCC gestalten.</value>
+	</data>
+	<data xml:space="preserve" name="home17">
+		<value>Erweiterung Ostafrikas</value>
+	</data>
+	<data xml:space="preserve" name="home18">
+		<value>Expansion Ostafrika: Entfesselung des technologischen Potenzials</value>
+	</data>
+	<data xml:space="preserve" name="home19">
+		<value>Ostafrika, eine Region voller ungenutzter Möglichkeiten, bietet ein aufregendes Betätigungsfeld für Diverse. Mit der Erweiterung unserer Aktivitäten nach Kenia im Jahr 2023 sind wir bestrebt, einen bleibenden Eindruck zu hinterlassen und den technologischen Fortschritt in diesem dynamischen Umfeld voranzutreiben. Durch die Nutzung unserer Markteinblicke und unseres Verständnisses der Region zielen wir darauf ab, die Lücken in der Technologie zu überbrücken und Lösungen zu liefern, die Unternehmen und Einzelpersonen gleichermaßen stärken. Begleiten Sie uns auf dieser transformierenden Reise, die eine neue Ära des Innovations- und Wachstum in ganz Ostafrika einläutet.</value>
+	</data>
+	<data xml:space="preserve" name="home20">
+		<value>Was ist neu</value>
+	</data>
+	<data xml:space="preserve" name="home21">
+		<value>Aktuelle Regionen von Diverse</value>
+	</data>
+	<data xml:space="preserve" name="home22">
+		<value>Nürnberg, Deutschland</value>
+	</data>
+	<data xml:space="preserve" name="home23">
+		<value>Kairo, Ägypten</value>
+	</data>
+	<data xml:space="preserve" name="home24">
+		<value>Kenia</value>
+	</data>
+	<data xml:space="preserve" name="home25">
+		<value>Saudi-Arabien</value>
+	</data>
+	<data xml:space="preserve" name="home26">
+		<value>Bereitstellung der besten Lösungen in der Informations- und Kommunikationstechnologie</value>
+	</data>
+	<data xml:space="preserve" name="home27">
+		<value>Mit der Vielfalt unserer Lösungen streben wir danach, höchste Qualität mit modernster Technologie zu erreichen</value>
+	</data>
+	<data xml:space="preserve" name="home28">
+		<value>Netzwerken</value>
+	</data>
+	<data xml:space="preserve" name="home29">
+		<value>Unsere Abteilung liefert fortschrittliche Konnektivitätslösungen mit einer perfekten Mischung aus kabelgebundenen und kabellosen Optionen, unterstützt von einem Team hochqualifizierter Ingenieure.</value>
+	</data>
+	<data xml:space="preserve" name="home3">
+		<value>Wir arbeiten auf unsere Mission hin, das Jahr 2023 markiert den Start von Diverse in ausgewählten internationalen Märkten. Beginnend mit Kenia als Zentrum für die ostafrikanische Subregion, Saudi-Arabien als Zentrum für den Golf-Kooperationsrat und Ägypten als Zentrum für Westafrika. Wir zielen darauf ab, diesen Regionen mit weltweit führenden Lösungen und Dienstleistungen zu helfen.</value>
+	</data>
+	<data xml:space="preserve" name="home30">
+		<value>Mehr lesen</value>
+	</data>
+	<data xml:space="preserve" name="home31">
+		<value>Rechenzentrum</value>
+	</data>
+	<data xml:space="preserve" name="home32">
+		<value>Robuste Rechenzentren, ausgestattet mit leistungsstarken Rechenkapazitäten, Speicherplatz, zuverlässigen Backup-Lösungen, unerlässlich im heutigen Wettbewerbsmarkt, um Effizienz zu ermöglichen.</value>
+	</data>
+	<data xml:space="preserve" name="home33">
+		<value>Cybersicherheit</value>
+	</data>
+	<data xml:space="preserve" name="home34">
+		<value>Diverse bietet umfassende Sicherheitslösungen, die Organisationen dabei helfen, sich an Verkehrsspitzen, komplexe und sich schnell entwickelnde Anwendungen in Rechenzentren anzupassen.</value>
+	</data>
+	<data xml:space="preserve" name="home35">
+		<value>Unsere Methodik</value>
+	</data>
+	<data xml:space="preserve" name="home36">
+		<value>Methodische Phasen, von der Planung bis zur Implementierung und Schulung, gewährleisten eine nahtlose und erfolgreiche Implementierung von IKT-Lösungen, fördern die Integration und die Benutzerkompetenz.</value>
+	</data>
+	<data xml:space="preserve" name="home37">
+		<value>Planung und Vorbereitung</value>
+	</data>
+	<data xml:space="preserve" name="home38">
+		<value>Umfangsdefinition, Lösungsexploration, Interessensvertreterausrichtung</value>
+	</data>
+	<data xml:space="preserve" name="home39">
+		<value>Entwurf und Implementierung</value>
+	</data>
+	<data xml:space="preserve" name="home4">
+		<value>Ägypten</value>
+	</data>
+	<data xml:space="preserve" name="home40">
+		<value>Lösungsarchitektur, Bereitstellung, Funktionserweiterung</value>
+	</data>
+	<data xml:space="preserve" name="home41">
+		<value>Betrieb und Optimierung</value>
+	</data>
+	<data xml:space="preserve" name="home42">
+		<value>Lösung warten, Probleme lösen, Leistung optimieren</value>
+	</data>
+	<data xml:space="preserve" name="home5">
+		<value>Saudi-Arabien</value>
+	</data>
+	<data xml:space="preserve" name="home6">
+		<value>Kenia</value>
+	</data>
+	<data xml:space="preserve" name="home7">
+		<value>Deutschland</value>
+	</data>
+	<data xml:space="preserve" name="home8">
+		<value>Die allerersten Anfänge</value>
+	</data>
+	<data xml:space="preserve" name="home9">
+		<value>Ambitionierte Anfänge in Europa und Nordafrika</value>
+	</data>
+	<data xml:space="preserve" name="hometitle1">
+		<value>Willkommen bei Diverse®</value>
+	</data>
+	<data xml:space="preserve" name="hometitle2">
+		<value>Willkommen bei Diverse, Ihrem ultimativen Ziel für innovative IT-Lösungen, wo Technologie und Vielfalt aufeinandertreffen, um Ihnen eine Welt voller Möglichkeiten zu bieten.</value>
+	</data>
+	<data xml:space="preserve" name="How can Diverse benefit my business ?">
+		<value>Wie kann Vielfalt mein Unternehmen nutzen?</value>
+	</data>
+	<data xml:space="preserve" name="How do Diverse ensure the compatibility of different technologies ?">
+		<value>Wie stellt Diverse die Kompatibilität verschiedener Technologien sicher?</value>
+	</data>
+	<data xml:space="preserve" name="Hyper-Converged solutions">
+		<value>Hyperkonvergente Lösungen</value>
+	</data>
+	<data xml:space="preserve" name="Implementation">
+		<value>Implementierung</value>
+	</data>
+	<data xml:space="preserve" name="Implementation Service">
+		<value>Implementierungsdienst</value>
+	</data>
+	<data xml:space="preserve" name="Implementation Services">
+		<value>Implementierungsdienste</value>
+	</data>
+	<data xml:space="preserve" name="In cases where frequent problems or emerging requirements demand it, we offer solution redesign services to optimize performance and accommodate new applications.">
+		<value>In Fällen, in denen häufige Probleme oder neue Anforderungen es erfordern, bieten wir Lösungs-Neuentwurfsdienste an, um die Leistung zu optimieren und neue Anwendungen zu integrieren.</value>
+	</data>
+	<data xml:space="preserve" name="Key Customers">
+		<value>Schlüsselkunden</value>
+	</data>
+	<data xml:space="preserve" name="Key Features">
+		<value>Hauptmerkmale</value>
+	</data>
+	<data xml:space="preserve" name="Language">
+		<value>Sprache</value>
+	</data>
+	<data xml:space="preserve" name="Latest Blogs">
+		<value>Neueste Blogs</value>
+	</data>
+	<data xml:space="preserve" name="Latest posts">
+		<value>Neueste Beiträge</value>
+	</data>
+	<data xml:space="preserve" name="Learn more">
+		<value>Erfahren Sie mehr</value>
+	</data>
+	<data xml:space="preserve" name="Load Balancers">
+		<value>Lastenausgleich</value>
+	</data>
+	<data xml:space="preserve" name="Load balancers are networking devices or software solutions that distribute network traffic across multiple servers or resources to ensure optimal utilization, maximize performance, and prevent overload.">
+		<value>Lastenausgleichsgeräte sind Netzwerkgeräte oder Softwarelösungen, die Netzwerkverkehr auf mehrere Server oder Ressourcen verteilen, um eine optimale Auslastung zu gewährleisten, die Leistung zu maximieren und Überlastungen zu vermeiden.</value>
+	</data>
+	<data xml:space="preserve" name="Load More">
+		<value>Mehr laden</value>
+	</data>
+	<data xml:space="preserve" name="locationaddress">
+		<value>Smart Village - Gebäude A218, Km 28 Kairo-Alexandria-Wüstenstraße 6. Oktober-Stadt – Giza, Ägypten</value>
+	</data>
+	<data xml:space="preserve" name="Maintain solution, resolve issues, optimize performance">
+		<value>Lösung warten, Probleme lösen, Leistung optimieren</value>
+	</data>
+	<data xml:space="preserve" name="Management Technologies.">
+		<value>Managementtechnologien</value>
+	</data>
+	<data xml:space="preserve" name="Methodical phases, from planning to implementation and training, ensure a seamless and successful deployment of ICT solutions, promoting integration and user proficiency.">
+		<value>Methodische Phasen, von der Planung bis zur Implementierung und Schulung, gewährleisten eine nahtlose und erfolgreiche Implementierung von IKT-Lösungen, fördern die Integration und die Benutzerkompetenz.</value>
+	</data>
+	<data xml:space="preserve" name="Mission Critical, low and midrange storage solutions">
+		<value>Mission Critical, Low- und Midrange-Speicherlösungen</value>
+	</data>
+	<data xml:space="preserve" name="Name">
+		<value>Name</value>
+	</data>
+	<data xml:space="preserve" name="Network">
+		<value>Netzwerk</value>
+	</data>
+	<data xml:space="preserve" name="Network &amp; security solutions">
+		<value>Netzwerk- und Sicherheitslösungen</value>
+	</data>
+	<data xml:space="preserve" name="Network and security solutions are essential for businesses and organizations to protect their data, systems,and network infrastructure from potential threats and unauthorized access. In today's digital age, where cyberattacks are becoming increasingly sophisticated, it is crucial to implement robust and comprehensive network and security solutions.">
+		<value>Netzwerk- und Sicherheitslösungen sind für Unternehmen und Organisationen unerlässlich, um ihre Daten, Systeme und Netzwerkinfrastruktur vor potenziellen Bedrohungen und unbefugtem Zugriff zu schützen. In unserem heutigen digitalen Zeitalter, in dem Cyberangriffe zunehmend komplexer werden, ist es von entscheidender Bedeutung, robuste und umfassende Netzwerk- und Sicherheitslösungen umzusetzen.</value>
+	</data>
+	<data xml:space="preserve" name="Networking">
+		<value>Netzwerken</value>
+	</data>
+	<data xml:space="preserve" name="Networking &amp; security">
+		<value>Netzwerk und Sicherheit</value>
+	</data>
+	<data xml:space="preserve" name="Next Generation Firewalls">
+		<value>Next-Generation-Firewalls</value>
+	</data>
+	<data xml:space="preserve" name="Next Generation Firewalls (NGFWs) are advanced network security devices that combine traditional firewall capabilities with additional security features and intelligence">
+		<value>Next-Generation-Firewalls (NGFWs) sind fortschrittliche Netzwerksicherheitsgeräte, die traditionelle Firewall-Funktionen mit zusätzlichen Sicherheitsfunktionen und Intelligenz kombinieren</value>
+	</data>
+	<data xml:space="preserve" name="Offering cutting-edge wired and wireless connectivity solutions delivered by highly qualified Engineers from world-leading technology vendors.">
+		<value>Bereitstellung von leistungsstarken kabelgebundenen und kabellosen Konnektivitätslösungen, die von hochqualifizierten Ingenieuren führender Technologieanbieter geliefert werden.</value>
+	</data>
+	<data xml:space="preserve" name="OP Support">
+		<value>OP-Support</value>
+	</data>
+	<data xml:space="preserve" name="Operation and Optimization">
+		<value>Betrieb und Optimierung</value>
+	</data>
+	<data xml:space="preserve" name="Operational Support Service">
+		<value>Betrieblicher Supportdienst</value>
+	</data>
+	<data xml:space="preserve" name="Operational Support Services">
+		<value>Betriebliche Unterstützungsleistungen</value>
+	</data>
+	<data xml:space="preserve" name="Our Clients">
+		<value>Unsere Kunden</value>
+	</data>
+	<data xml:space="preserve" name="Our consulting team possesses extensive industry expertise and experience, ensuring that we deliver high-quality solutions tailored to our clients' specific needs.">
+		<value>Unser Beratungsteam verfügt über umfangreiche Branchenkenntnisse und Erfahrung, sodass wir Lösungen von hoher Qualität anbieten können, die speziell auf die Bedürfnisse unserer Kunden zugeschnitten sind.</value>
+	</data>
+	<data xml:space="preserve" name="Our experts enhance your solution's functionality, enabling it to handle more capacity and leverage exposed APIs.">
+		<value>Unsere Experten verbessern die Funktionalität Ihrer Lösung, sodass sie eine höhere Kapazität bewältigen und offene APIs nutzen kann.</value>
+	</data>
+	<data xml:space="preserve" name="Our Mission">
+		<value>Unser Auftrag</value>
+	</data>
+	<data xml:space="preserve" name="Our Projects">
+		<value>Unsere Projekte</value>
+	</data>
+	<data xml:space="preserve" name="Our Services">
+		<value>Unsere Dienstleistungen</value>
+	</data>
+	<data xml:space="preserve" name="Our services include strategic migration planning, enabling a smooth transition to new technologies and future-proofing your business.">
+		<value>Unsere Dienstleistungen umfassen die strategische Migrationsplanung, die einen reibungslosen Übergang zu neuen Technologien und die Zukunftssicherung Ihres Unternehmens ermöglicht</value>
+	</data>
+	<data xml:space="preserve" name="Our Solutions">
+		<value>Unsere Lösungen</value>
+	</data>
+	<data xml:space="preserve" name="Our Stellar Team">
+		<value>Unser Stern-Team</value>
+	</data>
+	<data xml:space="preserve" name="Our team is equipped to swiftly detect and resolve issues that require immediate attention, minimizing downtime and disruptions.">
+		<value>Unser Team ist ausgestattet, um Probleme, die sofortige Aufmerksamkeit erfordern, schnell zu erkennen und zu lösen, um Ausfallzeiten und Störungen zu minimieren.</value>
+	</data>
+	<data xml:space="preserve" name="Our team swiftly identifies and resolves issues, providing troubleshooting support to minimize downtime and ensure uninterrupted operations.">
+		<value>Unser Team identifiziert und löst Probleme schnell, bietet Troubleshooting-Unterstützung, um Ausfallzeiten zu minimieren und einen reibungslosen Betrieb sicherzustellen.</value>
+	</data>
+	<data xml:space="preserve" name="Our Values">
+		<value>Unsere Werte</value>
+	</data>
+	<data xml:space="preserve" name="Our Vision">
+		<value>Unsere Vision</value>
+	</data>
+	<data xml:space="preserve" name="Our wide range of cutting-edge ICT services is tailored to empower businesses and drive digital transformation by providing innovative solutions, advanced technologies, and strategic guidance. Whether your organization is seeking to enhance its cybersecurity defenses, optimize its IT infrastructure, leverage cloud computing capabilities, or embark on digital initiatives, our comprehensive ICT services are designed to meet your unique needs and propel your business forward in the digital age.">
+		<value>Unser breites Spektrum an innovativen ICT-Dienstleistungen ist darauf ausgelegt, Unternehmen zu stärken und den digitalen Wandel voranzutreiben, indem wir innovative Lösungen, fortschrittliche Technologien und strategische Beratung bieten. Egal, ob Ihre Organisation ihre Cybersicherheitsmaßnahmen verbessern, ihre IT-Infrastruktur optimieren, die Möglichkeiten der Cloud-Computing nutzen oder digitale Initiativen starten möchte, unsere umfassenden ICT-Dienstleistungen sind darauf ausgelegt, Ihre spezifischen Bedürfnisse zu erfüllen und Ihr Unternehmen im digitalen Zeitalter voranzutreiben.</value>
+	</data>
+	<data xml:space="preserve" name="Penetration Testing &amp; vulnerability Assessment">
+		<value>Penetrationstest und Schwachstellenbewertung</value>
+	</data>
+	<data xml:space="preserve" name="Penetration testing and vulnerability assessment are two essential practices in the field of cybersecurity.">
+		<value>Penetrationstests und Schwachstellenbewertungen sind zwei wesentliche Praktiken im Bereich der Cybersicherheit.</value>
+	</data>
+	<data xml:space="preserve" name="Penetration testing mimics actual attacks while authorized attempts are made to exploit vulnerabilities in order to uncover holes before malicious actors may exploit them. Vulnerability assessment, on the other hand, carefully investigates systems and networks to classify potential faults, prioritizing risks and providing valuable information for corrective steps.">
+		<value>Penetrationstests imitieren tatsächliche Angriffe, während autorisierte Versuche unternommen werden, um Schwachstellen auszunutzen, um Lücken aufzudecken, bevor bösartige Akteure sie ausnutzen können. Schwachstellenbewertungen untersuchen Systeme und Netzwerke dagegen sorgfältig, um potenzielle Fehler zu klassifizieren, Risiken zu priorisieren und wertvolle Informationen für Korrekturmaßnahmen bereitzustellen.</value>
+	</data>
+	<data xml:space="preserve" name="Phone">
+		<value>Telefon</value>
+	</data>
+	<data xml:space="preserve" name="Phone number">
+		<value>Telefonnummer</value>
+	</data>
+	<data xml:space="preserve" name="Planning and Preparation">
+		<value>Planung und Vorbereitung</value>
+	</data>
+	<data xml:space="preserve" name="Power Technologies">
+		<value>Energie-Technologien</value>
+	</data>
+	<data xml:space="preserve" name="Proactive Issue Resolution:">
+		<value>Proaktive Problemlösung</value>
+	</data>
+	<data xml:space="preserve" name="Professional Service">
+		<value>Professioneller Service</value>
+	</data>
+	<data xml:space="preserve" name="Progressive Service Rollout">
+		<value>Schrittweiser Rollout von Diensten</value>
+	</data>
+	<data xml:space="preserve" name="Projects">
+		<value>Projekte</value>
+	</data>
+	<data xml:space="preserve" name="Providing comprehensive banking services, supporting economic growth and financial inclusion.">
+		<value>Bereitstellung umfassender Bankdienstleistungen, Unterstützung des Wirtschaftswachstums und der finanziellen Inklusion</value>
+	</data>
+	<data xml:space="preserve" name="Providing comprehensive security solutions that feature high performance and rugged defense for the applications, data and users of its customers.">
+		<value>Bereitstellung umfassender Sicherheitslösungen, die eine hohe Leistung und einen robusten Schutz für die Anwendungen, Daten und Benutzer ihrer Kunden bieten.</value>
+	</data>
+	<data xml:space="preserve" name="Reactive Troubleshooting:">
+		<value>Reaktive Fehlerbehebung</value>
+	</data>
+	<data xml:space="preserve" name="Read all">
+		<value>Alle lesen</value>
+	</data>
+	<data xml:space="preserve" name="Read more">
+		<value>Mehr lesen</value>
+	</data>
+	<data xml:space="preserve" name="Ready to join our growing family of satisfied clients? Take the first step towards success by becoming our valued client.Experience top - notch ICT solutions tailored to your business needs, exceptional customer service, and a partnership built on trust and excellence.Let us help you unlock your full potential and drive your business forward.Contact us today to begin your journey with us and become part of our success story.">
+		<value>Bereit, unserer wachsenden Familie zufriedener Kunden beizutreten? Machen Sie den ersten Schritt auf dem Weg zum Erfolg, indem Sie zu unserem geschätzten Kunden werden. Erleben Sie erstklassige ICT-Lösungen, die auf Ihre Geschäftsbedürfnisse zugeschnitten sind, außergewöhnlichen Kundenservice und eine Partnerschaft, die auf Vertrauen und Exzellenz basiert. Lassen Sie uns Ihnen helfen, Ihr volles Potenzial zu entfalten und Ihr Geschäft voranzutreiben. Kontaktieren Sie uns noch heute, um Ihre Reise mit uns zu beginnen und Teil unserer Erfolgsgeschichte zu werden.</value>
+	</data>
+	<data xml:space="preserve" name="Ready to join our growing family of satisfied clients? Take the first step towards success by becoming our valued client.Experience top-notch ICT solutions tailored to your business needs, exceptional customer service, and a partnership built on trust and excellence. Let us help you unlock your full potential and drive your business forward. Contact us today to begin your journey with us and become part of our success story.">
+		<value>Bereit, unserer wachsenden Familie zufriedener Kunden beizutreten? Machen Sie den ersten Schritt auf dem Weg zum Erfolg, indem Sie zu unserem geschätzten Kunden werden. Erleben Sie erstklassige ICT-Lösungen, die auf Ihre Geschäftsbedürfnisse zugeschnitten sind, außergewöhnlichen Kundenservice und eine Partnerschaft, die auf Vertrauen und Exzellenz basiert. Lassen Sie uns Ihnen helfen, Ihr volles Potenzial zu entfalten und Ihr Geschäft voranzutreiben. Kontaktieren Sie uns noch heute, um Ihre Reise mit uns zu beginnen und Teil unserer Erfolgsgeschichte zu werden.</value>
+	</data>
+	<data xml:space="preserve" name="Revolutionizing transportation with innovative solutions for efficient and sustainable mobility worldwide.">
+		<value>Revolutionierung des Transports mit innovativen Lösungen für effizientes und nachhaltiges Mobilität weltweit</value>
+	</data>
+	<data xml:space="preserve" name="Routers &amp; Switches">
+		<value>Router und Switches</value>
+	</data>
+	<data xml:space="preserve" name="Routers and switches are two essential networking devices that play distinct roles in the functioning of computer networks. They are often used together to create complex and efficient network infrastructures.">
+		<value>Router und Switches sind zwei grundlegende Netzwerkgeräte, die unterschiedliche Rollen bei der Funktionsweise von Computernetzwerken spielen. Sie werden oft gemeinsam verwendet, um komplexe und effiziente Netzwerkinfrastrukturen zu erstellen.</value>
+	</data>
+	<data xml:space="preserve" name="Scope definition, solution exploration, stakeholder alignment">
+		<value>Umfangsdefinition, Lösungsexploration, Interessensvertreterausrichtung</value>
+	</data>
+	<data xml:space="preserve" name="See linkedin profile.">
+		<value>Siehe LinkedIn-Profil</value>
+	</data>
+	<data xml:space="preserve" name="Send message">
+		<value>Nachricht senden</value>
+	</data>
+	<data xml:space="preserve" name="Services">
+		<value>Dienstleistungen</value>
+	</data>
+	<data xml:space="preserve" name="Services related">
+		<value>Verwandte Dienstleistungen</value>
+	</data>
+	<data xml:space="preserve" name="Shaping Egypt's education system and promoting quality learning for all students.">
+		<value>Gestaltung des ägyptischen Bildungssystems und Förderung des qualitativ hochwertigen Lernens für alle Schüler</value>
+	</data>
+	<data xml:space="preserve" name="SIEM &amp; IR Solutions">
+		<value>SIEM- und IR-Lösungen</value>
+	</data>
+	<data xml:space="preserve" name="SignOut">
+		<value>Abmelden</value>
+	</data>
+	<data xml:space="preserve" name="Solution architecture, deployment, functionality expansion">
+		<value>Lösungsarchitektur, Bereitstellung, Funktionserweiterung</value>
+	</data>
+	<data xml:space="preserve" name="Solution Expansion:">
+		<value>Lösungserweiterung</value>
+	</data>
+	<data xml:space="preserve" name="Solution Redesign:">
+		<value>Neuentwurf der Lösung</value>
+	</data>
+	<data xml:space="preserve" name="Solutions">
+		<value>Lösungen</value>
+	</data>
+	<data xml:space="preserve" name="Streamlined operational support ensures solution health, availability, and proactive fault detection for optimal performance.">
+		<value>Gestraffte Betriebssystemunterstützung gewährleistet Lösungsgesundheit, Verfügbarkeit und proaktive Fehlererkennung für optimale Leistung</value>
+	</data>
+	<data xml:space="preserve" name="support">
+		<value>Unterstützung</value>
+	</data>
+	<data xml:space="preserve" name="System integrator companies have extensive knowledge and experience in integrating diverse technologies. They conduct thorough research and analysis to understand the compatibility of various components and select the appropriate tools, protocols, and frameworks to ensure seamless integration.">
+		<value>Systemintegrationsunternehmen verfügen über umfassendes Wissen und Erfahrung bei der Integration verschiedener Technologien. Sie führen eine gründliche Recherche und Analyse durch, um die Kompatibilität verschiedener Komponenten zu verstehen und die geeigneten Werkzeuge, Protokolle und Frameworks auszuwählen, um eine nahtlose Integration sicherzustellen.</value>
+	</data>
+	<data xml:space="preserve" name="Tags">
+		<value>Schlagwörter</value>
+	</data>
+	<data xml:space="preserve" name="Through the Optimize phase, we constantly evaluate and fine-tune your solution to meet performance expectations and address evolving needs.">
+		<value>In der Optimierungsphase bewerten und feinabstimmen wir Ihre Lösung kontinuierlich, um die Leistungserwartungen zu erfüllen und sich ändernde Bedürfnisse zu berücksichtigen.</value>
+	</data>
+	<data xml:space="preserve" name="To improve the organization's security posture, vulnerability analyses and penetration tests are both necessary.">
+		<value>Um die Sicherheitslage der Organisation zu verbessern, sind sowohl Schwachstellenanalysen als auch Penetrationstests erforderlich</value>
+	</data>
+	<data xml:space="preserve" name="Vendor Support Integration:">
+		<value>Anbieter-Unterstützungsintegration</value>
+	</data>
+	<data xml:space="preserve" name="Vendors">
+		<value>Verkäufer</value>
+	</data>
+	<data xml:space="preserve" name="Vodafone">
+		<value>Vodafone</value>
+	</data>
+	<data xml:space="preserve" name="We employ proactive management techniques to identify and resolve issues before they impact your organization, ensuring smooth operations.">
+		<value>Wir verwenden proaktive Managementtechniken, um Probleme zu identifizieren und zu lösen, bevor sie Ihre Organisation beeinträchtigen, um einen reibungslosen Betrieb sicherzustellen.</value>
+	</data>
+	<data xml:space="preserve" name="We establish direct lines of communication with our vendors' support, enabling seamless collaboration and ensuring project success while minimizing risks.">
+		<value>Wir etablieren direkte Kommunikationslinien mit dem Support unserer Lieferanten, um eine nahtlose Zusammenarbeit zu ermöglichen und den Projekterfolg sicherzustellen, während wir die Risiken minimieren.</value>
+	</data>
+	<data xml:space="preserve" name="We help you expand your solution to new environments, accommodating your business growth and ensuring scalability.">
+		<value>Wir helfen Ihnen, Ihre Lösung auf neue Umgebungen auszuweiten, Ihr Geschäftswachstum zu unterstützen und Skalierbarkeit sicherzustellen.</value>
+	</data>
+	<data xml:space="preserve" name="We offer skilled professionals to design customized data center solutions that cater to each organization's unique needs, ensuring security, efficiency, and budget considerations are met.">
+		<value>Wir bieten qualifizierte Fachleute, um maßgeschneiderte Rechenzentrums-Lösungen zu entwerfen, die auf die individuellen Bedürfnisse jeder Organisation zugeschnitten sind und Sicherheit, Effizienz und Budgetaspekte erfüllen.</value>
+	</data>
+	<data xml:space="preserve" name="We prioritize proactive management to anticipate and address potential issues before they become critical. In cases where proactive management cannot predict failures, our reactive fault detection and correction mechanisms come into play.">
+		<value>Wir priorisieren eine proaktive Verwaltung, um potenzielle Probleme vorherzusehen und zu lösen, bevor sie kritisch werden. In Fällen, in denen eine proaktive Verwaltung keine Ausfälle vorhersagen kann, treten unsere reaktiven Fehlererkennungs- und Korrekturmechanismen in Kraft.</value>
+	</data>
+	<data xml:space="preserve" name="We provide end-to-end solution design, encompassing all aspects of the project lifecycle, to deliver comprehensive and integrated solutions that meet our clients' objectives.">
+		<value>Wir bieten eine umfassende Lösungsentwicklung von Anfang bis Ende, die alle Aspekte des Projekt-Lebenszyklus umfasst, um umfassende und integrierte Lösungen zu liefern, die die Ziele unserer Kunden erfüllen.</value>
+	</data>
+	<data xml:space="preserve" name="We take care of the entire deployment and exposition process, ensuring a seamless transition.">
+		<value>Wir übernehmen den gesamten Prozess der Bereitstellung und Präsentation, um einen nahtlosen Übergang sicherzustellen.</value>
+	</data>
+	<data xml:space="preserve" name="Web, Email &amp; App Security Solutions">
+		<value>Web-, E-Mail- und App-Sicherheitslösungen</value>
+	</data>
+	<data xml:space="preserve" name="Web, email, and app security solutions are designed to protect individuals, businesses, and organizations from various threats and vulnerabilities in the digital world.">
+		<value>Die Sicherheitslösungen für Web, E-Mail und Apps sind darauf ausgelegt, Einzelpersonen, Unternehmen und Organisationen vor verschiedenen Bedrohungen und Schwachstellen in der digitalen Welt zu schützen.</value>
+	</data>
+	<data xml:space="preserve" name="What industries do Diverse serve ?">
+		<value>Welche Branchen bedient Diverse?</value>
+	</data>
+	<data xml:space="preserve" name="What industries do Diverse serve?">
+		<value>Welche Branchen bedient Diverse?</value>
+	</data>
+	<data xml:space="preserve" name="What is Diverse specialized in ?">
+		<value>Worauf spezialisiert sich Diverse?</value>
+	</data>
+	<data xml:space="preserve" name="What makes Diverse different ?">
+		<value>Was macht Diverse anders?</value>
+	</data>
+	<data xml:space="preserve" name="What services does Diverse company offer?">
+		<value>Welche Dienstleistungen bietet das Unternehmen Diverse an?</value>
+	</data>
+	<data xml:space="preserve" name="What services does the company offer ?">
+		<value>Welche Dienstleistungen bietet das Unternehmen an?</value>
+	</data>
+	<data xml:space="preserve" name="When selecting Diverse, you will guarantee experience, expertise in your industry, track record of successful projects, technical skills, certifications, reputation, and ability to understand and address your specific business needs.">
+		<value>Wenn Sie Diverse auswählen, garantieren Sie Erfahrung, Fachwissen in Ihrer Branche, eine Erfolgsbilanz bei Projekten, technische Fähigkeiten, Zertifizierungen, Ruf und die Fähigkeit, Ihre spezifischen Geschäftsbedürfnisse zu verstehen und anzusprechen.</value>
+	</data>
+	<data xml:space="preserve" name="Wireless Solutions">
+		<value>Drahtlose Lösungen</value>
+	</data>
+	<data xml:space="preserve" name="Wireless solutions refer to technologies and systems that enable the transmission of data and communication without the need for physical wired connections. These solutions utilize wireless signals.">
+		<value>Drahtlose Lösungen beziehen sich auf Technologien und Systeme, die die Übertragung von Daten und Kommunikation ohne die Notwendigkeit von physischen Kabelverbindungen ermöglichen. Diese Lösungen nutzen drahtlose Signale.</value>
+	</data>
+	<data xml:space="preserve" name="Yasser joined Diverse since the first moments; he was a key player in bringing Diverseto be a key system integrator within MEA region.He had 15 years of experience in Sales with multi - national companies in Egypt with regional exposure overAfrica and Middle East markets.He is a results - oriented and a leader of people who canbuild teams and organizations from scratch with clear view on target and company business goals.">
+		<value>Yasser trat Diverse seit den ersten Momenten bei; er war ein Schlüsselspieler bei der Einführung von Diverse als Schlüsselsystemintegrator in der Region Naher Osten und Afrika. Er verfügte über 15 Jahre Erfahrung im Verkauf bei multinationalen Unternehmen in Ägypten mit regionalem Einblick in die Märkte von Afrika und dem Nahen Osten. Er ist ein ergebnisorientierter und ein Führungskraft, der Teams und Organisationen von Grund auf aufbauen kann, mit einem klaren Blick auf das Ziel und die Geschäftsziele des Unternehmens.</value>
+	</data>
+	<data xml:space="preserve" name="Yasser Zaky">
+		<value>Yasser Zaky</value>
+	</data>
+	<data xml:space="preserve" name="Yes, Diverse are skilled at working with existing systems. We assess your current infrastructure, identify areas that require integration or improvement, and develop solutions that seamlessly integrate with your existing systems while minimizing disruption to your operations.">
+		<value>Ja, Diverse sind geschickt darin, mit bestehenden Systemen zu arbeiten. Wir bewerten Ihre aktuelle Infrastruktur, identifizieren Bereiche, die eine Integration oder Verbesserung erfordern, und entwickeln Lösungen, die nahtlos mit Ihren bestehenden Systemen integriert werden, während wir die Störung Ihrer Betriebe minimieren.</value>
+	</data>
+	<data xml:space="preserve" name="Your message">
+		<value>Ihre Nachricht</value>
+	</data>
+	<data xml:space="preserve" name="Your name">
+		<value>Dein Name</value>
+	</data>
+	<data xml:space="preserve" name="© 2023 Diverse. All rights reserved.">
+		<value> 2023 Diverse. Alle Rechte vorbehalten.</value>
+	</data>
+	<data xml:space="preserve" name="“Earn customer loyalty , Pursue best practices , Improve service levels, Be reliable &amp; responsive, Enable customers to better manage costs, Minimize risks associated with outsourcing, Adapt to varying business demands”">
+		<value>Kundenloyalität gewinnen, beste Praktiken verfolgen, Servicequalität verbessern, zuverlässig und reaktionsfähig sein, Kunden bei der Kostenoptimierung unterstützen, Risiken im Zusammenhang mit der Auslagerung minimieren, sich an wechselnde Geschäftsanforderungen anpassen</value>
+	</data>
+	<data xml:space="preserve" name="“Is to become the premium business solutions provider for ICT market in Europe, Middle East, and Africa”">
+		<value>Unser Ziel ist es, der führende Anbieter von Business-Lösungen für den ICT-Markt in Europa, dem Nahen Osten und Afrika zu werden</value>
+	</data>
+	<data xml:space="preserve" name="“To provide our customers with quick, secure, reliable and high-quality ICT solutions, services, and consultancies that accelerate and sustain success for their businesses and increase end-customer satisfaction”">
+		<value>Um unseren Kunden schnelle, sichere, zuverlässige und hochwertige IKT-Lösungen, -Dienstleistungen und -Beratungen anzubieten, die den Erfolg ihrer Unternehmen beschleunigen und nachhaltig machen und die Kundenzufriedenheit der Endkunden erhöhen</value>
+	</data>
+	<data xml:space="preserve" name="“We are committed to delivering cutting - edge ICT solutions that drive business success.With a customer - centric approach, we strive to exceed expectations and empower our clients to thrive in the digital era.”">
+		<value>Wir sind uns verpflichtet, innovative ICT-Lösungen zu liefern, die den Geschäftserfolg vorantreiben. Mit einem kundenorientierten Ansatz streben wir danach, die Erwartungen zu übertreffen und unsere Kunden zu befähigen, im digitalen Zeitalter zu gedeihen.</value>
+	</data>
+</root>
